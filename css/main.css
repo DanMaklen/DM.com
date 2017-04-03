@@ -1,0 +1,15 @@
+body{
+	display: flex;
+	flex-direction: column;
+}
+#navbar{
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	overflow: auto;
+}
+#frame{
+	width: 100%;
+	padding: 1px;
+	border: none;
+	flex: 1;
+}
