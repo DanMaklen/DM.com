@@ -1,0 +1,4553 @@
+{
+	"Armor": {
+		"items": {
+			"HeavyArmor": {
+				"items": {
+					"BlackIronArmor": {
+						"id": "BlackIronArmor",
+						"parent": "BlackIronSet",
+						"text": "Black Iron Armor",
+						"url": "http://darksouls.wikidot.com/black-iron-armor"
+					},
+					"BlackIronGauntlets": {
+						"id": "BlackIronGauntlets",
+						"parent": "BlackIronSet",
+						"text": "Black Iron Gauntlets",
+						"url": "http://darksouls.wikidot.com/black-iron-gauntlets"
+					},
+					"BlackIronHelm": {
+						"id": "BlackIronHelm",
+						"parent": "BlackIronSet",
+						"text": "Black Iron Helm",
+						"url": "http://darksouls.wikidot.com/black-iron-helm"
+					},
+					"BlackIronLeggings": {
+						"id": "BlackIronLeggings",
+						"parent": "BlackIronSet",
+						"text": "Black Iron Leggings",
+						"url": "http://darksouls.wikidot.com/black-iron-leggings"
+					},
+					"BlackIronSet": {
+						"id": "BlackIronSet",
+						"parent": "#",
+						"text": "Black Iron Set",
+						"url": "http://darksouls.wikidot.com/black-iron-set"
+					},
+					"GiantArmor": {
+						"id": "GiantArmor",
+						"parent": "GiantSet",
+						"text": "Giant Armor",
+						"url": "http://darksouls.wikidot.com/giant-armor"
+					},
+					"GiantGauntlets": {
+						"id": "GiantGauntlets",
+						"parent": "GiantSet",
+						"text": "Giant Gauntlets",
+						"url": "http://darksouls.wikidot.com/giant-gauntlets"
+					},
+					"GiantHelm": {
+						"id": "GiantHelm",
+						"parent": "GiantSet",
+						"text": "Giant Helm",
+						"url": "http://darksouls.wikidot.com/giant-helm"
+					},
+					"GiantLeggings": {
+						"id": "GiantLeggings",
+						"parent": "GiantSet",
+						"text": "Giant Leggings",
+						"url": "http://darksouls.wikidot.com/giant-leggings"
+					},
+					"GiantSet": {
+						"id": "GiantSet",
+						"parent": "#",
+						"text": "Giant Set",
+						"url": "http://darksouls.wikidot.com/giant-set"
+					},
+					"GolemArmor": {
+						"id": "GolemArmor",
+						"parent": "GolemSet",
+						"text": "Golem Armor",
+						"url": "http://darksouls.wikidot.com/golem-armor"
+					},
+					"GolemGauntlets": {
+						"id": "GolemGauntlets",
+						"parent": "GolemSet",
+						"text": "Golem Gauntlets",
+						"url": "http://darksouls.wikidot.com/golem-gauntlets"
+					},
+					"GolemHelm": {
+						"id": "GolemHelm",
+						"parent": "GolemSet",
+						"text": "Golem Helm",
+						"url": "http://darksouls.wikidot.com/golem-helm"
+					},
+					"GolemLeggings": {
+						"id": "GolemLeggings",
+						"parent": "GolemSet",
+						"text": "Golem Leggings",
+						"url": "http://darksouls.wikidot.com/golem-leggings"
+					},
+					"GolemSet": {
+						"id": "GolemSet",
+						"parent": "#",
+						"text": "Golem Set",
+						"url": "http://darksouls.wikidot.com/golem-set"
+					},
+					"GuardianArmor": {
+						"id": "GuardianArmor",
+						"parent": "GuardianSet",
+						"text": "Guardian Armor",
+						"url": "http://darksouls.wikidot.com/guardian-armor"
+					},
+					"GuardianGauntlets": {
+						"id": "GuardianGauntlets",
+						"parent": "GuardianSet",
+						"text": "Guardian Gauntlets",
+						"url": "http://darksouls.wikidot.com/guardian-gauntlets"
+					},
+					"GuardianHelm": {
+						"id": "GuardianHelm",
+						"parent": "GuardianSet",
+						"text": "Guardian Helm",
+						"url": "http://darksouls.wikidot.com/guardian-helm"
+					},
+					"GuardianLeggings": {
+						"id": "GuardianLeggings",
+						"parent": "GuardianSet",
+						"text": "Guardian Leggings",
+						"url": "http://darksouls.wikidot.com/guardian-leggings"
+					},
+					"GuardianSet": {
+						"id": "GuardianSet",
+						"parent": "#",
+						"text": "Guardian Set",
+						"url": "http://darksouls.wikidot.com/guardian-set"
+					},
+					"HavelsArmor": {
+						"id": "HavelsArmor",
+						"parent": "HavelsSet",
+						"text": "Havel's Armor",
+						"url": "http://darksouls.wikidot.com/havel-s-armor"
+					},
+					"HavelsGauntlets": {
+						"id": "HavelsGauntlets",
+						"parent": "HavelsSet",
+						"text": "Havel's Gauntlets",
+						"url": "http://darksouls.wikidot.com/havel-s-gauntlets"
+					},
+					"HavelsHelm": {
+						"id": "HavelsHelm",
+						"parent": "HavelsSet",
+						"text": "Havel's Helm",
+						"url": "http://darksouls.wikidot.com/havel-s-helm"
+					},
+					"HavelsLeggings": {
+						"id": "HavelsLeggings",
+						"parent": "HavelsSet",
+						"text": "Havel's Leggings",
+						"url": "http://darksouls.wikidot.com/havel-s-leggings"
+					},
+					"HavelsSet": {
+						"id": "HavelsSet",
+						"parent": "#",
+						"text": "Havel's Set",
+						"url": "http://darksouls.wikidot.com/havel-s-set"
+					},
+					"SmoughsArmor": {
+						"id": "SmoughsArmor",
+						"parent": "SmoughsSet",
+						"text": "Smough's Armor",
+						"url": "http://darksouls.wikidot.com/smough-s-armor"
+					},
+					"SmoughsGauntlets": {
+						"id": "SmoughsGauntlets",
+						"parent": "SmoughsSet",
+						"text": "Smough's Gauntlets",
+						"url": "http://darksouls.wikidot.com/smough-s-gauntlets"
+					},
+					"SmoughsHelm": {
+						"id": "SmoughsHelm",
+						"parent": "SmoughsSet",
+						"text": "Smough's Helm",
+						"url": "http://darksouls.wikidot.com/smough-s-helm"
+					},
+					"SmoughsLeggings": {
+						"id": "SmoughsLeggings",
+						"parent": "SmoughsSet",
+						"text": "Smough's Leggings",
+						"url": "http://darksouls.wikidot.com/smough-s-leggings"
+					},
+					"SmoughsSet": {
+						"id": "SmoughsSet",
+						"parent": "#",
+						"text": "Smough's Set",
+						"url": "http://darksouls.wikidot.com/smough-s-set"
+					},
+					"StoneArmor": {
+						"id": "StoneArmor",
+						"parent": "StoneSet",
+						"text": "Stone Armor",
+						"url": "http://darksouls.wikidot.com/stone-armor"
+					},
+					"StoneGauntlets": {
+						"id": "StoneGauntlets",
+						"parent": "StoneSet",
+						"text": "Stone Gauntlets",
+						"url": "http://darksouls.wikidot.com/stone-gauntlets"
+					},
+					"StoneHelm": {
+						"id": "StoneHelm",
+						"parent": "StoneSet",
+						"text": "Stone Helm",
+						"url": "http://darksouls.wikidot.com/stone-helm"
+					},
+					"StoneLeggings": {
+						"id": "StoneLeggings",
+						"parent": "StoneSet",
+						"text": "Stone Leggings",
+						"url": "http://darksouls.wikidot.com/stone-leggings"
+					},
+					"StoneSet": {
+						"id": "StoneSet",
+						"parent": "#",
+						"text": "Stone Set",
+						"url": "http://darksouls.wikidot.com/stone-set"
+					}
+				},
+				"text": "Heavy Armor"
+			},
+			"LightArmor": {
+				"items": {
+					"AnkletoftheGreatLord": {
+						"id": "AnkletoftheGreatLord",
+						"parent": "SetoftheGreatLord",
+						"text": "Anklet of the Great Lord",
+						"url": "http://darksouls.wikidot.com/anklet-of-the-great-lord"
+					},
+					"AntiquatedDress": {
+						"id": "AntiquatedDress",
+						"parent": "AntiquatedSet",
+						"text": "Antiquated Dress",
+						"url": "http://darksouls.wikidot.com/antiquated-dress"
+					},
+					"AntiquatedGloves": {
+						"id": "AntiquatedGloves",
+						"parent": "AntiquatedSet",
+						"text": "Antiquated Gloves",
+						"url": "http://darksouls.wikidot.com/antiquated-gloves"
+					},
+					"AntiquatedSet": {
+						"id": "AntiquatedSet",
+						"parent": "#",
+						"text": "Antiquated Set",
+						"url": "http://darksouls.wikidot.com/antiquated-set"
+					},
+					"AntiquatedSkirt": {
+						"id": "AntiquatedSkirt",
+						"parent": "AntiquatedSet",
+						"text": "Antiquated Skirt",
+						"url": "http://darksouls.wikidot.com/antiquated-skirt"
+					},
+					"BigHat": {
+						"id": "BigHat",
+						"parent": "BigHatsSet",
+						"text": "Big Hat",
+						"url": "http://darksouls.wikidot.com/big-hat"
+					},
+					"BigHatsSet": {
+						"id": "BigHatsSet",
+						"parent": "#",
+						"text": "Big Hat's Set",
+						"url": "http://darksouls.wikidot.com/big-hat-s-set"
+					},
+					"BlackClericRobe": {
+						"id": "BlackClericRobe",
+						"parent": "BlackSet",
+						"text": "Black Cleric Robe",
+						"url": "http://darksouls.wikidot.com/black-cleric-robe"
+					},
+					"BlackManchette": {
+						"id": "BlackManchette",
+						"parent": "BlackSet",
+						"text": "Black Manchette",
+						"url": "http://darksouls.wikidot.com/black-manchette"
+					},
+					"BlackSet": {
+						"id": "BlackSet",
+						"parent": "#",
+						"text": "Black Set",
+						"url": "http://darksouls.wikidot.com/black-set"
+					},
+					"BlackSorcererBoots": {
+						"id": "BlackSorcererBoots",
+						"parent": "BlackSorcererSet",
+						"text": "Black Sorcerer Boots",
+						"url": "http://darksouls.wikidot.com/black-sorcerer-boots"
+					},
+					"BlackSorcererCloak": {
+						"id": "BlackSorcererCloak",
+						"parent": "BlackSorcererSet",
+						"text": "Black Sorcerer Cloak",
+						"url": "http://darksouls.wikidot.com/black-sorcerer-cloak"
+					},
+					"BlackSorcererGloves": {
+						"id": "BlackSorcererGloves",
+						"parent": "BlackSorcererSet",
+						"text": "Black Sorcerer Gloves",
+						"url": "http://darksouls.wikidot.com/black-sorcerer-gauntlets"
+					},
+					"BlackSorcererHat": {
+						"id": "BlackSorcererHat",
+						"parent": "BlackSorcererSet",
+						"text": "Black Sorcerer Hat",
+						"url": "http://darksouls.wikidot.com/black-sorcerer-hat"
+					},
+					"BlackSorcererSet": {
+						"id": "BlackSorcererSet",
+						"parent": "#",
+						"text": "Black Sorcerer Set",
+						"url": "http://darksouls.wikidot.com/black-sorcerer-set"
+					},
+					"BlackTights": {
+						"id": "BlackTights",
+						"parent": "BlackSet",
+						"text": "Black Tights",
+						"url": "http://darksouls.wikidot.com/black-manchette"
+					},
+					"BloodStainedSkirt": {
+						"id": "BloodStainedSkirt",
+						"parent": "DingySet",
+						"text": "Blood-Stained Skirt",
+						"url": "http://darksouls.wikidot.com/blood-stained-skirt"
+					},
+					"BraceletoftheGreatLord": {
+						"id": "BraceletoftheGreatLord",
+						"parent": "SetoftheGreatLord",
+						"text": "Bracelet of the Great Lord",
+						"url": "http://darksouls.wikidot.com/bracelet-of-the-great-lord"
+					},
+					"ChainArmor": {
+						"id": "ChainArmor",
+						"parent": "ChainSet",
+						"text": "Chain Armor",
+						"url": "http://darksouls.wikidot.com/chain-armor"
+					},
+					"ChainHelm": {
+						"id": "ChainHelm",
+						"parent": "ChainSet",
+						"text": "Chain Helm",
+						"url": "http://darksouls.wikidot.com/chain-helm"
+					},
+					"ChainLeggings": {
+						"id": "ChainLeggings",
+						"parent": "ChainSet",
+						"text": "Chain Leggings",
+						"url": "http://darksouls.wikidot.com/chain-leggings"
+					},
+					"ChainSet": {
+						"id": "ChainSet",
+						"parent": "#",
+						"text": "Chain Set",
+						"url": "http://darksouls.wikidot.com/chain-set"
+					},
+					"ChestersGloves": {
+						"id": "ChestersGloves",
+						"parent": "ChestersSet",
+						"text": "Chester's Gloves",
+						"url": "http://darksouls.wikidot.com/chester-s-gloves"
+					},
+					"ChestersLongCoat": {
+						"id": "ChestersLongCoat",
+						"parent": "ChestersSet",
+						"text": "Chester's Long Coat",
+						"url": "http://darksouls.wikidot.com/chester-s-long-coat"
+					},
+					"ChestersSet": {
+						"id": "ChestersSet",
+						"parent": "#",
+						"text": "Chester's Set",
+						"url": "http://darksouls.wikidot.com/chester-s-set"
+					},
+					"ChestersTrousers": {
+						"id": "ChestersTrousers",
+						"parent": "ChestersSet",
+						"text": "Chester's Trousers",
+						"url": "http://darksouls.wikidot.com/chester-s-trousers"
+					},
+					"CrimsonGloves": {
+						"id": "CrimsonGloves",
+						"parent": "CrimsonSet",
+						"text": "Crimson Gloves",
+						"url": "http://darksouls.wikidot.com/crimson-gloves"
+					},
+					"CrimsonRobe": {
+						"id": "CrimsonRobe",
+						"parent": "CrimsonSet",
+						"text": "Crimson Robe",
+						"url": "http://darksouls.wikidot.com/crimson-robe"
+					},
+					"CrimsonSet": {
+						"id": "CrimsonSet",
+						"parent": "#",
+						"text": "Crimson Set",
+						"url": "http://darksouls.wikidot.com/crimson-set"
+					},
+					"CrimsonWaistcloth": {
+						"id": "CrimsonWaistcloth",
+						"parent": "CrimsonSet",
+						"text": "Crimson Waistcloth",
+						"url": "http://darksouls.wikidot.com/crimson-waistcloth"
+					},
+					"CrownofDusk": {
+						"id": "CrownofDusk",
+						"parent": "AntiquatedSet",
+						"text": "Crown of Dusk",
+						"url": "http://darksouls.wikidot.com/crown-of-dusk"
+					},
+					"CrownoftheDarkSun": {
+						"id": "CrownoftheDarkSun",
+						"parent": "MoonlightSet",
+						"text": "Crown of the Dark Sun",
+						"url": "http://darksouls.wikidot.com/crown-of-the-dark-sun"
+					},
+					"CrownoftheGreatLord": {
+						"id": "CrownoftheGreatLord",
+						"parent": "SetoftheGreatLord",
+						"text": "Crown of the Great Lord",
+						"url": "http://darksouls.wikidot.com/crown-of-the-great-lord"
+					},
+					"DingyGloves": {
+						"id": "DingyGloves",
+						"parent": "DingySet",
+						"text": "Dingy Gloves",
+						"url": "http://darksouls.wikidot.com/dingy-gloves"
+					},
+					"DingyHood": {
+						"id": "DingyHood",
+						"parent": "DingySet",
+						"text": "Dingy Hood",
+						"url": "http://darksouls.wikidot.com/dingy-hood"
+					},
+					"DingyRobe": {
+						"id": "DingyRobe",
+						"parent": "DingySet",
+						"text": "Dingy Robe",
+						"url": "http://darksouls.wikidot.com/dingy-robe"
+					},
+					"DingySet": {
+						"id": "DingySet",
+						"parent": "#",
+						"text": "Dingy Set",
+						"url": "http://darksouls.wikidot.com/dingy-set"
+					},
+					"GauntletsoftheChannelers": {
+						"id": "GauntletsoftheChannelers",
+						"parent": "SetoftheChannelers",
+						"text": "Gauntlets of the Channelers",
+						"url": "http://darksouls.wikidot.com/gauntlets-of-the-channelers"
+					},
+					"GoldHemmedBlackCloak": {
+						"id": "GoldHemmedBlackCloak",
+						"parent": "GoldHemmedBlackSet",
+						"text": "Gold-Hemmed Black Cloak",
+						"url": "http://darksouls.wikidot.com/gold-hemmed-black-cloak"
+					},
+					"GoldHemmedBlackGloves": {
+						"id": "GoldHemmedBlackGloves",
+						"parent": "GoldHemmedBlackSet",
+						"text": "Gold-Hemmed Black Gloves",
+						"url": "http://darksouls.wikidot.com/gold-hemmed-black-gloves"
+					},
+					"GoldHemmedBlackHood": {
+						"id": "GoldHemmedBlackHood",
+						"parent": "GoldHemmedBlackSet",
+						"text": "Gold-Hemmed Black Hood",
+						"url": "http://darksouls.wikidot.com/gold-hemmed-black-hood"
+					},
+					"GoldHemmedBlackSet": {
+						"id": "GoldHemmedBlackSet",
+						"parent": "#",
+						"text": "Gold-Hemmed Black Set",
+						"url": "http://darksouls.wikidot.com/gold-hemmed-black-set"
+					},
+					"GoldHemmedBlackSkirt": {
+						"id": "GoldHemmedBlackSkirt",
+						"parent": "GoldHemmedBlackSet",
+						"text": "Gold-Hemmed Black Skirt",
+						"url": "http://darksouls.wikidot.com/gold-hemmed-black-skirt"
+					},
+					"HollowSoldierArmor": {
+						"id": "HollowSoldierArmor",
+						"parent": "HollowSoldierSet",
+						"text": "Hollow Soldier Armor",
+						"url": "http://darksouls.wikidot.com/hollow-soldier-armor"
+					},
+					"HollowSoldierHelm": {
+						"id": "HollowSoldierHelm",
+						"parent": "HollowSoldierSet",
+						"text": "Hollow Soldier Helm",
+						"url": "http://darksouls.wikidot.com/hollow-soldier-helm"
+					},
+					"HollowSoldierSet": {
+						"id": "HollowSoldierSet",
+						"parent": "#",
+						"text": "Hollow Soldier Set",
+						"url": "http://darksouls.wikidot.com/hollow-soldier-set"
+					},
+					"HollowSoldierWaistcloth": {
+						"id": "HollowSoldierWaistcloth",
+						"parent": "HollowSoldierSet",
+						"text": "Hollow Soldier Waistcloth",
+						"url": "http://darksouls.wikidot.com/hollow-soldier-waistcloth"
+					},
+					"HollowThiefsHood": {
+						"id": "HollowThiefsHood",
+						"parent": "HollowThiefsSet",
+						"text": "Hollow Thief's Hood",
+						"url": "http://darksouls.wikidot.com/hollow-thief-s-hood"
+					},
+					"HollowThiefsLeatherArmor": {
+						"id": "HollowThiefsLeatherArmor",
+						"parent": "HollowThiefsSet",
+						"text": "Hollow Thief's Leather Armor",
+						"url": "http://darksouls.wikidot.com/hollow-thief-s-leather-armor"
+					},
+					"HollowThiefsSet": {
+						"id": "HollowThiefsSet",
+						"parent": "#",
+						"text": "Hollow Thief's Set",
+						"url": "http://darksouls.wikidot.com/hollow-thief-s-set"
+					},
+					"HollowThiefsTights": {
+						"id": "HollowThiefsTights",
+						"parent": "HollowThiefsSet",
+						"text": "Hollow Thief's Tights",
+						"url": "http://darksouls.wikidot.com/hollow-thief-s-tights"
+					},
+					"HollowWarriorArmor": {
+						"id": "HollowWarriorArmor",
+						"parent": "HollowWarriorSet",
+						"text": "Hollow Warrior Armor",
+						"url": "http://darksouls.wikidot.com/hollow-warrior-armor"
+					},
+					"HollowWarriorHelm": {
+						"id": "HollowWarriorHelm",
+						"parent": "HollowWarriorSet",
+						"text": "Hollow Warrior Helm",
+						"url": "http://darksouls.wikidot.com/hollow-warrior-helm"
+					},
+					"HollowWarriorSet": {
+						"id": "HollowWarriorSet",
+						"parent": "#",
+						"text": "Hollow Warrior Set",
+						"url": "http://darksouls.wikidot.com/hollow-warrior-set"
+					},
+					"HollowWarriorWaistcloth": {
+						"id": "HollowWarriorWaistcloth",
+						"parent": "HollowWarriorSet",
+						"text": "Hollow Warrior Waistcloth",
+						"url": "http://darksouls.wikidot.com/hollow-warrior-waistcloth"
+					},
+					"LeatherGauntlets": {
+						"id": "LeatherGauntlets",
+						"parent": "ChainSet",
+						"text": "Leather Gauntlets",
+						"url": "http://darksouls.wikidot.com/leather-gauntlets"
+					},
+					"LogansTravelingGloves": {
+						"id": "LogansTravelingGloves",
+						"parent": "BigHatsSet",
+						"text": "Logan's Traveling Gloves",
+						"url": "http://darksouls.wikidot.com/traveling-gloves-logan"
+					},
+					"LordsBladeCiaransSet": {
+						"id": "LordsBladeCiaransSet",
+						"parent": "#",
+						"text": "Lord's Blade Ciaran's Set",
+						"url": "http://darksouls.wikidot.com/lord-s-blade-ciaran-s-set"
+					},
+					"LordsBladeGloves": {
+						"id": "LordsBladeGloves",
+						"parent": "LordsBladeCiaransSet",
+						"text": "Lord's Blade Gloves",
+						"url": "http://darksouls.wikidot.com/lord-s-blade-gloves"
+					},
+					"LordsBladeRobe": {
+						"id": "LordsBladeRobe",
+						"parent": "LordsBladeCiaransSet",
+						"text": "Lord's Blade Robe",
+						"url": "http://darksouls.wikidot.com/lord-s-blade-robe"
+					},
+					"LordsBladeWaistcloth": {
+						"id": "LordsBladeWaistcloth",
+						"parent": "LordsBladeCiaransSet",
+						"text": "Lord's Blade Waistcloth",
+						"url": "http://darksouls.wikidot.com/lord-s-blade-waistcloth"
+					},
+					"MaidenGloves": {
+						"id": "MaidenGloves",
+						"parent": "MaidenSet",
+						"text": "Maiden Gloves",
+						"url": "http://darksouls.wikidot.com/maiden-gloves"
+					},
+					"MaidenHood": {
+						"id": "MaidenHood",
+						"parent": "MaidenSet",
+						"text": "Maiden Hood",
+						"url": "http://darksouls.wikidot.com/maiden-hood"
+					},
+					"MaidenRobe": {
+						"id": "MaidenRobe",
+						"parent": "MaidenSet",
+						"text": "Maiden Robe",
+						"url": "http://darksouls.wikidot.com/maiden-robe"
+					},
+					"MaidenSet": {
+						"id": "MaidenSet",
+						"parent": "#",
+						"text": "Maiden Set",
+						"url": "http://darksouls.wikidot.com/maiden-set"
+					},
+					"MaidenSkirt": {
+						"id": "MaidenSkirt",
+						"parent": "MaidenSet",
+						"text": "Maiden Skirt",
+						"url": "http://darksouls.wikidot.com/maiden-skirt"
+					},
+					"MaskofVelka": {
+						"id": "MaskofVelka",
+						"parent": "BlackSet",
+						"text": "Mask of Velka",
+						"url": "http://darksouls.wikidot.com/mask-of-velka"
+					},
+					"MaskoftheSealer": {
+						"id": "MaskoftheSealer",
+						"parent": "CrimsonSet",
+						"text": "Mask of the Sealer",
+						"url": "http://darksouls.wikidot.com/mask-of-the-sealer"
+					},
+					"MoonlightGloves": {
+						"id": "MoonlightGloves",
+						"parent": "MoonlightSet",
+						"text": "Moonlight Gloves",
+						"url": "http://darksouls.wikidot.com/moonlight-gloves"
+					},
+					"MoonlightRobe": {
+						"id": "MoonlightRobe",
+						"parent": "MoonlightSet",
+						"text": "Moonlight Robe",
+						"url": "http://darksouls.wikidot.com/moonlight-robe"
+					},
+					"MoonlightSet": {
+						"id": "MoonlightSet",
+						"parent": "#",
+						"text": "Moonlight Set",
+						"url": "http://darksouls.wikidot.com/moonlight-set"
+					},
+					"MoonlightWaistcloth": {
+						"id": "MoonlightWaistcloth",
+						"parent": "MoonlightSet",
+						"text": "Moonlight Waistcloth",
+						"url": "http://darksouls.wikidot.com/moonlight-waistcloth"
+					},
+					"PaintingGuardianGloves": {
+						"id": "PaintingGuardianGloves",
+						"parent": "PaintingGuardianSet",
+						"text": "Painting Guardian Gloves",
+						"url": "http://darksouls.wikidot.com/painting-guardian-gloves"
+					},
+					"PaintingGuardianHood": {
+						"id": "PaintingGuardianHood",
+						"parent": "PaintingGuardianSet",
+						"text": "Painting Guardian Hood",
+						"url": "http://darksouls.wikidot.com/painting-guardian-hood"
+					},
+					"PaintingGuardianRobe": {
+						"id": "PaintingGuardianRobe",
+						"parent": "PaintingGuardianSet",
+						"text": "Painting Guardian Robe",
+						"url": "http://darksouls.wikidot.com/painting-guardian-robe"
+					},
+					"PaintingGuardianSet": {
+						"id": "PaintingGuardianSet",
+						"parent": "#",
+						"text": "Painting Guardian Set",
+						"url": "http://darksouls.wikidot.com/painting-guardian-set"
+					},
+					"PaintingGuardianWaistcloth": {
+						"id": "PaintingGuardianWaistcloth",
+						"parent": "PaintingGuardianSet",
+						"text": "Painting Guardian Waistcloth",
+						"url": "http://darksouls.wikidot.com/painting-guardian-waistcloth"
+					},
+					"PorcelainMask": {
+						"id": "PorcelainMask",
+						"parent": "LordsBladeCiaransSet",
+						"text": "Porcelain Mask",
+						"url": "http://darksouls.wikidot.com/porcelain-mask"
+					},
+					"RobeoftheChannelers": {
+						"id": "RobeoftheChannelers",
+						"parent": "SetoftheChannelers",
+						"text": "Robe of the Channelers",
+						"url": "http://darksouls.wikidot.com/robe-of-the-channelers"
+					},
+					"RobeoftheGreatLord": {
+						"id": "RobeoftheGreatLord",
+						"parent": "SetoftheGreatLord",
+						"text": "Robe of the Great Lord",
+						"url": "http://darksouls.wikidot.com/robe-of-the-great-lord"
+					},
+					"SageRobe": {
+						"id": "SageRobe",
+						"parent": "BigHatsSet",
+						"text": "Sage Robe",
+						"url": "http://darksouls.wikidot.com/sage-robe"
+					},
+					"SetoftheChannelers": {
+						"id": "SetoftheChannelers",
+						"parent": "#",
+						"text": "Set of the Channelers",
+						"url": "http://darksouls.wikidot.com/set-of-the-channelers"
+					},
+					"SetoftheGreatLord": {
+						"id": "SetoftheGreatLord",
+						"parent": "#",
+						"text": "Set of the Great Lord",
+						"url": "http://darksouls.wikidot.com/set-of-the-great-lord"
+					},
+					"ShadowGarb": {
+						"id": "ShadowGarb",
+						"parent": "ShadowSet",
+						"text": "Shadow Garb",
+						"url": "http://darksouls.wikidot.com/shadow-garb"
+					},
+					"ShadowGauntlets": {
+						"id": "ShadowGauntlets",
+						"parent": "ShadowSet",
+						"text": "Shadow Gauntlets",
+						"url": "http://darksouls.wikidot.com/shadow-gauntlets"
+					},
+					"ShadowLeggings": {
+						"id": "ShadowLeggings",
+						"parent": "ShadowSet",
+						"text": "Shadow Leggings",
+						"url": "http://darksouls.wikidot.com/shadow-leggings"
+					},
+					"ShadowMask": {
+						"id": "ShadowMask",
+						"parent": "ShadowSet",
+						"text": "Shadow Mask",
+						"url": "http://darksouls.wikidot.com/shadow-mask"
+					},
+					"ShadowSet": {
+						"id": "ShadowSet",
+						"parent": "#",
+						"text": "Shadow Set",
+						"url": "http://darksouls.wikidot.com/shadow-set"
+					},
+					"SixEyedHelmoftheChannelers": {
+						"id": "SixEyedHelmoftheChannelers",
+						"parent": "SetoftheChannelers",
+						"text": "Six-Eyed Helm of the Channelers",
+						"url": "http://darksouls.wikidot.com/six-eyed-helm-of-the-channelers"
+					},
+					"SnickeringTopHat": {
+						"id": "SnickeringTopHat",
+						"parent": "ChestersSet",
+						"text": "Snickering Top Hat",
+						"url": "http://darksouls.wikidot.com/snickering-top-hat"
+					},
+					"TravelingBoots": {
+						"id": "TravelingBoots",
+						"parent": "BigHatsSet",
+						"text": "Traveling Boots",
+						"url": "http://darksouls.wikidot.com/traveling-boots"
+					},
+					"WaistclothoftheChannelers": {
+						"id": "WaistclothoftheChannelers",
+						"parent": "SetoftheChannelers",
+						"text": "Waistcloth of the Channelers",
+						"url": "http://darksouls.wikidot.com/waistcloth-of-the-channelers"
+					},
+					"WitchCloak": {
+						"id": "WitchCloak",
+						"parent": "WitchSet",
+						"text": "Witch Cloak",
+						"url": "http://darksouls.wikidot.com/witch-cloak"
+					},
+					"WitchGloves": {
+						"id": "WitchGloves",
+						"parent": "WitchSet",
+						"text": "Witch Gloves",
+						"url": "http://darksouls.wikidot.com/witch-gloves"
+					},
+					"WitchHat": {
+						"id": "WitchHat",
+						"parent": "WitchSet",
+						"text": "Witch Hat",
+						"url": "http://darksouls.wikidot.com/witch-hat"
+					},
+					"WitchSet": {
+						"id": "WitchSet",
+						"parent": "#",
+						"text": "Witch Set",
+						"url": "http://darksouls.wikidot.com/witch-set"
+					},
+					"WitchSkirt": {
+						"id": "WitchSkirt",
+						"parent": "WitchSet",
+						"text": "Witch Skirt",
+						"url": "http://darksouls.wikidot.com/witch-skirt"
+					},
+					"XanthousCrown": {
+						"id": "XanthousCrown",
+						"parent": "XanthousSet",
+						"text": "Xanthous Crown",
+						"url": "http://darksouls.wikidot.com/xanthous-crown"
+					},
+					"XanthousGloves": {
+						"id": "XanthousGloves",
+						"parent": "XanthousSet",
+						"text": "Xanthous Gloves",
+						"url": "http://darksouls.wikidot.com/xanthous-gloves"
+					},
+					"XanthousOvercoat": {
+						"id": "XanthousOvercoat",
+						"parent": "XanthousSet",
+						"text": "Xanthous Overcoat",
+						"url": "http://darksouls.wikidot.com/xanthous-overcoat"
+					},
+					"XanthousSet": {
+						"id": "XanthousSet",
+						"parent": "#",
+						"text": "Xanthous Set",
+						"url": "http://darksouls.wikidot.com/xanthous-set"
+					},
+					"XanthousWaistcloth": {
+						"id": "XanthousWaistcloth",
+						"parent": "XanthousSet",
+						"text": "Xanthous Waistcloth",
+						"url": "http://darksouls.wikidot.com/xanthous-waistcloth"
+					}
+				},
+				"text": "Light Armor"
+			},
+			"MediumArmor": {
+				"items": {
+					"AdventurersSet": {
+						"id": "AdventurersSet",
+						"parent": "#",
+						"text": "Adventurer's Set",
+						"url": "http://darksouls.wikidot.com/adventurer-s-set"
+					},
+					"Armor": {
+						"id": "Armor",
+						"parent": "EasternSet",
+						"text": "Armor",
+						"url": "http://darksouls.wikidot.com/eastern-armor"
+					},
+					"ArmorofArtorias": {
+						"id": "ArmorofArtorias",
+						"parent": "SetofArtorias",
+						"text": "Armor of Artorias",
+						"url": "http://darksouls.wikidot.com/armor-of-artorias"
+					},
+					"ArmorofThorns": {
+						"id": "ArmorofThorns",
+						"parent": "SetofThorns",
+						"text": "Armor of Thorns",
+						"url": "http://darksouls.wikidot.com/armor-of-thorns"
+					},
+					"ArmoroftheGlorious": {
+						"id": "ArmoroftheGlorious",
+						"parent": "AdventurersSet",
+						"text": "Armor of the Glorious",
+						"url": "http://darksouls.wikidot.com/armor-of-the-glorious"
+					},
+					"ArmoroftheSun": {
+						"id": "ArmoroftheSun",
+						"parent": "IronSunSet",
+						"text": "Armor of the Sun",
+						"url": "http://darksouls.wikidot.com/armor-of-the-sun"
+					},
+					"BalderArmor": {
+						"id": "BalderArmor",
+						"parent": "BalderSet",
+						"text": "Balder Armor",
+						"url": "http://darksouls.wikidot.com/balder-armor"
+					},
+					"BalderGauntlets": {
+						"id": "BalderGauntlets",
+						"parent": "BalderSet",
+						"text": "Balder Gauntlets",
+						"url": "http://darksouls.wikidot.com/balder-gauntlets"
+					},
+					"BalderHelm": {
+						"id": "BalderHelm",
+						"parent": "BalderSet",
+						"text": "Balder Helm",
+						"url": "http://darksouls.wikidot.com/balder-helm"
+					},
+					"BalderLeggings": {
+						"id": "BalderLeggings",
+						"parent": "BalderSet",
+						"text": "Balder Leggings",
+						"url": "http://darksouls.wikidot.com/balder-leggings"
+					},
+					"BalderSet": {
+						"id": "BalderSet",
+						"parent": "#",
+						"text": "Balder Set",
+						"url": "http://darksouls.wikidot.com/balder-set"
+					},
+					"BlackKnightArmor": {
+						"id": "BlackKnightArmor",
+						"parent": "BlackKnightSet",
+						"text": "Black Knight Armor",
+						"url": "http://darksouls.wikidot.com/black-knight-armor"
+					},
+					"BlackKnightGauntlets": {
+						"id": "BlackKnightGauntlets",
+						"parent": "BlackKnightSet",
+						"text": "Black Knight Gauntlets",
+						"url": "http://darksouls.wikidot.com/black-knight-gauntlets"
+					},
+					"BlackKnightHelm": {
+						"id": "BlackKnightHelm",
+						"parent": "BlackKnightSet",
+						"text": "Black Knight Helm",
+						"url": "http://darksouls.wikidot.com/black-knight-helm"
+					},
+					"BlackKnightLeggings": {
+						"id": "BlackKnightLeggings",
+						"parent": "BlackKnightSet",
+						"text": "Black Knight Leggings",
+						"url": "http://darksouls.wikidot.com/black-knight-leggings"
+					},
+					"BlackKnightSet": {
+						"id": "BlackKnightSet",
+						"parent": "#",
+						"text": "Black Knight Set",
+						"url": "http://darksouls.wikidot.com/black-knight-set"
+					},
+					"BootsoftheExplorer": {
+						"id": "BootsoftheExplorer",
+						"parent": "AdventurersSet",
+						"text": "Boots of the Explorer",
+						"url": "http://darksouls.wikidot.com/boots-of-the-explorer"
+					},
+					"BrassArmor": {
+						"id": "BrassArmor",
+						"parent": "BrassSet",
+						"text": "Brass Armor",
+						"url": "http://darksouls.wikidot.com/brass-armor"
+					},
+					"BrassGauntlets": {
+						"id": "BrassGauntlets",
+						"parent": "BrassSet",
+						"text": "Brass Gauntlets",
+						"url": "http://darksouls.wikidot.com/brass-gauntlets"
+					},
+					"BrassHelm": {
+						"id": "BrassHelm",
+						"parent": "BrassSet",
+						"text": "Brass Helm",
+						"url": "http://darksouls.wikidot.com/brass-helm"
+					},
+					"BrassLeggings": {
+						"id": "BrassLeggings",
+						"parent": "BrassSet",
+						"text": "Brass Leggings",
+						"url": "http://darksouls.wikidot.com/brass-leggings"
+					},
+					"BrassSet": {
+						"id": "BrassSet",
+						"parent": "#",
+						"text": "Brass Set",
+						"url": "http://darksouls.wikidot.com/brass-set"
+					},
+					"CatarinaArmor": {
+						"id": "CatarinaArmor",
+						"parent": "CatarinaSet",
+						"text": "Catarina Armor",
+						"url": "http://darksouls.wikidot.com/catarina-armor"
+					},
+					"CatarinaGauntlets": {
+						"id": "CatarinaGauntlets",
+						"parent": "CatarinaSet",
+						"text": "Catarina Gauntlets",
+						"url": "http://darksouls.wikidot.com/catarina-gauntlets"
+					},
+					"CatarinaHelm": {
+						"id": "CatarinaHelm",
+						"parent": "CatarinaSet",
+						"text": "Catarina Helm",
+						"url": "http://darksouls.wikidot.com/catarina-helm"
+					},
+					"CatarinaLeggings": {
+						"id": "CatarinaLeggings",
+						"parent": "CatarinaSet",
+						"text": "Catarina Leggings",
+						"url": "http://darksouls.wikidot.com/catarina-leggings"
+					},
+					"CatarinaSet": {
+						"id": "CatarinaSet",
+						"parent": "#",
+						"text": "Catarina Set",
+						"url": "http://darksouls.wikidot.com/catarina-set"
+					},
+					"ClericArmor": {
+						"id": "ClericArmor",
+						"parent": "HolySet",
+						"text": "Cleric Armor",
+						"url": "http://darksouls.wikidot.com/cleric-armor"
+					},
+					"ClericGauntlets": {
+						"id": "ClericGauntlets",
+						"parent": "HolySet",
+						"text": "Cleric Gauntlets",
+						"url": "http://darksouls.wikidot.com/cleric-gauntlets"
+					},
+					"ClericHelm": {
+						"id": "ClericHelm",
+						"parent": "HolySet",
+						"text": "Cleric Helm",
+						"url": "http://darksouls.wikidot.com/cleric-helm"
+					},
+					"ClericLegggings": {
+						"id": "ClericLegggings",
+						"parent": "HolySet",
+						"text": "Cleric Legggings",
+						"url": "http://darksouls.wikidot.com/cleric-leggings"
+					},
+					"CrystallineArmor": {
+						"id": "CrystallineArmor",
+						"parent": "CrystallineSet",
+						"text": "Crystalline Armor",
+						"url": "http://darksouls.wikidot.com/crystalline-armor"
+					},
+					"CrystallineGauntlets": {
+						"id": "CrystallineGauntlets",
+						"parent": "CrystallineSet",
+						"text": "Crystalline Gauntlets",
+						"url": "http://darksouls.wikidot.com/crystalline-gauntlets"
+					},
+					"CrystallineHelm": {
+						"id": "CrystallineHelm",
+						"parent": "CrystallineSet",
+						"text": "Crystalline Helm",
+						"url": "http://darksouls.wikidot.com/crystalline-helm"
+					},
+					"CrystallineLeggings": {
+						"id": "CrystallineLeggings",
+						"parent": "CrystallineSet",
+						"text": "Crystalline Leggings",
+						"url": "http://darksouls.wikidot.com/crystalline-leggings"
+					},
+					"CrystallineSet": {
+						"id": "CrystallineSet",
+						"parent": "#",
+						"text": "Crystalline Set",
+						"url": "http://darksouls.wikidot.com/crystalline-set"
+					},
+					"DarkArmor": {
+						"id": "DarkArmor",
+						"parent": "DarkSet",
+						"text": "Dark Armor",
+						"url": "http://darksouls.wikidot.com/dark-armor"
+					},
+					"DarkGauntlets": {
+						"id": "DarkGauntlets",
+						"parent": "DarkSet",
+						"text": "Dark Gauntlets",
+						"url": "http://darksouls.wikidot.com/dark-gauntlets"
+					},
+					"DarkLeggings": {
+						"id": "DarkLeggings",
+						"parent": "DarkSet",
+						"text": "Dark Leggings",
+						"url": "http://darksouls.wikidot.com/dark-leggings"
+					},
+					"DarkMask": {
+						"id": "DarkMask",
+						"parent": "DarkSet",
+						"text": "Dark Mask",
+						"url": "http://darksouls.wikidot.com/dark-mask"
+					},
+					"DarkSet": {
+						"id": "DarkSet",
+						"parent": "#",
+						"text": "Dark Set",
+						"url": "http://darksouls.wikidot.com/dark-set"
+					},
+					"EasternSet": {
+						"id": "EasternSet",
+						"parent": "#",
+						"text": "Eastern Set",
+						"url": "http://darksouls.wikidot.com/eastern-set"
+					},
+					"EliteKnightArmor": {
+						"id": "EliteKnightArmor",
+						"parent": "EliteKnightSet",
+						"text": "Elite Knight Armor",
+						"url": "http://darksouls.wikidot.com/elite-knight-armor"
+					},
+					"EliteKnightGauntlets": {
+						"id": "EliteKnightGauntlets",
+						"parent": "EliteKnightSet",
+						"text": "Elite Knight Gauntlets",
+						"url": "http://darksouls.wikidot.com/elite-knight-gauntlets"
+					},
+					"EliteKnightHelm": {
+						"id": "EliteKnightHelm",
+						"parent": "EliteKnightSet",
+						"text": "Elite Knight Helm",
+						"url": "http://darksouls.wikidot.com/elite-knight-helm"
+					},
+					"EliteKnightLegggings": {
+						"id": "EliteKnightLegggings",
+						"parent": "EliteKnightSet",
+						"text": "Elite Knight Legggings",
+						"url": "http://darksouls.wikidot.com/elite-knight-leggings"
+					},
+					"EliteKnightSet": {
+						"id": "EliteKnightSet",
+						"parent": "#",
+						"text": "Elite Knight Set",
+						"url": "http://darksouls.wikidot.com/elite-knight-set"
+					},
+					"EmbracedArmorofFavor": {
+						"id": "EmbracedArmorofFavor",
+						"parent": "SetofFavor",
+						"text": "Embraced Armor of Favor",
+						"url": "http://darksouls.wikidot.com/embraced-armor-of-favor"
+					},
+					"Gauntlets": {
+						"id": "Gauntlets",
+						"parent": "EasternSet",
+						"text": "Gauntlets",
+						"url": "http://darksouls.wikidot.com/eastern-gauntlets"
+					},
+					"GauntletsofArtorias": {
+						"id": "GauntletsofArtorias",
+						"parent": "SetofArtorias",
+						"text": "Gauntlets of Artorias",
+						"url": "http://darksouls.wikidot.com/gauntlets-of-artorias"
+					},
+					"GauntletsofFavor": {
+						"id": "GauntletsofFavor",
+						"parent": "SetofFavor",
+						"text": "Gauntlets of Favor",
+						"url": "http://darksouls.wikidot.com/gauntlets-of-favor"
+					},
+					"GauntletsofThorns": {
+						"id": "GauntletsofThorns",
+						"parent": "SetofThorns",
+						"text": "Gauntlets of Thorns",
+						"url": "http://darksouls.wikidot.com/gauntlets-of-thorns"
+					},
+					"GauntletsoftheVanquisher": {
+						"id": "GauntletsoftheVanquisher",
+						"parent": "AdventurersSet",
+						"text": "Gauntlets of the Vanquisher",
+						"url": "http://darksouls.wikidot.com/gauntlets-of-the-vanquisher"
+					},
+					"GoughsArmor": {
+						"id": "GoughsArmor",
+						"parent": "HawkeyeGoughsSet",
+						"text": "Gough's Armor",
+						"url": "http://darksouls.wikidot.com/gough-s-armor"
+					},
+					"GoughsGauntlets": {
+						"id": "GoughsGauntlets",
+						"parent": "HawkeyeGoughsSet",
+						"text": "Gough's Gauntlets",
+						"url": "http://darksouls.wikidot.com/gough-s-gauntlets"
+					},
+					"GoughsHelm": {
+						"id": "GoughsHelm",
+						"parent": "HawkeyeGoughsSet",
+						"text": "Gough's Helm",
+						"url": "http://darksouls.wikidot.com/gough-s-helm"
+					},
+					"GoughsLegggings": {
+						"id": "GoughsLegggings",
+						"parent": "HawkeyeGoughsSet",
+						"text": "Gough's Legggings",
+						"url": "http://darksouls.wikidot.com/gough-s-leggings"
+					},
+					"HawkeyeGoughsSet": {
+						"id": "HawkeyeGoughsSet",
+						"parent": "#",
+						"text": "Hawkeye Gough's Set",
+						"url": "http://darksouls.wikidot.com/hawkeye-gough-s-set"
+					},
+					"Helm": {
+						"id": "Helm",
+						"parent": "EasternSet",
+						"text": "Helm",
+						"url": "http://darksouls.wikidot.com/eastern-helm"
+					},
+					"HelmofArtorias": {
+						"id": "HelmofArtorias",
+						"parent": "SetofArtorias",
+						"text": "Helm of Artorias",
+						"url": "http://darksouls.wikidot.com/helm-of-artorias"
+					},
+					"HelmofFavor": {
+						"id": "HelmofFavor",
+						"parent": "SetofFavor",
+						"text": "Helm of Favor",
+						"url": "http://darksouls.wikidot.com/helm-of-favor"
+					},
+					"HelmofThorns": {
+						"id": "HelmofThorns",
+						"parent": "SetofThorns",
+						"text": "Helm of Thorns",
+						"url": "http://darksouls.wikidot.com/helm-of-thorns"
+					},
+					"HelmoftheWise": {
+						"id": "HelmoftheWise",
+						"parent": "AdventurersSet",
+						"text": "Helm of the Wise",
+						"url": "http://darksouls.wikidot.com/helm-of-the-wise"
+					},
+					"HolySet": {
+						"id": "HolySet",
+						"parent": "#",
+						"text": "Holy Set",
+						"url": "http://darksouls.wikidot.com/holy-set"
+					},
+					"IronBracelet": {
+						"id": "IronBracelet",
+						"parent": "IronSunSet",
+						"text": "Iron Bracelet",
+						"url": "http://darksouls.wikidot.com/iron-bracelet"
+					},
+					"IronHelm": {
+						"id": "IronHelm",
+						"parent": "IronSunSet",
+						"text": "Iron Helm",
+						"url": "http://darksouls.wikidot.com/iron-helm"
+					},
+					"IronLeggings": {
+						"id": "IronLeggings",
+						"parent": "IronSunSet",
+						"text": "Iron Leggings",
+						"url": "http://darksouls.wikidot.com/iron-leggings"
+					},
+					"IronSunSet": {
+						"id": "IronSunSet",
+						"parent": "#",
+						"text": "Iron & Sun Set",
+						"url": "http://darksouls.wikidot.com/iron-sun-set"
+					},
+					"Leggings": {
+						"id": "Leggings",
+						"parent": "EasternSet",
+						"text": "Leggings",
+						"url": "http://darksouls.wikidot.com/eastern-leggings"
+					},
+					"LeggingsofArtorias": {
+						"id": "LeggingsofArtorias",
+						"parent": "SetofArtorias",
+						"text": "Leggings of Artorias",
+						"url": "http://darksouls.wikidot.com/leggings-of-artorias"
+					},
+					"LeggingsofFavor": {
+						"id": "LeggingsofFavor",
+						"parent": "SetofFavor",
+						"text": "Leggings of Favor",
+						"url": "http://darksouls.wikidot.com/leggings-of-favor"
+					},
+					"LeggingsofThorns": {
+						"id": "LeggingsofThorns",
+						"parent": "SetofThorns",
+						"text": "Leggings of Thorns",
+						"url": "http://darksouls.wikidot.com/leggings-of-thorns"
+					},
+					"OrnsteinsArmor": {
+						"id": "OrnsteinsArmor",
+						"parent": "OrnsteinsSet",
+						"text": "Ornstein's Armor",
+						"url": "http://darksouls.wikidot.com/ornstein-s-armor"
+					},
+					"OrnsteinsGauntlets": {
+						"id": "OrnsteinsGauntlets",
+						"parent": "OrnsteinsSet",
+						"text": "Ornstein's Gauntlets",
+						"url": "http://darksouls.wikidot.com/ornstein-s-gauntlets"
+					},
+					"OrnsteinsHelm": {
+						"id": "OrnsteinsHelm",
+						"parent": "OrnsteinsSet",
+						"text": "Ornstein's Helm",
+						"url": "http://darksouls.wikidot.com/ornstein-s-helm"
+					},
+					"OrnsteinsLeggings": {
+						"id": "OrnsteinsLeggings",
+						"parent": "OrnsteinsSet",
+						"text": "Ornstein's Leggings",
+						"url": "http://darksouls.wikidot.com/ornstein-s-leggings"
+					},
+					"OrnsteinsSet": {
+						"id": "OrnsteinsSet",
+						"parent": "#",
+						"text": "Ornstein's Set",
+						"url": "http://darksouls.wikidot.com/ornstein-s-set"
+					},
+					"PaladinArmor": {
+						"id": "PaladinArmor",
+						"parent": "PaladinSet",
+						"text": "Paladin Armor",
+						"url": "http://darksouls.wikidot.com/paladin-armor"
+					},
+					"PaladinGauntlets": {
+						"id": "PaladinGauntlets",
+						"parent": "PaladinSet",
+						"text": "Paladin Gauntlets",
+						"url": "http://darksouls.wikidot.com/paladin-gauntlets"
+					},
+					"PaladinHelm": {
+						"id": "PaladinHelm",
+						"parent": "PaladinSet",
+						"text": "Paladin Helm",
+						"url": "http://darksouls.wikidot.com/paladin-helm"
+					},
+					"PaladinLeggings": {
+						"id": "PaladinLeggings",
+						"parent": "PaladinSet",
+						"text": "Paladin Leggings",
+						"url": "http://darksouls.wikidot.com/paladin-leggings"
+					},
+					"PaladinSet": {
+						"id": "PaladinSet",
+						"parent": "#",
+						"text": "Paladin Set",
+						"url": "http://darksouls.wikidot.com/paladin-set"
+					},
+					"SetofArtorias": {
+						"id": "SetofArtorias",
+						"parent": "#",
+						"text": "Set of Artorias",
+						"url": "http://darksouls.wikidot.com/set-of-artorias"
+					},
+					"SetofFavor": {
+						"id": "SetofFavor",
+						"parent": "#",
+						"text": "Set of Favor",
+						"url": "http://darksouls.wikidot.com/set-of-favor"
+					},
+					"SetofThorns": {
+						"id": "SetofThorns",
+						"parent": "#",
+						"text": "Set of Thorns",
+						"url": "http://darksouls.wikidot.com/set-of-thorns"
+					},
+					"SilverKnightArmor": {
+						"id": "SilverKnightArmor",
+						"parent": "SilverKnightSet",
+						"text": "Silver Knight Armor",
+						"url": "http://darksouls.wikidot.com/silver-knight-armor"
+					},
+					"SilverKnightGauntlets": {
+						"id": "SilverKnightGauntlets",
+						"parent": "SilverKnightSet",
+						"text": "Silver Knight Gauntlets",
+						"url": "http://darksouls.wikidot.com/silver-knight-gauntlets"
+					},
+					"SilverKnightHelm": {
+						"id": "SilverKnightHelm",
+						"parent": "SilverKnightSet",
+						"text": "Silver Knight Helm",
+						"url": "http://darksouls.wikidot.com/silver-knight-helm"
+					},
+					"SilverKnightLeggings": {
+						"id": "SilverKnightLeggings",
+						"parent": "SilverKnightSet",
+						"text": "Silver Knight Leggings",
+						"url": "http://darksouls.wikidot.com/silver-knight-leggings"
+					},
+					"SilverKnightSet": {
+						"id": "SilverKnightSet",
+						"parent": "#",
+						"text": "Silver Knight Set",
+						"url": "http://darksouls.wikidot.com/silver-knight-set"
+					},
+					"SteelArmor": {
+						"id": "SteelArmor",
+						"parent": "SteelSet",
+						"text": "Steel Armor",
+						"url": "http://darksouls.wikidot.com/steel-armor"
+					},
+					"SteelGauntlets": {
+						"id": "SteelGauntlets",
+						"parent": "SteelSet",
+						"text": "Steel Gauntlets",
+						"url": "http://darksouls.wikidot.com/steel-gauntlets"
+					},
+					"SteelHelm": {
+						"id": "SteelHelm",
+						"parent": "SteelSet",
+						"text": "Steel Helm",
+						"url": "http://darksouls.wikidot.com/steel-helm"
+					},
+					"SteelLeggings": {
+						"id": "SteelLeggings",
+						"parent": "SteelSet",
+						"text": "Steel Leggings",
+						"url": "http://darksouls.wikidot.com/steel-leggings"
+					},
+					"SteelSet": {
+						"id": "SteelSet",
+						"parent": "#",
+						"text": "Steel Set",
+						"url": "http://darksouls.wikidot.com/steel-set"
+					}
+				},
+				"text": "Medium Armor"
+			},
+			"StartingSets": {
+				"items": {
+					"BanditSet": {
+						"id": "BanditSet",
+						"parent": "#",
+						"text": "Bandit Set",
+						"url": "http://darksouls.wikidot.com/bandit-set"
+					},
+					"BlackLeatherArmor": {
+						"id": "BlackLeatherArmor",
+						"parent": "ThiefSet",
+						"text": "Black Leather Armor",
+						"url": "http://darksouls.wikidot.com/black-leather-armor"
+					},
+					"BlackLeatherBoots": {
+						"id": "BlackLeatherBoots",
+						"parent": "ThiefSet",
+						"text": "Black Leather Boots",
+						"url": "http://darksouls.wikidot.com/black-leather-boots"
+					},
+					"BlackLeatherGloves": {
+						"id": "BlackLeatherGloves",
+						"parent": "ThiefSet",
+						"text": "Black Leather Gloves",
+						"url": "http://darksouls.wikidot.com/black-leather-gloves"
+					},
+					"BrigandArmor": {
+						"id": "BrigandArmor",
+						"parent": "BanditSet",
+						"text": "Brigand Armor",
+						"url": "http://darksouls.wikidot.com/brigand-armor"
+					},
+					"BrigandGauntlets": {
+						"id": "BrigandGauntlets",
+						"parent": "BanditSet",
+						"text": "Brigand Gauntlets",
+						"url": "http://darksouls.wikidot.com/brigand-gauntlets"
+					},
+					"BrigandHood": {
+						"id": "BrigandHood",
+						"parent": "BanditSet",
+						"text": "Brigand Hood",
+						"url": "http://darksouls.wikidot.com/brigand-hood"
+					},
+					"BrigandTrousers": {
+						"id": "BrigandTrousers",
+						"parent": "BanditSet",
+						"text": "Brigand Trousers",
+						"url": "http://darksouls.wikidot.com/brigand-trousers"
+					},
+					"ClericSet": {
+						"id": "ClericSet",
+						"parent": "#",
+						"text": "Cleric Set",
+						"url": "http://darksouls.wikidot.com/cleric-set"
+					},
+					"HardLeatherArmor": {
+						"id": "HardLeatherArmor",
+						"parent": "WarriorSet",
+						"text": "Hard Leather Armor",
+						"url": "http://darksouls.wikidot.com/hard-leather-armor"
+					},
+					"HardLeatherBoots": {
+						"id": "HardLeatherBoots",
+						"parent": "WarriorSet",
+						"text": "Hard Leather Boots",
+						"url": "http://darksouls.wikidot.com/hard-leather-boots"
+					},
+					"HardLeatherGauntlets": {
+						"id": "HardLeatherGauntlets",
+						"parent": "WarriorSet",
+						"text": "Hard Leather Gauntlets",
+						"url": "http://darksouls.wikidot.com/hard-leather-gauntlets"
+					},
+					"HeavyBoots": {
+						"id": "HeavyBoots",
+						"parent": "PyromancerSet",
+						"text": "Heavy Boots",
+						"url": "http://darksouls.wikidot.com/heavy-boots"
+					},
+					"HolyRobe": {
+						"id": "HolyRobe",
+						"parent": "ClericSet",
+						"text": "Holy Robe",
+						"url": "http://darksouls.wikidot.com/holy-robe"
+					},
+					"HolyTrousers": {
+						"id": "HolyTrousers",
+						"parent": "ClericSet",
+						"text": "Holy Trousers",
+						"url": "http://darksouls.wikidot.com/holy-trousers"
+					},
+					"HunterSet": {
+						"id": "HunterSet",
+						"parent": "#",
+						"text": "Hunter Set",
+						"url": "http://darksouls.wikidot.com/hunter-set"
+					},
+					"KnightArmor": {
+						"id": "KnightArmor",
+						"parent": "KnightSet",
+						"text": "Knight Armor",
+						"url": "http://darksouls.wikidot.com/knight-armor"
+					},
+					"KnightGauntlets": {
+						"id": "KnightGauntlets",
+						"parent": "KnightSet",
+						"text": "Knight Gauntlets",
+						"url": "http://darksouls.wikidot.com/knight-gauntlets"
+					},
+					"KnightHelm": {
+						"id": "KnightHelm",
+						"parent": "KnightSet",
+						"text": "Knight Helm",
+						"url": "http://darksouls.wikidot.com/knight-helm"
+					},
+					"KnightLeggings": {
+						"id": "KnightLeggings",
+						"parent": "KnightSet",
+						"text": "Knight Leggings",
+						"url": "http://darksouls.wikidot.com/knight-leggings"
+					},
+					"KnightSet": {
+						"id": "KnightSet",
+						"parent": "#",
+						"text": "Knight Set",
+						"url": "http://darksouls.wikidot.com/knight-set"
+					},
+					"LeatherArmor": {
+						"id": "LeatherArmor",
+						"parent": "HunterSet",
+						"text": "Leather Armor",
+						"url": "http://darksouls.wikidot.com/leather-armor"
+					},
+					"LeatherBoots": {
+						"id": "LeatherBoots",
+						"parent": "HunterSet",
+						"text": "Leather Boots",
+						"url": "http://darksouls.wikidot.com/leather-boots"
+					},
+					"LeatherGloves": {
+						"id": "LeatherGloves",
+						"parent": "HunterSet",
+						"text": "Leather Gloves",
+						"url": "http://darksouls.wikidot.com/leather-gloves"
+					},
+					"PharissHat": {
+						"id": "PharissHat",
+						"parent": "HunterSet",
+						"text": "Pharis's Hat",
+						"url": "http://darksouls.wikidot.com/pharis-s-hat"
+					},
+					"PriestsHat": {
+						"id": "PriestsHat",
+						"parent": "ClericSet",
+						"text": "Priest's Hat",
+						"url": "http://darksouls.wikidot.com/priest-s-hat"
+					},
+					"PyromancerSet": {
+						"id": "PyromancerSet",
+						"parent": "#",
+						"text": "Pyromancer Set",
+						"url": "http://darksouls.wikidot.com/pyromancer-set"
+					},
+					"SorcererBoots": {
+						"id": "SorcererBoots",
+						"parent": "SorcererSet",
+						"text": "Sorcerer Boots",
+						"url": "http://darksouls.wikidot.com/sorcerer-boots"
+					},
+					"SorcererCloak": {
+						"id": "SorcererCloak",
+						"parent": "SorcererSet",
+						"text": "Sorcerer Cloak",
+						"url": "http://darksouls.wikidot.com/sorcerer-cloak"
+					},
+					"SorcererGauntlets": {
+						"id": "SorcererGauntlets",
+						"parent": "SorcererSet",
+						"text": "Sorcerer Gauntlets",
+						"url": "http://darksouls.wikidot.com/sorcerer-gauntlets"
+					},
+					"SorcererHat": {
+						"id": "SorcererHat",
+						"parent": "SorcererSet",
+						"text": "Sorcerer Hat",
+						"url": "http://darksouls.wikidot.com/sorcerer-hat"
+					},
+					"SorcererSet": {
+						"id": "SorcererSet",
+						"parent": "#",
+						"text": "Sorcerer Set",
+						"url": "http://darksouls.wikidot.com/sorcerer-set"
+					},
+					"StandardHelm": {
+						"id": "StandardHelm",
+						"parent": "WarriorSet",
+						"text": "Standard Helm",
+						"url": "http://darksouls.wikidot.com/standard-helm"
+					},
+					"TatteredClothHood": {
+						"id": "TatteredClothHood",
+						"parent": "PyromancerSet",
+						"text": "Tattered Cloth Hood",
+						"url": "http://darksouls.wikidot.com/tattered-cloth-hood"
+					},
+					"TatteredClothManchette": {
+						"id": "TatteredClothManchette",
+						"parent": "PyromancerSet",
+						"text": "Tattered Cloth Manchette",
+						"url": "http://darksouls.wikidot.com/tattered-cloth-manchette"
+					},
+					"TatteredClothRobe": {
+						"id": "TatteredClothRobe",
+						"parent": "PyromancerSet",
+						"text": "Tattered Cloth Robe",
+						"url": "http://darksouls.wikidot.com/tattered-cloth-robe"
+					},
+					"ThiefMask": {
+						"id": "ThiefMask",
+						"parent": "ThiefSet",
+						"text": "Thief Mask",
+						"url": "http://darksouls.wikidot.com/thief-mask"
+					},
+					"ThiefSet": {
+						"id": "ThiefSet",
+						"parent": "#",
+						"text": "Thief Set",
+						"url": "http://darksouls.wikidot.com/thief-set"
+					},
+					"TravelingGloves": {
+						"id": "TravelingGloves",
+						"parent": "ClericSet",
+						"text": "Traveling Gloves",
+						"url": "http://darksouls.wikidot.com/traveling-gloves"
+					},
+					"WandererBoots": {
+						"id": "WandererBoots",
+						"parent": "WandererSet",
+						"text": "Wanderer Boots",
+						"url": "http://darksouls.wikidot.com/wanderer-boots"
+					},
+					"WandererCoat": {
+						"id": "WandererCoat",
+						"parent": "WandererSet",
+						"text": "Wanderer Coat",
+						"url": "http://darksouls.wikidot.com/wanderer-coat"
+					},
+					"WandererHood": {
+						"id": "WandererHood",
+						"parent": "WandererSet",
+						"text": "Wanderer Hood",
+						"url": "http://darksouls.wikidot.com/wanderer-hood"
+					},
+					"WandererManchette": {
+						"id": "WandererManchette",
+						"parent": "WandererSet",
+						"text": "Wanderer Manchette",
+						"url": "http://darksouls.wikidot.com/wanderer-manchette"
+					},
+					"WandererSet": {
+						"id": "WandererSet",
+						"parent": "#",
+						"text": "Wanderer Set",
+						"url": "http://darksouls.wikidot.com/wanderer-set"
+					},
+					"WarriorSet": {
+						"id": "WarriorSet",
+						"parent": "#",
+						"text": "Warrior Set",
+						"url": "http://darksouls.wikidot.com/warrior-set"
+					}
+				},
+				"text": "Starting Sets"
+			},
+			"UniqueArmorPieces": {
+				"items": {
+					"BloatedHead": {
+						"id": "BloatedHead",
+						"parent": "#",
+						"text": "Bloated Head",
+						"url": "http://darksouls.wikidot.com/bloated-head"
+					},
+					"BloatedSorcererHead": {
+						"id": "BloatedSorcererHead",
+						"parent": "#",
+						"text": "Bloated Sorcerer Head",
+						"url": "http://darksouls.wikidot.com/bloated-sorcerer-head"
+					},
+					"FangBoarHelm": {
+						"id": "FangBoarHelm",
+						"parent": "#",
+						"text": "Fang Boar Helm",
+						"url": "http://darksouls.wikidot.com/fang-boar-helm"
+					},
+					"GargoyleHelm": {
+						"id": "GargoyleHelm",
+						"parent": "#",
+						"text": "Gargoyle Helm",
+						"url": "http://darksouls.wikidot.com/gargoyle-helm"
+					},
+					"MaskoftheChild": {
+						"id": "MaskoftheChild",
+						"parent": "#",
+						"text": "Mask of the Child",
+						"url": "http://darksouls.wikidot.com/mask-of-the-child"
+					},
+					"MaskoftheFather": {
+						"id": "MaskoftheFather",
+						"parent": "#",
+						"text": "Mask of the Father",
+						"url": "http://darksouls.wikidot.com/mask-of-the-father"
+					},
+					"MaskoftheMother": {
+						"id": "MaskoftheMother",
+						"parent": "#",
+						"text": "Mask of the Mother",
+						"url": "http://darksouls.wikidot.com/mask-of-the-mother"
+					},
+					"RoyalHelm": {
+						"id": "RoyalHelm",
+						"parent": "#",
+						"text": "Royal Helm",
+						"url": "http://darksouls.wikidot.com/royal-helm"
+					},
+					"Sack": {
+						"id": "Sack",
+						"parent": "#",
+						"text": "Sack",
+						"url": "http://darksouls.wikidot.com/sack"
+					},
+					"SunlightMaggot": {
+						"id": "SunlightMaggot",
+						"parent": "#",
+						"text": "Sunlight Maggot",
+						"url": "http://darksouls.wikidot.com/sunlight-maggot"
+					},
+					"SymbolofAvarice": {
+						"id": "SymbolofAvarice",
+						"parent": "#",
+						"text": "Symbol of Avarice",
+						"url": "http://darksouls.wikidot.com/symbol-of-avarice"
+					}
+				},
+				"text": "Unique Armor Pieces"
+			}
+		},
+		"text": "Armor",
+		"url": "http://darksouls.wikidot.com/armor"
+	},
+	"Others": {
+		"items": {
+			"Ammo": {
+				"items": {
+					"Arrows": {
+						"id": "Arrows",
+						"parent": "#",
+						"text": "Arrows",
+						"url": "http://darksouls.wikidot.com/ammo#toc0"
+					},
+					"Bolts": {
+						"id": "Bolts",
+						"parent": "#",
+						"text": "Bolts",
+						"url": "http://darksouls.wikidot.com/ammo#toc1"
+					},
+					"DragonslayerArrow": {
+						"id": "DragonslayerArrow",
+						"parent": "GreatArrows",
+						"text": "Dragonslayer Arrow",
+						"url": "http://darksouls.wikidot.com/dragonslayer-arrow"
+					},
+					"FeatherArrow": {
+						"id": "FeatherArrow",
+						"parent": "Arrows",
+						"text": "Feather Arrow",
+						"url": "http://darksouls.wikidot.com/feather-arrow"
+					},
+					"FireArrow": {
+						"id": "FireArrow",
+						"parent": "Arrows",
+						"text": "Fire Arrow",
+						"url": "http://darksouls.wikidot.com/fire-arrow"
+					},
+					"GoughsGreatArrow": {
+						"id": "GoughsGreatArrow",
+						"parent": "GreatArrows",
+						"text": "Gough's Great Arrow",
+						"url": "http://darksouls.wikidot.com/gough-s-great-arrow"
+					},
+					"GreatArrows": {
+						"id": "GreatArrows",
+						"parent": "#",
+						"text": "Great Arrows",
+						"url": "http://darksouls.wikidot.com/ammo#toc0"
+					},
+					"HeavyBolt": {
+						"id": "HeavyBolt",
+						"parent": "Bolts",
+						"text": "Heavy Bolt",
+						"url": "http://darksouls.wikidot.com/heavy-bolt"
+					},
+					"LargeArrow": {
+						"id": "LargeArrow",
+						"parent": "Arrows",
+						"text": "Large Arrow",
+						"url": "http://darksouls.wikidot.com/large-arrow"
+					},
+					"LightningBolt": {
+						"id": "LightningBolt",
+						"parent": "Bolts",
+						"text": "Lightning Bolt",
+						"url": "http://darksouls.wikidot.com/lightning-bolt"
+					},
+					"MoonlightArrow": {
+						"id": "MoonlightArrow",
+						"parent": "Arrows",
+						"text": "Moonlight Arrow",
+						"url": "http://darksouls.wikidot.com/moonlight-arrow"
+					},
+					"PoisonArrow": {
+						"id": "PoisonArrow",
+						"parent": "Arrows",
+						"text": "Poison Arrow",
+						"url": "http://darksouls.wikidot.com/poison-arrow"
+					},
+					"SniperBolt": {
+						"id": "SniperBolt",
+						"parent": "Bolts",
+						"text": "Sniper Bolt",
+						"url": "http://darksouls.wikidot.com/sniper-bolt"
+					},
+					"StandardArrow": {
+						"id": "StandardArrow",
+						"parent": "Arrows",
+						"text": "Standard Arrow",
+						"url": "http://darksouls.wikidot.com/standard-arrow"
+					},
+					"StandardBolt": {
+						"id": "StandardBolt",
+						"parent": "Bolts",
+						"text": "Standard Bolt",
+						"url": "http://darksouls.wikidot.com/standard-bolt"
+					},
+					"WoodBolt": {
+						"id": "WoodBolt",
+						"parent": "Bolts",
+						"text": "Wood Bolt",
+						"url": "http://darksouls.wikidot.com/wood-bolt"
+					},
+					"WoodenArrow": {
+						"id": "WoodenArrow",
+						"parent": "Arrows",
+						"text": "Wooden Arrow",
+						"url": "http://darksouls.wikidot.com/wooden-arrow"
+					}
+				},
+				"text": "Ammo",
+				"url": "http://darksouls.wikidot.com/ammo"
+			},
+			"Keys": {
+				"items": {
+					"AnnexKey": {
+						"id": "AnnexKey",
+						"parent": "#",
+						"text": "Annex Key",
+						"url": "http://darksouls.wikidot.com/annex-key"
+					},
+					"ArchivePrisonExtraKey": {
+						"id": "ArchivePrisonExtraKey",
+						"parent": "#",
+						"text": "Archive Prison Extra Key",
+						"url": "http://darksouls.wikidot.com/archive-tower-cell-key"
+					},
+					"ArchiveTowerCellKey": {
+						"id": "ArchiveTowerCellKey",
+						"parent": "#",
+						"text": "Archive Tower Cell Key",
+						"url": "http://darksouls.wikidot.com/archive-tower-giant-cell-key"
+					},
+					"ArchiveTowerGiantCellKey": {
+						"id": "ArchiveTowerGiantCellKey",
+						"parent": "#",
+						"text": "Archive Tower Giant Cell Key",
+						"url": "http://darksouls.wikidot.com/archive-tower-giant-door-key"
+					},
+					"ArchiveTowerGiantDoorKey": {
+						"id": "ArchiveTowerGiantDoorKey",
+						"parent": "#",
+						"text": "Archive Tower Giant Door Key",
+						"url": "http://darksouls.wikidot.com/archive-tower-extra-key"
+					},
+					"BasementKey": {
+						"id": "BasementKey",
+						"parent": "#",
+						"text": "Basement Key",
+						"url": "http://darksouls.wikidot.com/basement-key"
+					},
+					"BigPilgrimsKey": {
+						"id": "BigPilgrimsKey",
+						"parent": "#",
+						"text": "Big Pilgrim's Key",
+						"url": "http://darksouls.wikidot.com/big-pilgrim-s-key"
+					},
+					"BlighttownKey": {
+						"id": "BlighttownKey",
+						"parent": "#",
+						"text": "Blighttown Key",
+						"url": "http://darksouls.wikidot.com/blighttown-key"
+					},
+					"BrokenPendant": {
+						"id": "BrokenPendant",
+						"parent": "#",
+						"text": "Broken Pendant",
+						"url": "http://darksouls.wikidot.com/broken-pendant"
+					},
+					"CageKey": {
+						"id": "CageKey",
+						"parent": "#",
+						"text": "Cage Key",
+						"url": "http://darksouls.wikidot.com/cage-key"
+					},
+					"CrestKey": {
+						"id": "CrestKey",
+						"parent": "#",
+						"text": "Crest Key",
+						"url": "http://darksouls.wikidot.com/crest-key"
+					},
+					"CrestofArtorias": {
+						"id": "CrestofArtorias",
+						"parent": "#",
+						"text": "Crest of Artorias",
+						"url": "http://darksouls.wikidot.com/crest-of-artorias"
+					},
+					"DungeonCellKey": {
+						"id": "DungeonCellKey",
+						"parent": "#",
+						"text": "Dungeon Cell Key",
+						"url": "http://darksouls.wikidot.com/dungeon-cell-key"
+					},
+					"KeytoDepths": {
+						"id": "KeytoDepths",
+						"parent": "#",
+						"text": "Key to Depths",
+						"url": "http://darksouls.wikidot.com/key-to-the-depths"
+					},
+					"KeytoNewLondoRuins": {
+						"id": "KeytoNewLondoRuins",
+						"parent": "#",
+						"text": "Key to New Londo Ruins",
+						"url": "http://darksouls.wikidot.com/key-to-new-londo-ruins"
+					},
+					"KeytotheSeal": {
+						"id": "KeytotheSeal",
+						"parent": "#",
+						"text": "Key to the Seal",
+						"url": "http://darksouls.wikidot.com/key-to-the-seal"
+					},
+					"MasterKey": {
+						"id": "MasterKey",
+						"parent": "#",
+						"text": "Master Key",
+						"url": "http://darksouls.wikidot.com/master-key"
+					},
+					"MysteryKey": {
+						"id": "MysteryKey",
+						"parent": "#",
+						"text": "Mystery Key",
+						"url": "http://darksouls.wikidot.com/mystery-key"
+					},
+					"PeculiarDoll": {
+						"id": "PeculiarDoll",
+						"parent": "#",
+						"text": "Peculiar Doll",
+						"url": "http://darksouls.wikidot.com/peculiar-doll"
+					},
+					"ResidenceKey": {
+						"id": "ResidenceKey",
+						"parent": "#",
+						"text": "Residence Key",
+						"url": "http://darksouls.wikidot.com/residence-key"
+					},
+					"SewerChamberKey": {
+						"id": "SewerChamberKey",
+						"parent": "#",
+						"text": "Sewer Chamber Key",
+						"url": "http://darksouls.wikidot.com/undead-asylum-f2-east-key"
+					},
+					"UndeadAsylumF2EastKey": {
+						"id": "UndeadAsylumF2EastKey",
+						"parent": "#",
+						"text": "Undead Asylum F2 East Key",
+						"url": "http://darksouls.wikidot.com/undead-asylum-f2-west-key"
+					},
+					"UndeadAsylumF2WestKey": {
+						"id": "UndeadAsylumF2WestKey",
+						"parent": "#",
+						"text": "Undead Asylum F2 West Key",
+						"url": "http://darksouls.wikidot.com/sewer-chamber-key"
+					},
+					"WatchtowerBasementKey": {
+						"id": "WatchtowerBasementKey",
+						"parent": "#",
+						"text": "Watchtower Basement Key",
+						"url": "http://darksouls.wikidot.com/watchtower-basement-key"
+					}
+				},
+				"text": "Keys",
+				"url": "http://darksouls.wikidot.com/keys"
+			},
+			"Misc": {
+				"items": {
+					"Archtrees": {
+						"id": "Archtrees",
+						"parent": "#",
+						"text": "Archtrees",
+						"url": "http://darksouls.wikidot.com/multiplayer-items#toc3"
+					},
+					"ArmorSmithbox": {
+						"id": "ArmorSmithbox",
+						"parent": "BonfireItems",
+						"text": "Armor Smithbox",
+						"url": "http://darksouls.wikidot.com/armor-smithbox"
+					},
+					"Binoculars": {
+						"id": "Binoculars",
+						"parent": "#",
+						"text": "Binoculars",
+						"url": "http://darksouls.wikidot.com/binoculars"
+					},
+					"BlackSeparationCrystal": {
+						"id": "BlackSeparationCrystal",
+						"parent": "Crystals",
+						"text": "Black Separation Crystal",
+						"url": "http://darksouls.wikidot.com/black-separation-crystal"
+					},
+					"BlueEyeOrb": {
+						"id": "BlueEyeOrb",
+						"parent": "Orbs",
+						"text": "Blue Eye Orb",
+						"url": "http://darksouls.wikidot.com/blue-eye-orb"
+					},
+					"BonfireItems": {
+						"id": "BonfireItems",
+						"parent": "#",
+						"text": "Bonfire Items",
+						"url": "http://darksouls.wikidot.com/bonfire-items"
+					},
+					"BookoftheGuilty": {
+						"id": "BookoftheGuilty",
+						"parent": "MultiplayerItems",
+						"text": "Book of the Guilty",
+						"url": "http://darksouls.wikidot.com/book-of-the-guilty"
+					},
+					"BossSouls": {
+						"id": "BossSouls",
+						"parent": "Souls",
+						"text": "Boss Souls"
+					},
+					"BottomlessBox": {
+						"id": "BottomlessBox",
+						"parent": "BonfireItems",
+						"text": "Bottomless Box",
+						"url": "http://darksouls.wikidot.com/bottomless-box"
+					},
+					"ChaosFlameEmber": {
+						"id": "ChaosFlameEmber",
+						"parent": "Embers",
+						"text": "Chaos Flame Ember",
+						"url": "http://darksouls.wikidot.com/chaos-flame-ember"
+					},
+					"Coins": {
+						"id": "Coins",
+						"parent": "#",
+						"text": "Coins"
+					},
+					"CopperCoin": {
+						"id": "CopperCoin",
+						"parent": "Coins",
+						"text": "Copper Coin",
+						"url": "http://darksouls.wikidot.com/copper-coin"
+					},
+					"CoreofanIronGolem": {
+						"id": "CoreofanIronGolem",
+						"parent": "BossSouls",
+						"text": "Core of an Iron Golem",
+						"url": "http://darksouls.wikidot.com/core-of-an-iron-golem"
+					},
+					"CrystalEmber": {
+						"id": "CrystalEmber",
+						"parent": "Embers",
+						"text": "Crystal Ember",
+						"url": "http://darksouls.wikidot.com/crystal-ember"
+					},
+					"Crystals": {
+						"id": "Crystals",
+						"parent": "MultiplayerItems",
+						"text": "Crystals",
+						"url": "http://darksouls.wikidot.com/multiplayer-items#toc0"
+					},
+					"DarkEmber": {
+						"id": "DarkEmber",
+						"parent": "Embers",
+						"text": "Dark Ember",
+						"url": "http://darksouls.wikidot.com/dark-ember"
+					},
+					"Darksign": {
+						"id": "Darksign",
+						"parent": "#",
+						"text": "Darksign",
+						"url": "http://darksouls.wikidot.com/darksign"
+					},
+					"DivineBlessing": {
+						"id": "DivineBlessing",
+						"parent": "#",
+						"text": "Divine Blessing",
+						"url": "http://darksouls.wikidot.com/divine-blessing"
+					},
+					"DivineEmber": {
+						"id": "DivineEmber",
+						"parent": "Embers",
+						"text": "Divine Ember",
+						"url": "http://darksouls.wikidot.com/divine-ember"
+					},
+					"DragonEye": {
+						"id": "DragonEye",
+						"parent": "MultiplayerItems",
+						"text": "Dragon Eye",
+						"url": "http://darksouls.wikidot.com/dragon-eye"
+					},
+					"DragonHeadStone": {
+						"id": "DragonHeadStone",
+						"parent": "DragonStones",
+						"text": "Dragon Head Stone",
+						"url": "http://darksouls.wikidot.com/dragon-head-stone"
+					},
+					"DragonStones": {
+						"id": "DragonStones",
+						"parent": "#",
+						"text": "Dragon Stones"
+					},
+					"DragonTorsoStone": {
+						"id": "DragonTorsoStone",
+						"parent": "DragonStones",
+						"text": "Dragon Torso Stone",
+						"url": "http://darksouls.wikidot.com/dragon-torso-stone"
+					},
+					"DriedFinger": {
+						"id": "DriedFinger",
+						"parent": "MultiplayerItems",
+						"text": "Dried Finger",
+						"url": "http://darksouls.wikidot.com/dried-finger"
+					},
+					"ElizabethsMushroom": {
+						"id": "ElizabethsMushroom",
+						"parent": "#",
+						"text": "Elizabeth's Mushroom",
+						"url": "http://darksouls.wikidot.com/elizabeth-s-mushroom"
+					},
+					"Embers": {
+						"id": "Embers",
+						"parent": "#",
+						"text": "Embers",
+						"url": "http://darksouls.wikidot.com/embers"
+					},
+					"EnchantedEmber": {
+						"id": "EnchantedEmber",
+						"parent": "Embers",
+						"text": "Enchanted Ember",
+						"url": "http://darksouls.wikidot.com/enchanted-ember"
+					},
+					"EstuxFlask": {
+						"id": "EstuxFlask",
+						"parent": "#",
+						"text": "Estux Flask",
+						"url": "http://darksouls.wikidot.com/estus-flask"
+					},
+					"GoldCoin": {
+						"id": "GoldCoin",
+						"parent": "Coins",
+						"text": "Gold Coin",
+						"url": "http://darksouls.wikidot.com/gold-coin"
+					},
+					"GuardianSoul": {
+						"id": "GuardianSoul",
+						"parent": "BossSouls",
+						"text": "Guardian Soul",
+						"url": "http://darksouls.wikidot.com/guardian-soul"
+					},
+					"HelloCarving": {
+						"id": "HelloCarving",
+						"parent": "Archtrees",
+						"text": "Hello Carving",
+						"url": "http://darksouls.wikidot.com/hello-carving"
+					},
+					"HelpmeCarving": {
+						"id": "HelpmeCarving",
+						"parent": "Archtrees",
+						"text": "Help me! Carving",
+						"url": "http://darksouls.wikidot.com/help-me-carving"
+					},
+					"ImSorryCarving": {
+						"id": "ImSorryCarving",
+						"parent": "Archtrees",
+						"text": "I'm Sorry Carving",
+						"url": "http://darksouls.wikidot.com/i-m-sorry-carving"
+					},
+					"Indictment": {
+						"id": "Indictment",
+						"parent": "MultiplayerItems",
+						"text": "Indictment",
+						"url": "http://darksouls.wikidot.com/indictment"
+					},
+					"LargeDivineEmber": {
+						"id": "LargeDivineEmber",
+						"parent": "Embers",
+						"text": "Large Divine Ember",
+						"url": "http://darksouls.wikidot.com/large-divine-ember"
+					},
+					"LargeEmber": {
+						"id": "LargeEmber",
+						"parent": "Embers",
+						"text": "Large Ember",
+						"url": "http://darksouls.wikidot.com/large-ember"
+					},
+					"LargeFlameEmber": {
+						"id": "LargeFlameEmber",
+						"parent": "Embers",
+						"text": "Large Flame Ember",
+						"url": "http://darksouls.wikidot.com/large-flame-ember"
+					},
+					"LargeMagicEmber": {
+						"id": "LargeMagicEmber",
+						"parent": "Embers",
+						"text": "Large Magic Ember",
+						"url": "http://darksouls.wikidot.com/large-magic-ember"
+					},
+					"LargeSoulofaBraveWarrior": {
+						"id": "LargeSoulofaBraveWarrior",
+						"parent": "NormalSouls",
+						"text": "Large Soul of a Brave Warrior",
+						"url": "http://darksouls.wikidot.com/large-soul-of-a-brave-warrior"
+					},
+					"LargeSoulofaLostUndead": {
+						"id": "LargeSoulofaLostUndead",
+						"parent": "NormalSouls",
+						"text": "Large Soul of a Lost Undead",
+						"url": "http://darksouls.wikidot.com/large-soul-of-a-lost-undead"
+					},
+					"LargeSoulofaNamelessSoldier": {
+						"id": "LargeSoulofaNamelessSoldier",
+						"parent": "NormalSouls",
+						"text": "Large Soul of a Nameless Soldier",
+						"url": "http://darksouls.wikidot.com/large-soul-of-a-nameless-soldier"
+					},
+					"LargeSoulofaProudKnight": {
+						"id": "LargeSoulofaProudKnight",
+						"parent": "NormalSouls",
+						"text": "Large Soul of a Proud Knight",
+						"url": "http://darksouls.wikidot.com/large-soul-of-a-proud-knight"
+					},
+					"MultiplayerItems": {
+						"id": "MultiplayerItems",
+						"parent": "#",
+						"text": "Multiplayer Items",
+						"url": "http://darksouls.wikidot.com/multiplayer-items"
+					},
+					"NormalSouls": {
+						"id": "NormalSouls",
+						"parent": "Souls",
+						"text": "Normal Souls"
+					},
+					"OrangeGuidanceSoapstone": {
+						"id": "OrangeGuidanceSoapstone",
+						"parent": "Soapstones",
+						"text": "Orange Guidance Soapstone",
+						"url": "http://darksouls.wikidot.com/orange-guidance-soapstone"
+					},
+					"Orbs": {
+						"id": "Orbs",
+						"parent": "MultiplayerItems",
+						"text": "Orbs",
+						"url": "http://darksouls.wikidot.com/multiplayer-items#toc1"
+					},
+					"Pendant": {
+						"id": "Pendant",
+						"parent": "Pendants",
+						"text": "Pendant",
+						"url": "http://darksouls.wikidot.com/pendant"
+					},
+					"Pendants": {
+						"id": "Pendants",
+						"parent": "#",
+						"text": "Pendants"
+					},
+					"PurpleCowardsCrystal": {
+						"id": "PurpleCowardsCrystal",
+						"parent": "Crystals",
+						"text": "Purple Coward's Crystal",
+						"url": "http://darksouls.wikidot.com/purple-coward-s-crystal"
+					},
+					"RedEyeOrb": {
+						"id": "RedEyeOrb",
+						"parent": "Orbs",
+						"text": "Red Eye Orb",
+						"url": "http://darksouls.wikidot.com/red-eye-orb"
+					},
+					"RedSignSoapstone": {
+						"id": "RedSignSoapstone",
+						"parent": "Soapstones",
+						"text": "Red Sign Soapstone",
+						"url": "http://darksouls.wikidot.com/red-sign-soapstone"
+					},
+					"Repairbox": {
+						"id": "Repairbox",
+						"parent": "BonfireItems",
+						"text": "Repairbox",
+						"url": "http://darksouls.wikidot.com/repairbox"
+					},
+					"RiteofKindling": {
+						"id": "RiteofKindling",
+						"parent": "BonfireItems",
+						"text": "Rite of Kindling",
+						"url": "http://darksouls.wikidot.com/rite-of-kindling"
+					},
+					"Rubbish": {
+						"id": "Rubbish",
+						"parent": "#",
+						"text": "Rubbish",
+						"url": "http://darksouls.wikidot.com/rubbish"
+					},
+					"ServantRoster": {
+						"id": "ServantRoster",
+						"parent": "MultiplayerItems",
+						"text": "Servant Roster",
+						"url": "http://darksouls.wikidot.com/servant-roster"
+					},
+					"SilverCoin": {
+						"id": "SilverCoin",
+						"parent": "Coins",
+						"text": "Silver Coin",
+						"url": "http://darksouls.wikidot.com/silver-coin"
+					},
+					"SilverPendant": {
+						"id": "SilverPendant",
+						"parent": "Pendants",
+						"text": "Silver Pendant",
+						"url": "http://darksouls.wikidot.com/silver-pendant"
+					},
+					"SkullLantern": {
+						"id": "SkullLantern",
+						"parent": "#",
+						"text": "Skull Lantern",
+						"url": "http://darksouls.wikidot.com/skull-lantern"
+					},
+					"Soapstones": {
+						"id": "Soapstones",
+						"parent": "MultiplayerItems",
+						"text": "Soapstones",
+						"url": "http://darksouls.wikidot.com/multiplayer-items#toc0"
+					},
+					"SoulofArtorias": {
+						"id": "SoulofArtorias",
+						"parent": "BossSouls",
+						"text": "Soul of Artorias",
+						"url": "http://darksouls.wikidot.com/soul-of-artorias"
+					},
+					"SoulofGwynLordofCinder": {
+						"id": "SoulofGwynLordofCinder",
+						"parent": "BossSouls",
+						"text": "Soul of Gwyn, Lord of Cinder",
+						"url": "http://darksouls.wikidot.com/soul-of-gwyn-lord-of-cinder"
+					},
+					"SoulofGwyndolin": {
+						"id": "SoulofGwyndolin",
+						"parent": "BossSouls",
+						"text": "Soul of Gwyndolin",
+						"url": "http://darksouls.wikidot.com/soul-of-gwyndolin"
+					},
+					"SoulofManus": {
+						"id": "SoulofManus",
+						"parent": "BossSouls",
+						"text": "Soul of Manus",
+						"url": "http://darksouls.wikidot.com/soul-of-manus"
+					},
+					"SoulofOrnstein": {
+						"id": "SoulofOrnstein",
+						"parent": "BossSouls",
+						"text": "Soul of Ornstein",
+						"url": "http://darksouls.wikidot.com/soul-of-ornstein"
+					},
+					"SoulofPriscilla": {
+						"id": "SoulofPriscilla",
+						"parent": "BossSouls",
+						"text": "Soul of Priscilla",
+						"url": "http://darksouls.wikidot.com/soul-of-priscilla"
+					},
+					"SoulofQuelaag": {
+						"id": "SoulofQuelaag",
+						"parent": "BossSouls",
+						"text": "Soul of Quelaag",
+						"url": "http://darksouls.wikidot.com/soul-of-quelaag"
+					},
+					"SoulofSif": {
+						"id": "SoulofSif",
+						"parent": "BossSouls",
+						"text": "Soul of Sif",
+						"url": "http://darksouls.wikidot.com/soul-of-sif"
+					},
+					"SoulofSmough": {
+						"id": "SoulofSmough",
+						"parent": "BossSouls",
+						"text": "Soul of Smough",
+						"url": "http://darksouls.wikidot.com/soul-of-smough"
+					},
+					"SoulofaBraveWarrior": {
+						"id": "SoulofaBraveWarrior",
+						"parent": "NormalSouls",
+						"text": "Soul of a Brave Warrior",
+						"url": "http://darksouls.wikidot.com/soul-of-a-brave-warrior"
+					},
+					"SoulofaGreatHero": {
+						"id": "SoulofaGreatHero",
+						"parent": "NormalSouls",
+						"text": "Soul of a Great Hero",
+						"url": "http://darksouls.wikidot.com/soul-of-a-great-hero"
+					},
+					"SoulofaHero": {
+						"id": "SoulofaHero",
+						"parent": "NormalSouls",
+						"text": "Soul of a Hero",
+						"url": "http://darksouls.wikidot.com/soul-of-a-hero"
+					},
+					"SoulofaLostUndead": {
+						"id": "SoulofaLostUndead",
+						"parent": "NormalSouls",
+						"text": "Soul of a Lost Undead",
+						"url": "http://darksouls.wikidot.com/soul-of-a-lost-undead"
+					},
+					"SoulofaNamelessSoldier": {
+						"id": "SoulofaNamelessSoldier",
+						"parent": "NormalSouls",
+						"text": "Soul of a Nameless Soldier",
+						"url": "http://darksouls.wikidot.com/soul-of-a-nameless-soldier"
+					},
+					"SoulofaProudKnight": {
+						"id": "SoulofaProudKnight",
+						"parent": "NormalSouls",
+						"text": "Soul of a Proud Knight",
+						"url": "http://darksouls.wikidot.com/soul-of-a-proud-knight"
+					},
+					"SouloftheMoonlightButterfly": {
+						"id": "SouloftheMoonlightButterfly",
+						"parent": "BossSouls",
+						"text": "Soul of the Moonlight Butterfly",
+						"url": "http://darksouls.wikidot.com/soul-of-the-moonlight-butterfly"
+					},
+					"Souls": {
+						"id": "Souls",
+						"parent": "#",
+						"text": "Souls",
+						"url": "http://darksouls.wikidot.com/souls"
+					},
+					"ThankYouCarving": {
+						"id": "ThankYouCarving",
+						"parent": "Archtrees",
+						"text": "Thank You Carving",
+						"url": "http://darksouls.wikidot.com/thank-you-carving"
+					},
+					"VeryGoodCarving": {
+						"id": "VeryGoodCarving",
+						"parent": "Archtrees",
+						"text": "Very Good! Carving",
+						"url": "http://darksouls.wikidot.com/very-good-carving"
+					},
+					"VeryLargeEmber": {
+						"id": "VeryLargeEmber",
+						"parent": "Embers",
+						"text": "Very Large Ember",
+						"url": "http://darksouls.wikidot.com/very-large-ember"
+					},
+					"WeaponSmithbox": {
+						"id": "WeaponSmithbox",
+						"parent": "BonfireItems",
+						"text": "Weapon Smithbox",
+						"url": "http://darksouls.wikidot.com/weapon-smithbox"
+					},
+					"WhiteSignSoapstone": {
+						"id": "WhiteSignSoapstone",
+						"parent": "Soapstones",
+						"text": "White Sign Soapstone",
+						"url": "http://darksouls.wikidot.com/white-sign-soapstone"
+					}
+				},
+				"text": "Misc"
+			},
+			"Rings": {
+				"items": {
+					"BellowingDragoncrestRing": {
+						"id": "BellowingDragoncrestRing",
+						"parent": "#",
+						"text": "Bellowing Dragoncrest Ring",
+						"url": "http://darksouls.wikidot.com/bellowing-dragoncrest-ring"
+					},
+					"BloodbiteRing": {
+						"id": "BloodbiteRing",
+						"parent": "#",
+						"text": "Bloodbite Ring",
+						"url": "http://darksouls.wikidot.com/bloodbite-ring"
+					},
+					"BlueTearstoneRing": {
+						"id": "BlueTearstoneRing",
+						"parent": "#",
+						"text": "Blue Tearstone Ring",
+						"url": "http://darksouls.wikidot.com/blue-tearstone-ring"
+					},
+					"CalamityRing": {
+						"id": "CalamityRing",
+						"parent": "#",
+						"text": "Calamity Ring",
+						"url": "http://darksouls.wikidot.com/calamity-ring"
+					},
+					"CatCovenantRing": {
+						"id": "CatCovenantRing",
+						"parent": "#",
+						"text": "Cat Covenant Ring",
+						"url": "http://darksouls.wikidot.com/cat-covenant-ring"
+					},
+					"CloranthyRing": {
+						"id": "CloranthyRing",
+						"parent": "#",
+						"text": "Cloranthy Ring",
+						"url": "http://darksouls.wikidot.com/cloranthy-ring"
+					},
+					"CovenantofArtorias": {
+						"id": "CovenantofArtorias",
+						"parent": "#",
+						"text": "Covenant of Artorias",
+						"url": "http://darksouls.wikidot.com/covenant-of-artorias"
+					},
+					"CovetousGoldSerpentRing": {
+						"id": "CovetousGoldSerpentRing",
+						"parent": "#",
+						"text": "Covetous Gold Serpent Ring",
+						"url": "http://darksouls.wikidot.com/covetous-gold-serpent-ring"
+					},
+					"CovetousSilverSerpentRing": {
+						"id": "CovetousSilverSerpentRing",
+						"parent": "#",
+						"text": "Covetous Silver Serpent Ring",
+						"url": "http://darksouls.wikidot.com/covetous-silver-serpent-ring"
+					},
+					"CursebiteRing": {
+						"id": "CursebiteRing",
+						"parent": "#",
+						"text": "Cursebite Ring",
+						"url": "http://darksouls.wikidot.com/cursebite-ring"
+					},
+					"DarkWoodGrainRing": {
+						"id": "DarkWoodGrainRing",
+						"parent": "#",
+						"text": "Dark Wood Grain Ring",
+						"url": "http://darksouls.wikidot.com/darkmoon-blade-covenant-ring"
+					},
+					"DarkmoonBladeCovenantRing": {
+						"id": "DarkmoonBladeCovenantRing",
+						"parent": "#",
+						"text": "Darkmoon Blade Covenant Ring",
+						"url": "http://darksouls.wikidot.com/darkmoon-seance-ring"
+					},
+					"DarkmoonSeanceRing": {
+						"id": "DarkmoonSeanceRing",
+						"parent": "#",
+						"text": "Darkmoon Seance Ring",
+						"url": "http://darksouls.wikidot.com/dark-wood-grain-ring"
+					},
+					"DuskCrownRing": {
+						"id": "DuskCrownRing",
+						"parent": "#",
+						"text": "Dusk Crown Ring",
+						"url": "http://darksouls.wikidot.com/dusk-crown-ring"
+					},
+					"EastWoodGrainRing": {
+						"id": "EastWoodGrainRing",
+						"parent": "#",
+						"text": "East Wood Grain Ring",
+						"url": "http://darksouls.wikidot.com/east-wood-grain-ring"
+					},
+					"FlameStoneplateRing": {
+						"id": "FlameStoneplateRing",
+						"parent": "#",
+						"text": "Flame Stoneplate Ring",
+						"url": "http://darksouls.wikidot.com/flame-stoneplate-ring"
+					},
+					"HavelsRing": {
+						"id": "HavelsRing",
+						"parent": "#",
+						"text": "Havel's Ring",
+						"url": "http://darksouls.wikidot.com/havel-s-ring"
+					},
+					"HawkRing": {
+						"id": "HawkRing",
+						"parent": "#",
+						"text": "Hawk Ring",
+						"url": "http://darksouls.wikidot.com/hawk-ring"
+					},
+					"HornetRing": {
+						"id": "HornetRing",
+						"parent": "#",
+						"text": "Hornet Ring",
+						"url": "http://darksouls.wikidot.com/hornet-ring"
+					},
+					"LeoRing": {
+						"id": "LeoRing",
+						"parent": "#",
+						"text": "Leo Ring",
+						"url": "http://darksouls.wikidot.com/leo-ring"
+					},
+					"LingeringDragoncrestRing": {
+						"id": "LingeringDragoncrestRing",
+						"parent": "#",
+						"text": "Lingering Dragoncrest Ring",
+						"url": "http://darksouls.wikidot.com/lingering-dragoncrest-ring"
+					},
+					"OldWitchsRing": {
+						"id": "OldWitchsRing",
+						"parent": "#",
+						"text": "Old Witch's Ring",
+						"url": "http://darksouls.wikidot.com/old-witch-s-ring"
+					},
+					"OrangeCharredRing": {
+						"id": "OrangeCharredRing",
+						"parent": "#",
+						"text": "Orange Charred Ring",
+						"url": "http://darksouls.wikidot.com/orange-charred-ring"
+					},
+					"PoisonbiteRing": {
+						"id": "PoisonbiteRing",
+						"parent": "#",
+						"text": "Poisonbite Ring",
+						"url": "http://darksouls.wikidot.com/poisonbite-ring"
+					},
+					"RareRingofSacrifice": {
+						"id": "RareRingofSacrifice",
+						"parent": "#",
+						"text": "Rare Ring of Sacrifice",
+						"url": "http://darksouls.wikidot.com/rare-ring-of-sacrifice"
+					},
+					"RedTearstoneRing": {
+						"id": "RedTearstoneRing",
+						"parent": "#",
+						"text": "Red Tearstone Ring",
+						"url": "http://darksouls.wikidot.com/red-tearstone-ring"
+					},
+					"RingofFavorandProtection": {
+						"id": "RingofFavorandProtection",
+						"parent": "#",
+						"text": "Ring of Favor and Protection",
+						"url": "http://darksouls.wikidot.com/ring-of-favor-and-protection"
+					},
+					"RingofFog": {
+						"id": "RingofFog",
+						"parent": "#",
+						"text": "Ring of Fog",
+						"url": "http://darksouls.wikidot.com/ring-of-fog"
+					},
+					"RingofSacrifice": {
+						"id": "RingofSacrifice",
+						"parent": "#",
+						"text": "Ring of Sacrifice",
+						"url": "http://darksouls.wikidot.com/ring-of-sacrifice"
+					},
+					"RingofSteelProtection": {
+						"id": "RingofSteelProtection",
+						"parent": "#",
+						"text": "Ring of Steel Protection",
+						"url": "http://darksouls.wikidot.com/ring-of-steel-protection"
+					},
+					"RingoftheEvilEye": {
+						"id": "RingoftheEvilEye",
+						"parent": "#",
+						"text": "Ring of the Evil Eye",
+						"url": "http://darksouls.wikidot.com/ring-of-the-evil-eye"
+					},
+					"RingoftheSunPrincess": {
+						"id": "RingoftheSunPrincess",
+						"parent": "#",
+						"text": "Ring of the Sun Princess",
+						"url": "http://darksouls.wikidot.com/ring-of-the-sun-princess"
+					},
+					"RingoftheSunsFirstborn": {
+						"id": "RingoftheSunsFirstborn",
+						"parent": "#",
+						"text": "Ring of the Sun's Firstborn",
+						"url": "http://darksouls.wikidot.com/ring-of-the-sun-s-firstborn"
+					},
+					"RustedIronRing": {
+						"id": "RustedIronRing",
+						"parent": "#",
+						"text": "Rusted Iron Ring",
+						"url": "http://darksouls.wikidot.com/rusted-iron-ring"
+					},
+					"SlumberingDragoncrestRing": {
+						"id": "SlumberingDragoncrestRing",
+						"parent": "#",
+						"text": "Slumbering Dragoncrest Ring",
+						"url": "http://darksouls.wikidot.com/slumbering-dragoncrest-ring"
+					},
+					"SpeckledStoneplateRing": {
+						"id": "SpeckledStoneplateRing",
+						"parent": "#",
+						"text": "Speckled Stoneplate Ring",
+						"url": "http://darksouls.wikidot.com/speckled-stoneplate-ring"
+					},
+					"SpellStoneplateRing": {
+						"id": "SpellStoneplateRing",
+						"parent": "#",
+						"text": "Spell Stoneplate Ring",
+						"url": "http://darksouls.wikidot.com/spell-stoneplate-ring"
+					},
+					"ThunderStoneplateRing": {
+						"id": "ThunderStoneplateRing",
+						"parent": "#",
+						"text": "Thunder Stoneplate Ring",
+						"url": "http://darksouls.wikidot.com/thunder-stoneplate-ring"
+					},
+					"TinyBeingsRing": {
+						"id": "TinyBeingsRing",
+						"parent": "#",
+						"text": "Tiny Being's Ring",
+						"url": "http://darksouls.wikidot.com/tiny-being-s-ring"
+					},
+					"WhiteSeanceRing": {
+						"id": "WhiteSeanceRing",
+						"parent": "#",
+						"text": "White Seance Ring",
+						"url": "http://darksouls.wikidot.com/white-seance-ring"
+					},
+					"WolfRing": {
+						"id": "WolfRing",
+						"parent": "#",
+						"text": "Wolf Ring",
+						"url": "http://darksouls.wikidot.com/wolf-ring"
+					}
+				},
+				"text": "Rings",
+				"url": "http://darksouls.wikidot.com/rings"
+			}
+		},
+		"text": "Others"
+	},
+	"Shields": {
+		"items": {
+			"LargeShields": {
+				"items": {
+					"BlackIronGreatshield": {
+						"id": "BlackIronGreatshield",
+						"parent": "#",
+						"text": "Black Iron Greatshield",
+						"url": "http://darksouls.wikidot.com/black-iron-greatshield"
+					},
+					"BonewheelShield": {
+						"id": "BonewheelShield",
+						"parent": "#",
+						"text": "Bonewheel Shield",
+						"url": "http://darksouls.wikidot.com/bonewheel-shield"
+					},
+					"CleansingGreatshield": {
+						"id": "CleansingGreatshield",
+						"parent": "#",
+						"text": "Cleansing Greatshield",
+						"url": "http://darksouls.wikidot.com/cleansing-greatshield"
+					},
+					"EagleShield": {
+						"id": "EagleShield",
+						"parent": "#",
+						"text": "Eagle Shield",
+						"url": "http://darksouls.wikidot.com/eagle-shield"
+					},
+					"GiantShield": {
+						"id": "GiantShield",
+						"parent": "#",
+						"text": "Giant Shield",
+						"url": "http://darksouls.wikidot.com/giant-s-shield"
+					},
+					"GreatshieldofArtorias": {
+						"id": "GreatshieldofArtorias",
+						"parent": "#",
+						"text": "Greatshield of Artorias",
+						"url": "http://darksouls.wikidot.com/greatshield-of-artorias"
+					},
+					"HavelsGreatshield": {
+						"id": "HavelsGreatshield",
+						"parent": "#",
+						"text": "Havel's Greatshield",
+						"url": "http://darksouls.wikidot.com/havel-s-greatshield"
+					},
+					"StoneGreatshield": {
+						"id": "StoneGreatshield",
+						"parent": "#",
+						"text": "Stone Greatshield",
+						"url": "http://darksouls.wikidot.com/stone-greatshield"
+					},
+					"TowerShield": {
+						"id": "TowerShield",
+						"parent": "#",
+						"text": "Tower Shield",
+						"url": "http://darksouls.wikidot.com/tower-shield"
+					}
+				},
+				"text": "Large Sheilds",
+				"url": "http://darksouls.wikidot.com/large-shield"
+			},
+			"NormalShields": {
+				"items": {
+					"BalderShield": {
+						"id": "BalderShield",
+						"parent": "#",
+						"text": "Balder Shield",
+						"url": "http://darksouls.wikidot.com/balder-shield"
+					},
+					"BlackKnightShield": {
+						"id": "BlackKnightShield",
+						"parent": "#",
+						"text": "Black Knight Shield",
+						"url": "http://darksouls.wikidot.com/black-knight-shield"
+					},
+					"Bloodshield": {
+						"id": "Bloodshield",
+						"parent": "#",
+						"text": "Bloodshield",
+						"url": "http://darksouls.wikidot.com/bloodshield"
+					},
+					"CaduceusKiteShield": {
+						"id": "CaduceusKiteShield",
+						"parent": "#",
+						"text": "Caduceus Kite Shield",
+						"url": "http://darksouls.wikidot.com/caduceus-kite-shield"
+					},
+					"CrestShield": {
+						"id": "CrestShield",
+						"parent": "#",
+						"text": "Crest Shield",
+						"url": "http://darksouls.wikidot.com/crest-shield"
+					},
+					"DragonCrestShield": {
+						"id": "DragonCrestShield",
+						"parent": "#",
+						"text": "Dragon Crest Shield",
+						"url": "http://darksouls.wikidot.com/dragon-crest-shield"
+					},
+					"EastWestShield": {
+						"id": "EastWestShield",
+						"parent": "#",
+						"text": "East-West Shield",
+						"url": "http://darksouls.wikidot.com/east-west-shield"
+					},
+					"GargoylesShield": {
+						"id": "GargoylesShield",
+						"parent": "#",
+						"text": "Gargoyle's Shield",
+						"url": "http://darksouls.wikidot.com/gargoyle-s-shield"
+					},
+					"GrassCrestShield": {
+						"id": "GrassCrestShield",
+						"parent": "#",
+						"text": "Grass Crest Shield",
+						"url": "http://darksouls.wikidot.com/grass-crest-shield"
+					},
+					"HeaterShield": {
+						"id": "HeaterShield",
+						"parent": "#",
+						"text": "Heater Shield",
+						"url": "http://darksouls.wikidot.com/heater-shield"
+					},
+					"HollowSoldierShield": {
+						"id": "HollowSoldierShield",
+						"parent": "#",
+						"text": "Hollow Soldier Shield",
+						"url": "http://darksouls.wikidot.com/hollow-soldier-shield"
+					},
+					"IronRoundShield": {
+						"id": "IronRoundShield",
+						"parent": "#",
+						"text": "Iron Round Shield",
+						"url": "http://darksouls.wikidot.com/iron-round-shield"
+					},
+					"KnightShield": {
+						"id": "KnightShield",
+						"parent": "#",
+						"text": "Knight Shield",
+						"url": "http://darksouls.wikidot.com/knight-shield"
+					},
+					"LargeLeatherShield": {
+						"id": "LargeLeatherShield",
+						"parent": "#",
+						"text": "Large Leather Shield",
+						"url": "http://darksouls.wikidot.com/large-leather-shield"
+					},
+					"Sanctus": {
+						"id": "Sanctus",
+						"parent": "#",
+						"text": "Sanctus",
+						"url": "http://darksouls.wikidot.com/sanctus"
+					},
+					"SilverKnightShield": {
+						"id": "SilverKnightShield",
+						"parent": "#",
+						"text": "Silver Knight Shield",
+						"url": "http://darksouls.wikidot.com/silver-knight-shield"
+					},
+					"SpiderShield": {
+						"id": "SpiderShield",
+						"parent": "#",
+						"text": "Spider Shield",
+						"url": "http://darksouls.wikidot.com/spider-shield"
+					},
+					"SunlightShield": {
+						"id": "SunlightShield",
+						"parent": "#",
+						"text": "Sunlight Shield",
+						"url": "http://darksouls.wikidot.com/sunlight-shield"
+					},
+					"TowerKiteShield": {
+						"id": "TowerKiteShield",
+						"parent": "#",
+						"text": "Tower Kite Shield",
+						"url": "http://darksouls.wikidot.com/tower-kite-shield"
+					},
+					"WoodenShield": {
+						"id": "WoodenShield",
+						"parent": "#",
+						"text": "Wooden Shield",
+						"url": "http://darksouls.wikidot.com/wooden-shield"
+					}
+				},
+				"text": "Normal Shields",
+				"url": "http://darksouls.wikidot.com/normal-shields"
+			},
+			"SmallShields": {
+				"items": {
+					"Buckler": {
+						"id": "Buckler",
+						"parent": "#",
+						"text": "Buckler",
+						"url": "http://darksouls.wikidot.com/buckler"
+					},
+					"CaduceusRoundShield": {
+						"id": "CaduceusRoundShield",
+						"parent": "#",
+						"text": "Caduceus Round Shield",
+						"url": "http://darksouls.wikidot.com/caduceus-round-shield"
+					},
+					"CrackedRoundShield": {
+						"id": "CrackedRoundShield",
+						"parent": "#",
+						"text": "Cracked Round Shield",
+						"url": "http://darksouls.wikidot.com/cracked-round-shield"
+					},
+					"EffigyShield": {
+						"id": "EffigyShield",
+						"parent": "#",
+						"text": "Effigy Shield",
+						"url": "http://darksouls.wikidot.com/effigy-shield"
+					},
+					"LeatherShield": {
+						"id": "LeatherShield",
+						"parent": "#",
+						"text": "Leather Shield",
+						"url": "http://darksouls.wikidot.com/leather-shield"
+					},
+					"PlankShield": {
+						"id": "PlankShield",
+						"parent": "#",
+						"text": "Plank Shield",
+						"url": "http://darksouls.wikidot.com/plank-shield"
+					},
+					"RedWhiteRoundShield": {
+						"id": "RedWhiteRoundShield",
+						"parent": "#",
+						"text": "Red & White Round Shield",
+						"url": "http://darksouls.wikidot.com/red-and-white-round-shield"
+					},
+					"SmallLeatherShield": {
+						"id": "SmallLeatherShield",
+						"parent": "#",
+						"text": "Small Leather Shield",
+						"url": "http://darksouls.wikidot.com/small-leather-shield"
+					},
+					"TargetShield": {
+						"id": "TargetShield",
+						"parent": "#",
+						"text": "Target Shield",
+						"url": "http://darksouls.wikidot.com/target-shield"
+					},
+					"WarriorsRoundShield": {
+						"id": "WarriorsRoundShield",
+						"parent": "#",
+						"text": "Warrior's Round Shield",
+						"url": "http://darksouls.wikidot.com/warrior-s-round-shield"
+					}
+				},
+				"text": "Small Shields",
+				"url": "http://darksouls.wikidot.com/small-shields"
+			},
+			"UniqueShields": {
+				"items": {
+					"CrystalRingShield": {
+						"id": "CrystalRingShield",
+						"parent": "#",
+						"text": "Crystal Ring Shield",
+						"url": "http://darksouls.wikidot.com/crystal-ring-shield"
+					},
+					"CrystalShield": {
+						"id": "CrystalShield",
+						"parent": "#",
+						"text": "Crystal Shield",
+						"url": "http://darksouls.wikidot.com/crystal-shield"
+					},
+					"PierceShield": {
+						"id": "PierceShield",
+						"parent": "#",
+						"text": "Pierce Shield",
+						"url": "http://darksouls.wikidot.com/pierce-shield"
+					},
+					"SpikedShield": {
+						"id": "SpikedShield",
+						"parent": "#",
+						"text": "Spiked Shield",
+						"url": "http://darksouls.wikidot.com/spiked-shield"
+					}
+				},
+				"text": "Unique Shields",
+				"url": "http://darksouls.wikidot.com/unique-shields"
+			}
+		},
+		"text": "Shields",
+		"url": "http://darksouls.wikidot.com/shields"
+	},
+	"Spells": {
+		"items": {
+			"Miracles": {
+				"items": {
+					"BountifulSunlight": {
+						"id": "BountifulSunlight",
+						"parent": "#",
+						"text": "Bountiful Sunlight",
+						"url": "http://darksouls.wikidot.com/bountiful-sunlight"
+					},
+					"DarkmoonBlade": {
+						"id": "DarkmoonBlade",
+						"parent": "#",
+						"text": "Darkmoon Blade",
+						"url": "http://darksouls.wikidot.com/darkmoon-blade"
+					},
+					"EmitForce": {
+						"id": "EmitForce",
+						"parent": "#",
+						"text": "Emit Force",
+						"url": "http://darksouls.wikidot.com/emit-force"
+					},
+					"Force": {
+						"id": "Force",
+						"parent": "#",
+						"text": "Force",
+						"url": "http://darksouls.wikidot.com/force"
+					},
+					"GravelordGreatswordDance": {
+						"id": "GravelordGreatswordDance",
+						"parent": "#",
+						"text": "Gravelord Greatsword Dance",
+						"url": "http://darksouls.wikidot.com/gravelord-greatsword-dance"
+					},
+					"GravelordSwordDance": {
+						"id": "GravelordSwordDance",
+						"parent": "#",
+						"text": "Gravelord Sword Dance",
+						"url": "http://darksouls.wikidot.com/gravelord-sword-dance"
+					},
+					"GreatHeal": {
+						"id": "GreatHeal",
+						"parent": "#",
+						"text": "Great Heal",
+						"url": "http://darksouls.wikidot.com/great-heal"
+					},
+					"GreatHealExcerpt": {
+						"id": "GreatHealExcerpt",
+						"parent": "#",
+						"text": "Great Heal Excerpt",
+						"url": "http://darksouls.wikidot.com/great-heal-excerpt"
+					},
+					"GreatLightningSpear": {
+						"id": "GreatLightningSpear",
+						"parent": "#",
+						"text": "Great Lightning Spear",
+						"url": "http://darksouls.wikidot.com/great-lightning-spear"
+					},
+					"GreatMagicBarrier": {
+						"id": "GreatMagicBarrier",
+						"parent": "#",
+						"text": "Great Magic Barrier",
+						"url": "http://darksouls.wikidot.com/great-magic-barrier"
+					},
+					"Heal": {
+						"id": "Heal",
+						"parent": "#",
+						"text": "Heal",
+						"url": "http://darksouls.wikidot.com/heal"
+					},
+					"Homeward": {
+						"id": "Homeward",
+						"parent": "#",
+						"text": "Homeward",
+						"url": "http://darksouls.wikidot.com/homeward"
+					},
+					"KarmicJustice": {
+						"id": "KarmicJustice",
+						"parent": "#",
+						"text": "Karmic Justice",
+						"url": "http://darksouls.wikidot.com/karmic-justice"
+					},
+					"LightningSpear": {
+						"id": "LightningSpear",
+						"parent": "#",
+						"text": "Lightning Spear",
+						"url": "http://darksouls.wikidot.com/lightning-spear-miracle"
+					},
+					"MagicBarrier": {
+						"id": "MagicBarrier",
+						"parent": "#",
+						"text": "Magic Barrier",
+						"url": "http://darksouls.wikidot.com/magic-barrier"
+					},
+					"Replenishment": {
+						"id": "Replenishment",
+						"parent": "#",
+						"text": "Replenishment",
+						"url": "http://darksouls.wikidot.com/replenishment"
+					},
+					"SeekGuidance": {
+						"id": "SeekGuidance",
+						"parent": "#",
+						"text": "Seek Guidance",
+						"url": "http://darksouls.wikidot.com/seek-guidance"
+					},
+					"SoothingSunlight": {
+						"id": "SoothingSunlight",
+						"parent": "#",
+						"text": "Soothing Sunlight",
+						"url": "http://darksouls.wikidot.com/soothing-sunlight"
+					},
+					"SunlightBlade": {
+						"id": "SunlightBlade",
+						"parent": "#",
+						"text": "Sunlight Blade",
+						"url": "http://darksouls.wikidot.com/sunlight-blade"
+					},
+					"SunlightSpear": {
+						"id": "SunlightSpear",
+						"parent": "#",
+						"text": "Sunlight Spear",
+						"url": "http://darksouls.wikidot.com/sunlight-spear"
+					},
+					"TranquilWalkofPeace": {
+						"id": "TranquilWalkofPeace",
+						"parent": "#",
+						"text": "Tranquil Walk of Peace",
+						"url": "http://darksouls.wikidot.com/tranquil-walk-of-peace"
+					},
+					"VowofSilence": {
+						"id": "VowofSilence",
+						"parent": "#",
+						"text": "Vow of Silence",
+						"url": "http://darksouls.wikidot.com/vow-of-silence"
+					},
+					"WrathoftheGods": {
+						"id": "WrathoftheGods",
+						"parent": "#",
+						"text": "Wrath of the Gods",
+						"url": "http://darksouls.wikidot.com/wrath-of-the-gods"
+					}
+				},
+				"text": "Miracles",
+				"url": "http://darksouls.wikidot.com/miracles"
+			},
+			"Pyromancies": {
+				"items": {
+					"AcidSurge": {
+						"id": "AcidSurge",
+						"parent": "#",
+						"text": "Acid Surge",
+						"url": "http://darksouls.wikidot.com/acid-surge"
+					},
+					"BlackFlame": {
+						"id": "BlackFlame",
+						"parent": "#",
+						"text": "Black Flame",
+						"url": "http://darksouls.wikidot.com/black-flame"
+					},
+					"ChaosFireWhip": {
+						"id": "ChaosFireWhip",
+						"parent": "#",
+						"text": "Chaos Fire Whip",
+						"url": "http://darksouls.wikidot.com/chaos-fire-whip"
+					},
+					"ChaosStorm": {
+						"id": "ChaosStorm",
+						"parent": "#",
+						"text": "Chaos Storm",
+						"url": "http://darksouls.wikidot.com/chaos-storm"
+					},
+					"Combustion": {
+						"id": "Combustion",
+						"parent": "#",
+						"text": "Combustion",
+						"url": "http://darksouls.wikidot.com/combustion"
+					},
+					"FireOrb": {
+						"id": "FireOrb",
+						"parent": "#",
+						"text": "Fire Orb",
+						"url": "http://darksouls.wikidot.com/fire-orb"
+					},
+					"FireSurge": {
+						"id": "FireSurge",
+						"parent": "#",
+						"text": "Fire Surge",
+						"url": "http://darksouls.wikidot.com/fire-surge"
+					},
+					"FireTempest": {
+						"id": "FireTempest",
+						"parent": "#",
+						"text": "Fire Tempest",
+						"url": "http://darksouls.wikidot.com/fire-tempest"
+					},
+					"FireWhip": {
+						"id": "FireWhip",
+						"parent": "#",
+						"text": "Fire Whip",
+						"url": "http://darksouls.wikidot.com/fire-whip"
+					},
+					"Fireball": {
+						"id": "Fireball",
+						"parent": "#",
+						"text": "Fireball",
+						"url": "http://darksouls.wikidot.com/fireball"
+					},
+					"Firestorm": {
+						"id": "Firestorm",
+						"parent": "#",
+						"text": "Firestorm",
+						"url": "http://darksouls.wikidot.com/firestorm"
+					},
+					"FlashSweat": {
+						"id": "FlashSweat",
+						"parent": "#",
+						"text": "Flash Sweat",
+						"url": "http://darksouls.wikidot.com/flash-sweat"
+					},
+					"GreatChaosFireball": {
+						"id": "GreatChaosFireball",
+						"parent": "#",
+						"text": "Great Chaos Fireball",
+						"url": "http://darksouls.wikidot.com/great-chaos-fireball"
+					},
+					"GreatCombustion": {
+						"id": "GreatCombustion",
+						"parent": "#",
+						"text": "Great Combustion",
+						"url": "http://darksouls.wikidot.com/great-combustion"
+					},
+					"GreatFireball": {
+						"id": "GreatFireball",
+						"parent": "#",
+						"text": "Great Fireball",
+						"url": "http://darksouls.wikidot.com/great-fireball"
+					},
+					"IronFlesh": {
+						"id": "IronFlesh",
+						"parent": "#",
+						"text": "Iron Flesh",
+						"url": "http://darksouls.wikidot.com/iron-flesh"
+					},
+					"PoisonMist": {
+						"id": "PoisonMist",
+						"parent": "#",
+						"text": "Poison Mist",
+						"url": "http://darksouls.wikidot.com/poison-mist"
+					},
+					"PowerWithin": {
+						"id": "PowerWithin",
+						"parent": "#",
+						"text": "Power Within",
+						"url": "http://darksouls.wikidot.com/power-within"
+					},
+					"ToxicMist": {
+						"id": "ToxicMist",
+						"parent": "#",
+						"text": "Toxic Mist",
+						"url": "http://darksouls.wikidot.com/toxic-mist"
+					},
+					"UndeadRapport": {
+						"id": "UndeadRapport",
+						"parent": "#",
+						"text": "Undead Rapport",
+						"url": "http://darksouls.wikidot.com/undead-rapport"
+					}
+				},
+				"text": "Pyromancies",
+				"url": "http://darksouls.wikidot.com/pyromancies"
+			},
+			"Sorceries": {
+				"items": {
+					"AuralDecoy": {
+						"id": "AuralDecoy",
+						"parent": "#",
+						"text": "Aural Decoy",
+						"url": "http://darksouls.wikidot.com/aural-decoy"
+					},
+					"CastLight": {
+						"id": "CastLight",
+						"parent": "#",
+						"text": "Cast Light",
+						"url": "http://darksouls.wikidot.com/cast-light"
+					},
+					"Chameleon": {
+						"id": "Chameleon",
+						"parent": "#",
+						"text": "Chameleon",
+						"url": "http://darksouls.wikidot.com/chameleon"
+					},
+					"CrystalMagicWeapon": {
+						"id": "CrystalMagicWeapon",
+						"parent": "#",
+						"text": "Crystal Magic Weapon",
+						"url": "http://darksouls.wikidot.com/crystal-magic-weapon"
+					},
+					"CrystalSoulSpear": {
+						"id": "CrystalSoulSpear",
+						"parent": "#",
+						"text": "Crystal Soul Spear",
+						"url": "http://darksouls.wikidot.com/crystal-soul-spear"
+					},
+					"DarkBead": {
+						"id": "DarkBead",
+						"parent": "#",
+						"text": "Dark Bead",
+						"url": "http://darksouls.wikidot.com/dark-bead"
+					},
+					"DarkFog": {
+						"id": "DarkFog",
+						"parent": "#",
+						"text": "Dark Fog",
+						"url": "http://darksouls.wikidot.com/dark-fog"
+					},
+					"DarkOrb": {
+						"id": "DarkOrb",
+						"parent": "#",
+						"text": "Dark Orb",
+						"url": "http://darksouls.wikidot.com/dark-orb"
+					},
+					"FallControl": {
+						"id": "FallControl",
+						"parent": "#",
+						"text": "Fall Control",
+						"url": "http://darksouls.wikidot.com/fall-control"
+					},
+					"GreatHeavySoulArrow": {
+						"id": "GreatHeavySoulArrow",
+						"parent": "#",
+						"text": "Great Heavy Soul Arrow",
+						"url": "http://darksouls.wikidot.com/great-heavy-soul-arrow"
+					},
+					"GreatMagicWeapon": {
+						"id": "GreatMagicWeapon",
+						"parent": "#",
+						"text": "Great Magic Weapon",
+						"url": "http://darksouls.wikidot.com/great-magic-weapon"
+					},
+					"GreatSoulArrow": {
+						"id": "GreatSoulArrow",
+						"parent": "#",
+						"text": "Great Soul Arrow",
+						"url": "http://darksouls.wikidot.com/great-soul-arrow"
+					},
+					"HeavySoulArrow": {
+						"id": "HeavySoulArrow",
+						"parent": "#",
+						"text": "Heavy Soul Arrow",
+						"url": "http://darksouls.wikidot.com/heavy-soul-arrow"
+					},
+					"HiddenBody": {
+						"id": "HiddenBody",
+						"parent": "#",
+						"text": "Hidden Body",
+						"url": "http://darksouls.wikidot.com/hidden-body"
+					},
+					"HiddenWeapon": {
+						"id": "HiddenWeapon",
+						"parent": "#",
+						"text": "Hidden Weapon",
+						"url": "http://darksouls.wikidot.com/hidden-weapon"
+					},
+					"HomingCrystalSoulmass": {
+						"id": "HomingCrystalSoulmass",
+						"parent": "#",
+						"text": "Homing Crystal Soulmass",
+						"url": "http://darksouls.wikidot.com/homing-crystal-soulmass"
+					},
+					"HomingSoulmass": {
+						"id": "HomingSoulmass",
+						"parent": "#",
+						"text": "Homing Soulmass",
+						"url": "http://darksouls.wikidot.com/homing-soulmass"
+					},
+					"Hush": {
+						"id": "Hush",
+						"parent": "#",
+						"text": "Hush",
+						"url": "http://darksouls.wikidot.com/hush"
+					},
+					"MagicShield": {
+						"id": "MagicShield",
+						"parent": "#",
+						"text": "Magic Shield",
+						"url": "http://darksouls.wikidot.com/magic-shield"
+					},
+					"MagicWeapon": {
+						"id": "MagicWeapon",
+						"parent": "#",
+						"text": "Magic Weapon",
+						"url": "http://darksouls.wikidot.com/magic-weapon"
+					},
+					"Pursuers": {
+						"id": "Pursuers",
+						"parent": "#",
+						"text": "Pursuers",
+						"url": "http://darksouls.wikidot.com/pursuers"
+					},
+					"Remedy": {
+						"id": "Remedy",
+						"parent": "#",
+						"text": "Remedy",
+						"url": "http://darksouls.wikidot.com/remedy"
+					},
+					"Repair": {
+						"id": "Repair",
+						"parent": "#",
+						"text": "Repair",
+						"url": "http://darksouls.wikidot.com/repair"
+					},
+					"ResistCurse": {
+						"id": "ResistCurse",
+						"parent": "#",
+						"text": "Resist Curse",
+						"url": "http://darksouls.wikidot.com/resist-curse"
+					},
+					"SoulArrow": {
+						"id": "SoulArrow",
+						"parent": "#",
+						"text": "Soul Arrow",
+						"url": "http://darksouls.wikidot.com/soul-arrow"
+					},
+					"SoulSpear": {
+						"id": "SoulSpear",
+						"parent": "#",
+						"text": "Soul Spear",
+						"url": "http://darksouls.wikidot.com/soul-spear"
+					},
+					"StrongMagicShield": {
+						"id": "StrongMagicShield",
+						"parent": "#",
+						"text": "Strong Magic Shield",
+						"url": "http://darksouls.wikidot.com/strong-magic-shield"
+					},
+					"WhiteDragonBreath": {
+						"id": "WhiteDragonBreath",
+						"parent": "#",
+						"text": "White Dragon Breath",
+						"url": "http://darksouls.wikidot.com/white-dragon-breath"
+					}
+				},
+				"text": "Sorceries",
+				"url": "http://darksouls.wikidot.com/sorceries"
+			}
+		},
+		"text": "Spells"
+	},
+	"Weapons": {
+		"items": {
+			"Melee": {
+				"items": {
+					"AbyssGreatsword": {
+						"id": "AbyssGreatsword",
+						"parent": "Greatswords",
+						"text": "Abyss Greatsword",
+						"url": "http://darksouls.wikidot.com/abyss-greatsword"
+					},
+					"AstorasStraightSword": {
+						"id": "AstorasStraightSword",
+						"parent": "StraightSwords",
+						"text": "Astora's Straight Sword",
+						"url": "http://darksouls.wikidot.com/astora-s-straight-sword"
+					},
+					"Axes": {
+						"id": "Axes",
+						"parent": "#",
+						"text": "Axes",
+						"url": "http://darksouls.wikidot.com/axes"
+					},
+					"BalderSideSword": {
+						"id": "BalderSideSword",
+						"parent": "StraightSwords",
+						"text": "Balder Side Sword",
+						"url": "http://darksouls.wikidot.com/balder-side-sword"
+					},
+					"BanditsKnife": {
+						"id": "BanditsKnife",
+						"parent": "Daggers",
+						"text": "Bandit's Knife",
+						"url": "http://darksouls.wikidot.com/bandit-s-knife"
+					},
+					"BarbedStraightSword": {
+						"id": "BarbedStraightSword",
+						"parent": "StraightSwords",
+						"text": "Barbed Straight Sword",
+						"url": "http://darksouls.wikidot.com/barbed-straight-sword"
+					},
+					"BastardSword": {
+						"id": "BastardSword",
+						"parent": "Greatswords",
+						"text": "Bastard Sword",
+						"url": "http://darksouls.wikidot.com/bastard-sword"
+					},
+					"BattleAxe": {
+						"id": "BattleAxe",
+						"parent": "Axes",
+						"text": "Battle Axe",
+						"url": "http://darksouls.wikidot.com/battle-axe"
+					},
+					"BlackKnightGreataxe": {
+						"id": "BlackKnightGreataxe",
+						"parent": "GreatAxes",
+						"text": "Black Knight Greataxe",
+						"url": "http://darksouls.wikidot.com/black-knight-greataxe"
+					},
+					"BlackKnightGreatsword": {
+						"id": "BlackKnightGreatsword",
+						"parent": "UltraGreatswords",
+						"text": "Black Knight Greatsword",
+						"url": "http://darksouls.wikidot.com/black-knight-greatsword"
+					},
+					"BlackKnightHalberd": {
+						"id": "BlackKnightHalberd",
+						"parent": "Halberds",
+						"text": "Black Knight Halberd",
+						"url": "http://darksouls.wikidot.com/black-knight-halberd"
+					},
+					"BlackKnightSword": {
+						"id": "BlackKnightSword",
+						"parent": "Greatswords",
+						"text": "Black Knight Sword",
+						"url": "http://darksouls.wikidot.com/black-knight-sword"
+					},
+					"BlacksmithGiantHammer": {
+						"id": "BlacksmithGiantHammer",
+						"parent": "Hammers",
+						"text": "Blacksmith Giant Hammer",
+						"url": "http://darksouls.wikidot.com/blacksmith-giant-hammer"
+					},
+					"BlacksmithHammer": {
+						"id": "BlacksmithHammer",
+						"parent": "Hammers",
+						"text": "Blacksmith Hammer",
+						"url": "http://darksouls.wikidot.com/blacksmith-hammer"
+					},
+					"BroadSword": {
+						"id": "BroadSword",
+						"parent": "StraightSwords",
+						"text": "Broad Sword",
+						"url": "http://darksouls.wikidot.com/broadsword"
+					},
+					"BrokenStraightSword": {
+						"id": "BrokenStraightSword",
+						"parent": "StraightSwords",
+						"text": "Broken Straight Sword",
+						"url": "http://darksouls.wikidot.com/broken-straight-sword"
+					},
+					"ButcherKnife": {
+						"id": "ButcherKnife",
+						"parent": "Axes",
+						"text": "Butcher Knife",
+						"url": "http://darksouls.wikidot.com/butcher-knife"
+					},
+					"Caestus": {
+						"id": "Caestus",
+						"parent": "Fist",
+						"text": "Caestus",
+						"url": "http://darksouls.wikidot.com/caestus"
+					},
+					"ChannelersTrident": {
+						"id": "ChannelersTrident",
+						"parent": "Spears",
+						"text": "Channeler's Trident",
+						"url": "http://darksouls.wikidot.com/channeler-s-trident"
+					},
+					"ChaosBlade": {
+						"id": "ChaosBlade",
+						"parent": "Katanas",
+						"text": "Chaos Blade",
+						"url": "http://darksouls.wikidot.com/chaos-blade"
+					},
+					"Claws": {
+						"id": "Claws",
+						"parent": "Fist",
+						"text": "Claws",
+						"url": "http://darksouls.wikidot.com/claw"
+					},
+					"Claymore": {
+						"id": "Claymore",
+						"parent": "Greatswords",
+						"text": "Claymore",
+						"url": "http://darksouls.wikidot.com/claymore"
+					},
+					"Club": {
+						"id": "Club",
+						"parent": "Hammers",
+						"text": "Club",
+						"url": "http://darksouls.wikidot.com/club"
+					},
+					"CrescentAxe": {
+						"id": "CrescentAxe",
+						"parent": "Axes",
+						"text": "Crescent Axe",
+						"url": "http://darksouls.wikidot.com/crescent-axe"
+					},
+					"CrystalGreatsword": {
+						"id": "CrystalGreatsword",
+						"parent": "Greatswords",
+						"text": "Crystal Greatsword",
+						"url": "http://darksouls.wikidot.com/crystal-greatsword"
+					},
+					"CrystalStraightSword": {
+						"id": "CrystalStraightSword",
+						"parent": "StraightSwords",
+						"text": "Crystal Straight Sword",
+						"url": "http://darksouls.wikidot.com/crystal-straight-sword"
+					},
+					"CurvedGreatswords": {
+						"id": "CurvedGreatswords",
+						"parent": "#",
+						"text": "Curved Greatswords",
+						"url": "http://darksouls.wikidot.com/curved-greatswords"
+					},
+					"CurvedSwords": {
+						"id": "CurvedSwords",
+						"parent": "#",
+						"text": "Curved Swords",
+						"url": "http://darksouls.wikidot.com/curved-swords"
+					},
+					"Dagger": {
+						"id": "Dagger",
+						"parent": "Daggers",
+						"text": "Dagger",
+						"url": "http://darksouls.wikidot.com/dagger"
+					},
+					"Daggers": {
+						"id": "Daggers",
+						"parent": "#",
+						"text": "Daggers",
+						"url": "http://darksouls.wikidot.com/daggers"
+					},
+					"DarkHand": {
+						"id": "DarkHand",
+						"parent": "Fist",
+						"text": "Dark Hand",
+						"url": "http://darksouls.wikidot.com/dark-hand"
+					},
+					"DarkSilverTracer": {
+						"id": "DarkSilverTracer",
+						"parent": "Daggers",
+						"text": "Dark Silver Tracer",
+						"url": "http://darksouls.wikidot.com/dark-silver-tracer"
+					},
+					"DarkSword": {
+						"id": "DarkSword",
+						"parent": "StraightSwords",
+						"text": "Dark Sword",
+						"url": "http://darksouls.wikidot.com/dark-sword"
+					},
+					"DemonGreatMachete": {
+						"id": "DemonGreatMachete",
+						"parent": "UltraGreatswords",
+						"text": "Demon Great Machete",
+						"url": "http://darksouls.wikidot.com/demon-great-machete"
+					},
+					"DemonsGreatHammer": {
+						"id": "DemonsGreatHammer",
+						"parent": "GreatHammers",
+						"text": "Demon's Great Hammer",
+						"url": "http://darksouls.wikidot.com/demon-s-great-hammer"
+					},
+					"DemonsGreataxe": {
+						"id": "DemonsGreataxe",
+						"parent": "GreatAxes",
+						"text": "Demon's Greataxe",
+						"url": "http://darksouls.wikidot.com/demon-s-greataxe"
+					},
+					"DemonsSpear": {
+						"id": "DemonsSpear",
+						"parent": "Spears",
+						"text": "Demon's Spear",
+						"url": "http://darksouls.wikidot.com/demon-s-spear"
+					},
+					"DragonBoneFist": {
+						"id": "DragonBoneFist",
+						"parent": "Fist",
+						"text": "Dragon Bone Fist",
+						"url": "http://darksouls.wikidot.com/dragon-bone-fist"
+					},
+					"DragonGreatsword": {
+						"id": "DragonGreatsword",
+						"parent": "UltraGreatswords",
+						"text": "Dragon Greatsword",
+						"url": "http://darksouls.wikidot.com/dragon-greatsword"
+					},
+					"DragonKingGreataxe": {
+						"id": "DragonKingGreataxe",
+						"parent": "GreatAxes",
+						"text": "Dragon King Greataxe",
+						"url": "http://darksouls.wikidot.com/dragon-king-greataxe"
+					},
+					"DragonTooth": {
+						"id": "DragonTooth",
+						"parent": "GreatHammers",
+						"text": "Dragon Tooth",
+						"url": "http://darksouls.wikidot.com/dragon-tooth"
+					},
+					"DragonslayerSpear": {
+						"id": "DragonslayerSpear",
+						"parent": "Spears",
+						"text": "Dragonslayer Spear",
+						"url": "http://darksouls.wikidot.com/dragonslayer-spear"
+					},
+					"DrakeSword": {
+						"id": "DrakeSword",
+						"parent": "StraightSwords",
+						"text": "Drake Sword",
+						"url": "http://darksouls.wikidot.com/drake-sword"
+					},
+					"Estoc": {
+						"id": "Estoc",
+						"parent": "ThrustingSwords",
+						"text": "Estoc",
+						"url": "http://darksouls.wikidot.com/estoc"
+					},
+					"Falchion": {
+						"id": "Falchion",
+						"parent": "CurvedSwords",
+						"text": "Falchion",
+						"url": "http://darksouls.wikidot.com/falchion"
+					},
+					"Fist": {
+						"id": "Fist",
+						"parent": "#",
+						"text": "Fist",
+						"url": "http://darksouls.wikidot.com/fist"
+					},
+					"Flamberge": {
+						"id": "Flamberge",
+						"parent": "Greatswords",
+						"text": "Flamberge",
+						"url": "http://darksouls.wikidot.com/flamberge"
+					},
+					"FourProngedPlow": {
+						"id": "FourProngedPlow",
+						"parent": "Spears",
+						"text": "Four-Pronged Plow",
+						"url": "http://darksouls.wikidot.com/four-pronged-plow"
+					},
+					"GargoyleTailAxe": {
+						"id": "GargoyleTailAxe",
+						"parent": "Axes",
+						"text": "Gargoyle Tail Axe",
+						"url": "http://darksouls.wikidot.com/gargoyle-tail-axe"
+					},
+					"GargoylesHalberd": {
+						"id": "GargoylesHalberd",
+						"parent": "Halberds",
+						"text": "Gargoyle's Halberd",
+						"url": "http://darksouls.wikidot.com/gargoyle-halberd/"
+					},
+					"GhostBlade": {
+						"id": "GhostBlade",
+						"parent": "Daggers",
+						"text": "Ghost Blade",
+						"url": "http://darksouls.wikidot.com/ghost-blade"
+					},
+					"GiantsHalberd": {
+						"id": "GiantsHalberd",
+						"parent": "Halberds",
+						"text": "Giant's Halberd",
+						"url": "http://darksouls.wikidot.com/giant-s-halberd"
+					},
+					"GoldTracer": {
+						"id": "GoldTracer",
+						"parent": "CurvedSwords",
+						"text": "Gold Tracer",
+						"url": "http://darksouls.wikidot.com/gold-tracer"
+					},
+					"GolemAxe": {
+						"id": "GolemAxe",
+						"parent": "Axes",
+						"text": "Golem Axe",
+						"url": "http://darksouls.wikidot.com/golem-axe"
+					},
+					"Grant": {
+						"id": "Grant",
+						"parent": "GreatHammers",
+						"text": "Grant",
+						"url": "http://darksouls.wikidot.com/grant"
+					},
+					"GravelordSword": {
+						"id": "GravelordSword",
+						"parent": "CurvedGreatswords",
+						"text": "Gravelord Sword",
+						"url": "http://darksouls.wikidot.com/gravelord-sword"
+					},
+					"GreatAxes": {
+						"id": "GreatAxes",
+						"parent": "#",
+						"text": "Great Axes",
+						"url": "http://darksouls.wikidot.com/greataxes"
+					},
+					"GreatClub": {
+						"id": "GreatClub",
+						"parent": "GreatHammers",
+						"text": "Great Club",
+						"url": "http://darksouls.wikidot.com/great-club"
+					},
+					"GreatHammers": {
+						"id": "GreatHammers",
+						"parent": "#",
+						"text": "Great Hammers",
+						"url": "http://darksouls.wikidot.com/great-hammers"
+					},
+					"GreatLordGreatsword": {
+						"id": "GreatLordGreatsword",
+						"parent": "Greatswords",
+						"text": "Great Lord Greatsword",
+						"url": "http://darksouls.wikidot.com/great-lord-greatsword"
+					},
+					"GreatScythe": {
+						"id": "GreatScythe",
+						"parent": "Halberds",
+						"text": "Great Scythe",
+						"url": "http://darksouls.wikidot.com/great-scythe"
+					},
+					"Greataxe": {
+						"id": "Greataxe",
+						"parent": "GreatAxes",
+						"text": "Greataxe",
+						"url": "http://darksouls.wikidot.com/greataxe"
+					},
+					"Greatsword": {
+						"id": "Greatsword",
+						"parent": "UltraGreatswords",
+						"text": "Greatsword",
+						"url": "http://darksouls.wikidot.com/greatsword"
+					},
+					"GreatswordofArtorias": {
+						"id": "GreatswordofArtorias",
+						"parent": "Greatswords",
+						"text": "Greatsword of Artorias",
+						"url": "http://darksouls.wikidot.com/greatsword-of-artorias"
+					},
+					"GreatswordofArtoriasCursed": {
+						"id": "GreatswordofArtoriasCursed",
+						"parent": "Greatswords",
+						"text": "Greatsword of Artorias (Cursed)",
+						"url": "http://darksouls.wikidot.com/greatsword-of-artorias-cursed"
+					},
+					"Greatswords": {
+						"id": "Greatswords",
+						"parent": "#",
+						"text": "Greatswords",
+						"url": "http://darksouls.wikidot.com/greatswords"
+					},
+					"GuardianTail": {
+						"id": "GuardianTail",
+						"parent": "Whips",
+						"text": "Guardian Tail",
+						"url": "http://darksouls.wikidot.com/guardian-tail"
+					},
+					"Halberd": {
+						"id": "Halberd",
+						"parent": "Halberds",
+						"text": "Halberd",
+						"url": "http://darksouls.wikidot.com/halberd"
+					},
+					"Halberds": {
+						"id": "Halberds",
+						"parent": "#",
+						"text": "Halberds",
+						"url": "http://darksouls.wikidot.com/halberds"
+					},
+					"HammerofVamos": {
+						"id": "HammerofVamos",
+						"parent": "Hammers",
+						"text": "Hammer of Vamos",
+						"url": "http://darksouls.wikidot.com/hammer-of-vamos"
+					},
+					"Hammers": {
+						"id": "Hammers",
+						"parent": "#",
+						"text": "Hammers",
+						"url": "http://darksouls.wikidot.com/hammers"
+					},
+					"HandAxe": {
+						"id": "HandAxe",
+						"parent": "Axes",
+						"text": "Hand Axe",
+						"url": "http://darksouls.wikidot.com/hand-axe"
+					},
+					"Iaito": {
+						"id": "Iaito",
+						"parent": "Katanas",
+						"text": "Iaito",
+						"url": "http://darksouls.wikidot.com/iaito-sword"
+					},
+					"JaggedGhostBlade": {
+						"id": "JaggedGhostBlade",
+						"parent": "CurvedSwords",
+						"text": "Jagged Ghost Blade",
+						"url": "http://darksouls.wikidot.com/jagged-ghost-blade"
+					},
+					"Katanas": {
+						"id": "Katanas",
+						"parent": "#",
+						"text": "Katanas",
+						"url": "http://darksouls.wikidot.com/katanas"
+					},
+					"LargeClub": {
+						"id": "LargeClub",
+						"parent": "GreatHammers",
+						"text": "Large Club",
+						"url": "http://darksouls.wikidot.com/large-club"
+					},
+					"LifehuntScythe": {
+						"id": "LifehuntScythe",
+						"parent": "Halberds",
+						"text": "Lifehunt Scythe",
+						"url": "http://darksouls.wikidot.com/lifehunt-scythe"
+					},
+					"Longsword": {
+						"id": "Longsword",
+						"parent": "StraightSwords",
+						"text": "Longsword",
+						"url": "http://darksouls.wikidot.com/longsword"
+					},
+					"Lucerne": {
+						"id": "Lucerne",
+						"parent": "Halberds",
+						"text": "Lucerne",
+						"url": "http://darksouls.wikidot.com/lucerne"
+					},
+					"Mace": {
+						"id": "Mace",
+						"parent": "Hammers",
+						"text": "Mace",
+						"url": "http://darksouls.wikidot.com/mace"
+					},
+					"MailBreaker": {
+						"id": "MailBreaker",
+						"parent": "ThrustingSwords",
+						"text": "Mail Breaker",
+						"url": "http://darksouls.wikidot.com/mail-breaker"
+					},
+					"ManSerpentGreatsword": {
+						"id": "ManSerpentGreatsword",
+						"parent": "Greatswords",
+						"text": "Man Serpent Greatsword",
+						"url": "http://darksouls.wikidot.com/man-serpent-greatsword"
+					},
+					"MoonlightButterflyHorn": {
+						"id": "MoonlightButterflyHorn",
+						"parent": "Spears",
+						"text": "Moonlight Butterfly Horn",
+						"url": "http://darksouls.wikidot.com/moonlight-butterfly-horn"
+					},
+					"MoonlightGreatsword": {
+						"id": "MoonlightGreatsword",
+						"parent": "Greatswords",
+						"text": "Moonlight Greatsword",
+						"url": "http://darksouls.wikidot.com/moonlight-greatsword"
+					},
+					"MorningStar": {
+						"id": "MorningStar",
+						"parent": "Hammers",
+						"text": "Morning Star",
+						"url": "http://darksouls.wikidot.com/morning-star"
+					},
+					"Murakumo": {
+						"id": "Murakumo",
+						"parent": "CurvedGreatswords",
+						"text": "Murakumo",
+						"url": "http://darksouls.wikidot.com/murakumo"
+					},
+					"NotchedWhip": {
+						"id": "NotchedWhip",
+						"parent": "Whips",
+						"text": "Notched Whip",
+						"url": "http://darksouls.wikidot.com/notched-whip"
+					},
+					"ObsidianGreatsword": {
+						"id": "ObsidianGreatsword",
+						"parent": "Greatswords",
+						"text": "Obsidian Greatsword",
+						"url": "http://darksouls.wikidot.com/obsidian-greatsword"
+					},
+					"PaintingGuardianSword": {
+						"id": "PaintingGuardianSword",
+						"parent": "CurvedSwords",
+						"text": "Painting Guardian Sword",
+						"url": "http://darksouls.wikidot.com/painting-guardian-sword"
+					},
+					"ParryingDagger": {
+						"id": "ParryingDagger",
+						"parent": "Daggers",
+						"text": "Parrying Dagger",
+						"url": "http://darksouls.wikidot.com/parrying-dagger"
+					},
+					"Partizan": {
+						"id": "Partizan",
+						"parent": "Spears",
+						"text": "Partizan",
+						"url": "http://darksouls.wikidot.com/partizan"
+					},
+					"Pickaxe": {
+						"id": "Pickaxe",
+						"parent": "Hammers",
+						"text": "Pickaxe",
+						"url": "http://darksouls.wikidot.com/pickaxe"
+					},
+					"Pike": {
+						"id": "Pike",
+						"parent": "Spears",
+						"text": "Pike",
+						"url": "http://darksouls.wikidot.com/pike"
+					},
+					"PriscillasDagger": {
+						"id": "PriscillasDagger",
+						"parent": "Daggers",
+						"text": "Priscilla's Dagger",
+						"url": "http://darksouls.wikidot.com/priscilla-s-dagger"
+					},
+					"QuelaagsFurysword": {
+						"id": "QuelaagsFurysword",
+						"parent": "CurvedSwords",
+						"text": "Quelaag's Furysword",
+						"url": "http://darksouls.wikidot.com/quelaag-s-furysword"
+					},
+					"Rapier": {
+						"id": "Rapier",
+						"parent": "ThrustingSwords",
+						"text": "Rapier",
+						"url": "http://darksouls.wikidot.com/rapier"
+					},
+					"ReinforcedClub": {
+						"id": "ReinforcedClub",
+						"parent": "Hammers",
+						"text": "Reinforced Club",
+						"url": "http://darksouls.wikidot.com/reinforced-club"
+					},
+					"RicardsRapier": {
+						"id": "RicardsRapier",
+						"parent": "ThrustingSwords",
+						"text": "Ricard's Rapier",
+						"url": "http://darksouls.wikidot.com/ricard-s-rapier"
+					},
+					"Scimitar": {
+						"id": "Scimitar",
+						"parent": "CurvedSwords",
+						"text": "Scimitar",
+						"url": "http://darksouls.wikidot.com/scimitar"
+					},
+					"Scythe": {
+						"id": "Scythe",
+						"parent": "Halberds",
+						"text": "Scythe",
+						"url": "http://darksouls.wikidot.com/scythe"
+					},
+					"Server": {
+						"id": "Server",
+						"parent": "CurvedGreatswords",
+						"text": "Server",
+						"url": "http://darksouls.wikidot.com/server"
+					},
+					"Shortsword": {
+						"id": "Shortsword",
+						"parent": "StraightSwords",
+						"text": "Shortsword",
+						"url": "http://darksouls.wikidot.com/shortsword"
+					},
+					"Shotel": {
+						"id": "Shotel",
+						"parent": "CurvedSwords",
+						"text": "Shotel",
+						"url": "http://darksouls.wikidot.com/shotel"
+					},
+					"SilverKnightSpear": {
+						"id": "SilverKnightSpear",
+						"parent": "Spears",
+						"text": "Silver Knight Spear",
+						"url": "http://darksouls.wikidot.com/silver-knight-spear"
+					},
+					"SilverKnightStraightSword": {
+						"id": "SilverKnightStraightSword",
+						"parent": "StraightSwords",
+						"text": "Silver Knight Straight Sword",
+						"url": "http://darksouls.wikidot.com/silver-knight-straight-sword"
+					},
+					"SmoughsHammer": {
+						"id": "SmoughsHammer",
+						"parent": "GreatHammers",
+						"text": "Smough's Hammer",
+						"url": "http://darksouls.wikidot.com/smough-s-hammer"
+					},
+					"Spear": {
+						"id": "Spear",
+						"parent": "Spears",
+						"text": "Spear",
+						"url": "http://darksouls.wikidot.com/spear"
+					},
+					"Spears": {
+						"id": "Spears",
+						"parent": "#",
+						"text": "Spears",
+						"url": "http://darksouls.wikidot.com/spears"
+					},
+					"StoneGreataxe": {
+						"id": "StoneGreataxe",
+						"parent": "GreatAxes",
+						"text": "Stone Greataxe",
+						"url": "http://darksouls.wikidot.com/stone-greataxe"
+					},
+					"StoneGreatsword": {
+						"id": "StoneGreatsword",
+						"parent": "Greatswords",
+						"text": "Stone Greatsword",
+						"url": "http://darksouls.wikidot.com/stone-greatsword"
+					},
+					"StraightSwordHilt": {
+						"id": "StraightSwordHilt",
+						"parent": "StraightSwords",
+						"text": "Straight Sword Hilt",
+						"url": "http://darksouls.wikidot.com/straight-sword-hilt"
+					},
+					"StraightSwords": {
+						"id": "StraightSwords",
+						"parent": "#",
+						"text": "Straight Swords",
+						"url": "http://darksouls.wikidot.com/straightswords"
+					},
+					"SunlightStraightSword": {
+						"id": "SunlightStraightSword",
+						"parent": "StraightSwords",
+						"text": "Sunlight Straight Sword",
+						"url": "http://darksouls.wikidot.com/sunlight-straight-sword"
+					},
+					"ThrustingSwords": {
+						"id": "ThrustingSwords",
+						"parent": "#",
+						"text": "Thrusting Swords",
+						"url": "http://darksouls.wikidot.com/thrusting-swords"
+					},
+					"TitaniteCatchPole": {
+						"id": "TitaniteCatchPole",
+						"parent": "Halberds",
+						"text": "Titanite Catch Pole",
+						"url": "http://darksouls.wikidot.com/titanite-catch-pole"
+					},
+					"Uchigatana": {
+						"id": "Uchigatana",
+						"parent": "Katanas",
+						"text": "Uchigatana",
+						"url": "http://darksouls.wikidot.com/uchigatana"
+					},
+					"UltraGreatswords": {
+						"id": "UltraGreatswords",
+						"parent": "#",
+						"text": "Ultra Greatswords",
+						"url": "http://darksouls.wikidot.com/ultra-greatswords"
+					},
+					"VelkasRapier": {
+						"id": "VelkasRapier",
+						"parent": "ThrustingSwords",
+						"text": "Velka's Rapier",
+						"url": "http://darksouls.wikidot.com/velka-s-rapier"
+					},
+					"Warpick": {
+						"id": "Warpick",
+						"parent": "Hammers",
+						"text": "Warpick",
+						"url": "http://darksouls.wikidot.com/warpick"
+					},
+					"WashingPole": {
+						"id": "WashingPole",
+						"parent": "Katanas",
+						"text": "Washing Pole",
+						"url": "http://darksouls.wikidot.com/washing-pole"
+					},
+					"Whip": {
+						"id": "Whip",
+						"parent": "Whips",
+						"text": "Whip",
+						"url": "http://darksouls.wikidot.com/whip"
+					},
+					"Whips": {
+						"id": "Whips",
+						"parent": "#",
+						"text": "Whips",
+						"url": "http://darksouls.wikidot.com/whips"
+					},
+					"WingedSpear": {
+						"id": "WingedSpear",
+						"parent": "Spears",
+						"text": "Winged Spear",
+						"url": "http://darksouls.wikidot.com/winged-spear"
+					},
+					"Zweihander": {
+						"id": "Zweihander",
+						"parent": "UltraGreatswords",
+						"text": "Zweihander",
+						"url": "http://darksouls.wikidot.com/zweihander"
+					}
+				},
+				"text": "Melee"
+			},
+			"Ranged": {
+				"items": {
+					"Avelyn": {
+						"id": "Avelyn",
+						"parent": "Crossbows",
+						"text": "Avelyn",
+						"url": "http://darksouls.wikidot.com/avelyn"
+					},
+					"BlackBowofPharis": {
+						"id": "BlackBowofPharis",
+						"parent": "Bows",
+						"text": "Black Bow of Pharis",
+						"url": "http://darksouls.wikidot.com/black-bow-of-pharis"
+					},
+					"Bows": {
+						"id": "Bows",
+						"parent": "#",
+						"text": "Bows",
+						"url": "http://darksouls.wikidot.com/bows"
+					},
+					"CompositeBow": {
+						"id": "CompositeBow",
+						"parent": "Bows",
+						"text": "Composite Bow",
+						"url": "http://darksouls.wikidot.com/composite-bow"
+					},
+					"Crossbows": {
+						"id": "Crossbows",
+						"parent": "#",
+						"text": "Crossbows",
+						"url": "http://darksouls.wikidot.com/crossbows"
+					},
+					"DarkmoonBow": {
+						"id": "DarkmoonBow",
+						"parent": "Bows",
+						"text": "Darkmoon Bow",
+						"url": "http://darksouls.wikidot.com/darkmoon-bow"
+					},
+					"DragonslayerGreatbow": {
+						"id": "DragonslayerGreatbow",
+						"parent": "Greatbows",
+						"text": "Dragonslayer Greatbow",
+						"url": "http://darksouls.wikidot.com/dragonslayer-greatbow"
+					},
+					"GoughsGreatbow": {
+						"id": "GoughsGreatbow",
+						"parent": "Greatbows",
+						"text": "Gough's Greatbow",
+						"url": "http://darksouls.wikidot.com/gough-s-greatbow"
+					},
+					"Greatbows": {
+						"id": "Greatbows",
+						"parent": "#",
+						"text": "Greatbows",
+						"url": "http://darksouls.wikidot.com/greatbows"
+					},
+					"HeavyCrossbow": {
+						"id": "HeavyCrossbow",
+						"parent": "Crossbows",
+						"text": "Heavy Crossbow",
+						"url": "http://darksouls.wikidot.com/heavy-crossbow"
+					},
+					"LightCrossbow": {
+						"id": "LightCrossbow",
+						"parent": "Crossbows",
+						"text": "Light Crossbow",
+						"url": "http://darksouls.wikidot.com/light-crossbow"
+					},
+					"Longbow": {
+						"id": "Longbow",
+						"parent": "Bows",
+						"text": "Longbow",
+						"url": "http://darksouls.wikidot.com/long-bow"
+					},
+					"ShortBow": {
+						"id": "ShortBow",
+						"parent": "Bows",
+						"text": "Short Bow",
+						"url": "http://darksouls.wikidot.com/short-bow"
+					},
+					"SniperCrossbow": {
+						"id": "SniperCrossbow",
+						"parent": "Crossbows",
+						"text": "Sniper Crossbow",
+						"url": "http://darksouls.wikidot.com/sniper-crossbow"
+					}
+				},
+				"text": "Ranged"
+			},
+			"SpellTools": {
+				"items": {
+					"AscendedPyromancyFlame": {
+						"id": "AscendedPyromancyFlame",
+						"parent": "PyromancyFlames",
+						"text": "Ascended Pyromancy Flame",
+						"url": "http://darksouls.wikidot.com/pyromancy-flame-ascended"
+					},
+					"BeatricesCatalyst": {
+						"id": "BeatricesCatalyst",
+						"parent": "Catalysts",
+						"text": "Beatrice's Catalyst",
+						"url": "http://darksouls.wikidot.com/beatrice-s-catalyst"
+					},
+					"CanvasTalisman": {
+						"id": "CanvasTalisman",
+						"parent": "Talismans",
+						"text": "Canvas Talisman",
+						"url": "http://darksouls.wikidot.com/canvas-talisman"
+					},
+					"Catalysts": {
+						"id": "Catalysts",
+						"parent": "#",
+						"text": "Catalysts",
+						"url": "http://darksouls.wikidot.com/catalysts"
+					},
+					"DarkmoonTalisman": {
+						"id": "DarkmoonTalisman",
+						"parent": "Talismans",
+						"text": "Darkmoon Talisman",
+						"url": "http://darksouls.wikidot.com/darkmoon-talisman"
+					},
+					"DemonsCatalyst": {
+						"id": "DemonsCatalyst",
+						"parent": "Catalysts",
+						"text": "Demon's Catalyst",
+						"url": "http://darksouls.wikidot.com/demon-s-catalyst"
+					},
+					"IvoryTalisman": {
+						"id": "IvoryTalisman",
+						"parent": "Talismans",
+						"text": "Ivory Talisman",
+						"url": "http://darksouls.wikidot.com/ivory-talisman"
+					},
+					"IzalithCatalyst": {
+						"id": "IzalithCatalyst",
+						"parent": "Catalysts",
+						"text": "Izalith Catalyst",
+						"url": "http://darksouls.wikidot.com/izalith-catalyst"
+					},
+					"LogansCatalyst": {
+						"id": "LogansCatalyst",
+						"parent": "Catalysts",
+						"text": "Logan's Catalyst",
+						"url": "http://darksouls.wikidot.com/logan-s-catalyst"
+					},
+					"ManusCatalyst": {
+						"id": "ManusCatalyst",
+						"parent": "Catalysts",
+						"text": "Manus Catalyst",
+						"url": "http://darksouls.wikidot.com/manus-catalyst"
+					},
+					"OolacileCatalyst": {
+						"id": "OolacileCatalyst",
+						"parent": "Catalysts",
+						"text": "Oolacile Catalyst",
+						"url": "http://darksouls.wikidot.com/oolacile-catalyst"
+					},
+					"OolacileIvoryCatalyst": {
+						"id": "OolacileIvoryCatalyst",
+						"parent": "Catalysts",
+						"text": "Oolacile Ivory Catalyst",
+						"url": "http://darksouls.wikidot.com/oolacile-ivory-catalyst"
+					},
+					"PyromancyFlame": {
+						"id": "PyromancyFlame",
+						"parent": "PyromancyFlames",
+						"text": "Pyromancy Flame",
+						"url": "http://darksouls.wikidot.com/pyromancy-flame"
+					},
+					"PyromancyFlames": {
+						"id": "PyromancyFlames",
+						"parent": "#",
+						"text": "Pyromancy Flames",
+						"url": "http://darksouls.wikidot.com/pyromancy-flames"
+					},
+					"SorcerersCatalyst": {
+						"id": "SorcerersCatalyst",
+						"parent": "Catalysts",
+						"text": "Sorcerer's Catalyst",
+						"url": "http://darksouls.wikidot.com/sorcerer-s-catalyst"
+					},
+					"SunlightTalisman": {
+						"id": "SunlightTalisman",
+						"parent": "Talismans",
+						"text": "Sunlight Talisman",
+						"url": "http://darksouls.wikidot.com/sunlight-talisman"
+					},
+					"Talisman": {
+						"id": "Talisman",
+						"parent": "Talismans",
+						"text": "Talisman",
+						"url": "http://darksouls.wikidot.com/talisman"
+					},
+					"Talismans": {
+						"id": "Talismans",
+						"parent": "#",
+						"text": "Talismans",
+						"url": "http://darksouls.wikidot.com/talismans"
+					},
+					"ThorolundTalisman": {
+						"id": "ThorolundTalisman",
+						"parent": "Talismans",
+						"text": "Thorolund Talisman",
+						"url": "http://darksouls.wikidot.com/thorolund-talisman"
+					},
+					"TinBanishmentCatalyst": {
+						"id": "TinBanishmentCatalyst",
+						"parent": "Catalysts",
+						"text": "Tin Banishment Catalyst",
+						"url": "http://darksouls.wikidot.com/tin-banishment-catalyst"
+					},
+					"TinCrystallizationCatalyst": {
+						"id": "TinCrystallizationCatalyst",
+						"parent": "Catalysts",
+						"text": "Tin Crystallization Catalyst",
+						"url": "http://darksouls.wikidot.com/tin-crystallization-catalyst"
+					},
+					"TinDarkmoonCatalyst": {
+						"id": "TinDarkmoonCatalyst",
+						"parent": "Catalysts",
+						"text": "Tin Darkmoon Catalyst",
+						"url": "http://darksouls.wikidot.com/tin-darkmoon-catalyst"
+					},
+					"VelkasTalisman": {
+						"id": "VelkasTalisman",
+						"parent": "Talismans",
+						"text": "Velka's Talisman",
+						"url": "http://darksouls.wikidot.com/velka-s-talisman"
+					}
+				},
+				"text": "Spell Tools",
+				"url": "http://darksouls.wikidot.com/spell-tools"
+			},
+			"Upgraded": {
+				"items": {
+					"Chaos5": {
+						"id": "Chaos5",
+						"parent": "#",
+						"text": "Chaos +5",
+						"url": "http://darksouls.wikidot.com/chaos"
+					},
+					"Crystal5": {
+						"id": "Crystal5",
+						"parent": "#",
+						"text": "Crystal +5",
+						"url": "http://darksouls.wikidot.com/crystal"
+					},
+					"Divin10": {
+						"id": "Divin10",
+						"parent": "#",
+						"text": "Divin +10",
+						"url": "http://darksouls.wikidot.com/divine"
+					},
+					"Enchanted5": {
+						"id": "Enchanted5",
+						"parent": "#",
+						"text": "Enchanted +5",
+						"url": "http://darksouls.wikidot.com/enchanted"
+					},
+					"Fire10": {
+						"id": "Fire10",
+						"parent": "#",
+						"text": "Fire +10",
+						"url": "http://darksouls.wikidot.com/fire"
+					},
+					"Lightning5": {
+						"id": "Lightning5",
+						"parent": "#",
+						"text": "Lightning +5",
+						"url": "http://darksouls.wikidot.com/lightning"
+					},
+					"Magic10": {
+						"id": "Magic10",
+						"parent": "#",
+						"text": "Magic +10",
+						"url": "http://darksouls.wikidot.com/magic"
+					},
+					"Normal15": {
+						"id": "Normal15",
+						"parent": "#",
+						"text": "Normal +15",
+						"url": "http://darksouls.wikidot.com/normal"
+					},
+					"Occult5": {
+						"id": "Occult5",
+						"parent": "#",
+						"text": "Occult +5",
+						"url": "http://darksouls.wikidot.com/occult"
+					},
+					"Raw5": {
+						"id": "Raw5",
+						"parent": "#",
+						"text": "Raw +5",
+						"url": "http://darksouls.wikidot.com/raw"
+					}
+				},
+				"text": "Upgraded",
+				"url": "http://darksouls.wikidot.com/upgrade"
+			}
+		},
+		"text": "Weapons",
+		"url": "http://darksouls.wikidot.com/weapons"
+	}
+}
