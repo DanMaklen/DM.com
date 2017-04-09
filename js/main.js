@@ -11,6 +11,7 @@ var doc = [
 var curDoc = -1;
 
 $(document).ready(function(){
+
 	$('#navbar').jqxNavBar({
 		height:30,
 		theme:'DMSimpleGrey',

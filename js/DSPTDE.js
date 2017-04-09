@@ -11,7 +11,7 @@ function gradientColor(color1, color2, weight) {
 }
 
 $(document).ready(function(){
-	$.getJSON('data/DSPTDE_items.json', function(items){
+	$.getJSON('data/DSPTDE/items.json', function(items){
 		fillExtraInfo(items);
 		console.log(items);
 

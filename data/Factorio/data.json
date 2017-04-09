@@ -1,0 +1,35 @@
+{
+	"OilProcessing":{
+		"BasicOilProcessing":{
+			"name": "Basic Oil Processing",
+			"craftTime": 5,
+			"material": {
+				"CrudeOil": 10
+			},
+			"output": {
+				"HeavyOil": 3,
+				"LightOil": 3,
+				"PetroleumGas": 4
+			},
+			"factory":[
+				"OilRefinery"
+			]
+		},
+		"AdvancedOilProcessing":{
+			"name": "Advanced Oil Processing",
+			"craftTime": 5,
+			"material": {
+				"CrudeOil": 10,
+				"Water": 5
+			},
+			"output": {
+				"HeavyOil": 1,
+				"LightOil": 4.5,
+				"PetroleumGas": 5.5
+			},
+			"factory":[
+				"OilRefinery"
+			]
+		}
+	}
+}

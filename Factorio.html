@@ -1,15 +1,37 @@
 <html>
 <head>
 	<title>DM.com: Factorio</title>
-	<link rel='stylesheet' href='Libraries/JQWidget/css/jqx.base.css' type='text/css'/>
-	<link rel='stylesheet' href='Libraries/JQWidget/css/jqwidget-theme-DMSimpleGrey.css' type='text/css'/>
+	<link rel="stylesheet" href="Libraries/JQueryUI/css/jquery-ui.min.css" type="text/css"/>
+	<link rel="stylesheet" href="Libraries/JSTree/css/default/style.min.css" type="text/css"/>
 
-	<script type='text/javascript' src='Libraries/JQuery/js/jquery.min.js'></script>
-	<script type='text/javascript' src='Libraries/JQWidget/js/jqxcore.js'></script>
+	<script type="text/javascript" src="Libraries/JQuery/js/jquery.min.js"></script>
+	<script type="text/javascript" src="Libraries/JQueryUI/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="Libraries/JSTree/js/jstree.min.js"></script>
 
-	<script type='text/javascript' src='js/Factorio.js'></script>
+	<link rel="stylesheet" href="css/Factorio.css" type="text/css"/>
+	<script type="text/javascript" src="js/Factorio.js"></script>
+	<script type="text/javascript" src="js/JSTree-plugin.js"></script>
 </head>
-<body>
-	Factorio
+<body class="flex">
+	<div class="dialog" id="AddOilBuild" title="Oil Processing">
+		I'm a dialog
+	</div>
+	<div id="Factory">
+		<div id="Items">
+			<div class="tree" id="Build"></div>
+		</div>
+		<div id="OilProcessing">
+			<table id="Build">
+
+			</table>
+			<div class="flex">
+				<button id="addBuild">Add Build</button>
+			</div>
+		</div>
+	</div>
+	<div id="sidebar">
+		<button id="newBuild">New Build</button>
+		<button id="addToBuild">Add to Build</button>
+	</div>
 </body>
 </html>

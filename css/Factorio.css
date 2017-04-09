@@ -1,0 +1,21 @@
+.flex{
+	display: flex;
+}
+#Factory{
+	padding: 0.1em;
+	margin-right: auto;
+	width: 50%;
+}
+#Factory #Items{
+	height: 50%;
+	overflow:auto;
+	width: 100%;
+}
+#Factory #OilProcessing{
+	height: 50%;
+	width: 100%;
+}
+
+#sidebar{
+	margin-left: auto;
+}
