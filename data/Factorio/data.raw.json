@@ -33,7 +33,8 @@
 					"CrudeOil",
 					"HeavyOil",
 					"LightOil",
-					"PetroleumGas"
+					"PetroleumGas",
+					"SulfuricAcid"
 				],
 				[
 					"CrudeOilBarrel",
@@ -61,8 +62,10 @@
 					"IronGearWheel",
 					"CopperCable",
 					"PlasticBar",
+					"Sulfur",
 					"ElectronicCircuit",
-					"AdvancedCircuit"
+					"AdvancedCircuit",
+					"ProcessingUnit"
 				]
 			]
 		},
@@ -71,6 +74,17 @@
 			"subCatigories": [
 				[
 					"SpeedModule1",
+					"SpeedModule2",
+					"SpeedModule3",
+					"ProductivityModule1",
+					"ProductivityModule2",
+					"ProductivityModule3",
+					"EfficiencyModule1",
+					"EfficiencyModule2",
+					"EfficiencyModule3",
+					"Beacon"
+				],
+				[
 					"Pipe"
 				]
 			]
@@ -80,6 +94,7 @@
 	"recipe": {
 		"BasicOilProcessing": {
 			"label": "Basic Oil Processing",
+			"icon": "BasicOilProcessing.png",
 			"craftingTime": 5,
 			"ingredients": {
 				"CrudeOil": 10
@@ -95,6 +110,7 @@
 		},
 		"AdvancedOilProcessing": {
 			"label": "Advanced Oil Processing",
+			"icon": "AdvancedOilProcessing.png",
 			"craftingTime": 5,
 			"ingredients": {
 				"CrudeOil": 10,
@@ -111,6 +127,7 @@
 		},
 		"HeavyOilCracking": {
 			"label": "Heavy Oil Cracking",
+			"icon": "HeavyOilCracking.png",
 			"craftingTime": 5,
 			"ingredients": {
 				"HeavyOil": 4,
@@ -125,6 +142,7 @@
 		},
 		"LightOilCracking": {
 			"label": "Light Oil Cracking",
+			"icon": "LightOilCracking.png",
 			"craftingTime": 5,
 			"ingredients": {
 				"LightOil": 3,
@@ -388,9 +406,24 @@
 				"Pumpjack"
 			]
 		},
+		"SulfuricAcid": {
+			"craftingTime": 1,
+			"ingredients": {
+				"Sulfur": 5,
+				"IronPlate": 1,
+				"Water": 10
+			},
+			"output": {
+				"SulfuricAcid": 5
+			},
+			"machine": [
+				"ChemicalPlant"
+			]
+		},
 
 		"CrudeOilBarreling": {
 			"label": "Crude Oil Barelling",
+			"icon": "CrudeOilBarreling.png",
 			"craftingTime": 1,
 			"ingredients": {
 				"EmptyBarrel": 1,
@@ -406,6 +439,7 @@
 		},
 		"CrudeOilUnbarreling": {
 			"label": "Crude Oil Unbarelling",
+			"icon": "CrudeOilUnbarreling.png",
 			"craftingTime": 1,
 			"ingredients": {
 				"CrudeOilBarrel": 1
@@ -611,6 +645,19 @@
 				"ChemicalPlant"
 			]
 		},
+		"Sulfur": {
+			"craftingTime": 1,
+			"ingredients": {
+				"Water": 3,
+				"PetroleumGas": 3
+			},
+			"output": {
+				"Sulfur": 2
+			},
+			"machine": [
+				"ChemicalPlant"
+			]
+		},
 		"ElectronicCircuit": {
 			"craftingTime": 0.5,
 			"ingredients": {
@@ -643,15 +690,15 @@
 				"AssemblingMachine3"
 			]
 		},
-
-		"SpeedModule1": {
+		"ProcessingUnit": {
 			"craftingTime": 15,
 			"ingredients": {
-				"AdvancedCircuit": 5,
-				"ElectronicCircuit": 5
+				"ElectronicCircuit": 20,
+				"AdvancedCircuit": 2,
+				"SulfuricAcid": 2
 			},
 			"output": {
-				"SpeedModule1": 1
+				"ProcessingUnit": 1
 			},
 			"machine": [
 				"Hand",
@@ -674,12 +721,175 @@
 				"AssemblingMachine2",
 				"AssemblingMachine3"
 			]
+		},
+
+		"SpeedModule1": {
+			"craftingTime": 15,
+			"ingredients": {
+				"AdvancedCircuit": 5,
+				"ElectronicCircuit": 5
+			},
+			"output": {
+				"SpeedModule1": 1
+			},
+			"machine": [
+				"Hand",
+				"AssemblingMachine1",
+				"AssemblingMachine2",
+				"AssemblingMachine3"
+			]
+		},
+		"SpeedModule2": {
+			"craftingTime": 30,
+			"ingredients": {
+				"AdvancedCircuit": 5,
+				"ProcessingUnit": 5,
+				"SpeedModule1": 4
+			},
+			"output": {
+				"SpeedModule2": 1
+			},
+			"machine": [
+				"Hand",
+				"AssemblingMachine2",
+				"AssemblingMachine3"
+			]
+		},
+		"SpeedModule3": {
+			"craftingTime": 60,
+			"ingredients": {
+				"AdvancedCircuit": 5,
+				"ProcessingUnit": 5,
+				"SpeedModule2": 4
+			},
+			"output": {
+				"SpeedModule3": 1
+			},
+			"machine": [
+				"Hand",
+				"AssemblingMachine2",
+				"AssemblingMachine3"
+			]
+		},
+		"ProductivityModule1": {
+			"craftingTime": 15,
+			"ingredients": {
+				"AdvancedCircuit": 5,
+				"ElectronicCircuit": 5
+			},
+			"output": {
+				"ProductivityModule1": 1
+			},
+			"machine": [
+				"Hand",
+				"AssemblingMachine1",
+				"AssemblingMachine2",
+				"AssemblingMachine3"
+			]
+		},
+		"ProductivityModule2": {
+			"craftingTime": 30,
+			"ingredients": {
+				"AdvancedCircuit": 5,
+				"ProcessingUnit": 5,
+				"ProductivityModule1": 4
+			},
+			"output": {
+				"ProductivityModule2": 1
+			},
+			"machine": [
+				"Hand",
+				"AssemblingMachine2",
+				"AssemblingMachine3"
+			]
+		},
+		"ProductivityModule3": {
+			"craftingTime": 60,
+			"ingredients": {
+				"AdvancedCircuit": 5,
+				"ProcessingUnit": 5,
+				"ProductivityModule2": 5
+			},
+			"output": {
+				"ProductivityModule3": 1
+			},
+			"machine": [
+				"Hand",
+				"AssemblingMachine2",
+				"AssemblingMachine3"
+			]
+		},
+		"EfficiencyModule1": {
+			"craftingTime": 15,
+			"ingredients": {
+				"AdvancedCircuit": 5,
+				"ElectronicCircuit": 5
+			},
+			"output": {
+				"EfficiencyModule1": 1
+			},
+			"machine": [
+				"Hand",
+				"AssemblingMachine1",
+				"AssemblingMachine2",
+				"AssemblingMachine3"
+			]
+		},
+		"EfficiencyModule2": {
+			"craftingTime": 30,
+			"ingredients": {
+				"AdvancedCircuit": 5,
+				"ProcessingUnit": 5,
+				"EfficiencyModule1": 4
+			},
+			"output": {
+				"EfficiencyModule2": 1
+			},
+			"machine": [
+				"Hand",
+				"AssemblingMachine2",
+				"AssemblingMachine3"
+			]
+		},
+		"EfficiencyModule3": {
+			"craftingTime": 60,
+			"ingredients": {
+				"AdvancedCircuit": 5,
+				"ProcessingUnit": 5,
+				"EfficiencyModule2": 5
+			},
+			"output": {
+				"EfficiencyModule3": 1
+			},
+			"machine": [
+				"Hand",
+				"AssemblingMachine2",
+				"AssemblingMachine3"
+			]
+		},
+		"Beacon": {
+			"craftingTime": 15,
+			"ingredients": {
+				"ElectronicCircuit": 20,
+				"AdvancedCircuit": 20,
+				"SteelPlate": 10,
+				"CopperCable": 10
+			},
+			"output": {
+				"Beacon": 1
+			},
+			"machine": [
+				"Hand",
+				"AssemblingMachine2",
+				"AssemblingMachine3"
+			]
 		}
 	},
 
 	"items": {
 		"Hand": {
 			"label": "Hand",
+			"icon": "Hand.png",
 			"url": "https://wiki.factorio.com/Manual_crafting",
 			"recipe": null,
 			"production": {
@@ -691,6 +901,7 @@
 		},
 		"IronAxe": {
 			"label": "Iron Axe",
+			"icon": "IronAxe.png",
 			"url": "https://wiki.factorio.com/Iron_axe",
 			"recipe": [
 				"IronAxe"
@@ -704,6 +915,7 @@
 		},
 		"SteelAxe": {
 			"label": "Steel Axe",
+			"icon": "SteelAxe.png",
 			"url": "https://wiki.factorio.com/Steel_axe",
 			"recipe": [
 				"SteelAxe"
@@ -717,6 +929,7 @@
 		},
 		"BurnerMiningDrill": {
 			"label": "Burner Mining Drill",
+			"icon": "BurnerMiningDrill.png",
 			"url": "https://wiki.factorio.com/Burner_mining_drill",
 			"recipe": [
 				"BurnerMiningDrill"
@@ -730,6 +943,7 @@
 		},
 		"ElectricMiningDrill": {
 			"label": "Electric Mining Drill",
+			"icon": "ElectricMiningDrill.png",
 			"url": "https://wiki.factorio.com/Electric_mining_drill",
 			"recipe": [
 				"ElectricMiningDrill"
@@ -743,6 +957,7 @@
 		},
 		"OffshorePump": {
 			"label": "Offshore Pump",
+			"icon": "OffshorePump.png",
 			"url": "https://wiki.factorio.com/Offshore_pump",
 			"recipe": [
 				"OffshorePump"
@@ -756,6 +971,7 @@
 		},
 		"Pumpjack": {
 			"label": "Pumpjack",
+			"icon": "Pumpjack.png",
 			"url": "https://wiki.factorio.com/Pumpjack",
 			"recipe": [
 				"Pumpjack"
@@ -769,6 +985,7 @@
 		},
 		"StoneFurnace": {
 			"label": "Stone Furnace",
+			"icon": "StoneFurnace.png",
 			"url": "https://wiki.factorio.com/Stone_furnace",
 			"recipe": [
 				"StoneFurnace"
@@ -782,6 +999,7 @@
 		},
 		"SteelFurnace": {
 			"label": "Steel Furnace",
+			"icon": "SteelFurnace.png",
 			"url": "https://wiki.factorio.com/Steel_furnace",
 			"recipe": [
 				"SteelFurnace"
@@ -795,6 +1013,7 @@
 		},
 		"ElectricFurnace": {
 			"label": "Electric Furnace",
+			"icon": "ElectricFurnace.png",
 			"url": "https://wiki.factorio.com/Electric_furnace",
 			"recipe": [
 				"ElectricFurnace"
@@ -808,6 +1027,7 @@
 		},
 		"AssemblingMachine1": {
 			"label": "Assembling Machine 1",
+			"icon": "AssemblingMachine1.png",
 			"url": "https://wiki.factorio.com/Assembling_machine_1",
 			"recipe": [
 				"AssemblingMachine1"
@@ -821,6 +1041,7 @@
 		},
 		"AssemblingMachine2": {
 			"label": "Assembling Machine 2",
+			"icon": "AssemblingMachine2.png",
 			"url": "https://wiki.factorio.com/Assembling_machine_2",
 			"recipe": [
 				"AssemblingMachine2"
@@ -834,6 +1055,7 @@
 		},
 		"AssemblingMachine3": {
 			"label": "Assembling Machine 3",
+			"icon": "AssemblingMachine3.png",
 			"url": "https://wiki.factorio.com/Assembling_machine_3",
 			"recipe": [
 				"AssemblingMachine3"
@@ -847,6 +1069,7 @@
 		},
 		"OilRefinery": {
 			"label": "Oil Refinery",
+			"icon": "OilRefinery.png",
 			"url": "https://wiki.factorio.com/Oil_refinery",
 			"recipe": [
 				"OilRefinery"
@@ -860,6 +1083,7 @@
 		},
 		"ChemicalPlant": {
 			"label": "Chemical Plant",
+			"icon": "ChemicalPlant.png",
 			"url": "https://wiki.factorio.com/Chemical_plant",
 			"recipe": [
 				"ChemicalPlant"
@@ -872,9 +1096,9 @@
 			}
 		},
 
-
 		"Water": {
 			"label": "Water",
+			"icon": "Water.png",
 			"url": "https://wiki.factorio.com/Water",
 			"recipe": [
 				"Water"
@@ -882,6 +1106,7 @@
 		},
 		"CrudeOil": {
 			"label": "Crude Oil",
+			"icon": "CrudeOil.png",
 			"url": "https://wiki.factorio.com/Crude_oil",
 			"recipe": [
 				"CrudeOil",
@@ -890,6 +1115,7 @@
 		},
 		"HeavyOil": {
 			"label": "Heavy Oil",
+			"icon": "HeavyOil.png",
 			"url": "https://wiki.factorio.com/Heavy_oil",
 			"recipe": [
 				"BasicOilProcessing",
@@ -898,6 +1124,7 @@
 		},
 		"LightOil": {
 			"label": "Light Oil",
+			"icon": "LightOil.png",
 			"url": "https://wiki.factorio.com/Light_oil",
 			"recipe": [
 				"BasicOilProcessing",
@@ -907,6 +1134,7 @@
 		},
 		"PetroleumGas": {
 			"label": "Petroleum Gas",
+			"icon": "PetroleumGas.png",
 			"url": "https://wiki.factorio.com/Petroleum_gas",
 			"recipe": [
 				"BasicOilProcessing",
@@ -914,9 +1142,18 @@
 				"LightOilCracking"
 			]
 		},
+		"SulfuricAcid": {
+			"label": "Sulfuric Acid",
+			"icon": "SulfuricAcid.png",
+			"url": "https://wiki.factorio.com/Sulfuric_acid",
+			"recipe": [
+				"SulfuricAcid"
+			]
+		},
 
 		"CrudeOilBarrel": {
 			"label": "Crude Oil Barrel",
+			"icon": "CrudeOilBarrel.png",
 			"url": "https://wiki.factorio.com/Crude_oil_barrel",
 			"recipe": [
 				"CrudeOilBarreling"
@@ -924,6 +1161,7 @@
 		},
 		"EmptyBarrel": {
 			"label": "Empty Barrel",
+			"icon": "EmptyBarrel.png",
 			"url": "https://wiki.factorio.com/Empty_barrel",
 			"recipe": [
 				"EmptyBarrel",
@@ -933,6 +1171,7 @@
 
 		"IronOre": {
 			"label": "Iron Ore",
+			"icon": "IronOre.png",
 			"url": "https://wiki.factorio.com/Iron_ore",
 			"recipe": [
 				"IronOre"
@@ -940,6 +1179,7 @@
 		},
 		"CopperOre": {
 			"label": "Copper Ore",
+			"icon": "CopperOre.png",
 			"url": "https://wiki.factorio.com/Copper_ore",
 			"recipe": [
 				"CopperOre"
@@ -947,6 +1187,7 @@
 		},
 		"Stone": {
 			"label": "Stone",
+			"icon": "Stone.png",
 			"url": "https://wiki.factorio.com/Stone",
 			"recipe": [
 				"Stone"
@@ -954,6 +1195,7 @@
 		},
 		"Coal": {
 			"label": "Coal",
+			"icon": "Coal.png",
 			"url": "https://wiki.factorio.com/Coal",
 			"recipe": [
 				"Coal"
@@ -962,6 +1204,7 @@
 
 		"IronPlate": {
 			"label": "Iron Plate",
+			"icon": "IronPlate.png",
 			"url": "https://wiki.factorio.com/Iron_plate",
 			"recipe": [
 				"IronPlate"
@@ -969,6 +1212,7 @@
 		},
 		"SteelPlate": {
 			"label": "Steel Plate",
+			"icon": "SteelPlate.png",
 			"url": "https://wiki.factorio.com/Steel_plate",
 			"recipe": [
 				"SteelPlate"
@@ -976,6 +1220,7 @@
 		},
 		"CopperPlate": {
 			"label": "Copper Plate",
+			"icon": "CopperPlate.png",
 			"url": "https://wiki.factorio.com/Copper_plate",
 			"recipe": [
 				"CopperPlate"
@@ -983,6 +1228,7 @@
 		},
 		"StoneBrick": {
 			"label": "Stone Brick",
+			"icon": "StoneBrick.png",
 			"url": "https://wiki.factorio.com/Stone_Brick",
 			"recipe": [
 				"StoneBrick"
@@ -991,6 +1237,7 @@
 
 		"IronStick": {
 			"label": "Iron Stick",
+			"icon": "IronStick.png",
 			"url": "https://wiki.factorio.com/Iron_stick",
 			"recipe": [
 				"IronStick"
@@ -998,6 +1245,7 @@
 		},
 		"IronGearWheel": {
 			"label": "Iron Gear Wheel",
+			"icon": "IronGearWheel.png",
 			"url": "https://wiki.factorio.com/Iron_gear_wheel",
 			"recipe": [
 				"IronGearWheel"
@@ -1005,6 +1253,7 @@
 		},
 		"CopperCable": {
 			"label": "Copper Cable",
+			"icon": "CopperCable.png",
 			"url": "https://wiki.factorio.com/Copper_cable",
 			"recipe": [
 				"CopperCable"
@@ -1012,13 +1261,23 @@
 		},
 		"PlasticBar": {
 			"label": "Plastic Bar",
+			"icon": "PlasticBar.png",
 			"url": "https://wiki.factorio.com/Plastic_bar",
 			"recipe": [
 				"PlasticBar"
 			]
 		},
+		"Sulfur": {
+			"label": "Sulfur",
+			"icon": "Sulfur.png",
+			"url": "https://wiki.factorio.com/Sulfur",
+			"recipe": [
+				"Sulfur"
+			]
+		},
 		"ElectronicCircuit": {
 			"label": "Electronic Circuit",
+			"icon": "ElectronicCircuit.png",
 			"url": "https://wiki.factorio.com/Electronic_circuit",
 			"recipe": [
 				"ElectronicCircuit"
@@ -1026,14 +1285,33 @@
 		},
 		"AdvancedCircuit": {
 			"label": "Advanced Circuit",
+			"icon": "AdvancedCircuit.png",
 			"url": "https://wiki.factorio.com/Advanced_circuit",
 			"recipe": [
 				"AdvancedCircuit"
 			]
 		},
+		"ProcessingUnit": {
+			"label": "Processing Uni",
+			"icon": "ProcessingUnit.png",
+			"url": "https://wiki.factorio.com/Processing_unit",
+			"recipe": [
+				"ProcessingUnit"
+			]
+		},
+
+		"Pipe": {
+			"label": "Pipe",
+			"icon": "Pipe.png",
+			"url": "https://wiki.factorio.com/Pipe",
+			"recipe": [
+				"Pipe"
+			]
+		},
 
 		"SpeedModule1": {
 			"label": "Speed Module 1",
+			"icon": "SpeedModule1.png",
 			"url": "https://wiki.factorio.com/Speed_module_1",
 			"recipe": [
 				"SpeedModule1"
@@ -1041,16 +1319,133 @@
 			"moduleModifer": {
 				"speed": 0.2,
 				"productivity": 0,
-				"energy": 0.5
+				"energy": 0.5,
+				"pollution": 0
 			}
 		},
-
-		"Pipe": {
-			"label": "Pipe",
-			"url": "https://wiki.factorio.com/Pipe",
+		"SpeedModule2": {
+			"label": "Speed Module 2",
+			"icon": "SpeedModule2.png",
+			"url": "https://wiki.factorio.com/Speed_module_2",
 			"recipe": [
-				"Pipe"
-			]
+				"SpeedModule2"
+			],
+			"moduleModifer": {
+				"speed": 0.3,
+				"productivity": 0,
+				"energy": 0.6,
+				"pollution": 0
+			}
+		},
+		"SpeedModule3": {
+			"label": "Speed Module 3",
+			"icon": "SpeedModule3.png",
+			"url": "https://wiki.factorio.com/Speed_module_3",
+			"recipe": [
+				"SpeedModule3"
+			],
+			"moduleModifer": {
+				"speed": 0.5,
+				"productivity": 0,
+				"energy": 0.7,
+				"pollution": 0
+			}
+		},
+		"ProductivityModule1": {
+			"label": "Productivity Module 1",
+			"icon": "ProductivityModule1.png",
+			"url": "https://wiki.factorio.com/Productivity_module_1",
+			"recipe": [
+				"ProductivityModule1"
+			],
+			"moduleModifer": {
+				"speed": -0.15,
+				"productivity": 0.04,
+				"energy": 0.4,
+				"pollution": 0.05
+			}
+		},
+		"ProductivityModule2": {
+			"label": "Productivity Module 3",
+			"icon": "ProductivityModule2.png",
+			"url": "https://wiki.factorio.com/Productivity_module_2",
+			"recipe": [
+				"ProductivityModule2"
+			],
+			"moduleModifer": {
+				"speed": -0.15,
+				"productivity": 0.06,
+				"energy": 0.6,
+				"pollution": 0.075
+			}
+		},
+		"ProductivityModule3": {
+			"label": "Productivity Module 3",
+			"icon": "ProductivityModule3.png",
+			"url": "https://wiki.factorio.com/Productivity_module_3",
+			"recipe": [
+				"ProductivityModule3"
+			],
+			"moduleModifer": {
+				"speed": -0.15,
+				"productivity": 0.1,
+				"energy": 0.8,
+				"pollution": 0.1
+			}
+		},
+		"EfficiencyModule1": {
+			"label": "Efficiency Module 1",
+			"icon": "EfficiencyModule1.png",
+			"url": "https://wiki.factorio.com/Efficiency_module_1",
+			"recipe": [
+				"EfficiencyModule1"
+			],
+			"moduleModifer": {
+				"speed": 0,
+				"productivity": 0,
+				"energy": -0.3,
+				"pollution": 0
+			}
+		},
+		"EfficiencyModule2": {
+			"label": "Efficiency Module 3",
+			"icon": "EfficiencyModule2.png",
+			"url": "https://wiki.factorio.com/Efficiency_module_2",
+			"recipe": [
+				"EfficiencyModule2"
+			],
+			"moduleModifer": {
+				"speed": 0,
+				"productivity": 0,
+				"energy": -0.4,
+				"pollution": 0
+			}
+		},
+		"EfficiencyModule3": {
+			"label": "Efficiency Module 3",
+			"icon": "EfficiencyModule3.png",
+			"url": "https://wiki.factorio.com/Efficiency_module_3",
+			"recipe": [
+				"EfficiencyModule3"
+			],
+			"moduleModifer": {
+				"speed": 0,
+				"productivity": 0,
+				"energy": -0.5,
+				"pollution": 0
+			}
+		},
+		"Beacon":{
+			"label": "Beacon",
+			"icon": "Beacon.png",
+			"url": "https://wiki.factorio.com/Beacon",
+			"recipe": [
+				"Beacon"
+			],
+			"production":{
+				"moduleSlots": 2,
+				"ModuleEffeciency": 0.5
+			}
 		}
 	}
 }

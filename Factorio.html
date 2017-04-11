@@ -8,39 +8,40 @@
 	<script type="text/javascript" src="Libraries/JQueryUI/js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="Libraries/JSTree/js/jstree.min.js"></script>
 
+	<link rel="stylesheet" href="css/Plugins/SelectMenu.css" type="text/css"/>
+	<link rel="stylesheet" href="css/Plugins/TabbedIconSelect.css" type="text/css"/>
+	<script type="text/javascript" src="js/Plugins/SelectMenu.js"></script>
+	<script type="text/javascript" src="js/Plugins/TabbedIconSelect.js"></script>
+
 	<link rel="stylesheet" href="css/Factorio.css" type="text/css"/>
-	<script type="text/javascript" src="js/Factorio.js"></script>
-	<script type="text/javascript" src="js/JSTree-plugin.js"></script>
+	<script type="text/javascript" src="js/Factorio/DataBase.js"></script>
+	<script type="text/javascript" src="js/Factorio/main.js"></script>
 </head>
 <body class="flex">
 	<div class="dialog" id="newBuild" title="New Build">
 		<fieldset>
 			<legend>
 				<label for="BuildType" style="display: inline">Build Type:</label>
-				<select id="BuildType">
-					<option value="ItemBuild">Item</option>
-					<option value="OilBuild">Build</option>
-					<option value="ElectricityBuild" disabled="true">Electricity</option>
-					<option value="ScienceBuild" disabled="true">Science</option>
+				<select class="SelectMenu" id="BuildType">
 				</select>
 			</legend>
 			<div class="BuildForm ActiveBuildType" id="ItemBuild">
-				<div class="tabs" id="ItemSelect">
-					<ul class="header">
-					</ul>
+				<div class="TabbedIconSelect" id="ItemSelect">
+					<ul class="header"></ul>
 				</div>
-
-				<div id="ItemRate">
-					<input id="value" type="number" step="any" min="0">
+				<div class="inline" id="ItemRate">
+					<input class="spinner" id="value">
 					<label>/</label>
-					<select id="unit">
-						<option value="perS">sec</option>
-						<option value="perM">min</option>
-						<option value="perH">hour</option>
-					</select>
+					<select class='SelectMenu' id="unit"></select>
 				</div>
-
-				<select class='selectmenu' id="RecipeSelect"></select>
+			</div>
+			<div class="BuildForm" id="OilBuild">
+				<select class='SelectMenu' id="RecipeSelect"></select>
+				<div class="inline">
+					<label for="OilCount">Count:</label>
+					<input class="spinner" id="OilCount">
+				</div>
+				<select class="SelectMenu" id="OilMachine"></select>
 			</div>
 		</fieldset>
 	</div>

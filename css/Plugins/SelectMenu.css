@@ -1,0 +1,21 @@
+.SelectMenu-icon{
+	border-radius: .4em;
+	background-size: contain;
+	vertical-align: middle;
+	background-color: transparent;
+	display: inline-block;
+}
+
+.SelectMenu-item-compressed{
+	display: inline-block;
+	margin: auto;
+	padding: 0;
+	float: left;
+}
+.SelectMenu-item-stripe{
+	background-color: #A0A0A0
+}
+.SelectMenu-item-disabled{
+	pointer-events: none;
+	opacity: .35;
+}

@@ -1,27 +1,8 @@
 .flex{
 	display: flex;
 }
-.icon{
-	border-radius: .4em;
-	background-size: contain;
-	display: inline-block;
-}
-
-.selectmenuIcon{
-	vertical-align: middle;
-	margin-left: 0.2em;
-	width: 24px;
-	height: 24px;
-	background-color: #A0A0A0;
-}
-
-.selectableItem{
-	margin: 0.2em;
-	width: 32px;
-	height: 32px;
-}
-.selectedItem{
-	background-color: #FF7F50;
+.inline{
+	display: inline;
 }
 
 .BuildForm{
@@ -31,12 +12,13 @@
 	display: block;
 }
 
-.dialog .tabs{
-	padding: 0px;
+.spinner:focus{
+	outline-width: 0px;
 }
+
 .dialog > fieldset > div > * {
-	margin-bottom: 0.2em;
-	margin-top: 0.2em;
+	margin-bottom: 0.3em;
+	margin-top: 0.3em;
 	display: block;
 }
 
