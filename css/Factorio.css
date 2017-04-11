@@ -1,21 +1,55 @@
 .flex{
 	display: flex;
 }
+.icon{
+	border-radius: .4em;
+	background-size: contain;
+	display: inline-block;
+}
+
+.selectmenuIcon{
+	vertical-align: middle;
+	margin-left: 0.2em;
+	width: 24px;
+	height: 24px;
+	background-color: #A0A0A0;
+}
+
+.selectableItem{
+	margin: 0.2em;
+	width: 32px;
+	height: 32px;
+}
+.selectedItem{
+	background-color: #FF7F50;
+}
+
+.BuildForm{
+	display: none;
+}
+.BuildForm.ActiveBuildType{
+	display: block;
+}
+
+.dialog .tabs{
+	padding: 0px;
+}
+.dialog > fieldset > div > * {
+	margin-bottom: 0.2em;
+	margin-top: 0.2em;
+	display: block;
+}
+
+
 #Factory{
 	padding: 0.1em;
 	margin-right: auto;
 	width: 50%;
 }
 #Factory #Items{
-	height: 50%;
-	overflow:auto;
+	overflow: auto;
 	width: 100%;
 }
-#Factory #OilProcessing{
-	height: 50%;
-	width: 100%;
-}
-
 #sidebar{
 	margin-left: auto;
 }
