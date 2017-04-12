@@ -2,7 +2,7 @@
 	display: flex;
 }
 .inline{
-	display: inline;
+	display: inline-block;
 }
 
 .BuildForm{
@@ -16,12 +16,15 @@
 	outline-width: 0px;
 }
 
-.dialog > fieldset > div > * {
+.dialog#machineSelect > *, .dialog#newBuild > fieldset > div > * {
 	margin-bottom: 0.3em;
 	margin-top: 0.3em;
 	display: block;
 }
-
+fieldset > *{
+	margin-top: 0.3em;
+	margin-top: 0.3em;
+}
 
 #Factory{
 	padding: 0.1em;

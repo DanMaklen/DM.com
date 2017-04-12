@@ -3,6 +3,16 @@ class DataBase{
 		this.data = data;
 	}
 
+	getItemCatigories(){
+		return this.data.itemCatigories
+	}
+	getItem(itemID){
+		return this.data.items[itemID];
+	}
+	getRecipe(recipeID){
+		return this.data.recipe[recipeID];
+	}
+
 	getItemLabel(itemID){
 		if(!this.data.items.hasOwnProperty(itemID)) return '<<null>>';
 		var item = this.data.items[itemID];
@@ -18,22 +28,18 @@ class DataBase{
 		return 'icon/missing.png'
 	}
 
-	getItemCatigories(){
-		return this.data.itemCatigories
-	}
-
 	getRecipeLabel(recipeID){
 		if(!this.data.recipe.hasOwnProperty(recipeID)) return '<<null>>';
 		var recipe = this.data.recipe[recipeID];
 		if(recipe.hasOwnProperty('label') && recipe['label'])
 			return recipe['label'];
-		return this.getItemLabel(recipeID);
+		return 'MissingLabel';
 	}
 	getRecipeIcon(recipeID){
 		if(!this.data.recipe.hasOwnProperty(recipeID)) return '';
 		var recipe = this.data.recipe[recipeID];
 		if(recipe.hasOwnProperty('icon') && recipe['icon'])
 			return 'icon/Factorio/'+recipe['icon'];
-		return this.getItemIcon(recipeID) || 'icon/missing.png';
+		return 'icon/missing.png';
 	}
 }

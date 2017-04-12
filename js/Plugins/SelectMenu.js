@@ -34,8 +34,12 @@ class SelectMenu{
 					this._renderItemData(ul, items[i]);
 			},
 			_resizeMenu: function(){
+				var menu_width = this.menu.outerWidth();
+				var widget_width = self.$.SelectMenu('widget').outerWidth();
 				if(self.opt.style.compress)
-					this.menu.outerWidth(self.$.SelectMenu('widget').outerWidth(true));
+					this.menu.outerWidth(widget_width);
+				else
+					this.menu.outerWidth(Math.max(menu_width, widget_width));
 			}
 		});
 	}
@@ -48,15 +52,14 @@ class SelectMenu{
 		if(this.opt.items[itemID].hasOwnProperty('label') && this.opt.items[itemID].label)
 			div.text(this.opt.items[itemID].label);
 		if(this.opt.items[itemID].hasOwnProperty('icon') && this.opt.items[itemID].icon)
-			$('<div>')
-				.addClass('SelectMenu-icon')
+			Icon.newIcon(this.opt.items[itemID].icon, {}, {
+					width: this.opt.style.icon_size.width,
+					height: this.opt.style.icon_size.height
+				}).get$()
+				.prependTo(div)
 				.css({
-					'width': this.opt.style.icon_size.width,
-					'height': this.opt.style.icon_size.height,
-					'background-image': 'url('+this.opt.items[itemID].icon+')',
 					'margin-right': '0.5em'
-				}).prependTo(div)
-				;
+				});
 		return div;
 	}
 	_ItemOption(itemID){
@@ -82,7 +85,6 @@ class SelectMenu{
 			change: function(item){}
 		}, options);
 		this.$ = $(this.opt.parentSelector+' .SelectMenu#'+id);
-
 		this._defWidget();
 		this.$.SelectMenu({
 			icons: {
@@ -96,10 +98,18 @@ class SelectMenu{
 		this.setItems(this.opt.items);
 	}
 
+	enable(){
+		this.$.SelectMenu('enable');
+	}
+	disable(){
+		this.$.SelectMenu('disable');
+	}
+	isDisabled(){
+		return this.$.SelectMenu('option', 'disabled');
+	}
 	clearItems(){
 		this.$.empty();
 	}
-
 	setItems(items){
 		this.opt.items = items;
 		this.$.SelectMenu(($.isEmptyObject(items)) ? 'disable' : 'enable');

@@ -1,10 +1,3 @@
-.TabbedIconSelect-icon{
-	border-radius: .4em;
-	background-size: contain;
-	vertical-align: middle;
-	background-color: transparent;
-	display: inline-block;
-}
 .TabbedIconSelect-item-selected{
 	background-color: #FF7F50;
 }

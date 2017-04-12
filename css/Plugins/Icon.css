@@ -1,0 +1,28 @@
+.Icon{
+	position: relative;
+	border-radius: .4em;
+	background-size: contain;
+	vertical-align: middle;
+	background-color: transparent;
+	display: inline-block;
+}
+.Icon-overlay{
+	/*border-radius: 0px;*/
+	width: 40%;
+	height: 40%;
+	position: absolute;
+	background-color: transparent;
+}
+
+.Icon-top{
+	top: 20%;
+}
+.Icon-left{
+	left: 20%;
+}
+.Icon-bottom{
+	bottom: 20%;
+}
+.Icon-right{
+	right: 20%;
+}

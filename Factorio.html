@@ -8,8 +8,10 @@
 	<script type="text/javascript" src="Libraries/JQueryUI/js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="Libraries/JSTree/js/jstree.min.js"></script>
 
+	<link rel="stylesheet" href="css/Plugins/Icon.css" type="text/css"/>
 	<link rel="stylesheet" href="css/Plugins/SelectMenu.css" type="text/css"/>
 	<link rel="stylesheet" href="css/Plugins/TabbedIconSelect.css" type="text/css"/>
+	<script type="text/javascript" src="js/Plugins/Icon.js"></script>
 	<script type="text/javascript" src="js/Plugins/SelectMenu.js"></script>
 	<script type="text/javascript" src="js/Plugins/TabbedIconSelect.js"></script>
 
@@ -21,9 +23,8 @@
 	<div class="dialog" id="newBuild" title="New Build">
 		<fieldset>
 			<legend>
-				<label for="BuildType" style="display: inline">Build Type:</label>
-				<select class="SelectMenu" id="BuildType">
-				</select>
+				<label class="inline" for="BuildType">Build Type:</label>
+				<select class="SelectMenu" id="BuildType"></select>
 			</legend>
 			<div class="BuildForm ActiveBuildType" id="ItemBuild">
 				<div class="TabbedIconSelect" id="ItemSelect">
@@ -41,11 +42,33 @@
 					<label for="OilCount">Count:</label>
 					<input class="spinner" id="OilCount">
 				</div>
-				<select class="SelectMenu" id="OilMachine"></select>
+				<button class="btn" id="OilMachine"></button>
 			</div>
 		</fieldset>
 	</div>
-
+	<div class="dialog" id="machineSelect" title="Select Machine">
+		<select class="SelectMenu" id="Machine"></select>
+		<fieldset id="#ModuleConfig">
+			<legend>Module Configration:</legend>
+			<div id="Module">
+				<select class="SelectMenu inline" id="Module1"></select>
+				<select class="SelectMenu inline" id="Module2"></select>
+				<select class="SelectMenu inline" id="Module3"></select>
+				<select class="SelectMenu inline" id="Module4"></select>
+			</div>
+		</fieldset>
+		<fieldset id="#BeaconConfig">
+			<legend>Module Configration:</legend>
+			<div class="inline">
+				<label for="BeaconCount">Count:</label>
+				<input class="spinner" id="BeaconCount">
+			</div>
+			<div id="Module">
+				<select class="SelectMenu inline" id="BeaconModule1"></select>
+				<select class="SelectMenu inline" id="BeaconModule2"></select>
+			</div>
+		</fieldset>
+	</div>
 	<div id="Factory">
 		<div class="tree" id="Build"></div>
 	</div>

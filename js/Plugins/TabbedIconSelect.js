@@ -1,14 +1,13 @@
 class TabbedIconSelect{
 	_initItem(itemID){
-		return $('<div>')
+		return Icon.newIcon(this.opt.getIcon_func(itemID), {}, {
+				width: this.opt.style.icon_size.width,
+				height: this.opt.style.icon_size.height
+			}).get$()
 			.attr('id', itemID)
-			.addClass('TabbedIconSelect-icon')
 			.addClass('TabbedIconSelect-selectable')
 			.css({
-				'width': this.opt.style.icon_size.width,
-				'height': this.opt.style.icon_size.height,
-				'margin': '0.2em',
-				'background-image': 'url('+this.opt.getIcon_func(itemID)+')'
+				'margin': '0.2em'
 			});
 	}
 	_initSubCatigory(subCatigory){
