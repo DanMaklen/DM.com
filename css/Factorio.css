@@ -31,10 +31,6 @@ fieldset > *{
 	margin-right: auto;
 	width: 50%;
 }
-#Factory #Items{
-	overflow: auto;
-	width: 100%;
-}
 #sidebar{
 	margin-left: auto;
 }

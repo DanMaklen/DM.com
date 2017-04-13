@@ -8,21 +8,21 @@
 }
 .Icon-overlay{
 	/*border-radius: 0px;*/
-	width: 40%;
-	height: 40%;
+	width: 45%;
+	height: 45%;
 	position: absolute;
 	background-color: transparent;
 }
 
 .Icon-top{
-	top: 20%;
+	top: 15%;
 }
 .Icon-left{
-	left: 20%;
+	left: 15%;
 }
 .Icon-bottom{
-	bottom: 20%;
+	bottom: 15%;
 }
 .Icon-right{
-	right: 20%;
+	right: 15%;
 }
