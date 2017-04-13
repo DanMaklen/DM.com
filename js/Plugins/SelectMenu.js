@@ -114,4 +114,8 @@ class SelectMenu{
 	getSelectedItem(){
 		return this.$.val()
 	}
+	setSelectedItem(id){
+		this.$.val(id);
+		this.$.SelectMenu('refresh');
+	}
 }

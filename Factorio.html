@@ -80,14 +80,20 @@
 			</div>
 		</fieldset>
 	</div>
+	<div class="dialog" id="settings" title="Settings">
+		<div>Rate Unit: <select class="SelectMenu" id="RateUnit"></select></div>
+		<div>Percision: <select class="SelectMenu" id="Percision"></select></div>
+	</div>
 	<div id="Factory">
 		<div class="tree" id="Build"></div>
 	</div>
 	<div class=" flex-column" id="sidebar">
 		<div id="Control">
 			<button class="btn" id="newBuild">New Build</button>
+			<button class="btn" id="setSettings">Settings</button>
 		</div>
 		<div id="TotalBuild">
+			<button class="btn" id="refreshTotal">Refresh Total</button>
 			<fieldset id="TotalProducts"><legend>Total Products:</legend></fieldset>
 			<fieldset id="TotalIngredients"><legend>Total Ingredients:</legend></fieldset>
 		</div>

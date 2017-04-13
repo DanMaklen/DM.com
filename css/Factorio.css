@@ -5,6 +5,9 @@
 	display: flex;
 	flex-flow: column;
 }
+.greyed-out{
+	opacity: 0.35;
+}
 .inline{
 	display: inline-block;
 }
@@ -31,11 +34,14 @@
 .dialog{
 	text-align: center;
 }
-.dialog#machineSelect > *, .dialog#newBuild > fieldset > div > * {
+.dialog#settings > *,
+.dialog#machineSelect > *,
+.dialog#newBuild > fieldset > div > * {
 	margin-bottom: 0.3em;
 	margin-top: 0.3em;
 	display: block;
 }
+
 fieldset > * {
 	margin-top: 0.3em;
 	margin-top: 0.3em;
@@ -44,7 +50,9 @@ fieldset > * {
 	margin-left: 0.3em;
 	margin-right: 0.3em;
 }
-
+.dialog #settings > div > * {
+	display: inline-block;
+}
 #Factory .tree{
 	flex: 1;
 	overflow: auto;

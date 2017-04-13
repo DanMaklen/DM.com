@@ -1,8 +1,4 @@
 function DONE(){if(parent.frame_loaded_event) parent.frame_loaded_event();}
-function round(n, percision){
-	var factor = Math.pow(10, percision);
-	return Math.round(n * factor)/factor;
-}
 function mergeInto_byAddition(obj1, obj2){
 	if(!obj1 || !obj2) return obj1 || {};
 	for(var key in obj2) if(obj2.hasOwnProperty(key))
@@ -13,35 +9,81 @@ function mergeInto_byAddition(obj1, obj2){
 	return obj1;
 }
 
+class Settings{
+	constructor(){
+		var self = this;
+		this.config = {
+			rateUnit: 1,
+			percision: 2
+		}
+		//this.dialog_settings = new Dialog_Settings();
+
+		this.rateLabel = {
+			1: '/sec',
+			60: '/min',
+			3600: '/hour'
+		};
+	}
+
+	updateSettings(config){
+		this.config = $.extend(true, this.config, config);
+		factory.redrawAll();
+	}
+	getRateText(rate){
+		rate = this.round(rate) / this.config.rateUnit;
+		return rate + this.rateLabel[this.config.rateUnit];
+	}
+	round(n){
+		var factor = Math.pow(10, this.config.percision);
+		return Math.round(n * factor)/factor;
+	}
+}
+
 var db;
+var settings;
 
 var factory;
-var tree_factory;
 var dialog_machineSelect;
 var dialog_newBuild;
+var dialog_settings;
 
 $(document).ready(function(){
 	$.getJSON('data/Factorio/data.json', function(data){
 		db = new DataBase(data);
+		settings = new Settings();
 
 		factory = new Factory();
-		tree_factory = new FactoryTree();
 		dialog_machineSelect = new Dialog_machineSelect();
 		dialog_newBuild = new Dialog_newBuild();
+		dialog_settings = new Dialog_Settings();
 
-		$('.btn#newBuild').button({
+		var new_build = $('.btn#newBuild').button({
 			label: "New Build",
 			icon: 'ui-icon-circle-plus',
 			showLabel: false
-		});
-		$('.btn#newBuild').click(function(e){
+		}).click(function(e){
 			dialog_newBuild.open(function(build){
 				factory.newBuild(build);
-				// factory.calcTotal();
-				// console.log(factory.calcTotal());
 			})
 		});
+		var set_settings = $('.btn#setSettings').button({
+			label: 'New Build',
+			icon: 'ui-icon-gear',
+			showLabel: false
+		}).click(function(e){
+			self.dialog_settings.open(function(config){
+				settings.updateSettings(config);
+			});
+		});
+		var refresh_total = $('.btn#refreshTotal').button({
+			label: 'Refresh Total',
+			icon: 'ui-icon-arrowrefresh-1-s',
+			showLabel: false
+		}).click(function(e){
+			factory.calcTotal();
+		});
 
+		var refresh
 		DONE();
 	});
 });

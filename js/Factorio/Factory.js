@@ -16,36 +16,26 @@ class FactoryTree{
 		});
 		return icon.getHTML();
 	}
+
 	_getByProductHTML(byProduct){
 		if(!byProduct || Object.keys(byProduct).length == 0) return '';
 		var lst = [];
 		for(var itemID in byProduct) if(byProduct.hasOwnProperty(itemID))
-		lst.push(round(byProduct[itemID], this.percision) + '/sec' + this._getIconHTML(db.getItemIcon(itemID)));
+		lst.push(settings.getRateText(byProduct[itemID]) + this._getIconHTML(db.getItemIcon(itemID)));
 		return ' [' + lst.join(', ') + ']';
 	}
 	_getBeaconHTML(count, module){
 		if(!count || !module || !module.length) return '';
-		return  ' ' + round(count, this.percision) + ':'
+		return  ' ' + settings.round(count) + ':'
 			+	this._getIconHTML(db.getItemIcon('Beacon'), this._getModuleOverlay(module))
+			;
 	}
 	_getMachineHTML(count, config){
 		if(!count || !config || !config.machineID) return '';
-		return  ' (' + round(count, this.percision) + '*'
+		return  ' (' + settings.round(count) + '*'
 			+	this._getIconHTML(db.getItemIcon(config.machineID), this._getModuleOverlay(config.module))
 			+	this._getBeaconHTML(config.beacon.count, config.beacon.module)
 			+	')'
-			;
-	}
-	_getItemHTML(build){
-		return  round(build.rate, this.percision) + '/sec' + this._getIconHTML(db.getItemIcon(build.itemID))
-			+	this._getByProductHTML(build.byProduct)
-			+	this._getMachineHTML(build.machineCount, build.machineConfig)
-			;
-	}
-	_getRecipeHTML(build){
-		return  this._getByProductHTML(build.byProduct)
-			+	' ' + this._getIconHTML(db.getRecipeIcon(build.recipeID)) + ' '
-			+	this._getMachineHTML(build.machineCount, build.machineConfig)
 			;
 	}
 
@@ -95,16 +85,27 @@ class FactoryTree{
 			}
 		})
 		this.tree = this.$.jstree(true);
-		this.percision = 2;
 	}
 
+	getItemText(build){
+		return settings.getRateText(build.rate) + this._getIconHTML(db.getItemIcon(build.itemID))
+		+	this._getByProductHTML(build.byProduct)
+		+	this._getMachineHTML(build.machineCount, build.machineConfig)
+		;
+	}
+	getRecipeText(build){
+		return  this._getByProductHTML(build.byProduct)
+		+	' ' + this._getIconHTML(db.getRecipeIcon(build.recipeID)) + ' '
+		+	this._getMachineHTML(build.machineCount, build.machineConfig)
+		;
+	}
 	addNode(parent, node){
 		return this.tree.create_node(parent, node);
 	}
 	newItemNodeJSON(build){
 		return {
 			id: build.treeNodeID,
-			text: this._getItemHTML(build),
+			text: this.getItemText(build),
 			state: {
 				opened: true
 			}
@@ -113,11 +114,17 @@ class FactoryTree{
 	newRecipeNodeJSON(build){
 		return {
 			id: build.treeNodeID,
-			text: this._getRecipeHTML(build),
+			text: this.getRecipeText(build),
 			state: {
 				opened: true
 			}
 		}
+	}
+	updateText(nodeID, text){
+		this.tree.rename_node(nodeID, text);
+	}
+	redraw(nodeID){
+		this.tree.redraw(true);
 	}
 }
 
@@ -171,9 +178,9 @@ class Factory {
 		build.rate = info.rate;
 
 		parent.child.push(build);
-		build.treeNodeID = tree_factory.addNode(
+		build.treeNodeID = this.tree_factory.addNode(
 			parent.treeNodeID,
-			tree_factory.newItemNodeJSON(build)
+			this.tree_factory.newItemNodeJSON(build)
 		);
 	}
 	_newBuild_Recipe(parent, info){
@@ -187,9 +194,9 @@ class Factory {
 		build.byProduct = rate.product;
 
 		parent.child.push(build);
-		build.treeNodeID = tree_factory.addNode(
+		build.treeNodeID = this.tree_factory.addNode(
 			parent.treeNodeID,
-			tree_factory.newRecipeNodeJSON(build)
+			this.tree_factory.newRecipeNodeJSON(build)
 		);
 
 		for(var itemID in rate.ingredient) if(rate.ingredient.hasOwnProperty(itemID))
@@ -245,24 +252,8 @@ class Factory {
 		return total;
 	}
 
-	_renderRates$(parent$, rate){
-		for(var itemID in rate) if(rate.hasOwnProperty(itemID)){
-			$('<div>', {id: 'totalRate_'+itemID})
-				.addClass('inline')
-				.text(round(rate[itemID], 2) + '/sec')
-				.append(Icon.newIcon(db.getItemIcon(itemID)).get$())
-				.appendTo(parent$)
-				;
-		}
-	}
-	_renderTotal(){
-		this.total$.product.find('div').empty();
-		this.total$.ingredient.find('div').empty();
-		this._renderRates$(this.total$.product, this.total.product);
-		this._renderRates$(this.total$.ingredient, this.total.ingredient);
-	}
-
 	constructor(){
+		var self = this;
 		this.build = {
 			ItemBuild: {
 				treeNodeID: 'ItemBuild',
@@ -281,12 +272,20 @@ class Factory {
 				child: []
 			},
 		};
+		this.tree_factory = new FactoryTree();
+
 		this._newBuild = {
 			'ItemBuild': this._newBuild_Item,
 			'OilBuild': this._newBuild_Recipe,
 			'ElectricityBuild': function(parent, info){},
 			'ScienceBuild': function(parent, info){}
 		}
+		this._redraw = {
+			'ItemBuild': this._redraw_Item,
+			'OilBuild': this._redraw_Recipe,
+			'ElectricityBuild': function(build, deep){},
+			'ScienceBuild': function(build, deep){}
+		};
 		this._calcTotal = {
 			'ItemBuild': this._calcTotal_ItemBuild,
 			'OilBuild': this._calcTotal_OilBuild,
@@ -302,12 +301,13 @@ class Factory {
 			product: {},
 			ingredient: {}
 		};
-		this._renderTotal();
+		this.redrawTotal();
 	}
 
 	newBuild(build){
 		this._newBuild[build.type].call(this, this.build[build.type], build.info);
-		this.calcTotal();
+		this.total$.product.addClass('greyed-out');
+		this.total$.ingredient.addClass('greyed-out');
 	}
 	calcTotal(){
 		this.total = {
@@ -319,7 +319,40 @@ class Factory {
 			mergeInto_byAddition(this.total.product, temp.product);
 			mergeInto_byAddition(this.total.ingredient, temp.ingredient);
 		}
-		this._renderTotal();
+		this.redrawTotal();
 		return this.total;
+	}
+
+	_redraw_Item(build, deep){
+		console.log(build)
+		this.tree_factory.updateText(build.treeNodeID, this.tree_factory.getItemText(build));
+		this.tree_factory.redraw(build.treeNodeID);
+	}
+	_redraw_Recipe(build, deep){
+		this.tree_factory.updateText(build.treeNodeID, this.tree_factory.getRecipeText(build));
+	}
+	_renderRates$(parent$, rate){
+		for(var itemID in rate) if(rate.hasOwnProperty(itemID)){
+			$('<div>', {id: 'totalRate_'+itemID})
+			.addClass('inline')
+			.text(settings.getRateText(rate[itemID]))
+			.append(Icon.newIcon(db.getItemIcon(itemID)).get$())
+			.appendTo(parent$)
+			;
+		}
+	}
+	redrawTotal(){
+		this.total$.product.find('div').empty();
+		this.total$.ingredient.find('div').empty();
+		this.total$.product.removeClass('greyed-out');
+		this.total$.ingredient.removeClass('greyed-out');
+		this._renderRates$(this.total$.product, this.total.product);
+		this._renderRates$(this.total$.ingredient, this.total.ingredient);
+	}
+	redrawAll(){
+		for(var buildTypeID in this.build) if(this.build.hasOwnProperty(buildTypeID))
+			for(var i = 0; i < this.build[buildTypeID].child.length; i++)
+				this._redraw[buildTypeID].call(this, this.build[buildTypeID].child[i], true);
+		this.redrawTotal();
 	}
 }

@@ -30,6 +30,14 @@ class Dialog_machineSelect{
 			}
 		});
 	}
+	_Set(){
+		var config = this._validate(this._getConfig());
+		if(config){
+			if(this.sucess_callback) this.sucess_callback(config);
+			this.$.dialog('close');
+		}
+		else alert('Missing Info');
+	}
 
 	_machine_select_items(machine){
 		var item = {};
@@ -148,13 +156,8 @@ class Dialog_machineSelect{
 			modal: true,
 			resizable: false,
 			buttons: {
-				'Add': function(){
-					var build = self._validate(self._getConfig());
-					if(build){
-						if(self.sucess_callback) self.sucess_callback(build);
-						self.$.dialog('close');
-					}
-					else alert('Missing Info');
+				'Set': function(){
+					self._Set();
 				},
 				'Cancle': function(){
 					self.$.dialog('close');
@@ -187,6 +190,9 @@ class Dialog_machineSelect{
 		this.sucess_callback = sucess_callback;
 		this.$.dialog('open');
 	}
+	isOpen(){
+		return this.$.dialog('isOpen');
+	}
 };
 class Dialog_newBuild{
 	_validate(build){
@@ -215,6 +221,15 @@ class Dialog_newBuild{
 		}
 		return build;
 	}
+	_Add(){
+		var build = this._validate(this._getBuild());
+		if(build){
+			if(this.sucess_callback) this.sucess_callback(build);
+			this.$.dialog('close');
+		}
+		else alert('Missing Info');
+	}
+
 	_checkMachineConfigValidity(recipeID){
 		var recipe = db.getRecipe(recipeID);
 		if(!this.machine_config || $.inArray(this.machine_config.machineID, recipe.machine) == -1)
@@ -318,12 +333,7 @@ class Dialog_newBuild{
 			resizable: false,
 			buttons: {
 				'Add': function(){
-					var build = self._validate(self._getBuild());
-					if(build){
-						if(self.sucess_callback) self.sucess_callback(build);
-						self.$.dialog('close');
-					}
-					else alert('Missing Info');
+					self._Add();
 				},
 				'Cancle': function(){
 					self.$.dialog('close');
@@ -409,5 +419,85 @@ class Dialog_newBuild{
 	open(sucess_callback = null){
 		this.sucess_callback = sucess_callback;
 		this.$.dialog('open');
+	}
+	isOpen(){
+		return this.$.dialog('isOpen');
+	}
+}
+class Dialog_Settings{
+	_validate(config){
+		return config;
+	}
+	_getConfig(){
+		var config = {
+			rateUnit: this.RateUnit.getSelectedItem(),
+			percision: this.Percision.getSelectedItem()
+		};
+
+
+		return config;
+	}
+	_Apply(){
+		var config = this._validate(this._getConfig());
+		if(config){
+			if(this.sucess_callback) this.sucess_callback(config);
+			this.$.dialog('close');
+		}
+		else alert('Missing Info');
+	}
+
+	constructor(){
+		var self = this;
+		this.sucess_callback = null;
+		this.$ = $('.dialog#settings').dialog({
+			width: 'auto',
+			autoOpen: false,
+			modal: true,
+			resizable: false,
+			buttons: {
+				'Apply': function(){
+					self._Apply();
+				},
+				'Cancle': function(){
+					self.$.dialog('close');
+				}
+			}
+		});
+
+		this.RateUnit = new SelectMenu('RateUnit', {
+			parentSelector: '.dialog#settings',
+			style: {
+				alignment: 'center'
+			},
+			items: {
+				"1": {label: "/sec"},
+				"60": {label: "/min"},
+				"3600": {label: "/hour"}
+			}
+		});
+		this.Percision = new SelectMenu('Percision', {
+			parentSelector: '.dialog#settings',
+			style: {
+				alignment: 'center'
+			},
+			items: {
+				"0": {label: "1"},
+				"1": {label: "0.1"},
+				"2": {label: "0.01"},
+				"3": {label: "0.001"},
+				"4": {label: "0.0001"}
+			}
+		})
+
+		this.RateUnit.setSelectedItem(settings.config.rateUnit);
+		this.Percision.setSelectedItem(settings.config.percision);
+	}
+
+	open(sucess_callback = null){
+		this.sucess_callback = sucess_callback;
+		this.$.dialog('open');
+	}
+	isOpen(){
+		return this.$.dialog('isOpen');
 	}
 }
