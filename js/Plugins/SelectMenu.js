@@ -2,24 +2,17 @@ class SelectMenu{
 	_defWidget(){
 		var self = this;
 		$.widget('custom.SelectMenu', $.ui.selectmenu, {
-			_renderItem: function(ul, item){
+			_renderItem: function(parent, item){
 				var li = $('<li>');
 				var div = self._ItemDiv(item.value);
-				if(self.opt.style.compress){
-					div.addClass('SelectMenu-item-compressed')
-						.css({
-							'padding-left': '0.25em',
-							'padding-right': '0.25em',
-						});
-					li.addClass('SelectMenu-item-compressed');
-				}
-
 				var item = self.opt.items[item.value];
 				if(item.hasOwnProperty('disabled') && item.disabled)
 					li.addClass('SelectMenu-item-disabled');
-				return li.append(div).appendTo(ul);
+
+				return li.append(div).appendTo(parent);
 			},
 			_renderButtonItem: function(item){
+				// console.log('ohaio', item);
 				if(item.value == null)
 					return $('<div>', {text: '<<null>>'})
 						.css({
@@ -36,10 +29,7 @@ class SelectMenu{
 			_resizeMenu: function(){
 				var menu_width = this.menu.outerWidth();
 				var widget_width = self.$.SelectMenu('widget').outerWidth();
-				if(self.opt.style.compress)
-					this.menu.outerWidth(widget_width);
-				else
-					this.menu.outerWidth(Math.max(menu_width, widget_width));
+				this.menu.outerWidth(Math.max(menu_width, widget_width));
 			}
 		});
 	}
@@ -73,8 +63,8 @@ class SelectMenu{
 		this.opt = $.extend(true, {
 			parentSelector: '',
 			style:{
+				firstInRow: true,
 				alignment: 'left',
-				compress: false,
 				icon_size: {
 					width: '32px',
 					height: '32px'

@@ -70,12 +70,11 @@ class Dialog_machineSelect{
 		}
 	}
 
-	_newCompressedSelectMenu(id, items){
+	_newInlineSelectMenu(id, items){
 		return new SelectMenu(id, {
 			parentSelector: '.dialog#machineSelect',
 			style:{
-				alignment: 'center',
-				compressed: true
+				alignment: 'center'
 			},
 			items: items
 		});
@@ -83,10 +82,10 @@ class Dialog_machineSelect{
 
 	_initModule(){
 		this.module_select = [
-			this._newCompressedSelectMenu('Module1', this._module_select_items()),
-			this._newCompressedSelectMenu('Module2', this._module_select_items()),
-			this._newCompressedSelectMenu('Module3', this._module_select_items()),
-			this._newCompressedSelectMenu('Module4', this._module_select_items())
+			this._newInlineSelectMenu('Module1', this._module_select_items()),
+			this._newInlineSelectMenu('Module2', this._module_select_items()),
+			this._newInlineSelectMenu('Module3', this._module_select_items()),
+			this._newInlineSelectMenu('Module4', this._module_select_items())
 		];
 	}
 	_initBeacon(){
@@ -94,8 +93,8 @@ class Dialog_machineSelect{
 			$: $('.dialog#machineSelect #BeaconConfig'),
 			count: $('.dialog#machineSelect #BeaconCount'),
 			module: [
-				this._newCompressedSelectMenu('BeaconModule1', this._beacon_select_items()),
-				this._newCompressedSelectMenu('BeaconModule2', this._beacon_select_items())
+				this._newInlineSelectMenu('BeaconModule1', this._beacon_select_items()),
+				this._newInlineSelectMenu('BeaconModule2', this._beacon_select_items())
 			]
 		}
 		var self = this;
@@ -217,8 +216,25 @@ class Dialog_newBuild{
 		return build;
 	}
 	_checkMachineConfigValidity(recipeID){
-		if(this.machine_config && $.inArray(this.machine_config.machineID, db.getRecipe(recipeID).machine) == -1)
-			this.machine_config = null;
+		var recipe = db.getRecipe(recipeID);
+		if(!this.machine_config || $.inArray(this.machine_config.machineID, recipe.machine) == -1)
+			this.machine_config = {
+				machineID: recipe.machine[0],
+				module: [
+					"noModule",
+					"noModule",
+					"noModule",
+					"noModule"
+				],
+				beacon: {
+					count: 0,
+					module: [
+						"noModule",
+						"noModule"
+					]
+				}
+			}
+		this._updateMachineInfo();
 	}
 	_build_type_items(){
 		return {
@@ -258,6 +274,36 @@ class Dialog_newBuild{
 			'LightOilCracking': {
 				label: db.getRecipeLabel('LightOilCracking'),
 				icon: db.getRecipeIcon('LightOilCracking')
+			}
+		}
+	}
+
+	_updateMachineInfo(){
+		if(!this.machine_config || !this.machine_config.machineID) this.machine_info.css('visibility', 'hidden');
+		else{
+			this.machine_info.css('visibility', 'visible');
+			this.machine_icon.setIcon({
+				main: db.getItemIcon(this.machine_config.machineID),
+				top_left: db.getItemIcon(this.machine_config.module[0]),
+				top_right: db.getItemIcon(this.machine_config.module[1]),
+				bottom_left: db.getItemIcon(this.machine_config.module[2]),
+				bottom_right: db.getItemIcon(this.machine_config.module[3]),
+			})
+			if(this.machine_config.beacon && this.machine_config.beacon.count){
+				this.beacon_count.text(this.machine_config.beacon.count + '*');
+				this.beacon_icon.setIcon({
+					main: db.getItemIcon('Beacon'),
+					top_left: db.getItemIcon(this.machine_config.beacon.module[0]),
+					top_right: db.getItemIcon(this.machine_config.beacon.module[1])
+				});
+			}
+			else{
+				this.beacon_count.text('');
+				this.beacon_icon.setIcon({
+					main: 'icon/blank.png',
+					top_left: 'icon/blank.png',
+					top_right: 'icon/blank.png'
+				});
 			}
 		}
 	}
@@ -339,8 +385,25 @@ class Dialog_newBuild{
 			dialog_machineSelect.setMachines(recipe.machine);
 			dialog_machineSelect.open(function(config){
 				self.machine_config = config;
+				self._updateMachineInfo();
 			})
 		});
+		this.machine_info = $('.dialog#newBuild #OilBuild #MachineInfo');
+		this.machine_icon = new Icon('MachineIcon', {
+			parentSelector: '.dialog#newBuild #OilBuild',
+			icon: {
+				main: 'icon/blank.png'
+			}
+		});
+		this.beacon_count = $('.dialog#newBuild #OilBuild #BeaconCount');
+		this.beacon_icon = new Icon('BeaconIcon', {
+			parentSelector: '.dialog#newBuild #OilBuild',
+			icon: {
+				main: 'icon/blank.png'
+			}
+		});
+		self._checkMachineConfigValidity(this.oil_select.getSelectedItem());
+		this._updateMachineInfo();
 	}
 
 	open(sucess_callback = null){

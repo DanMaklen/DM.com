@@ -88,8 +88,8 @@ class Icon{
 		_renderIcon()
 	}
 	setIcon(icon = {}){
-		this.opt = $.merge(this.opt.icon, icon);
-		_renderIcon();
+		this.opt.icon = $.extend(this.opt.icon, icon);
+		this._renderIcon();
 	}
 
 	get$(){

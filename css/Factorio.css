@@ -1,8 +1,24 @@
 .flex{
 	display: flex;
 }
+.flex-column{
+	display: flex;
+	flex-flow: column;
+}
 .inline{
 	display: inline-block;
+}
+.shadowBorder{
+	border-radius: 0.3em;
+	border-width: 0.1em;
+	padding: 0.1em 0.1em 0.1em 0.1em;
+	border-color: lightgrey;
+	border-style: solid;
+	box-shadow: 0.1em 0.1em 0.1em lightgrey;
+}
+
+.spinner:focus{
+	outline-width: 0px;
 }
 
 .BuildForm{
@@ -12,25 +28,49 @@
 	display: block;
 }
 
-.spinner:focus{
-	outline-width: 0px;
+.dialog{
+	text-align: center;
 }
-
 .dialog#machineSelect > *, .dialog#newBuild > fieldset > div > * {
 	margin-bottom: 0.3em;
 	margin-top: 0.3em;
 	display: block;
 }
-fieldset > *{
+fieldset > * {
 	margin-top: 0.3em;
 	margin-top: 0.3em;
+}
+.dialog #machineConfig > * {
+	margin-left: 0.3em;
+	margin-right: 0.3em;
 }
 
+#Factory .tree{
+	flex: 1;
+	overflow: auto;
+}
 #Factory{
-	padding: 0.1em;
-	margin-right: auto;
-	width: 50%;
+	flex: 1;
+	flex-flow: column;
+	width: 45%;
+	height: 100%;
+	margin-right: 0.5em;
 }
 #sidebar{
-	margin-left: auto;
+	width: 45%;
+	height: 100%;
+	margin-left: 0.5em;
+}
+#Control{
+	flex: 1;
+	margin-bottom: 0.5;
+}
+#TotalBuild{
+	flex: 1;
+	margin-top: 0.5;
+	overflow: auto;
+}
+#TotalBuild > fieldset {
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
 }

@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="css/Factorio.css" type="text/css"/>
 	<script type="text/javascript" src="js/Factorio/Dialog.js"></script>
 	<script type="text/javascript" src="js/Factorio/DataBase.js"></script>
+	<script type="text/javascript" src="js/Factorio/Factory.js"></script>
 	<script type="text/javascript" src="js/Factorio/main.js"></script>
 </head>
 <body class="flex">
@@ -43,7 +44,16 @@
 					<label for="OilCount">Count:</label>
 					<input class="spinner" id="OilCount">
 				</div>
-				<button class="btn" id="OilMachine"></button>
+				<div id="MachineConfig">
+					<div class="inline">
+						<div class="inline" id="MachineInfo">
+							<div class="Icon" id="MachineIcon"></div>
+							<label id="beaconCount"></div>
+							<div class="Icon" id="BeaconIcon"></div>
+						</div>
+						<button class="btn" id="OilMachine"></button>
+					</div>
+				</div>
 			</div>
 		</fieldset>
 	</div>
@@ -73,8 +83,14 @@
 	<div id="Factory">
 		<div class="tree" id="Build"></div>
 	</div>
-	<div id="sidebar">
-		<button class="btn" id="newBuild">New Build</button>
+	<div class=" flex-column" id="sidebar">
+		<div id="Control">
+			<button class="btn" id="newBuild">New Build</button>
+		</div>
+		<div id="TotalBuild">
+			<fieldset id="TotalProducts"><legend>Total Products:</legend></fieldset>
+			<fieldset id="TotalIngredients"><legend>Total Ingredients:</legend></fieldset>
+		</div>
 	</div>
 </body>
 </html>

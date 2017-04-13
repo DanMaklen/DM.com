@@ -54,10 +54,12 @@ class DataBase{
 				mod_module += this.getItem(module[i]).moduleModifer.speed;
 
 		var mod_beacon = 0;
-		for(var i = 0; i < module.length; i++)
-			if(module[i] && module[i] != 'noModule')
-				mod_beacon += this.getItem(beaconConfig.module[i]).moduleModifer.speed;
-		mod_beacon *= beaconConfig.count * this.getItem('Beacon').production.moduleEffeciency;
+		if(beaconConfig.count) {
+			for(var i = 0; i < beaconConfig.module.length; i++)
+				if(beaconConfig.module[i] && beaconConfig.module[i] != 'noModule')
+					mod_beacon += this.getItem(beaconConfig.module[i]).moduleModifer.speed;
+			mod_beacon *= beaconConfig.count * this.getItem('Beacon').production.moduleEffeciency;
+		}
 		return mod_module + mod_beacon;
 	}
 	calcProductivityModifier(module){
@@ -94,4 +96,5 @@ class DataBase{
 
 		return rate;
 	}
+
 }
