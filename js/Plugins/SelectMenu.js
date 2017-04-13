@@ -91,6 +91,9 @@ class SelectMenu{
 				button: 'ui-icon-blank'
 			},
 			width: 'auto',
+			position: {
+				collision: 'fit'
+			},
 			change: function(e, ui){
 				return self.opt.change(ui.item.value);
 			}
