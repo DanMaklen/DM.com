@@ -19,7 +19,7 @@
 
 	<link rel="stylesheet" href="css/Factorio/Dialog.css" type="text/css"/>
 	<link rel="stylesheet" href="css/Factorio/main.css" type="text/css"/>
-	<script type="text/javascript" src="js/Factorio/DataBase.js"></script>
+	<script type="text/javascript" src="js/Factorio/Factorio.js"></script>
 	<script type="text/javascript" src="js/Factorio/Toolbar.js"></script>
 	<script type="text/javascript" src="js/Factorio/Dialog.js"></script>
 	<script type="text/javascript" src="js/Factorio/Factory.js"></script>
@@ -29,27 +29,22 @@
 	<div class="dialog" id="Settings" title="Settings">
 		<div>Rate Unit: <select id="RateUnit"></select></div>
 		<div>Percision: <select id="Percision"></select></div>
-		<div>Crude Oil Yield: <input id="CrudeOilYield"> /sec</div>
+		<div>Crude Oil Yield: <input id="CrudeOilYield"> <select id="CrudeOilYieldUnit"></select></div>
 		<div>Recipe Difficulty: <select id="RecipeDifficulty"></select></div>
 		<div>Science Difficulty: <select id="ScienceDifficulty"></select></div>
 	</div>
-	<div class="dialog" id="newBuild" title="New Build">
+	<div class="dialog" id="NewBuild" title="New Build">
 		<fieldset>
 			<legend>
 				<label class="inline" for="BuildType">Build Type:</label>
 				<select class="SelectMenu" id="BuildType"></select>
 			</legend>
-			<div class="BuildForm ActiveBuildType" id="ItemBuild">
-				<div class="TabbedIconSelect" id="ItemSelect">
+			<div class="BuildForm ActiveBuildForm" id="itemBuild">
+				<div id="ItemSelect">
 					<ul class="header"></ul>
 				</div>
-				<div class="inline" id="ItemRate">
-					<input class="spinner" id="value">
-					<label>/</label>
-					<select class='SelectMenu' id="unit"></select>
-				</div>
 			</div>
-			<div class="BuildForm" id="OilBuild">
+			<div class="BuildForm" id="oilBuild">
 				<select class='SelectMenu' id="RecipeSelect"></select>
 				<div class="inline">
 					<label for="OilCount">Count:</label>
@@ -68,29 +63,6 @@
 			</div>
 		</fieldset>
 	</div>
-	<div class="dialog" id="machineSelect" title="Select Machine">
-		<select class="SelectMenu" id="Machine"></select>
-		<fieldset id="#ModuleConfig">
-			<legend>Module Configration:</legend>
-			<div id="Module">
-				<select class="SelectMenu inline" id="Module1"></select>
-				<select class="SelectMenu inline" id="Module2"></select>
-				<select class="SelectMenu inline" id="Module3"></select>
-				<select class="SelectMenu inline" id="Module4"></select>
-			</div>
-		</fieldset>
-		<fieldset id="#BeaconConfig">
-			<legend>Beacon Configration:</legend>
-			<div class="inline">
-				<label for="BeaconCount">Count:</label>
-				<input class="spinner" id="BeaconCount">
-			</div>
-			<div id="Module">
-				<select class="SelectMenu inline" id="BeaconModule1"></select>
-				<select class="SelectMenu inline" id="BeaconModule2"></select>
-			</div>
-		</fieldset>
-	</div>
 	<div id="Factory">
 		<div class="tree" id="Build"></div>
 	</div>
@@ -98,8 +70,8 @@
 		<div id="Toolbar">
 			<button id="newBuild">New Build</button>
 			<button id="rmBuild">Remove Selected Build</button>
-			<button id="Apply">Apply</button>
-			<button class="float-right" id="Settings">change Settings</button>
+			<button id="apply">Apply</button>
+			<button class="float-right" id="settings">change Settings</button>
 		</div>
 		<div id="Control">
 			<div id="machineConfig">

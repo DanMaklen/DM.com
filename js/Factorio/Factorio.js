@@ -1,4 +1,4 @@
-class DataBase{
+class Factorio{
 	constructor(data){
 		this.data = data;
 	}
@@ -36,8 +36,8 @@ class DataBase{
 	getItem(itemID){
 		return this.data.item[itemID];
 	}
-	getItemCatigories(){
-		return this.data.itemCatigories
+	getItemCategories(){
+		return this.data.itemCategories
 	}
 
 	getLabel(type, id, checkItem=true){

@@ -7,23 +7,24 @@ class Toolbar{
 			showLabel: false
 		}).click(function(e){
 			dialog_newBuild.open(function(build){
-			 	factory.newBuild(build);
+				console.log(build);
+			 	//factory.newBuild(build);
 			});
 		});
 
-		this.$.find('#Apply').button().click(function(e){});
+		this.$.find('#apply').button().click(function(e){});
 
 		this.$.find('#rmBuild').button({
 			icon: 'ui-icon-circle-minus',
 			showLabel: false
 		}).click(function(e){});
 
-		this.$.find('#Settings').button({
+		this.$.find('#settings').button({
 			icon: 'ui-icon-gear',
 			showLabel: false
 		}).click(function(e){
 			self.dialog_settings.open(function(config){
-				//settings.updateSettings(config);
+				settings.updateSettings(config);
 			});
 		});
 

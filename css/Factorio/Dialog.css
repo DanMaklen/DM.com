@@ -1,0 +1,6 @@
+.BuildForm{
+	display: none;
+}
+.BuildForm.ActiveBuildForm{
+	display: block;
+}

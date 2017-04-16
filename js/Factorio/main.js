@@ -30,7 +30,6 @@ class Settings{
 
 	updateSettings(config){
 		this.config = $.extend(true, this.config, config);
-		factory.redrawAll();
 	}
 
 	getRateLabel(){
@@ -245,11 +244,10 @@ class Control{
 	}
 }
 
-var db;
+var factorio;
 var settings;
 
 var dialog_settings;
-
 var dialog_newBuild;
 
 var control;
@@ -258,10 +256,11 @@ var dialog_machineSelect;
 
 $(document).ready(function(){
 	$.getJSON('data/Factorio/data.json', function(data){
-		db = new DataBase(data);
+		factorio = new Factorio(data);
 		settings = new Settings();
 
 		dialog_settings = new Dialog_Settings();
+		dialog_newBuild = new Dialog_NewBuild();
 
 		var toolbar = new Toolbar();
 

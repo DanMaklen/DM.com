@@ -8,7 +8,7 @@ class TabbedIconSelect{
 	_initSubCategory(subCategory){
 		var subdiv = $('<div>');
 		for(var i = 0; i < subCategory.length; i++)
-			this._initItem(subCatigory[i]).appendTo(subdiv);
+			this._initItem(subCategory[i]).appendTo(subdiv);
 		return subdiv;
 	}
 	_initCategory(id, itemCategory){
@@ -22,11 +22,11 @@ class TabbedIconSelect{
 
 		var content = $('<div>').attr('id', 'content_'+id).appendTo(this.$content);
 		for(var i = 0; i < itemCategory.subCategories.length; i++)
-			this._initSubCatigory(itemCategory.subCategories[i]).appendTo(content)
+			this._initSubCategory(itemCategory.subCategories[i]).appendTo(content)
 	}
 	_init(){
 		for(var i = 0; i < this.opt.itemCategories.length; i++)
-			this._initCatigory(i, this.opt.itemCategories[i])
+			this._initCategory(i, this.opt.itemCategories[i])
 	}
 
 	constructor(div, options){
