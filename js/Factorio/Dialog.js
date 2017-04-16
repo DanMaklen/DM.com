@@ -1,9 +1,15 @@
 class Dialog_Settings{
 	_validate(val){
-
+		return val;
 	}
 	_getVal(){
-
+		return {
+			rateUnit: this.$rateUnit.getSelected(),
+			percision: this.$percision.getSelected(),
+			crudeOilYield: this.$crudeOilYield.getValue(),
+			recipeDifficulty: this.$recipeDifficulty.getSelected(),
+			scienceDifficulty: this.$scienceDifficulty.getSelected()
+		}
 	}
 	_OK(){
 		var val = this._validate(this._getVal());
