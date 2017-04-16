@@ -3,98 +3,148 @@ class DataBase{
 		this.data = data;
 	}
 
-	getItemCatigories(){
-		return this.data.itemCatigories
+	newBeconConfig(){
+		return {
+			beaconID: null,
+			count: 0,
+			module: []
+		}
 	}
-	getItem(itemID){
-		return this.data.items[itemID];
+	newMachineConfig(){
+		return {
+			machineID: null,
+			count: 0,
+			module: []
+		}
+	}
+
+	getFuel(fuelID){
+		return this.data.fuel[fuelID];
+	}
+	getModule(moduleID){
+		return this.data.module[moduleID];
+	}
+	getBeacon(beaconID){
+		return this.data.beacon[beaconID];
+	}
+	getMachine(machineID){
+		return this.data.machine[machineID]
 	}
 	getRecipe(recipeID){
 		return this.data.recipe[recipeID];
 	}
-
-	getItemLabel(itemID){
-		if(!this.data.items.hasOwnProperty(itemID)) return '<<null>>';
-		var item = this.data.items[itemID];
-		if(item.hasOwnProperty('label') && item['label'])
-			return item['label'];
-		return 'MissingLabel'
+	getItem(itemID){
+		return this.data.item[itemID];
 	}
-	getItemIcon(itemID){
-		if(!this.data.items.hasOwnProperty(itemID)) return '';
-		var item = this.data.items[itemID];
-		if(item.hasOwnProperty('icon') && item['icon'])
-			return 'icon/Factorio/'+item['icon'];
-		return 'icon/missing.png'
+	getItemCatigories(){
+		return this.data.itemCatigories
 	}
 
-	getRecipeLabel(recipeID){
-		if(!this.data.recipe.hasOwnProperty(recipeID)) return '<<null>>';
-		var recipe = this.data.recipe[recipeID];
-		if(recipe.hasOwnProperty('label') && recipe['label'])
-			return recipe['label'];
+	getLabel(type, id, checkItem=true){
+		if(!this.data[type].hasOwnProperty(id)) return '<<null>>';
+		var val = this.data[type][id];
+		if(val.hasOwnProperty('label') && val['label']) return val['label'];
+		if(checkItem && type != 'item') return this._getLabel('item', id, false);
 		return 'MissingLabel';
 	}
-	getRecipeIcon(recipeID){
-		if(!this.data.recipe.hasOwnProperty(recipeID)) return '';
-		var recipe = this.data.recipe[recipeID];
-		if(recipe.hasOwnProperty('icon') && recipe['icon'])
-			return 'icon/Factorio/'+recipe['icon'];
+	getIcon(type, id, checkItem=true){
+		if(!this.data[type].hasOwnProperty(id)) return '';
+		var val = this.data[type][id];
+		if(val.hasOwnProperty('icon') && val['icon']) return val['icon'];
+		if(checkItem && type != 'item') return this._getIcon('item', id, false);
 		return 'icon/missing.png';
 	}
 
-	calcBaseRate(itemID, recipeID){
-		var recipe = this.getRecipe(recipeID);
-		return recipe.product[itemID] / recipe.craftingTime;
-	}
-	calcSpeedModifier(module, beaconConfig){
-		var mod_module = 0;
-		for(var i = 0; i < module.length; i++)
-			if(module[i] && module[i] != 'noModule')
-				mod_module += this.getItem(module[i]).moduleModifer.speed;
-
-		var mod_beacon = 0;
-		if(beaconConfig.count) {
+	calcStatModifier(modifier, machineModule, beaconConfig=null){
+		var mod = 0;
+		if(!modifier || !machineModule) return 0;
+		for(var i = 0; i < machineModule.length; i++)
+			mod += this.getModule(machineModule[i])[modifier];
+		if(beaconConfig){
+			var beacon_mod = 0;
 			for(var i = 0; i < beaconConfig.module.length; i++)
-				if(beaconConfig.module[i] && beaconConfig.module[i] != 'noModule')
-					mod_beacon += this.getItem(beaconConfig.module[i]).moduleModifer.speed;
-			mod_beacon *= beaconConfig.count * this.getItem('Beacon').production.moduleEffeciency;
+				beacon_mod += this.getModule(beaconConfig.module[i])[modifier];
+			mod += beaconConfig.count * beacon_mod * this.getBeacon(beaconConfig.beaconID).moduleEffeciency;
 		}
-		return mod_module + mod_beacon;
+		return mod;
+
 	}
-	calcProductivityModifier(module){
-		var mod_module = 0;
-		for(var i = 0; i < module.length; i++)
-			if(module[i] && module[i] != 'noModule')
-				mod_module += this.getItem(module[i]).moduleModifer.productivity;
-		return mod_module;
+	calcStat(stat, machineConfig, beaconConfig=null){
+		if(!machineConfig) return 0;
+		var machine = this.getMachine(machineConfig.machineID);
+		var val = machine[stat];
+		if(machine.moduleSlots > 0)
+			val *= 1 + this.calcStatModifier(stat, machineConfig.module, beaconConfig);
+		return val;
 	}
-	calcSpeed(machineConfig){
-		var baseSpeed = this.getItem(machineConfig.machineID).production.craftingSpeed;
-		var mod = 1 + this.calcSpeedModifier(machineConfig.module, machineConfig.beacon);
-		return baseSpeed * mod;
+
+	calcEffectiveEnergyConsumption(machineConfig, beaconConfig=null){
+		if(!machineConfig) return 0;
+		var machine = this.getMachine(machineConfig.machineID);
+
+		var activeRatio = machineConfig.count / Math.ciel(machineConfig.count);
+		var energyConsumption = this.calcStat('energyConsumption', machineConfig, beaconConfig);
+		var drain = machine.drain;
+
+		return energyConsumption * activeRatio + drain * (1 - activeRatio);
 	}
-	calcProductivity(machineConfig){
-		return 1 + this.calcProductivityModifier(machineConfig.module);
+	calcEffectivePollution(machineConfig, beaconConfig=null){
+		if(!machineConfig) return 0;
+		var machine = this.getMachine(machineConfig.machineID);
+
+		var activeRatio = machineConfig.count / Math.ciel(machineConfig.count);
+		var energyConsumption = this.calcStat('energyConsumption', machineConfig, beaconConfig);
+		var pollution = this.calcStat('pollution', machineConfig, beaconConfig);
+
+		return energyConsumption * activeRatio * pollution;
 	}
-	calcRate(recipeID, machineCount, machineConfig){
+
+	calcProductBaseRate(itemID, recipeID){
 		var recipe = this.getRecipe(recipeID);
-		if($.inArray(machineConfig.machineID, recipe.machine) == -1) return false;
+		if(!itemID || !recipe || !recipe.product.hasOwnProperty(itemID)) return 0;
+		return recipe.product[itemID] / recipe.craftTime;
+	}
+	calcIngredientBaseRate(itemID, recipeID){
+		var recipe = this.getRecipe(recipeID);
+		if(!itemID || !recipe || !recipe.ingredient.hasOwnProperty(itemID)) return 0;
+		return recipe.ingredient[itemID] / recipe.craftTime;
+	}
+	calcProductRate(recipeID, machineConfig, beaconCount=null){
+		var recipe = this.getRecipe(recipeID);
+		if(!recipe || !machineConfig || $.inArray(machineConfig.machineID, recipe.machine) == -1) return {};
+		var machine = this.getMachine(machineConfig.machineID);
 
-		var speed = this.calcSpeed(machineConfig);
-		var productivity = this.calcProductivity(machineConfig);
+		var hardness = machine.power - recipe.hardness;
+		var speed = this.calcStat('speed', machineConfig, beaconConfig);
+		var productivity = this.calcStat('productivity', machineConfig, beaconConfig);
+		var multiplier = hardness * speed * productivity * machineConfig.count;
 
-		var rate = {
-			product: {},
-			ingredient: {}
-		};
+		//Special Case!! Might be better to think of a way to generalize this one.
+		if(recipeID == 'CrudeOil') multiplier *= settings.config.crudeOilYield;
 
+		var rate = {};
 		for(var itemID in recipe.product) if(recipe.product.hasOwnProperty(itemID))
-			rate.product[itemID] = recipe.product[itemID] / recipe.craftingTime * speed * productivity * machineCount;
-		for(var itemID in recipe.ingredient) if(recipe.ingredient.hasOwnProperty(itemID))
-			rate.ingredient[itemID] = recipe.ingredient[itemID] / recipe.craftingTime * speed * machineCount;
-
+			rate[itemID] = this.calcProductBaseRate(itemID, recipeID) * multiplier;
 		return rate;
 	}
+	calcIngredientRate(recipeID, machineConfig, beaconConfig=null){
+		var recipe = this.getRecipe(recipeID);
+		if(!recipe || !machineConfig || $.inArray(machineConfig.machineID, recipe.machine) == -1) return {};
+		var machine = this.getMachine(machineConfig.machineID);
 
+		var hardness = machine.power - recipe.hardness;
+		var speed = this.calcStat('speed', machineConfig, beaconConfig);
+		var multiplier = hardness * peed * machineConfig.count
+
+		var rate = {};
+		for(var itemID in recipe.ingredient) if(recipe.ingredient.hasOwnProperty(itemID))
+			rate[itemID] = this.calcIngredientBaseRate(itemID, recipeID) * multiplier;
+		return rate;
+	}
+	calcRate(recipeID, machineConfig, beaconConfig=null){
+		return {
+			product: this.calcProductRate(recipeID, machineConfig, beaconConfig),
+			ingredient: this.calcIngredientRate(recipeID, machineConfig, beaconConfig)
+		}
+	}
 }

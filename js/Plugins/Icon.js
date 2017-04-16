@@ -1,12 +1,10 @@
 class Icon{
-	static newIcon(icon, overlay = {}, icon_size={}){
+	static gen(icon, overlay = {}, icon_size={}){
 		overlay.main = icon;
-		return new Icon('', {
-			style:{
-				icon_size: icon_size
-			},
+		return new Icon($('<div>'), {
+			style:{icon_size: icon_size},
 			icon: overlay
-		}, true)
+		});
 	}
 
 	_init(main){
@@ -48,9 +46,8 @@ class Icon{
 		this.$bottom_right.css('background-image', 'url('+(this.opt.icon.bottom_right||'')+')');
 	}
 
-	constructor(id, options, newInstance = false){
+	constructor(div, options){
 		this.opt = $.extend(true, {
-			parentSelector: null,
 			style:{
 				icon_size:{
 					width: '32px',
@@ -66,16 +63,7 @@ class Icon{
 			}
 		}, options);
 
-		if(newInstance){
-			this.$ = $('<div>')
-				.attr('id', id)
-				.addClass('Icon')
-				;
-			if(this.opt.parentSelector)
-				$(this.opt.parentSelector).append(this.$);
-		}
-		else
-			this.$ = $(this.opt.parentSelector+' .Icon#'+id);
+		this.$ = div.addClass('Icon');
 		this._init();
 		this._renderIcon();
 	}

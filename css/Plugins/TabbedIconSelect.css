@@ -1,3 +1,7 @@
+.TabbedIconSelect-selectable{
+	margin: 0.2em;
+}
+
 .TabbedIconSelect-item-selected{
 	background-color: #FF7F50;
 }

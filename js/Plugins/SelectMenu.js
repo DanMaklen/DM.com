@@ -4,7 +4,7 @@ class SelectMenu{
 		$.widget('custom.SelectMenu', $.ui.selectmenu, {
 			_renderItem: function(parent, item){
 				var li = $('<li>');
-				var div = self._ItemDiv(item.value);
+				var div = self._genItemDiv(item.value);
 				var item = self.opt.items[item.value];
 				if(item.hasOwnProperty('disabled') && item.disabled)
 					li.addClass('SelectMenu-item-disabled');
@@ -12,7 +12,6 @@ class SelectMenu{
 				return li.append(div).appendTo(parent);
 			},
 			_renderButtonItem: function(item){
-				// console.log('ohaio', item);
 				if(item.value == null)
 					return $('<div>', {text: '<<null>>'})
 						.css({
@@ -20,7 +19,7 @@ class SelectMenu{
 						})
 						;
 
-				return self._ItemDiv(item.value);
+				return self._genItemDiv(item.value);
 			},
 			_renderMenu: function(ul, items){
 				for(var i = 0; i < items.length; i++)
@@ -33,62 +32,46 @@ class SelectMenu{
 			}
 		});
 	}
-	_ItemDiv(itemID){
-		var div = $('<div>')
-			.css({
-				'text-align': this.opt.style.alignment
-			})
-			;
-		if(this.opt.items[itemID].hasOwnProperty('label') && this.opt.items[itemID].label)
-			div.text(this.opt.items[itemID].label);
-		if(this.opt.items[itemID].hasOwnProperty('icon') && this.opt.items[itemID].icon)
-			Icon.newIcon(this.opt.items[itemID].icon, {}, {
-					width: this.opt.style.icon_size.width,
-					height: this.opt.style.icon_size.height
-				}).get$()
-				.prependTo(div)
-				.css({
-					'margin-right': '0.5em'
-				});
+	_genItemDiv(itemID){
+		var div = $('<div>').css('text-align', this.opt.style.alignment);
+		var item = this.opt.items[itemID];
+		if(item.hasOwnProperty('label') && item.label)
+			div.text(item.label);
+		if(item.hasOwnProperty('icon') && item.icon)
+			Icon.gen(item.icon, {}, this.opt.icon_size).get$().prependTo(div).css('margin-right', '0.5em');
 		return div;
 	}
-	_ItemOption(itemID){
-		return $('<option>', {
-			value: itemID
-		});
+	_genItemOption(itemID){
+		return $('<option>', {value: itemID});
 	}
 
-	constructor(id, options){
+	constructor(select, options){
 		var self = this;
 		this.opt = $.extend(true, {
-			parentSelector: '',
 			style:{
-				firstInRow: true,
-				alignment: 'left',
+				alignment: 'center',
 				icon_size: {
 					width: '32px',
 					height: '32px'
 				}
 			},
 			items: {},
+			default: null,
 
 			change: function(item){}
 		}, options);
-		this.$ = $(this.opt.parentSelector+' .SelectMenu#'+id);
+
+		this.$ = select;
+
 		this._defWidget();
 		this.$.SelectMenu({
-			icons: {
-				button: 'ui-icon-blank'
-			},
+			icons: {button: 'ui-icon-blank'},
 			width: 'auto',
-			position: {
-				collision: 'fit'
-			},
-			change: function(e, ui){
-				return self.opt.change(ui.item.value);
-			}
+			position: {collision: 'fit'},
+			change: function(e, ui){return self.opt.change(ui.item.value);}
 		})
 		this.setItems(this.opt.items);
+		if(this.opt.default) this.setSelected(this.opt.default);
 	}
 
 	enable(){
@@ -102,20 +85,27 @@ class SelectMenu{
 	}
 	clearItems(){
 		this.$.empty();
+		this.$.SelectMenu('disable');
+		this.$.SelectMenu('refresh');
 	}
 	setItems(items){
 		this.opt.items = items;
 		this.$.SelectMenu(($.isEmptyObject(items)) ? 'disable' : 'enable');
-		this.clearItems();
+		//Possibile Optimization: Instead of removing all then adding all, change first elements then add/remove the rest
+		this.$.empty();
 		for(var itemID in items) if(items.hasOwnProperty(itemID))
-			this.$.append(this._ItemOption(itemID, items[itemID]));
+			this.$.append(this._genItemOption(itemID, items[itemID]));
 		this.$.SelectMenu('refresh');
 	}
-	getSelectedItem(){
+	getSelected(){
 		return this.$.val()
 	}
-	setSelectedItem(id){
+	setSelected(id){
 		this.$.val(id);
 		this.$.SelectMenu('refresh');
+	}
+
+	onchange(callback){
+		this.opt.change = callback;
 	}
 }

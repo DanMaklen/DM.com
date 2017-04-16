@@ -5,25 +5,17 @@
 	display: flex;
 	flex-flow: column;
 }
-.greyed-out{
-	opacity: 0.35;
-}
 .inline{
 	display: inline-block;
 }
-.shadowBorder{
-	border-radius: 0.3em;
-	border-width: 0.1em;
-	padding: 0.1em 0.1em 0.1em 0.1em;
-	border-color: lightgrey;
-	border-style: solid;
-	box-shadow: 0.1em 0.1em 0.1em lightgrey;
+.float-right{
+	float: right;
 }
 
-.spinner:focus{
-	outline-width: 0px;
+.greyed-out{
+	opacity: 0.35;
 }
-
+/*
 .BuildForm{
 	display: none;
 }
@@ -53,10 +45,8 @@ fieldset > * {
 .dialog #settings > div > * {
 	display: inline-block;
 }
-#Factory .tree{
-	flex: 1;
-	overflow: auto;
-}
+*/
+
 #Factory{
 	flex: 1;
 	flex-flow: column;
@@ -64,18 +54,43 @@ fieldset > * {
 	height: 100%;
 	margin-right: 0.5em;
 }
-#sidebar{
+#Factory .tree{
+	flex: 1;
+	overflow: auto;
+}
+
+#Sidebar{
 	width: 45%;
 	height: 100%;
 	margin-left: 0.5em;
 }
-#Control{
-	flex: 1;
-	margin-bottom: 0.5;
+#Sidebar #Toolbar{
+	/*margin-bottom: 0.1em;*/
 }
+
+#Control{
+	flex: 2;
+	margin-top: 0.1em;
+	margin-bottom: 0.2em;
+	overflow: auto;
+}
+#Control > div{
+	display: block;
+}
+#Control > div > *{
+	margin-top: 0.15em;
+	margin-bottom: 0.15em;
+}
+
+#Control #Beacon > *,
+#Control #Machine > *{
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+}
+
 #TotalBuild{
 	flex: 1;
-	margin-top: 0.5;
+	margin-top: 0.2em;
 	overflow: auto;
 }
 #TotalBuild > fieldset {

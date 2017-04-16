@@ -26,7 +26,7 @@ class FactoryTree{
 	}
 	_getBeaconHTML(count, module){
 		if(!count || !module || !module.length) return '';
-		return  ' ' + settings.round(count) + ':'
+		return  ' ' + settings.round(count) + '*'
 			+	this._getIconHTML(db.getItemIcon('Beacon'), this._getModuleOverlay(module))
 			;
 	}
@@ -83,7 +83,10 @@ class FactoryTree{
 				ElectricityBuild: self.tree.get_node('ElectricityBuild'),
 				ScienceBuild: self.tree.get_node('ScienceBuild'),
 			}
-		})
+		});
+		this.$.on('changed.jstree', function(e, data){
+			control.setBuild(data.node.data);
+		});
 		this.tree = this.$.jstree(true);
 	}
 
@@ -108,7 +111,8 @@ class FactoryTree{
 			text: this.getItemText(build),
 			state: {
 				opened: true
-			}
+			},
+			data: build
 		}
 	}
 	newRecipeNodeJSON(build){
@@ -116,8 +120,9 @@ class FactoryTree{
 			id: build.treeNodeID,
 			text: this.getRecipeText(build),
 			state: {
-				opened: true
-			}
+			opened: true
+			},
+			data: build
 		}
 	}
 	updateText(nodeID, text){
@@ -126,53 +131,43 @@ class FactoryTree{
 	redraw(nodeID){
 		this.tree.redraw(true);
 	}
+	getSelectedBuild(){
+		console.log(this.tree.get_selected(true));
+		return this.tree.get_selected(true).build;
+	}
 }
 
 class Factory {
-	/*	Build Node Example
-	{
-		treeNodeID: 'nodeID',
-		itemID: info.itemID,
-		recipeID: 'AdvancedOilProcessing',	//Currently for testing. Should be null.
-		byProduct: {						//Currently for testing. Should be null.
-			'SpeedModule1': 4,
-			'CrudeOil': 2.4
-		},
-		rate: info.rate,
-		machineCount: 1,
-		machineConfig: {					//Currently for testing. Should be null.
-			machineID: 'AssemblingMachine2',
-			module: [
-				'EfficiencyModule3',
-				'noModule',
-				null,
-				null
-			],
-			beacon: {
-				count: 8,
-				module: [
-					'SpeedModule3',
-					'ProductivityModule3'
-				]
-			}
-		},
-		child: []
-	}
-	*/
-	_newBuildNode(){
+	_newBuildNode(parent){
 		return {
+			parentBuild: parent,
 			treeNodeID: null,
 			itemID: null,
 			recipeID: null,
 			byProduct: null,
-			rate: null,
-			machineCount: null,
-			machineConfig: null,
+			rate: 0,
+			machineCount: 1,
+			machineConfig: {
+				machineID: null,
+				module: [
+					null,
+					null,
+					null,
+					null
+				],
+				beacon: {
+					count: 0,
+					module: [
+						null,
+						null
+					]
+				}
+			},
 			child: []
 		}
 	}
 	_newBuild_Item(parent, info){
-		var build = this._newBuildNode();
+		var build = this._newBuildNode(parent);
 
 		build.itemID = info.itemID;
 		build.rate = info.rate;
@@ -184,7 +179,7 @@ class Factory {
 		);
 	}
 	_newBuild_Recipe(parent, info){
-		var build = this._newBuildNode();
+		var build = this._newBuildNode(parent);
 
 		build.recipeID = info.recipeID;
 		build.machineCount = info.machineCount

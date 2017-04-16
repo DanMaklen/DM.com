@@ -1,72 +1,64 @@
 class TabbedIconSelect{
 	_initItem(itemID){
-		return Icon.newIcon(this.opt.getIcon_func(itemID), {}, {
-				width: this.opt.style.icon_size.width,
-				height: this.opt.style.icon_size.height
-			}).get$()
+		return Icon.gen(this.opt.getIcon_func(itemID), {}, this.opt.style.icon_size).get$()
 			.attr('id', itemID)
 			.addClass('TabbedIconSelect-selectable')
-			.css({
-				'margin': '0.2em'
-			});
+			;
 	}
-	_initSubCatigory(subCatigory){
+	_initSubCategory(subCategory){
 		var subdiv = $('<div>');
-		for(var i = 0; i < subCatigory.length; i++)
+		for(var i = 0; i < subCategory.length; i++)
 			this._initItem(subCatigory[i]).appendTo(subdiv);
 		return subdiv;
 	}
-	_initCatigory(id, itemCatigory){
+	_initCategory(id, itemCategory){
 		this.$header.append(
 			$('<li>').attr('id', 'header_'+id).append(
 				$('<a>').attr('href', '#content_'+id).text(
-					itemCatigory.label
+					itemCategory.label
 				)
 			)
 		);
 
 		var content = $('<div>').attr('id', 'content_'+id).appendTo(this.$content);
-		for(var i = 0; i < itemCatigory.subCatigories.length; i++)
-			this._initSubCatigory(itemCatigory.subCatigories[i]).appendTo(content)
+		for(var i = 0; i < itemCategory.subCategories.length; i++)
+			this._initSubCatigory(itemCategory.subCategories[i]).appendTo(content)
 	}
 	_init(){
-		for(var i = 0; i < this.opt.itemCatigories.length; i++)
-			this._initCatigory(i, this.opt.itemCatigories[i])
+		for(var i = 0; i < this.opt.itemCategories.length; i++)
+			this._initCatigory(i, this.opt.itemCategories[i])
 	}
 
-	constructor(id, options){
+	constructor(div, options){
 		var self = this;
 		this.opt = $.extend({
-			parentSelector: '',
 			style:{
 				icon_size:{
 					width: '32px',
 					height: '32px'
 				}
 			},
-			itemCatigories: [],
+			itemCategories: [],
+
 			getIcon_func: function(itemID){return 'icon/missing.png';},
 			change: function(itemID){}
 		}, options);
 
-		this.$ = $(this.opt.parentSelector+' .TabbedIconSelect#'+id);
+		this.$ = div;
 		this.$header = this.$.find('.header');
 		this.$content = this.$
 
 		this._init();
 
 		this.selected = null;
-		$('.TabbedIconSelect-selectable').click(function(){
-			$('.TabbedIconSelect-selectable#'+self.selectedID).removeClass('TabbedIconSelect-item-selected');
+		self.$.find('.TabbedIconSelect-selectable').click(function(){
+			self.$.find('.TabbedIconSelect-item-selected').removeClass('TabbedIconSelect-item-selected');
 			$(this).addClass('TabbedIconSelect-item-selected');
 			self.selectedID = $(this).attr('id');
 			self.opt.change(self.selectedID);
 		})
 
-		this.$.tabs({
-			event: 'click',
-			heightStyle: 'content'
-		})
+		this.$.tabs();
 	}
 
 	getSelectedItem(){
