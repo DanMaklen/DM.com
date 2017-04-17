@@ -2,7 +2,7 @@ class Toolbar{
 	constructor(){
 		this.$ = $('#Sidebar #Toolbar');
 
-		this.$.find('#newBuild').button({
+		this.$newBuild = this.$.find('#newBuild').button({
 			icon: 'ui-icon-circle-plus',
 			showLabel: false
 		}).click(function(e){
@@ -11,14 +11,18 @@ class Toolbar{
 			});
 		});
 
-		this.$.find('#apply').button().click(function(e){});
+		this.$apply = this.$.find('#apply').button({
+			disabled: true
+		}).click(function(e){
+			factory.updateSelectedBuild(buildEdit.getValue());
+		});
 
-		this.$.find('#rmBuild').button({
+		this.$rmBuild = this.$.find('#rmBuild').button({
 			icon: 'ui-icon-circle-minus',
 			showLabel: false
 		}).click(function(e){});
 
-		this.$.find('#settings').button({
+		this.$settings = this.$.find('#settings').button({
 			icon: 'ui-icon-gear',
 			showLabel: false
 		}).click(function(e){

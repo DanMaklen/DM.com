@@ -96,6 +96,9 @@ class BuildEdit {
 		this.$rate.onchange(function(rate){
 			self._updateMachineCount();
 		})
+		this.$rateUnit.onchange(function(unit){
+			self._updateMachineCount();
+		})
 
 		this.$recipe.onchange(function(recipeID){
 			self.$machine.setItems(self._genSelectMenuItems(
@@ -103,36 +106,48 @@ class BuildEdit {
 				'machine'
 			));
 			self._updateModuleStatus();
-			self._updateRate_perMachine();
-			self._updateMachineCount()
+
+			if(self.build.itemID){
+				self._updateRate_perMachine();
+				self._updateMachineCount()
+			}
 		});
 
 		this.$machineCount.onchange(function(machineCount){
-			self.$rate.setValue(machineCount * self.rate_perMachine);
+			if(self.build.itemID) self.$rate.setValue(machineCount * self.rate_perMachine);
 		});
 		this.$machine.onchange(function(machineID){
 			self._updateModuleStatus();
-			self._updateRate_perMachine();
-			self._updateMachineCount();
+			if(self.build.itemID){
+				self._updateRate_perMachine();
+				self._updateMachineCount();
+			}
 		});
 		for(var i = 0; i < 4; i++) this.$machineModule[i].onchange(function(moduleID){
-			self._updateRate_perMachine();
-			self._updateMachineCount();
+			if(self.build.itemID){
+				self._updateRate_perMachine();
+				self._updateMachineCount();
+			}
 		});
 
 		this.$beaconCount.onchange(function(recipeID){
-			self._updateRate_perMachine();
-			self._updateMachineCount();
+			if(self.build.itemID){
+				self._updateRate_perMachine();
+				self._updateMachineCount();
+			}
 		});
 		this.$beacon.onchange(function(beaconID){
-			self._updateRate_perMachine();
-			self._updateMachineCount();
+			if(self.build.itemID){
+				self._updateRate_perMachine();
+				self._updateMachineCount();
+			}
 		});
 		for(var i = 0; i < 2; i++) this.$beaconModule[i].onchange(function(moduleID){
-			self._updateRate_perMachine();
-			self._updateMachineCount();
+			if(self.build.itemID){
+				self._updateRate_perMachine();
+				self._updateMachineCount();
+			}
 		})
-
 	}
 	constructor(){
 		this.build = null;
@@ -148,14 +163,19 @@ class BuildEdit {
 	}
 	enable(){
 		this._enable(this.$);
+		toolbar.$apply.button('enable');
 	}
 	_disable(obj){
 		obj.addClass('disabled');
 	}
 	disable(){
 		this._disable(this.$);
+		toolbar.$apply.button('disable');
 	}
 
+	_getRateValue(){
+		return this.$rate.getValue() * this.$rateUnit.getSelected();
+	}
 	_updateRate_perMachine(){
 		var config = this.getValue();
 		config.machineConfig.count = 1;
@@ -167,7 +187,7 @@ class BuildEdit {
 		);
 	}
 	_updateMachineCount(){
-		this.$machineCount.setValue(this.$rate.getValue()/this.rate_perMachine);
+		this.$machineCount.setValue(this._getRateValue()/this.rate_perMachine);
 	}
 	_updateModuleStatus(){
 		var recipe = factorio.getRecipe(this.$recipe.getSelected());
@@ -182,12 +202,12 @@ class BuildEdit {
 	}
 
 	setSelectedBuild(build){
-		if(!build || (!build.itemID && !build.recipeID)) return this._disable(this.$);
-		else this._enable(this.$);
 		this.build = build;
+		if(!build || (!build.itemID && !build.recipeID)) return this.disable();
+		else this.enable();
 
 		//Item
-		this.$rate.setValue(1);
+		this.$rate.setValue(build.rate);
 		this.$rateUnit.setSelected(settings.config.rateUnit);
 		this.$itemIcon.setIconAt('main',
 			build.itemID
@@ -212,7 +232,7 @@ class BuildEdit {
 		if(build.machineConfig.machineID) this.$machine.setSelected(build.machineConfig.machineID, false);
 		this.$machine.refresh();
 		for(var i = 0; i < 4; i++)
-			this.$machineModule[i].setSelected(build.machineConfig.module[i] || 'noModule', false);
+			this.$machineModule[i].setSelected(build.machineConfig.module[i] || 'noModule');
 
 		//Beacon Configuration
 		this.$beaconCount.setValue(build.beaconConfig.count);
@@ -222,8 +242,7 @@ class BuildEdit {
 		//Sync Rate and Machine Count Value
 		if(build.itemID){
 			this._updateRate_perMachine();
-			if(build.recipeID) this.$rate = this.rate_perMachine * build.machineConfig.count;
-			else this._updateMachineCount();
+			if(!build.recipeID) this._updateMachineCount();
 		}
 
 		if(build.itemID) this._enable(this.$item);
@@ -233,6 +252,7 @@ class BuildEdit {
 	}
 
 	_validate(config){
+		if(!config) return false;
 		var recipe = factorio.getRecipe(config.recipeID);
 		var machine = factorio.getMachine(config.machineConfig.machineID);
 		for(var i = 0; i < 4; i++){
@@ -244,8 +264,10 @@ class BuildEdit {
 		return config;
 	}
 	getValue(){
+		if(!this.build) return false;
 		return this._validate({
 			recipeID: this.$recipe.getSelected(),
+			rate: this._getRateValue(),
 			machineConfig: {
 				count: eval(this.$machineCount.getValue()),
 				machineID: this.$machine.getSelected(),

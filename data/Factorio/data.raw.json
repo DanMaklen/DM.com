@@ -25,6 +25,7 @@
 
 	"module": {
 		"noModule": {
+			"icon": "blank.png",
 			"speed": 0,
 			"productivity": 0,
 			"energyConsumption": 0,

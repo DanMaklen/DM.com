@@ -6,35 +6,49 @@ class Icon{
 			icon: overlay
 		});
 	}
+	static getIconList(){
+		return ['main', 'top_left', 'top_right', 'bottom_left', 'bottom_right'];
+	}
 
 	_init(main){
 		this.$icon = {
-			main: this.$
-				.css({
-					'width': this.opt.style.icon_size.width,
-					'height': this.opt.style.icon_size.height
-				}),
-			top_left: $('<div>').appendTo(this.$main)
-				.addClass('Icon')
-				.addClass('Icon-overlay')
-				.addClass('Icon-top')
-				.addClass('Icon-left'),
-			top_right: $('<div>').appendTo(this.$main)
-				.addClass('Icon')
-				.addClass('Icon-overlay')
-				.addClass('Icon-top')
-				.addClass('Icon-right'),
-			bottom_left: $('<div>').appendTo(this.$main)
-				.addClass('Icon')
-				.addClass('Icon-overlay')
-				.addClass('Icon-bottom')
-				.addClass('Icon-left'),
-			bottom_right: $('<div>').appendTo(this.$main)
-				.addClass('Icon')
-				.addClass('Icon-overlay')
-				.addClass('Icon-bottom')
-				.addClass('Icon-right')
+			main: this.$,
+			top_left: $('<div>'),
+			top_right: $('<div>'),
+			bottom_left: $('<div>'),
+			bottom_right: $('<div>')
 		};
+
+		this.$icon.main
+			.css({
+				'width': this.opt.style.icon_size.width,
+				'height': this.opt.style.icon_size.height
+			})
+			;
+		this.$icon.top_left.appendTo(this.$icon.main)
+			.addClass('Icon')
+			.addClass('Icon-overlay')
+			.addClass('Icon-top')
+			.addClass('Icon-left')
+			;
+		this.$icon.top_right.appendTo(this.$icon.main)
+			.addClass('Icon')
+			.addClass('Icon-overlay')
+			.addClass('Icon-top')
+			.addClass('Icon-right')
+			;
+		this.$icon.bottom_left.appendTo(this.$icon.main)
+			.addClass('Icon')
+			.addClass('Icon-overlay')
+			.addClass('Icon-bottom')
+			.addClass('Icon-left')
+			;
+		this.$icon.bottom_right.appendTo(this.$icon.main)
+			.addClass('Icon')
+			.addClass('Icon-overlay')
+			.addClass('Icon-bottom')
+			.addClass('Icon-right')
+			;
 	}
 	_renderIconAt(pos, icon){
 		this.$icon[pos].css('background-image', 'url('+(icon||'')+')');
@@ -60,7 +74,7 @@ class Icon{
 				bottom_right: null
 			}
 		}, options);
-		this.icon_lst = ['main', 'top_left', 'top_right', 'bottom_left', 'bottom_right'];
+		this.icon_lst = Icon.getIconList();
 
 		this.$ = div.addClass('Icon');
 		this._init();
