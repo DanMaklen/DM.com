@@ -6,7 +6,7 @@ class Dialog_Settings{
 				60: {label: '/min'},
 				3600: {label: '/hour'}
 			},
-			default: 1
+			default: settings.config.rateUnit
 		});
 		this.$percision = new SelectMenu(this.$.find('#Percision'), {
 			items: {
@@ -16,11 +16,7 @@ class Dialog_Settings{
 				3: {label: 0.001},
 				4: {label: 0.0001}
 			},
-			default: 2
-		});
-		this.$crudeOilYield = new Spinner(this.$.find('#CrudeOilYield'), {
-			min: 0,
-			default: 0.1
+			default: settings.config.percision
 		});
 		this.$crudeOilYieldUnit = new SelectMenu(this.$.find('#CrudeOilYieldUnit'), {
 			items: {
@@ -28,15 +24,15 @@ class Dialog_Settings{
 				60: {label: '/min'},
 				3600: {label: '/hour'}
 			},
-			default: 1
+			default: settings.config.rateUnit
 		});
 		this.$recipeDifficulty = new SelectMenu(this.$.find('#RecipeDifficulty'), {
 			items: {'normal': {label: 'Normal'}},
-			default: 'normal'
+			default: settings.config.recipeDifficulty
 		});
 		this.$scienceDifficulty = new SelectMenu(this.$.find('#ScienceDifficulty'), {
 			items: {'normal': {label: 'Normal'}},
-			default: 'normal'
+			default: settings.config.scienceDifficulty
 		});
 	}
 	constructor(){
@@ -48,7 +44,7 @@ class Dialog_Settings{
 			modal: true,
 			resizable: false,
 			buttons: {
-				'Apply': function(){self._OK();},
+				'Set': function(){self._OK();},
 				'Cancle': function(){self.$.dialog('close');}
 			}
 		});
@@ -56,7 +52,7 @@ class Dialog_Settings{
 	}
 
 	_OK(){
-		var val = this.getVal();
+		var val = this.getValue();
 		if(val){
 			if(this.callback) this.callback(val);
 			this.$.dialog('close');
@@ -71,11 +67,10 @@ class Dialog_Settings{
 	_validate(val){
 		return val;
 	}
-	getVal(){
+	getValue(){
 		return this._validate({
 			rateUnit: this.$rateUnit.getSelected(),
 			percision: this.$percision.getSelected(),
-			crudeOilYield: this.$crudeOilYield.getValue() * this.$crudeOilYieldUnit.getSelected(),
 			recipeDifficulty: this.$recipeDifficulty.getSelected(),
 			scienceDifficulty: this.$scienceDifficulty.getSelected()
 		});
@@ -85,7 +80,7 @@ class Dialog_Settings{
 class Dialog_NewBuild{
 	_init(){
 		var self = this;
-		this.buildType = new SelectMenu(this.$.find('#BuildType'), {
+		this.$buildType = new SelectMenu(this.$.find('#BuildType'), {
 			items: {
 				'itemBuild': {label: 'Item Build'},
 				'oilBuild': {label: 'Oil Build'},
@@ -105,14 +100,34 @@ class Dialog_NewBuild{
 			}
 		});
 
-		console.log(factorio.getItemCategories());
 		//Item Build:
-			this.item_select = new TabbedIconSelect(this.$.find('#ItemSelect'), {
-				itemCategories: factorio.getItemCategories(),
-				getIcon_func: function(itemID){return factorio.getIcon('item', itemID);}
-			});
-		//Oil Build:
+		this.$item = new TabbedIconSelect(this.$.find('#itemBuild #Item'), {
+			itemCategories: factorio.getItemCategories(),
+			getIcon_func: function(itemID){return factorio.getIcon('item', itemID);}
+		});
 
+		//Oil Build:
+		this.$recipe = new SelectMenu(this.$.find('#oilBuild #Recipe'), {
+			items: {
+				'BasicOilProcessing': {
+					label: factorio.getLabel('recipe', 'BasicOilProcessing', false),
+					icon: factorio.getIcon('recipe', 'BasicOilProcessing', false)
+				},
+				'AdvancedOilProcessing': {
+					label: factorio.getLabel('recipe', 'AdvancedOilProcessing', false),
+					icon: factorio.getIcon('recipe', 'AdvancedOilProcessing', false)
+				},
+				'HeavyOilCracking': {
+					label: factorio.getLabel('recipe', 'HeavyOilCracking', false),
+					icon: factorio.getIcon('recipe', 'HeavyOilCracking', false)
+				},
+				'LightOilCracking': {
+					label: factorio.getLabel('recipe', 'LightOilCracking', false),
+					icon: factorio.getIcon('recipe', 'LightOilCracking', false)
+				}
+			},
+			default: 'BasicOilProcessing'
+		})
 	}
 	constructor(){
 		var self = this;
@@ -123,7 +138,7 @@ class Dialog_NewBuild{
 			modal: true,
 			resizable: false,
 			buttons: {
-				'Apply': function(){self._OK();},
+				'Add': function(){self._OK();},
 				'Cancle': function(){self.$.dialog('close');}
 			}
 		});
@@ -131,7 +146,7 @@ class Dialog_NewBuild{
 	}
 
 	_OK(){
-		var val = this.getVal();
+		var val = this.getValue();
 		if(val){
 			if(this.callback) this.callback(val);
 			this.$.dialog('close');
@@ -144,15 +159,15 @@ class Dialog_NewBuild{
 	}
 
 	_validate(val){
+		if(val.buildTypeID == 'itemBuild') val.recipeID = null;
+		if(val.buildTypeID == 'oilBuild') val.itemID = null;
 		return val;
 	}
-	getVal(){
+	getValue(){
 		return this._validate({
-			rateUnit: this.$rateUnit.getSelected(),
-			percision: this.$percision.getSelected(),
-			crudeOilYield: this.$crudeOilYield.getValue() * this.$crudeOilYieldUnit.getSelected(),
-			recipeDifficulty: this.$recipeDifficulty.getSelected(),
-			scienceDifficulty: this.$scienceDifficulty.getSelected()
+			buildTypeID: this.$buildType.getSelected(),
+			itemID: this.$item.getSelected(),
+			recipeID: this.$recipe.getSelected()
 		});
 	}
 }

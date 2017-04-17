@@ -8,42 +8,40 @@ class Icon{
 	}
 
 	_init(main){
-		this.$main = this.$
-			.css({
-				'width': this.opt.style.icon_size.width,
-				'height': this.opt.style.icon_size.height
-			});
-		this.$top_left = $('<div>').appendTo(this.$main)
-			.addClass('Icon')
-			.addClass('Icon-overlay')
-			.addClass('Icon-top')
-			.addClass('Icon-left')
-			;
-		this.$top_right = $('<div>').appendTo(this.$main)
-			.addClass('Icon')
-			.addClass('Icon-overlay')
-			.addClass('Icon-top')
-			.addClass('Icon-right')
-			;
-		this.$bottom_left = $('<div>').appendTo(this.$main)
-			.addClass('Icon')
-			.addClass('Icon-overlay')
-			.addClass('Icon-bottom')
-			.addClass('Icon-left')
-			;
-		this.$bottom_right = $('<div>').appendTo(this.$main)
-			.addClass('Icon')
-			.addClass('Icon-overlay')
-			.addClass('Icon-bottom')
-			.addClass('Icon-right')
-			;
+		this.$icon = {
+			main: this.$
+				.css({
+					'width': this.opt.style.icon_size.width,
+					'height': this.opt.style.icon_size.height
+				}),
+			top_left: $('<div>').appendTo(this.$main)
+				.addClass('Icon')
+				.addClass('Icon-overlay')
+				.addClass('Icon-top')
+				.addClass('Icon-left'),
+			top_right: $('<div>').appendTo(this.$main)
+				.addClass('Icon')
+				.addClass('Icon-overlay')
+				.addClass('Icon-top')
+				.addClass('Icon-right'),
+			bottom_left: $('<div>').appendTo(this.$main)
+				.addClass('Icon')
+				.addClass('Icon-overlay')
+				.addClass('Icon-bottom')
+				.addClass('Icon-left'),
+			bottom_right: $('<div>').appendTo(this.$main)
+				.addClass('Icon')
+				.addClass('Icon-overlay')
+				.addClass('Icon-bottom')
+				.addClass('Icon-right')
+		};
+	}
+	_renderIconAt(pos, icon){
+		this.$icon[pos].css('background-image', 'url('+(icon||'')+')');
 	}
 	_renderIcon(){
-		this.$main.css('background-image', 'url('+(this.opt.icon.main||'')+')');
-		this.$top_left.css('background-image', 'url('+(this.opt.icon.top_left||'')+')');
-		this.$top_right.css('background-image', 'url('+(this.opt.icon.top_right||'')+')');
-		this.$bottom_left.css('background-image', 'url('+(this.opt.icon.bottom_left||'')+')');
-		this.$bottom_right.css('background-image', 'url('+(this.opt.icon.bottom_right||'')+')');
+		for(var i = 0; i < this.icon_lst.length; i++)
+			this._renderIconAt(this.icon_lst[i], this.opt.icon[this.icon_lst[i]]);
 	}
 
 	constructor(div, options){
@@ -62,18 +60,20 @@ class Icon{
 				bottom_right: null
 			}
 		}, options);
+		this.icon_lst = ['main', 'top_left', 'top_right', 'bottom_left', 'bottom_right'];
 
 		this.$ = div.addClass('Icon');
 		this._init();
+
 		this._renderIcon();
 	}
 
 	setIconAt(ind, icon){
-		var map = ['main', 'top_left', 'top_right', 'bottom_left', 'bottom_right'];
-		if(!this.opt.icons.hasOwnProperty(ind))
-			ind = map[ind];
-		this.opt.icon[ind] = icon;
-		_renderIcon()
+		var pos = ind;
+		if(!this.opt.icon.hasOwnProperty(ind))
+			pos = map[ind];
+		this.opt.icon[pos] = icon;
+		this._renderIconAt(pos, icon);
 	}
 	setIcon(icon = {}){
 		this.opt.icon = $.extend(this.opt.icon, icon);

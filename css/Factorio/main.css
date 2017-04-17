@@ -1,6 +1,11 @@
 .flex{
 	display: flex;
 }
+.float-right{
+	float: right;
+}
+
+
 .flex-column{
 	display: flex;
 	flex-flow: column;
@@ -8,44 +13,9 @@
 .inline{
 	display: inline-block;
 }
-.float-right{
-	float: right;
-}
-
 .greyed-out{
 	opacity: 0.35;
 }
-/*
-.BuildForm{
-	display: none;
-}
-.BuildForm.ActiveBuildType{
-	display: block;
-}
-
-.dialog{
-	text-align: center;
-}
-.dialog#settings > *,
-.dialog#machineSelect > *,
-.dialog#newBuild > fieldset > div > * {
-	margin-bottom: 0.3em;
-	margin-top: 0.3em;
-	display: block;
-}
-
-fieldset > * {
-	margin-top: 0.3em;
-	margin-top: 0.3em;
-}
-.dialog #machineConfig > * {
-	margin-left: 0.3em;
-	margin-right: 0.3em;
-}
-.dialog #settings > div > * {
-	display: inline-block;
-}
-*/
 
 #Factory{
 	flex: 1;

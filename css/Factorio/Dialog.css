@@ -4,3 +4,11 @@
 .BuildForm.ActiveBuildForm{
 	display: block;
 }
+
+.dialog{
+	text-align: center;
+}
+.dialog > * {
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+}

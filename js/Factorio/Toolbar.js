@@ -7,8 +7,7 @@ class Toolbar{
 			showLabel: false
 		}).click(function(e){
 			dialog_newBuild.open(function(build){
-				console.log(build);
-			 	//factory.newBuild(build);
+			 	factory.newBuild(build);
 			});
 		});
 

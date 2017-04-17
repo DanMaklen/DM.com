@@ -61,7 +61,7 @@ class TabbedIconSelect{
 		this.$.tabs();
 	}
 
-	getSelectedItem(){
+	getSelected(){
 		return this.selectedID;
 	}
 }

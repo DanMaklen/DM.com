@@ -18,8 +18,10 @@
 	<script type="text/javascript" src="js/Plugins/TabbedIconSelect.js"></script>
 
 	<link rel="stylesheet" href="css/Factorio/Dialog.css" type="text/css"/>
+	<link rel="stylesheet" href="css/Factorio/BuildEdit.css" type="text/css"/>
 	<link rel="stylesheet" href="css/Factorio/main.css" type="text/css"/>
 	<script type="text/javascript" src="js/Factorio/Factorio.js"></script>
+	<script type="text/javascript" src="js/Factorio/BuildEdit.js"></script>
 	<script type="text/javascript" src="js/Factorio/Toolbar.js"></script>
 	<script type="text/javascript" src="js/Factorio/Dialog.js"></script>
 	<script type="text/javascript" src="js/Factorio/Factory.js"></script>
@@ -29,43 +31,28 @@
 	<div class="dialog" id="Settings" title="Settings">
 		<div>Rate Unit: <select id="RateUnit"></select></div>
 		<div>Percision: <select id="Percision"></select></div>
-		<div>Crude Oil Yield: <input id="CrudeOilYield"> <select id="CrudeOilYieldUnit"></select></div>
 		<div>Recipe Difficulty: <select id="RecipeDifficulty"></select></div>
 		<div>Science Difficulty: <select id="ScienceDifficulty"></select></div>
 	</div>
 	<div class="dialog" id="NewBuild" title="New Build">
 		<fieldset>
 			<legend>
-				<label class="inline" for="BuildType">Build Type:</label>
-				<select class="SelectMenu" id="BuildType"></select>
+				<label for="BuildType">Build Type:</label>
+				<select id="BuildType"></select>
 			</legend>
 			<div class="BuildForm ActiveBuildForm" id="itemBuild">
-				<div id="ItemSelect">
-					<ul class="header"></ul>
-				</div>
+				<div id="Item"><ul class="header"></ul></div>
 			</div>
 			<div class="BuildForm" id="oilBuild">
-				<select class='SelectMenu' id="RecipeSelect"></select>
-				<div class="inline">
-					<label for="OilCount">Count:</label>
-					<input class="spinner" id="OilCount">
-				</div>
-				<div id="MachineConfig">
-					<div class="inline">
-						<div class="inline" id="MachineInfo">
-							<div class="Icon" id="MachineIcon"></div>
-							<label id="beaconCount"></label>
-							<div class="Icon" id="BeaconIcon"></div>
-						</div>
-						<button class="btn" id="OilMachine"></button>
-					</div>
-				</div>
+				<select id="Recipe"></select>
 			</div>
 		</fieldset>
 	</div>
+
 	<div id="Factory">
-		<div class="tree" id="Build"></div>
+		<div id="BuildTree"></div>
 	</div>
+
 	<div class="flex-column" id="Sidebar">
 		<div id="Toolbar">
 			<button id="newBuild">New Build</button>
@@ -73,36 +60,33 @@
 			<button id="apply">Apply</button>
 			<button class="float-right" id="settings">change Settings</button>
 		</div>
-		<div id="Control">
-			<div id="machineConfig">
-				<div>
-					<input class="spinner" id="Rate"> <label id="RateLabel"></label>
-					<select class="SelectMenu" id="recipeSelect"></select>
-				</div>
-				<div>
-					<label>Machine Count: </label> <input class="spinner" id="machineCount">
-				</div>
-				<div id="Machine">
-					<select class="SelectMenu" id="machineSelect"></select>
-					<div id="Module">
-						<select class="SelectMenu inline" id="module1"></select>
-						<select class="SelectMenu inline" id="module2"></select>
-						<select class="SelectMenu inline" id="module3"></select>
-						<select class="SelectMenu inline" id="module4"></select>
-					</div>
-				</div>
-				<div id="Beacon">
-					<div>
-						<label for="beaconCount">Beacon Count:</label>
-						<input class="spinner" id="beaconCount">
-					</div>
-					<div class="inline" id="Module">
-						<select class="SelectMenu inline" id="module1"></select>
-						<select class="SelectMenu inline" id="module2"></select>
-					</div>
-					</fieldset>
-				</div>
+		<div id="BuildEdit">
+			<div id="Item">
+				<input id="Rate">
+				<select id="RateUnit"></select>
+				<div id="ItemIcon"></div>
 			</div>
+			<select id="Recipe"></select>
+			<fieldset id="MachineConfig">
+				<legend>Machine Configuration:</legend>
+				<input id="MachineCount"> * <select id="Machine"></select>
+				<fieldset id="MachineModule">
+					<legend>Modules:</legend>
+					<select id="Module1"></select>
+					<select id="Module2"></select>
+					<select id="Module3"></select>
+					<select id="Module4"></select>
+				</fieldset>
+			</fieldset>
+			<fieldset id="BeaconConfig">
+				<legend>Beacon Configuration:</legend>
+				<input id="BeaconCount"> * <select id="Beacon"></select>
+				<fieldset id="BeaconModule">
+					<legend>Modules:</legend>
+					<select id="Module1"></select>
+					<select id="Module2"></select>
+				</fieldset>
+			</fieldset>
 		</div>
 		<div id="TotalBuild">
 			<button class="btn" id="refreshTotal">Refresh Total</button>

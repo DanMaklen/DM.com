@@ -44,14 +44,14 @@ class Factorio{
 		if(!this.data[type].hasOwnProperty(id)) return '<<null>>';
 		var val = this.data[type][id];
 		if(val.hasOwnProperty('label') && val['label']) return val['label'];
-		if(checkItem && type != 'item') return this._getLabel('item', id, false);
+		if(checkItem && type != 'item') return this.getLabel('item', id, false);
 		return 'MissingLabel';
 	}
 	getIcon(type, id, checkItem=true){
 		if(!this.data[type].hasOwnProperty(id)) return '';
 		var val = this.data[type][id];
-		if(val.hasOwnProperty('icon') && val['icon']) return val['icon'];
-		if(checkItem && type != 'item') return this._getIcon('item', id, false);
+		if(val.hasOwnProperty('icon') && val['icon']) return 'icon/Factorio/'+val['icon'];
+		if(checkItem && type != 'item') return this.getIcon('item', id, false);
 		return 'icon/missing.png';
 	}
 
@@ -99,17 +99,24 @@ class Factorio{
 		return energyConsumption * activeRatio * pollution;
 	}
 
-	calcProductBaseRate(itemID, recipeID){
+	calcBaseRate_Product(itemID, recipeID){
 		var recipe = this.getRecipe(recipeID);
 		if(!itemID || !recipe || !recipe.product.hasOwnProperty(itemID)) return 0;
 		return recipe.product[itemID] / recipe.craftTime;
 	}
-	calcIngredientBaseRate(itemID, recipeID){
+	calcBaseRate_Ingredient(itemID, recipeID){
 		var recipe = this.getRecipe(recipeID);
 		if(!itemID || !recipe || !recipe.ingredient.hasOwnProperty(itemID)) return 0;
 		return recipe.ingredient[itemID] / recipe.craftTime;
 	}
-	calcProductRate(recipeID, machineConfig, beaconCount=null){
+	calcBaseRate(itemID, recipeID){
+		return {
+			product: this.calcBaseRate_Product(itemID, recipeID),
+			ingredient: this.calcBaseRate_Ingredient(itemID, recipeID)
+		}
+	}
+
+	calcRate_Product(recipeID, machineConfig, beaconConfig=null){
 		var recipe = this.getRecipe(recipeID);
 		if(!recipe || !machineConfig || $.inArray(machineConfig.machineID, recipe.machine) == -1) return {};
 		var machine = this.getMachine(machineConfig.machineID);
@@ -119,15 +126,12 @@ class Factorio{
 		var productivity = this.calcStat('productivity', machineConfig, beaconConfig);
 		var multiplier = hardness * speed * productivity * machineConfig.count;
 
-		//Special Case!! Might be better to think of a way to generalize this one.
-		if(recipeID == 'CrudeOil') multiplier *= settings.config.crudeOilYield;
-
 		var rate = {};
 		for(var itemID in recipe.product) if(recipe.product.hasOwnProperty(itemID))
-			rate[itemID] = this.calcProductBaseRate(itemID, recipeID) * multiplier;
+			rate[itemID] = this.calcBaseRate_Product(itemID, recipeID) * multiplier;
 		return rate;
 	}
-	calcIngredientRate(recipeID, machineConfig, beaconConfig=null){
+	calcRate_Ingredient(recipeID, machineConfig, beaconConfig=null){
 		var recipe = this.getRecipe(recipeID);
 		if(!recipe || !machineConfig || $.inArray(machineConfig.machineID, recipe.machine) == -1) return {};
 		var machine = this.getMachine(machineConfig.machineID);
@@ -138,13 +142,34 @@ class Factorio{
 
 		var rate = {};
 		for(var itemID in recipe.ingredient) if(recipe.ingredient.hasOwnProperty(itemID))
-			rate[itemID] = this.calcIngredientBaseRate(itemID, recipeID) * multiplier;
+			rate[itemID] = this.calcBaseRate_Ingredient(itemID, recipeID) * multiplier;
 		return rate;
 	}
 	calcRate(recipeID, machineConfig, beaconConfig=null){
 		return {
-			product: this.calcProductRate(recipeID, machineConfig, beaconConfig),
-			ingredient: this.calcIngredientRate(recipeID, machineConfig, beaconConfig)
+			product: this.calcRate_Product(recipeID, machineConfig, beaconConfig),
+			ingredient: this.calcRate_Ingredient(recipeID, machineConfig, beaconConfig)
 		}
+	}
+
+	calcItemRate_Product(itemID, recipeID, machineConfig, beaconConfig=null){
+		return this.calcRate_Product(recipeID, machineConfig, beaconConfig)[itemID]
+	}
+	calcItemRate_Ingredient(itemID, recipeID, machineConfig, beaconConfig=null){
+		return this.calcRate_Ingredient(recipeID, machineConfig, beaconConfig)[itemID]
+	}
+	calcItemRate(itemID, recipeID, machineConfig, beaconConfig=null){
+		return {
+			product: this.calcItemRate_Product(itemID, recipeID, machineConfig, beaconConfig),
+			ingredient: this.calcItemRate_Ingredient(itemID, recipeID, machineConfig, beaconConfig)
+		}
+	}
+
+	isProductivityModule(moduleID){
+		return $.inArray(moduleID, [
+		   'ProductivityModule1',
+		   'ProductivityModule2',
+		   'ProductivityModule3',
+	   ]) != -1
 	}
 }

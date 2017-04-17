@@ -2,13 +2,12 @@ class SelectMenu{
 	_defWidget(){
 		var self = this;
 		$.widget('custom.SelectMenu', $.ui.selectmenu, {
-			_renderItem: function(parent, item){
+			_renderItem: function(parent, v){
 				var li = $('<li>');
-				var div = self._genItemDiv(item.value);
-				var item = self.opt.items[item.value];
+				var div = self._genItemDiv(v.value);
+				var item = self.opt.items[v.value];
 				if(item.hasOwnProperty('disabled') && item.disabled)
 					li.addClass('SelectMenu-item-disabled');
-
 				return li.append(div).appendTo(parent);
 			},
 			_renderButtonItem: function(item){
@@ -74,8 +73,22 @@ class SelectMenu{
 		if(this.opt.default) this.setSelected(this.opt.default);
 	}
 
+	refresh(){
+		this.$.SelectMenu('refresh')
+	}
+
+	enableItems(item, autoRefresh=true){
+		for(var i = 0; i < item.length; i++)
+			this.opt.items[item[i]].disabled=false;
+		if(!autoRefresh) this.$.SelectMenu('refresh');
+	}
 	enable(){
 		this.$.SelectMenu('enable');
+	}
+	disableItems(item, autoRefresh=true){
+		for(var i = 0; i < item.length; i++)
+			this.opt.items[item[i]].disabled=true;
+		if(autoRefresh) this.$.SelectMenu('refresh');
 	}
 	disable(){
 		this.$.SelectMenu('disable');
@@ -88,21 +101,21 @@ class SelectMenu{
 		this.$.SelectMenu('disable');
 		this.$.SelectMenu('refresh');
 	}
-	setItems(items){
+	setItems(items, autoRefresh=true){
 		this.opt.items = items;
 		this.$.SelectMenu(($.isEmptyObject(items)) ? 'disable' : 'enable');
 		//Possibile Optimization: Instead of removing all then adding all, change first elements then add/remove the rest
 		this.$.empty();
 		for(var itemID in items) if(items.hasOwnProperty(itemID))
 			this.$.append(this._genItemOption(itemID, items[itemID]));
-		this.$.SelectMenu('refresh');
+		if(autoRefresh) this.$.SelectMenu('refresh');
 	}
 	getSelected(){
-		return this.$.val()
+		return this.$.val();
 	}
-	setSelected(id){
+	setSelected(id, autoRefresh=true){
 		this.$.val(id);
-		this.$.SelectMenu('refresh');
+		if(autoRefresh) this.$.SelectMenu('refresh');
 	}
 
 	onchange(callback){

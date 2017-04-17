@@ -1,6 +1,4 @@
 .Spinner{
-	display: inline-block;
 	text-align: center;
-	width: auto;
-	max-width: 10em;
+	/*max-width: 10em;*/
 }

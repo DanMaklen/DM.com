@@ -22,4 +22,11 @@ class Spinner{
 	getValue(){
 		return this.$.val();
 	}
+	setValue(val){
+		return this.$.val(val);
+	}
+
+	onchange(callback){
+		this.opt.change = callback;
+	}
 }

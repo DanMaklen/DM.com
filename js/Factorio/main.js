@@ -15,8 +15,6 @@ class Settings{
 			rateUnit: 1,
 			percision: 2,
 
-			crudeOilYield: 0.1,
-
 			recipeDifficulty: 'normal',
 			scienceDifficulty: 'normal'
 		}
@@ -244,15 +242,14 @@ class Control{
 	}
 }
 
-var factorio;
-var settings;
+var factorio, settings;
 
-var dialog_settings;
-var dialog_newBuild;
+var dialog_settings, dialog_newBuild;
 
-var control;
 var factory;
-var dialog_machineSelect;
+
+var toolbar;
+var buildEdit;
 
 $(document).ready(function(){
 	$.getJSON('data/Factorio/data.json', function(data){
@@ -262,13 +259,10 @@ $(document).ready(function(){
 		dialog_settings = new Dialog_Settings();
 		dialog_newBuild = new Dialog_NewBuild();
 
-		var toolbar = new Toolbar();
+		factory = new Factory();
 
-		//factory = new Factory();
-		//control = new Control();
-		//dialog_machineSelect = new Dialog_machineSelect();
-		//dialog_newBuild = new Dialog_newBuild();
-		//dialog_settings = new Dialog_Settings();
+		toolbar = new Toolbar();
+		buildEdit = new BuildEdit();
 
 		DONE();
 	});

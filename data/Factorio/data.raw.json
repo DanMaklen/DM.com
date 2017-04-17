@@ -301,7 +301,8 @@
 		"BasicOilProcessing": {
 			"label": "Basic Oil Processing",
 			"icon": "BasicOilProcessing.png",
-			"craftingTime": 5,
+			"craftTime": 5,
+			"hardness": 0,
 			"ingredient": {
 				"CrudeOil": 10
 			},
@@ -312,12 +313,14 @@
 			},
 			"machine": [
 				"OilRefinery"
-			]
+			],
+			"acceptProductivityModule": true
 		},
 		"AdvancedOilProcessing": {
 			"label": "Advanced Oil Processing",
 			"icon": "AdvancedOilProcessing.png",
-			"craftingTime": 5,
+			"craftTime": 5,
+			"hardness": 0,
 			"ingredient": {
 				"CrudeOil": 10,
 				"Water": 5
@@ -329,12 +332,14 @@
 			},
 			"machine": [
 				"OilRefinery"
-			]
+			],
+			"acceptProductivityModule": true
 		},
 		"HeavyOilCracking": {
 			"label": "Heavy Oil Cracking",
 			"icon": "HeavyOilCracking.png",
-			"craftingTime": 5,
+			"craftTime": 5,
+			"hardness": 0,
 			"ingredient": {
 				"HeavyOil": 4,
 				"Water": 3
@@ -344,12 +349,14 @@
 			},
 			"machine": [
 				"ChemicalPlant"
-			]
+			],
+			"acceptProductivityModule": true
 		},
 		"LightOilCracking": {
 			"label": "Light Oil Cracking",
 			"icon": "LightOilCracking.png",
-			"craftingTime": 5,
+			"craftTime": 5,
+			"hardness": 0,
 			"ingredient": {
 				"LightOil": 3,
 				"Water": 3
@@ -359,11 +366,13 @@
 			},
 			"machine": [
 				"ChemicalPlant"
-			]
+			],
+			"acceptProductivityModule": true
 		},
 
 		"IronAxe": {
-			"craftingTime": 0.5,
+			"craftTime": 0.5,
+			"hardness": 0,
 			"ingredient": {
 				"IronStick": 2,
 				"IronPlate": 3
@@ -376,10 +385,12 @@
 				"AssemblingMachine1",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 		"SteelAxe": {
-			"craftingTime": 0.5,
+			"craftTime": 0.5,
+			"hardness": 0,
 			"ingredient": {
 				"SteelPlate": 5,
 				"IronStick": 2
@@ -392,10 +403,12 @@
 				"AssemblingMachine1",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 		"BurnerMiningDrill": {
-			"craftingTime": 2,
+			"craftTime": 2,
+			"hardness": 0,
 			"ingredient": {
 				"StoneFurnace": 1,
 				"IronPlate": 3,
@@ -408,10 +421,12 @@
 				"Hand_crafting",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 		"ElectricMiningDrill": {
-			"craftingTime": 2,
+			"craftTime": 2,
+			"hardness": 0,
 			"ingredient": {
 				"IronPlate": 10,
 				"IronGearWheel": 5,
@@ -424,10 +439,12 @@
 				"Hand_crafting",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 		"Pumpjack": {
-			"craftingTime": 20,
+			"craftTime": 20,
+			"hardness": 0,
 			"ingredient": {
 				"SteelPlate": 15,
 				"IronGearWheel": 10,
@@ -441,10 +458,12 @@
 				"Hand_crafting",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 		"OffshorePump": {
-			"craftingTime": 0.5,
+			"craftTime": 0.5,
+			"hardness": 0,
 			"ingredient": {
 				"ElectronicCircuit": 2,
 				"Pipe": 1,
@@ -457,10 +476,12 @@
 				"Hand_crafting",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 		"AssemblingMachine1": {
-			"craftingTime": 0.5,
+			"craftTime": 0.5,
+			"hardness": 0,
 			"ingredient": {
 				"ElectronicCircuit": 3,
 				"IronGearWheel": 5,
@@ -473,10 +494,12 @@
 				"Hand_crafting",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 		"AssemblingMachine2": {
-			"craftingTime": 0.5,
+			"craftTime": 0.5,
+			"hardness": 0,
 			"ingredient": {
 				"IronPlate": 9,
 				"ElectronicCircuit": 3,
@@ -490,10 +513,12 @@
 				"Hand_crafting",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 		"AssemblingMachine3": {
-			"craftingTime": 0.5,
+			"craftTime": 0.5,
+			"hardness": 0,
 			"ingredient": {
 				"AssemblingMachine2": 2,
 				"SpeedModule1": 4
@@ -506,10 +531,12 @@
 				"AssemblingMachine1",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 		"StoneFurnace": {
-			"craftingTime": 0.5,
+			"craftTime": 0.5,
+			"hardness": 0,
 			"ingredient": {
 				"Stone": 5
 			},
@@ -521,10 +548,12 @@
 				"AssemblingMachine1",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 		"SteelFurnace": {
-			"craftingTime": 3,
+			"craftTime": 3,
+			"hardness": 0,
 			"ingredient": {
 				"SteelPlate": 8,
 				"StoneBrick": 10
@@ -537,10 +566,12 @@
 				"AssemblingMachine1",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 		"ElectricFurnace": {
-			"craftingTime": 5,
+			"craftTime": 5,
+			"hardness": 0,
 			"ingredient": {
 				"SteelPlate": 15,
 				"StoneBrick": 10,
@@ -553,10 +584,12 @@
 				"Hand_crafting",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 		"OilRefinery": {
-			"craftingTime": 20,
+			"craftTime": 20,
+			"hardness": 0,
 			"ingredient": {
 				"Pipe": 10,
 				"SteelPlate": 15,
@@ -570,10 +603,12 @@
 			"machine": [
 				"Hand_crafting",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 		"ChemicalPlant": {
-			"craftingTime": 10,
+			"craftTime": 10,
+			"hardness": 0,
 			"ingredient": {
 				"SteelPlate": 5,
 				"IronGearWheel": 5,
@@ -587,11 +622,12 @@
 				"Hand_crafting",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 
 		"Water": {
-			"craftingTime": 1,
+			"craftTime": 1,
 			"hardness": 0,
 			"ingredient": {},
 			"product": {
@@ -599,21 +635,24 @@
 			},
 			"machine": [
 				"OffshorePump"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 		"CrudeOil": {
-			"craftingTime": 10,
+			"craftTime": 1,
 			"hardness": 1,
 			"ingredient": {},
 			"product": {
-				"CrudeOil": 1
+				"CrudeOil": 0.1
 			},
 			"machine": [
 				"Pumpjack"
-			]
+			],
+			"acceptProductivityModule": true
 		},
 		"SulfuricAcid": {
-			"craftingTime": 1,
+			"craftTime": 1,
+			"hardness": 0,
 			"ingredient": {
 				"Sulfur": 5,
 				"IronPlate": 1,
@@ -624,13 +663,15 @@
 			},
 			"machine": [
 				"ChemicalPlant"
-			]
+			],
+			"acceptProductivityModule": true
 		},
 
 		"CrudeOilBarreling": {
 			"label": "Crude Oil Barelling",
 			"icon": "CrudeOilBarreling.png",
-			"craftingTime": 1,
+			"craftTime": 1,
+			"hardness": 0,
 			"ingredient": {
 				"EmptyBarrel": 1,
 				"CrudeOil": 25
@@ -641,12 +682,14 @@
 			"machine": [
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 		"CrudeOilUnbarreling": {
 			"label": "Crude Oil Unbarelling",
 			"icon": "CrudeOilUnbarreling.png",
-			"craftingTime": 1,
+			"craftTime": 1,
+			"hardness": 0,
 			"ingredient": {
 				"CrudeOilBarrel": 1
 			},
@@ -657,10 +700,12 @@
 			"machine": [
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 		"EmptyBarrel": {
-			"craftingTime": 1,
+			"craftTime": 1,
+			"hardness": 0,
 			"ingredient": {
 				"SteelPlate": 1
 			},
@@ -672,11 +717,12 @@
 				"AssemblingMachine1",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 
 		"IronOre": {
-			"craftingTime": 2,
+			"craftTime": 2,
 			"hardness": 0.9,
 			"ingredient": {},
 			"product": {
@@ -688,10 +734,11 @@
 				"SteelAxe",
 				"BurnerMiningDrill",
 				"ElectricMiningDrill"
-			]
+			],
+			"acceptProductivityModule": true
 		},
 		"CopperOre": {
-			"craftingTime": 2,
+			"craftTime": 2,
 			"hardness": 0.9,
 			"ingredient": {},
 			"product": {
@@ -703,10 +750,11 @@
 				"SteelAxe",
 				"BurnerMiningDrill",
 				"ElectricMiningDrill"
-			]
+			],
+			"acceptProductivityModule": true
 		},
 		"Stone": {
-			"craftingTime": 2,
+			"craftTime": 2,
 			"hardness": 0.4,
 			"ingredient": {},
 			"product": {
@@ -718,10 +766,11 @@
 				"SteelAxe",
 				"BurnerMiningDrill",
 				"ElectricMiningDrill"
-			]
+			],
+			"acceptProductivityModule": true
 		},
 		"Coal": {
-			"craftingTime": 2,
+			"craftTime": 2,
 			"hardness": 0.9,
 			"ingredient": {},
 			"product": {
@@ -733,11 +782,13 @@
 				"SteelAxe",
 				"BurnerMiningDrill",
 				"ElectricMiningDrill"
-			]
+			],
+			"acceptProductivityModule": true
 		},
 
 		"IronPlate": {
-			"craftingTime": 3.5,
+			"craftTime": 3.5,
+			"hardness": 0,
 			"ingredient": {
 				"IronOre": 1
 			},
@@ -748,10 +799,12 @@
 				"StoneFurnace",
 				"SteelFurnace",
 				"ElectricFurnace"
-			]
+			],
+			"acceptProductivityModule": true
 		},
 		"CopperPlate": {
-			"craftingTime": 3.5,
+			"craftTime": 3.5,
+			"hardness": 0,
 			"ingredient": {
 				"CopperOre": 1
 			},
@@ -762,10 +815,12 @@
 				"StoneFurnace",
 				"SteelFurnace",
 				"ElectricFurnace"
-			]
+			],
+			"acceptProductivityModule": true
 		},
 		"SteelPlate": {
-			"craftingTime": 17.5,
+			"craftTime": 17.5,
+			"hardness": 0,
 			"ingredient": {
 				"IronPlate": 5
 			},
@@ -776,10 +831,12 @@
 				"StoneFurnace",
 				"SteelFurnace",
 				"ElectricFurnace"
-			]
+			],
+			"acceptProductivityModule": true
 		},
 		"StoneBrick": {
-			"craftingTime": 3.5,
+			"craftTime": 3.5,
+			"hardness": 0,
 			"ingredient": {
 				"Stone": 2
 			},
@@ -790,11 +847,13 @@
 				"StoneFurnace",
 				"SteelFurnace",
 				"ElectricFurnace"
-			]
+			],
+			"acceptProductivityModule": true
 		},
 
 		"IronStick": {
-			"craftingTime": 0.5,
+			"craftTime": 0.5,
+			"hardness": 0,
 			"ingredient": {
 				"IronPlate": 1
 			},
@@ -806,10 +865,12 @@
 				"AssemblingMachine1",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": true
 		},
 		"IronGearWheel": {
-			"craftingTime": 0.5,
+			"craftTime": 0.5,
+			"hardness": 0,
 			"ingredient": {
 				"IronPlate": 2
 			},
@@ -821,10 +882,12 @@
 				"AssemblingMachine1",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": true
 		},
 		"CopperCable": {
-			"craftingTime": 0.5,
+			"craftTime": 0.5,
+			"hardness": 0,
 			"ingredient": {
 				"CopperPlate": 1
 			},
@@ -836,10 +899,12 @@
 				"AssemblingMachine1",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": true
 		},
 		"PlasticBar": {
-			"craftingTime": 1,
+			"craftTime": 1,
+			"hardness": 0,
 			"ingredient": {
 				"Coal": 1,
 				"PetroleumGas": 3
@@ -849,10 +914,12 @@
 			},
 			"machine": [
 				"ChemicalPlant"
-			]
+			],
+			"acceptProductivityModule": true
 		},
 		"Sulfur": {
-			"craftingTime": 1,
+			"craftTime": 1,
+			"hardness": 0,
 			"ingredient": {
 				"Water": 3,
 				"PetroleumGas": 3
@@ -862,10 +929,12 @@
 			},
 			"machine": [
 				"ChemicalPlant"
-			]
+			],
+			"acceptProductivityModule": true
 		},
 		"ElectronicCircuit": {
-			"craftingTime": 0.5,
+			"craftTime": 0.5,
+			"hardness": 0,
 			"ingredient": {
 				"IronPlate": 1,
 				"CopperCable": 3
@@ -878,10 +947,12 @@
 				"AssemblingMachine1",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": true
 		},
 		"AdvancedCircuit": {
-			"craftingTime": 8,
+			"craftTime": 8,
+			"hardness": 0,
 			"ingredient": {
 				"ElectronicCircuit": 2,
 				"PlasticBar": 2,
@@ -894,10 +965,12 @@
 				"Hand_crafting",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": true
 		},
 		"ProcessingUnit": {
-			"craftingTime": 15,
+			"craftTime": 15,
+			"hardness": 0,
 			"ingredient": {
 				"ElectronicCircuit": 20,
 				"AdvancedCircuit": 2,
@@ -909,11 +982,13 @@
 			"machine": [
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": true
 		},
 
 		"Pipe": {
-			"craftingTime": 0.5,
+			"craftTime": 0.5,
+			"hardness": 0,
 			"ingredient": {
 				"IronPlate": 1
 			},
@@ -925,11 +1000,13 @@
 				"AssemblingMachine1",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 
 		"SpeedModule1": {
-			"craftingTime": 15,
+			"craftTime": 15,
+			"hardness": 0,
 			"ingredient": {
 				"AdvancedCircuit": 5,
 				"ElectronicCircuit": 5
@@ -942,10 +1019,12 @@
 				"AssemblingMachine1",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 		"SpeedModule2": {
-			"craftingTime": 30,
+			"craftTime": 30,
+			"hardness": 0,
 			"ingredient": {
 				"AdvancedCircuit": 5,
 				"ProcessingUnit": 5,
@@ -958,10 +1037,12 @@
 				"Hand_crafting",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 		"SpeedModule3": {
-			"craftingTime": 60,
+			"craftTime": 60,
+			"hardness": 0,
 			"ingredient": {
 				"AdvancedCircuit": 5,
 				"ProcessingUnit": 5,
@@ -974,10 +1055,12 @@
 				"Hand_crafting",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 		"ProductivityModule1": {
-			"craftingTime": 15,
+			"craftTime": 15,
+			"hardness": 0,
 			"ingredient": {
 				"AdvancedCircuit": 5,
 				"ElectronicCircuit": 5
@@ -990,10 +1073,12 @@
 				"AssemblingMachine1",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 		"ProductivityModule2": {
-			"craftingTime": 30,
+			"craftTime": 30,
+			"hardness": 0,
 			"ingredient": {
 				"AdvancedCircuit": 5,
 				"ProcessingUnit": 5,
@@ -1006,10 +1091,12 @@
 				"Hand_crafting",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 		"ProductivityModule3": {
-			"craftingTime": 60,
+			"craftTime": 60,
+			"hardness": 0,
 			"ingredient": {
 				"AdvancedCircuit": 5,
 				"ProcessingUnit": 5,
@@ -1022,10 +1109,12 @@
 				"Hand_crafting",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 		"EfficiencyModule1": {
-			"craftingTime": 15,
+			"craftTime": 15,
+			"hardness": 0,
 			"ingredient": {
 				"AdvancedCircuit": 5,
 				"ElectronicCircuit": 5
@@ -1038,10 +1127,12 @@
 				"AssemblingMachine1",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 		"EfficiencyModule2": {
-			"craftingTime": 30,
+			"craftTime": 30,
+			"hardness": 0,
 			"ingredient": {
 				"AdvancedCircuit": 5,
 				"ProcessingUnit": 5,
@@ -1054,10 +1145,12 @@
 				"Hand_crafting",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 		"EfficiencyModule3": {
-			"craftingTime": 60,
+			"craftTime": 60,
+			"hardness": 0,
 			"ingredient": {
 				"AdvancedCircuit": 5,
 				"ProcessingUnit": 5,
@@ -1070,10 +1163,12 @@
 				"Hand_crafting",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		},
 		"Beacon": {
-			"craftingTime": 15,
+			"craftTime": 15,
+			"hardness": 0,
 			"ingredient": {
 				"ElectronicCircuit": 20,
 				"AdvancedCircuit": 20,
@@ -1087,7 +1182,8 @@
 				"Hand_crafting",
 				"AssemblingMachine2",
 				"AssemblingMachine3"
-			]
+			],
+			"acceptProductivityModule": false
 		}
 	},
 
