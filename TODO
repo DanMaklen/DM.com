@@ -1,11 +1,12 @@
 Factorio:
-	Extending Builds and setting recipes
-	Detect Can Use Productivity on items
 	Delete Builds
 	Total Resources Required
+	Calculate Total Time
 	Mining
 	Science
 	Electricity
 	Common Builds
 	On 0.15 release add multiple difficulty settings.
 	Multiple Factories
+
+	Detect Can Use Productivity on items Currently it gets filtered out from the gui.

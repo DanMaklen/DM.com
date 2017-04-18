@@ -1,9 +1,38 @@
 class Factory{
 	_addNode(parent, node){
 		return this.$tree.create_node(parent, $.extend(true, {state:{opened: true}}, node));
-s	}
-	_redraw(treeNode, build){
-		this.$tree.rename_node(treeNode, this._getText(build));
+	}
+	_newNode(parent, data){
+		var nodeData = $.extend(true, {
+			itemID: null,
+			recipeID: null,
+			rate: 1,
+			machineConfig: {
+				count: 1,
+				machineID: null,
+				module: [
+					null,
+					null,
+					null,
+					null
+				]
+			},
+			beaconConfig: {
+				count: 0,
+				beaconID: 'Beacon',
+				module: [
+					null,
+					null
+				]
+			}
+		}, data);
+		return this.$tree.get_node(this._addNode(parent, {data: nodeData}));
+	}
+	_redraw(treeNode){
+		this.$tree.rename_node(treeNode, this._getText(treeNode.data));
+		var child = treeNode.children;
+		for(var i = 0; i < child.length; i++)
+			this._redraw(this.$tree.get_node(child[i]));
 	}
 
 	constructor(){
@@ -47,39 +76,63 @@ s	}
 		this.iconList = Icon.getIconList()
 	}
 
-	newBuild(build){
-		var node = {
-			treeNodeID: null,
-			itemID: build.itemID,
-			recipeID: build.recipeID,
-			rate: 1,
-			machineConfig: {
-				count: 1,
-				machineID: null,
-				module: [
-					null,
-					null,
-					null,
-					null
-				]
-			},
-			beaconConfig: {
-				count: 0,
-				beaconID: 'Beacon',
-				module: [
-					null,
-					null
-				]
+	_expandBuild(node){
+		var build = node.data;
+		var ingredient = factorio.calcRate_Ingredient(
+			build.recipeID,
+			build.machineConfig,
+			build.beaconConfig
+		);
+		for(var itemID in ingredient) if(ingredient.hasOwnProperty(itemID))
+			this._newNode(node, {
+				itemID: itemID,
+				rate: ingredient[itemID]
+			});
+	}
+	newBuild(newBuildInfo){
+		var node = this._newNode(this.rootNodeID[newBuildInfo.buildTypeID], {
+			itemID: newBuildInfo.itemID,
+			recipeID: newBuildInfo.recipeID
+		});
+		this._redraw(node);
+	}
+
+	_updateBuild_Rate(node, rate){
+		var build = node.data;
+		if(build.itemID){
+			build.rate = rate;
+			if(build.machineConfig.machineID)
+				build.machineConfig.count = factorio.calcMachineCount_Product(
+					build.rate,
+					build.itemID,
+					build.recipeID,
+					build.machineConfig,
+					build.beaconConfig
+				);
+		}
+		if(build.recipeID){
+			var ingredient = factorio.calcRate_Ingredient(
+				build.recipeID,
+				build.machineConfig,
+				build.beaconConfig
+			)
+			for(var i = 0; i < node.children.length; i++){
+				var child = this.$tree.get_node(node.children[i]);
+				this._updateBuild_Rate(child, ingredient[child.data.itemID]);
 			}
-		};
-		node.treeNodeID = this._addNode(this.rootNodeID[build.buildTypeID], {data: node});
-		this._redraw(node.treeNodeID, node);
+		}
 	}
 	updateSelectedBuild(newBuild){
 		if(!newBuild) return;
 		var treeNode = this.$tree.get_selected(true)[0];
+
+		if(treeNode.data.recipeID != newBuild.recipeID)
+			this.$tree.delete_node(treeNode.children);
 		treeNode.data = $.extend(true, treeNode.data, newBuild);
-		this._redraw(treeNode, treeNode.data);
+		if(treeNode.children.length == 0) this._expandBuild(treeNode)
+
+		this._updateBuild_Rate(treeNode, newBuild.rate);
+		this._redraw(treeNode);
 	}
 
 	_genModuleOverlay(lst){
@@ -131,7 +184,6 @@ s	}
 	_getText(build){
 		if(!build || (!build.itemID && !build.recipeID)) return '<<ERROR>>';
 		var text = '';
-
 		if(build.itemID)
 		 	text += settings.getRateText(build.rate) + this._genIconHTML(factorio.getIcon('item', build.itemID));
 		text += this._genByProductHTML(build);

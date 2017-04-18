@@ -138,7 +138,7 @@ class Factorio{
 
 		var hardness = machine.power - recipe.hardness;
 		var speed = this.calcStat('speed', machineConfig, beaconConfig);
-		var multiplier = hardness * peed * machineConfig.count
+		var multiplier = hardness * speed * machineConfig.count
 
 		var rate = {};
 		for(var itemID in recipe.ingredient) if(recipe.ingredient.hasOwnProperty(itemID))
@@ -164,6 +164,31 @@ class Factorio{
 			ingredient: this.calcItemRate_Ingredient(itemID, recipeID, machineConfig, beaconConfig)
 		}
 	}
+
+	calcMachineRatio_Product(itemID, recipeID, machineConfig, beaconConfig=null){
+		return 1 / this.calcItemRate_Product(
+			itemID,
+			recipeID,
+			$.extend({}, machineConfig, {count: 1}),
+			beaconConfig
+		);
+	}
+	calcMachineRatio_Ingredient(itemID, recipeID, machineConfig, beaconConfig=null){
+		return 1 / this.calcItemRate_Ingredient(
+			itemID,
+			recipeID,
+			$.extend({}, machineConfig, {count: 1}),
+			beaconConfig
+		);
+	}
+
+	calcMachineCount_Product(rate, itemID, recipeID, machineConfig, beaconConfig=null){
+		return rate * this.calcMachineRatio_Product(itemID, recipeID, machineConfig, beaconConfig);
+	}
+	calcMachineCount_Ingredient(rate, itemID, recipeID, machineConfig, beaconConfig=null){
+		return rate * this.calcMachineRatio_Ingredient(itemID, recipeID, machineConfig, beaconConfig);
+	}
+
 
 	isProductivityModule(moduleID){
 		return $.inArray(moduleID, [
