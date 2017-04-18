@@ -20,7 +20,9 @@ class Toolbar{
 		this.$rmBuild = this.$.find('#rmBuild').button({
 			icon: 'ui-icon-circle-minus',
 			showLabel: false
-		}).click(function(e){});
+		}).click(function(e){
+			factory.deleteSelectedBuild();
+		});
 
 		this.$settings = this.$.find('#settings').button({
 			icon: 'ui-icon-gear',
@@ -36,7 +38,7 @@ class Toolbar{
 		// 	icon: 'ui-icon-arrowrefresh-1-s',
 		// 	showLabel: false
 		// }).click(function(e){
-		// 	// factory.calcTotal();
+		
 		// });
 	}
 }

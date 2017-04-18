@@ -123,8 +123,8 @@ class Factory{
 		}
 	}
 	updateSelectedBuild(newBuild){
-		if(!newBuild) return;
 		var treeNode = this.$tree.get_selected(true)[0];
+		if(!newBuild || !treeNode) return;
 
 		if(treeNode.data.recipeID != newBuild.recipeID)
 			this.$tree.delete_node(treeNode.children);
@@ -133,6 +133,19 @@ class Factory{
 
 		this._updateBuild_Rate(treeNode, newBuild.rate);
 		this._redraw(treeNode);
+	}
+	deleteSelectedBuild(){
+		var treeNode = this.$tree.get_selected(true)[0];
+		if(!treeNode || treeNode.parents.length < 2) return;
+		var build = treeNode.data;
+		if(treeNode.parents.length > 2 || build.machineConfig.machineID){
+			build.machineConfig.machineID = null;
+			if(build.itemID) build.recipeID = null;
+			this.$tree.delete_node(treeNode.children);
+			this._redraw(treeNode);
+		}
+		else if(treeNode.parents.length == 2 && !build.machineConfig.machineID)
+			this.$tree.delete_node(treeNode);
 	}
 
 	_genModuleOverlay(lst){

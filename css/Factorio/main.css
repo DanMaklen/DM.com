@@ -1,69 +1,48 @@
 .flex{
 	display: flex;
 }
+.flex-column{
+	display: flex;
+	flex-direction: column;
+}
 .float-right{
 	float: right;
 }
-
-
-.flex-column{
-	display: flex;
-	flex-flow: column;
-}
-.inline{
-	display: inline-block;
-}
-.greyed-out{
+.disabled {
+	pointer-events: none;
 	opacity: 0.35;
 }
 
 #Factory{
 	flex: 1;
-	flex-flow: column;
-	width: 45%;
-	height: 100%;
 	margin-right: 0.5em;
-}
-#Factory .tree{
-	flex: 1;
 	overflow: auto;
 }
-
 #Sidebar{
-	width: 45%;
-	height: 100%;
 	margin-left: 0.5em;
 }
-#Sidebar #Toolbar{
-	/*margin-bottom: 0.1em;*/
-}
 
-#Control{
-	flex: 2;
-	margin-top: 0.1em;
-	margin-bottom: 0.2em;
-	overflow: auto;
+/*Dialog*/
+.BuildForm{
+	display: none;
 }
-#Control > div{
+.BuildForm.ActiveBuildForm{
 	display: block;
 }
-#Control > div > *{
-	margin-top: 0.15em;
-	margin-bottom: 0.15em;
-}
 
-#Control #Beacon > *,
-#Control #Machine > *{
+.dialog{
+	text-align: center;
+}
+.dialog > * {
 	margin-top: 0.2em;
 	margin-bottom: 0.2em;
 }
 
-#TotalBuild{
-	flex: 1;
-	margin-top: 0.2em;
+/*BuildEdit*/
+#BuildEdit{
 	overflow: auto;
 }
-#TotalBuild > fieldset {
+#BuildEdit > *{
 	margin-top: 0.2em;
 	margin-bottom: 0.2em;
 }
