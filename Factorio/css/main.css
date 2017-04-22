@@ -1,0 +1,66 @@
+.flex{
+	display: flex;
+}
+.flex-column{
+	display: flex;
+	flex-direction: column;
+}
+.float-right{
+	float: right;
+}
+.disabled {
+	pointer-events: none;
+	opacity: 0.35;
+}
+
+#Factory{
+	flex: 1;
+	margin-right: 0.5em;
+}
+#Sidebar{
+	margin-left: 0.5em;
+}
+
+/*BuildTree*/
+#BuildTree{
+	height: 100%;
+	overflow: auto;
+}
+
+/*Toolbar*/
+#Toolbar{
+	margin-bottom: 0.2em;
+}
+
+/*BuildEdit*/
+.BuildEditTab{
+	display: none;
+}
+.BuildEditTab.BuildEditTab-Active{
+	display: block;
+}
+#BuildEdit{
+	flex: 1;
+	overflow: auto;
+	margin-top: 0.2em;
+}
+#BuildEdit > div > *{
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+}
+
+
+/*Dialog*/
+.BuildForm{
+	display: none;
+}
+.BuildForm.ActiveBuildForm{
+	display: block;
+}
+.dialog{
+	text-align: center;
+}
+.dialog > * {
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+}

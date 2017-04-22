@@ -5,6 +5,7 @@
 	vertical-align: middle;
 	background-color: transparent;
 	display: inline-block;
+	background-repeat: no-repeat;
 }
 .Icon-overlay{
 	width: 45%;

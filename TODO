@@ -1,11 +1,14 @@
 Factorio:
-	Total Resources Required
-	Calculate Total Time
-	Mining
 	Science
 	Electricity
+	Total Resources Required
+	Calculate Total Time
 	Common Builds
 	On 0.15 release add multiple difficulty settings.
 	Multiple Factories
 
+	Help Page explaining all the equations
 	Detect Can Use Productivity on items Currently it gets filtered out from the gui.
+
+General:
+	Reorganize folder/file structure and possibily add backend

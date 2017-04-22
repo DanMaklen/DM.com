@@ -1,11 +1,11 @@
 var doc = [
 	{
 		title: 'Dark Souls PTDE',
-		src: 'DSPTDE.html'
+		src: 'DSPTDE/index.html'
 	},
 	{
 		title: 'Factorio',
-		src: 'Factorio.html'
+		src: 'Factorio/index.html'
 	}
 ];
 var curDoc = -1;

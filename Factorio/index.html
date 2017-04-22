@@ -1,0 +1,111 @@
+<html>
+<head>
+	<title>DM.com: Factorio</title>
+	<link rel="stylesheet" href="/Libraries/JQueryUI/css/jquery-ui.min.css" type="text/css"/>
+	<link rel="stylesheet" href="/Libraries/JSTree/css/default/style.min.css" type="text/css"/>
+
+	<script type="text/javascript" src="/Libraries/JQuery/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/Libraries/JQueryUI/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/Libraries/JSTree/js/jstree.min.js"></script>
+
+	<link rel="stylesheet" href="/css/Plugins/Icon.css" type="text/css"/>
+	<link rel="stylesheet" href="/css/Plugins/SelectMenu.css" type="text/css"/>
+	<link rel="stylesheet" href="/css/Plugins/Spinner.css" type="text/css"/>
+	<link rel="stylesheet" href="/css/Plugins/TabbedIconSelect.css" type="text/css"/>
+	<script type="text/javascript" src="/js/Plugins/Icon.js"></script>
+	<script type="text/javascript" src="/js/Plugins/SelectMenu.js"></script>
+	<script type="text/javascript" src="/js/Plugins/Spinner.js"></script>
+	<script type="text/javascript" src="/js/Plugins/TabbedIconSelect.js"></script>
+
+	<link rel="stylesheet" href="css/main.css" type="text/css"/>
+	<script type="text/javascript" src="js/Factorio.js"></script>
+	<script type="text/javascript" src="js/BuildEdit.js"></script>
+	<script type="text/javascript" src="js/Toolbar.js"></script>
+	<script type="text/javascript" src="js/Dialog.js"></script>
+	<script type="text/javascript" src="js/Factory.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body class="flex">
+	<div class="dialog" id="Settings" title="Settings">
+		<div>Rate Unit: <select id="RateUnit"></select></div>
+		<div>Rate Unit: <select id="PowerUnit"></select></div>
+		<div>Percision: <select id="Percision"></select></div>
+		<div>Recipe Difficulty: <select id="RecipeDifficulty"></select></div>
+		<div>Science Difficulty: <select id="ScienceDifficulty"></select></div>
+	</div>
+	<div class="dialog" id="NewBuild" title="New Build">
+		<fieldset>
+			<legend>
+				<label for="BuildType">Build Type:</label>
+				<select id="BuildType"></select>
+			</legend>
+			<div class="BuildForm ActiveBuildForm" id="itemBuild">
+				<div id="Item"><ul class="header"></ul></div>
+			</div>
+			<div class="BuildForm" id="oilBuild">
+				<select id="Recipe"></select>
+			</div>
+			<div class="BuildForm" id="electricityBuild">
+				<select id="ElectricityType"></select>
+			</div>
+		</fieldset>
+	</div>
+
+	<div id="Factory">
+		<div id="BuildTree"></div>
+	</div>
+
+	<div class="flex-column" id="Sidebar">
+		<div id="Toolbar">
+			<button id="newBuild">New Build</button>
+			<button id="rmBuild">Remove Selected Build</button>
+			<button id="apply">Apply</button>
+			<button class="float-right" id="settings">change Settings</button>
+		</div>
+		<div id="BuildEdit">
+			<div class="BuildEditTab BuildEditTab-Active" id="ItemRecipe">
+				<div id="Item">
+					<input id="Rate">
+					<select id="RateUnit"></select>
+					<div id="ItemIcon"></div>
+				</div>
+				<select id="Recipe"></select>
+				<fieldset id="MachineConfig">
+					<legend>Machine Configuration:</legend>
+					<input id="MachineCount"> * <select id="Machine"></select>
+					<fieldset id="MachineModule">
+						<legend>Modules:</legend>
+						<select id="Module1"></select>
+						<select id="Module2"></select>
+						<select id="Module3"></select>
+						<select id="Module4"></select>
+					</fieldset>
+				</fieldset>
+				<fieldset id="BeaconConfig">
+					<legend>Beacon Configuration:</legend>
+					<input id="BeaconCount"> * <select id="Beacon"></select>
+					<fieldset id="BeaconModule">
+						<legend>Modules:</legend>
+						<select id="Module1"></select>
+						<select id="Module2"></select>
+					</fieldset>
+				</fieldset>
+			</div>
+			<div class="BuildEditTab" id="Electricity">
+				<div>
+					<input id="Power"> <select id="PowerUnit"></select> <div id="ElectricityType"></div>
+				</div>
+				<select id="Fuel"></select>
+				<fieldset id="GeneratorConfig">
+					<legend>Generator:</legend>
+						<input id="GeneratorCount"> * <select id="Generator"></select>
+				</fieldset>
+				<fieldset id="AccumlatorConfig">
+					<legend>Accumlator:</legend>
+					<input id="AccumlatorCount"> * <select id="Accumlator"></select>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
