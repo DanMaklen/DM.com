@@ -13,7 +13,6 @@
 		"Burner": {
 			"label": "Burner Energy",
 			"icon": "BurnerEnergy.png",
-			"url": "https://wiki.factorio.com/Fuel",
 			"fuel": [
 				"Wood",
 				"RawWood",
@@ -29,7 +28,6 @@
 		"Electric": {
 			"label": "Electric Energy",
 			"icon": "ElectricEnergy.png",
-			"url": "https://wiki.factorio.com/Electric_system",
 			"fuel": [],
 			"generator": [
 				"SolarPanel",
@@ -66,53 +64,25 @@
 	"generator": {
 		"SolarPanel": {
 			"efficiency": {
-				"f": [
-					{
-						"t": 0.5,
-						"e(t)": [1]
-					},
-					{
-						"t": 0.2,
-						"e(t)": [1, 0]
-					},
-					{
-						"t": 0.1,
-						"e(t)": [0]
-					},
-					{
-						"t": 0.2,
-						"e(t)": [0,1]
-					}
-				],
-				"avg": 0.7
+				"avg": 0.7,
+				"l1variance": 0.336,
+				"max": 60000,
+				"min": 0
 			},
 			"ingredient": {},
-			"outputPower": {
-				"power": 60000,
-				"max": 60000,
-				"min": 0,
-				"type": "Electric"
-			}
+			"outputPower": 60000
 		},
 		"SteamEngine": {
 			"efficiency": {
-				"f": [
-					{
-						"t": 1,
-						"e(t)": [1]
-					}
-				],
-				"avg": 1
+				"avg": 1,
+				"l1variance": 0,
+				"max": 1,
+				"min": 1
 			},
 			"ingredient": {
 				"Water": 6
 			},
-			"outputPower": {
-				"power": 510000,
-				"max": 510000,
-				"min": 510000,
-				"type": "Electric"
-			}
+			"outputPower": 510000
 		}
 	},
 	"accumlator": {
@@ -125,65 +95,66 @@
 
 	"module": {
 		"noModule": {
+			"label": "",
 			"icon": "blank.png",
+			"energyConsumption": 0,
 			"speed": 0,
 			"productivity": 0,
-			"energyConsumption": 0,
 			"pollution": 0
 		},
 		"SpeedModule1": {
+			"energyConsumption": 0.5,
 			"speed": 0.2,
 			"productivity": 0,
-			"energyConsumption": 0.5,
 			"pollution": 0
 		},
 		"SpeedModule2": {
+			"energyConsumption": 0.6,
 			"speed": 0.3,
 			"productivity": 0,
-			"energyConsumption": 0.6,
 			"pollution": 0
 		},
 		"SpeedModule3": {
+			"energyConsumption": 0.7,
 			"speed": 0.5,
 			"productivity": 0,
-			"energyConsumption": 0.7,
 			"pollution": 0
 		},
-		"ProductivityModule1": {
-			"speed": -0.15,
-			"productivity": 0.04,
-			"energyConsumption": 0.4,
-			"pollution": 0.05
-		},
-		"ProductivityModule2": {
-			"speed": -0.15,
-			"productivity": 0.06,
-			"energyConsumption": 0.6,
-			"pollution": 0.075
-		},
-		"ProductivityModule3": {
-			"speed": -0.15,
-			"productivity": 0.1,
-			"energyConsumption": 0.8,
-			"pollution": 0.1
-		},
 		"EfficiencyModule1": {
+			"energyConsumption": -0.3,
 			"speed": 0,
 			"productivity": 0,
-			"energyConsumption": -0.3,
 			"pollution": 0
 		},
 		"EfficiencyModule2": {
+			"energyConsumption": -0.4,
 			"speed": 0,
 			"productivity": 0,
-			"energyConsumption": -0.4,
 			"pollution": 0
 		},
 		"EfficiencyModule3": {
+			"energyConsumption": -0.5,
 			"speed": 0,
 			"productivity": 0,
-			"energyConsumption": -0.5,
 			"pollution": 0
+		},
+		"ProductivityModule1": {
+			"energyConsumption": 0.4,
+			"speed": -0.15,
+			"productivity": 0.04,
+			"pollution": 0.05
+		},
+		"ProductivityModule2": {
+			"energyConsumption": 0.6,
+			"speed": -0.15,
+			"productivity": 0.06,
+			"pollution": 0.075
+		},
+		"ProductivityModule3": {
+			"energyConsumption": 0.8,
+			"speed": -0.15,
+			"productivity": 0.1,
+			"pollution": 0.1
 		}
 	},
 	"beacon": {
@@ -193,17 +164,15 @@
 				"consumption": 480000,
 				"type": "electric"
 			},
-			"moduleEffeciency": 0.5,
+			"distributionEffeciency": 0.5,
 			"moduleSlots": 2
 		}
 	},
 	"machine": {
-		"Hand_crafting": {
+		"Hand": {
 			"label": "Hand",
 			"icon": "Hand.png",
 			"speed": 1,
-			"power": 1,
-			"productivity": 1,
 			"inputPower": {
 				"drain": 0,
 				"consumption": 0,
@@ -211,1777 +180,5327 @@
 			},
 			"pollution": 0,
 			"moduleSlots": 0
-		},
-		"Hand_mining": {
-			"label": "Hand",
-			"icon": "Hand.png",
-			"speed": 0.6,
-			"power": 1,
-			"productivity": 1,
-			"inputPower": {
-				"drain": 0,
-				"consumption": 0,
-				"type": ""
-			},
-			"pollution": 0,
-			"moduleSlots": 0
-		},
-		"IronAxe": {
-			"speed": 0.6,
-			"power": 2.5,
-			"productivity": 1,
-			"inputPower": {
-				"drain": 0,
-				"consumption": 0,
-				"type": ""
-			},
-			"pollution": 0,
-			"moduleSlots": 0
-		},
-		"SteelAxe": {
-			"speed": 0.6,
-			"power": 4,
-			"productivity": 1,
-			"inputPower": {
-				"drain": 0,
-				"consumption": 0,
-				"type": ""
-			},
-			"pollution": 0,
-			"moduleSlots": 0
-		},
-		"BurnerMiningDrill": {
-			"speed": 0.35,
-			"power": 2.5,
-			"productivity": 1,
-			"inputPower": {
-				"drain": 0,
-				"consumption": 300000,
-				"type": "Burner"
-			},
-			"pollution": 0.00003333333333333333,
-			"moduleSlots": 0
-		},
-		"ElectricMiningDrill": {
-			"speed": 0.5,
-			"power": 3,
-			"productivity": 1,
-			"inputPower": {
-				"drain": 0,
-				"consumption": 90000,
-				"type": "electric"
-			},
-			"pollution": 0.0001,
-			"moduleSlots": 3
-		},
-		"OffshorePump": {
-			"speed": 1,
-			"power": 1,
-			"productivity": 1,
-			"inputPower": {
-				"drain": 0,
-				"consumption": 0,
-				"type": ""
-			},
-			"pollution": 0,
-			"moduleSlots": 2
-		},
-		"Pumpjack": {
-			"speed": 1,
-			"power": 2,
-			"productivity": 1,
-			"inputPower": {
-				"drain": 0,
-				"consumption": 90000,
-				"type": "electric"
-			},
-			"pollution": 0.0001,
-			"moduleSlots": 2
 		},
 		"StoneFurnace": {
 			"speed": 1,
-			"power": 1,
-			"productivity": 1,
 			"inputPower": {
 				"drain": 0,
 				"consumption": 180000,
 				"type": "Burner"
 			},
-			"pollution": 0.00001,
+			"pollution": 1e-5,
 			"moduleSlots": 0
 		},
 		"SteelFurnace": {
 			"speed": 2,
-			"power": 1,
-			"productivity": 1,
 			"inputPower": {
 				"drain": 0,
 				"consumption": 180000,
 				"type": "Burner"
 			},
-			"pollution": 0.00002,
+			"pollution": 2e-5,
 			"moduleSlots": 0
 		},
 		"ElectricFurnace": {
 			"speed": 2,
-			"power": 1,
-			"productivity": 1,
 			"inputPower": {
 				"drain": 6000,
 				"consumption": 180000,
 				"type": "electric"
 			},
-			"pollution": 0.000005,
+			"pollution": 5e-6,
 			"moduleSlots": 2
 		},
 		"AssemblingMachine1": {
 			"speed": 0.5,
-			"power": 1,
-			"productivity": 1,
 			"inputPower": {
-				"drain": 0,
+				"drain": 3000,
 				"consumption": 90000,
 				"type": "electric"
 			},
-			"pollution": 0.00003333333333333333,
+			"pollution": 3.3333333333333333e-5,
 			"moduleSlots": 0
 		},
 		"AssemblingMachine2": {
 			"speed": 0.75,
-			"power": 1,
-			"productivity": 1,
 			"inputPower": {
-				"drain": 0,
+				"drain": 5000,
 				"consumption": 150000,
 				"type": "electric"
 			},
-			"pollution": 0.000016,
+			"pollution": 1.6e-5,
 			"moduleSlots": 2
 		},
 		"AssemblingMachine3": {
 			"speed": 1.25,
-			"power": 1,
-			"productivity": 1,
-			"inputPower": {
-				"drain": 0,
-				"consumption": 210000,
-				"type": "electric"
-			},
-			"pollution": 0.00000857142857,
-			"moduleSlots": 4
-		},
-		"OilRefinery": {
-			"speed": 1,
-			"power": 1,
-			"productivity": 1,
-			"inputPower": {
-				"drain": 42000,
-				"consumption": 420000,
-				"type": "electric"
-			},
-			"pollution": 0.00000857142857,
-			"moduleSlots": 2
-		},
-		"ChemicalPlant": {
-			"speed": 1.25,
-			"power": 1,
-			"productivity": 1,
 			"inputPower": {
 				"drain": 7000,
 				"consumption": 210000,
 				"type": "electric"
 			},
-			"pollution": 0.00000857142857,
+			"pollution": 8.57142857e-6,
+			"moduleSlots": 4
+		},
+		"OilRefinery": {
+			"speed": 1,
+			"inputPower": {
+				"drain": 14000,
+				"consumption": 420000,
+				"type": "electric"
+			},
+			"pollution": 8.57142857e-6,
+			"moduleSlots": 3
+		},
+		"ChemicalPlant": {
+			"speed": 1.25,
+			"inputPower": {
+				"drain": 7000,
+				"consumption": 210000,
+				"type": "electric"
+			},
+			"pollution": 8.57142857e-6,
+			"moduleSlots": 3
+		},
+		"Centrifuge": {
+			"speed": 0.75,
+			"inputPower": {
+				"drain": 11600,
+				"consumption": 350000,
+				"type": "electric"
+			},
+			"pollution": 1.6e-5,
 			"moduleSlots": 2
 		}
 	},
 
 	"recipe": {
-		"BasicOilProcessing": {
-			"label": "Basic Oil Processing",
-			"icon": "BasicOilProcessing.png",
-			"craftTime": 5,
-			"hardness": 0,
-			"ingredient": {
-				"CrudeOil": 10
+		"Normal": {
+			"WoodenChest": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"Wood": 4
+				},
+				"product": {
+					"WoodenChest": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"product": {
-				"HeavyOil": 3,
-				"LightOil": 3,
-				"PetroleumGas": 4
+			"IronChest": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"IronPlate": 8
+				},
+				"product": {
+					"IronChest": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"OilRefinery"
-			],
-			"acceptProductivityModule": true
-		},
-		"AdvancedOilProcessing": {
-			"label": "Advanced Oil Processing",
-			"icon": "AdvancedOilProcessing.png",
-			"craftTime": 5,
-			"hardness": 0,
-			"ingredient": {
-				"CrudeOil": 10,
-				"Water": 5
+			"SteelChest": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"SteelPlate": 8
+				},
+				"product": {
+					"SteelChest": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"product": {
-				"HeavyOil": 1,
-				"LightOil": 4.5,
-				"PetroleumGas": 5.5
+			"StorageTank": {
+				"craftTime": 3,
+				"ingredient": {
+					"IronPlate": 20,
+					"SteelPlate": 5
+				},
+				"product": {
+					"StorageTank": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"OilRefinery"
-			],
-			"acceptProductivityModule": true
-		},
-		"HeavyOilCracking": {
-			"label": "Heavy Oil Cracking",
-			"icon": "HeavyOilCracking.png",
-			"craftTime": 5,
-			"hardness": 0,
-			"ingredient": {
-				"HeavyOil": 4,
-				"Water": 3
-			},
-			"product": {
-				"LightOil": 3
-			},
-			"machine": [
-				"ChemicalPlant"
-			],
-			"acceptProductivityModule": true
-		},
-		"LightOilCracking": {
-			"label": "Light Oil Cracking",
-			"icon": "LightOilCracking.png",
-			"craftTime": 5,
-			"hardness": 0,
-			"ingredient": {
-				"LightOil": 3,
-				"Water": 3
-			},
-			"product": {
-				"PetroleumGas": 2
-			},
-			"machine": [
-				"ChemicalPlant"
-			],
-			"acceptProductivityModule": true
-		},
 
-		"IronAxe": {
-			"craftTime": 0.5,
-			"hardness": 0,
-			"ingredient": {
-				"IronStick": 2,
-				"IronPlate": 3
+			"TransportBelt": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"IronPlate": 1,
+					"IronGearWheel": 1
+				},
+				"product": {
+					"TransportBelt": 2
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"product": {
-				"IronAxe": 1
+			"FastTransportBelt": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"IronGearWheel": 5,
+					"TransportBelt": 1
+				},
+				"product": {
+					"FastTransportBelt": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine1",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"SteelAxe": {
-			"craftTime": 0.5,
-			"hardness": 0,
-			"ingredient": {
-				"SteelPlate": 5,
-				"IronStick": 2
+			"ExpressTransportBelt": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"IronGearWheel": 10,
+					"FastTransportBelt": 1,
+					"Lubricant": 20
+				},
+				"product": {
+					"ExpressTransportBelt": 1
+				},
+				"machine": [
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"product": {
-				"SteelAxe": 1
+			"UndergroundBelt": {
+				"craftTime": 1,
+				"ingredient": {
+					"IronPlate": 10,
+					"TransportBelt": 5
+				},
+				"product": {
+					"UndergroundBelt": 2
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine1",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"BurnerMiningDrill": {
-			"craftTime": 2,
-			"hardness": 0,
-			"ingredient": {
-				"StoneFurnace": 1,
-				"IronPlate": 3,
-				"IronGearWheel": 3
+			"FastUndergroundBelt": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"IronGearWheel": 40,
+					"UndergroundBelt": 2
+				},
+				"product": {
+					"FastUndergroundBelt": 2
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"product": {
-				"BurnerMiningDrill": 1
+			"ExpressUndergroundBelt": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"IronGearWheel": 80,
+					"FastUndergroundBelt": 2,
+					"Lubricant": 40
+				},
+				"product": {
+					"ExpressUndergroundBelt": 2
+				},
+				"machine": [
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"ElectricMiningDrill": {
-			"craftTime": 2,
-			"hardness": 0,
-			"ingredient": {
-				"IronPlate": 10,
-				"IronGearWheel": 5,
-				"ElectronicCircuit": 3
+			"Splitter": {
+				"craftTime": 1,
+				"ingredient": {
+					"ElectronicCircuit": 5,
+					"IronPlate": 5,
+					"TransportBelt": 4
+				},
+				"product": {
+					"Splitter": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"product": {
-				"ElectricMiningDrill": 1
+			"FastSplitter": {
+				"craftTime": 2,
+				"ingredient": {
+					"Splitter": 1,
+					"IronGearWheel": 10,
+					"ElectronicCircuit": 10
+				},
+				"product": {
+					"FastSplitter": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"Pumpjack": {
-			"craftTime": 20,
-			"hardness": 0,
-			"ingredient": {
-				"SteelPlate": 15,
-				"IronGearWheel": 10,
-				"ElectronicCircuit": 10,
-				"Pipe": 10
+			"ExpressSplitter": {
+				"craftTime": 2,
+				"ingredient": {
+					"FastSplitter": 1,
+					"IronGearWheel": 10,
+					"AdvancedCircuit": 10,
+					"Lubricant": 80
+				},
+				"product": {
+					"ExpressSplitter": 1
+				},
+				"machine": [
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"product": {
-				"Pumpjack": 1
-			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"OffshorePump": {
-			"craftTime": 0.5,
-			"hardness": 0,
-			"ingredient": {
-				"ElectronicCircuit": 2,
-				"Pipe": 1,
-				"IronGearWheel": 5
-			},
-			"product": {
-				"OffshorePump": 1
-			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"AssemblingMachine1": {
-			"craftTime": 0.5,
-			"hardness": 0,
-			"ingredient": {
-				"ElectronicCircuit": 3,
-				"IronGearWheel": 5,
-				"IronPlate": 9
-			},
-			"product": {
-				"AssemblingMachine1": 1
-			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"AssemblingMachine2": {
-			"craftTime": 0.5,
-			"hardness": 0,
-			"ingredient": {
-				"IronPlate": 9,
-				"ElectronicCircuit": 3,
-				"IronGearWheel": 5,
-				"AssemblingMachine1": 1
-			},
-			"product": {
-				"AssemblingMachine2": 1
-			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"AssemblingMachine3": {
-			"craftTime": 0.5,
-			"hardness": 0,
-			"ingredient": {
-				"AssemblingMachine2": 2,
-				"SpeedModule1": 4
-			},
-			"product": {
-				"AssemblingMachine3": 1
-			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine1",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"StoneFurnace": {
-			"craftTime": 0.5,
-			"hardness": 0,
-			"ingredient": {
-				"Stone": 5
-			},
-			"product": {
-				"StoneFurnace": 1
-			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine1",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"SteelFurnace": {
-			"craftTime": 3,
-			"hardness": 0,
-			"ingredient": {
-				"SteelPlate": 8,
-				"StoneBrick": 10
-			},
-			"product": {
-				"SteelFurnace": 1
-			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine1",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"ElectricFurnace": {
-			"craftTime": 5,
-			"hardness": 0,
-			"ingredient": {
-				"SteelPlate": 15,
-				"StoneBrick": 10,
-				"AdvancedCircuit": 5
-			},
-			"product": {
-				"ElectricFurnace": 1
-			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"OilRefinery": {
-			"craftTime": 20,
-			"hardness": 0,
-			"ingredient": {
-				"Pipe": 10,
-				"SteelPlate": 15,
-				"StoneBrick": 10,
-				"IronGearWheel": 10,
-				"ElectronicCircuit": 10
-			},
-			"product": {
-				"OilRefinery": 1
-			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"ChemicalPlant": {
-			"craftTime": 10,
-			"hardness": 0,
-			"ingredient": {
-				"SteelPlate": 5,
-				"IronGearWheel": 5,
-				"ElectronicCircuit": 5,
-				"Pipe": 5
-			},
-			"product": {
-				"ChemicalPlant": 1
-			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
 
-		"Water": {
-			"craftTime": 1,
-			"hardness": 0,
-			"ingredient": {},
-			"product": {
-				"Water": 60
+			"BurnerInserter": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"IronPlate": 1,
+					"IronGearWheel": 1
+				},
+				"product": {
+					"BurnerInserter": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"OffshorePump"
-			],
-			"acceptProductivityModule": false
-		},
-		"CrudeOil": {
-			"craftTime": 1,
-			"hardness": 1,
-			"ingredient": {},
-			"product": {
-				"CrudeOil": 0.1
+			"Inserter": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"ElectronicCircuit": 1,
+					"IronGearWheel": 1,
+					"IronPlate": 1
+				},
+				"product": {
+					"Inserter": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"Pumpjack"
-			],
-			"acceptProductivityModule": true
-		},
-		"SulfuricAcid": {
-			"craftTime": 1,
-			"hardness": 0,
-			"ingredient": {
-				"Sulfur": 5,
-				"IronPlate": 1,
-				"Water": 10
+			"LongHandedInserter": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"IronGearWheel": 1,
+					"IronPlate": 1,
+					"Inserter": 1
+				},
+				"product": {
+					"LongHandedInserter": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"product": {
-				"SulfuricAcid": 5
+			"FastInserter": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"ElectronicCircuit": 2,
+					"IronPlate": 2,
+					"Inserter": 1
+				},
+				"product": {
+					"FastInserter": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"ChemicalPlant"
-			],
-			"acceptProductivityModule": true
-		},
+			"FilterInserter": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"FastInserter": 1,
+					"ElectronicCircuit": 4
+				},
+				"product": {
+					"FilterInserter": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"StackInserter": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"IronGearWheel": 15,
+					"ElectronicCircuit": 15,
+					"AdvancedCircuit": 1,
+					"FastInserter": 1
+				},
+				"product": {
+					"StackInserter": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"StackFilterInserter": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"StackInserter": 1,
+					"ElectronicCircuit": 5
+				},
+				"product": {
+					"StackFilterInserter": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
 
-		"CrudeOilBarreling": {
-			"label": "Crude Oil Barelling",
-			"icon": "CrudeOilBarreling.png",
-			"craftTime": 1,
-			"hardness": 0,
-			"ingredient": {
-				"EmptyBarrel": 1,
-				"CrudeOil": 25
+			"SmallElectricPole": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"Wood": 2,
+					"CopperCable": 2
+				},
+				"product": {
+					"SmallElectricPole": 2
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"product": {
-				"CrudeOilBarrel": 1
+			"MediumElectricPole": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"SteelPlate": 2,
+					"CopperPlate": 2
+				},
+				"product": {
+					"MediumElectricPole": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"CrudeOilUnbarreling": {
-			"label": "Crude Oil Unbarelling",
-			"icon": "CrudeOilUnbarreling.png",
-			"craftTime": 1,
-			"hardness": 0,
-			"ingredient": {
-				"CrudeOilBarrel": 1
+			"BigElectricPole": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"SteelPlate": 5,
+					"CopperPlate": 5
+				},
+				"product": {
+					"BigElectricPole": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"product": {
-				"EmptyBarrel": 1,
-				"CrudeOil": 25
+			"Substation": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"SteelPlate": 10,
+					"AdvancedCircuit": 5,
+					"CopperPlate": 5
+				},
+				"product": {
+					"Substation": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"EmptyBarrel": {
-			"craftTime": 1,
-			"hardness": 0,
-			"ingredient": {
-				"SteelPlate": 1
+			"Pipe": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"IronPlate": 1
+				},
+				"product": {
+					"Pipe": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"product": {
-				"EmptyBarrel": 1
+			"PipeToGround": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"Pipe": 10,
+					"IronPlate": 5
+				},
+				"product": {
+					"PipeToGround": 2
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine1",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
+			"Pump": {
+				"craftTime": 2,
+				"ingredient": {
+					"EngineUnit": 1,
+					"SteelPlate": 1,
+					"Pipe": 1
+				},
+				"product": {
+					"Pump": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
 
-		"IronOre": {
-			"craftTime": 2,
-			"hardness": 0.9,
-			"ingredient": {},
-			"product": {
-				"IronOre": 1
+			"StraightRail": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"Stone": 1,
+					"IronStick": 1,
+					"SteelPlate": 1
+				},
+				"product": {
+					"StraightRail": 2
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"Hand_mining",
-				"IronAxe",
-				"SteelAxe",
-				"BurnerMiningDrill",
-				"ElectricMiningDrill"
-			],
-			"acceptProductivityModule": true
-		},
-		"CopperOre": {
-			"craftTime": 2,
-			"hardness": 0.9,
-			"ingredient": {},
-			"product": {
-				"CopperOre": 1
+			"TrainStop": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"ElectronicCircuit": 5,
+					"IronPlate": 10,
+					"SteelPlate": 3
+				},
+				"product": {
+					"TrainStop": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"Hand_mining",
-				"IronAxe",
-				"SteelAxe",
-				"BurnerMiningDrill",
-				"ElectricMiningDrill"
-			],
-			"acceptProductivityModule": true
-		},
-		"Stone": {
-			"craftTime": 2,
-			"hardness": 0.4,
-			"ingredient": {},
-			"product": {
-				"Stone": 1
+			"RailSignal": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"ElectronicCircuit": 1,
+					"IronPlate": 5
+				},
+				"product": {
+					"RailSignal": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"Hand_mining",
-				"IronAxe",
-				"SteelAxe",
-				"BurnerMiningDrill",
-				"ElectricMiningDrill"
-			],
-			"acceptProductivityModule": true
-		},
-		"Coal": {
-			"craftTime": 2,
-			"hardness": 0.9,
-			"ingredient": {},
-			"product": {
-				"Coal": 1
+			"RailChainSignal": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"ElectronicCircuit": 1,
+					"IronPlate": 5
+				},
+				"product": {
+					"RailChainSignal": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"Hand_mining",
-				"IronAxe",
-				"SteelAxe",
-				"BurnerMiningDrill",
-				"ElectricMiningDrill"
-			],
-			"acceptProductivityModule": true
-		},
+			"Locomotive": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"EngineUnit": 20,
+					"ElectronicCircuit": 10,
+					"SteelPlate": 30
+				},
+				"product": {
+					"Locomotive": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"CargoWagon": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"IronGearWheel": 10,
+					"IronPlate": 20,
+					"SteelPlate": 20
+				},
+				"product": {
+					"CargoWagon": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"FluidWagon": {
+				"craftTime": 1.5,
+				"ingredient": {
+					"IronGearWheel": 10,
+					"SteelPlate": 16,
+					"Pipe": 8,
+					"StorageTank": 3
+				},
+				"product": {
+					"FluidWagon": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"Car": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"EngineUnit": 8,
+					"IronPlate": 20,
+					"SteelPlate": 5
+				},
+				"product": {
+					"Car": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"Tank": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"EngineUnit": 32,
+					"SteelPlate": 50,
+					"IronGearWheel": 15,
+					"AdvancedCircuit": 10
+				},
+				"product": {
+					"Tank": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
 
-		"IronPlate": {
-			"craftTime": 3.5,
-			"hardness": 0,
-			"ingredient": {
-				"IronOre": 1
+			"LogisticRobot": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"FlyingRobotFrame": 1,
+					"AdvancedCircuit": 2
+				},
+				"product": {
+					"LogisticRobot": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"product": {
-				"IronPlate": 1
+			"ConstructionRobot": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"FlyingRobotFrame": 1,
+					"ElectronicCircuit": 2
+				},
+				"product": {
+					"ConstructionRobot": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"StoneFurnace",
-				"SteelFurnace",
-				"ElectricFurnace"
-			],
-			"acceptProductivityModule": true
-		},
-		"CopperPlate": {
-			"craftTime": 3.5,
-			"hardness": 0,
-			"ingredient": {
-				"CopperOre": 1
+			"ActiveProviderChest": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"SteelChest": 1,
+					"ElectronicCircuit": 3,
+					"AdvancedCircuit": 1
+				},
+				"product": {
+					"ActiveProviderChest": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"product": {
-				"CopperPlate": 1
+			"PassiveProviderChest": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"SteelChest": 1,
+					"ElectronicCircuit": 3,
+					"AdvancedCircuit": 1
+				},
+				"product": {
+					"PassiveProviderChest": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"StoneFurnace",
-				"SteelFurnace",
-				"ElectricFurnace"
-			],
-			"acceptProductivityModule": true
-		},
-		"SteelPlate": {
-			"craftTime": 17.5,
-			"hardness": 0,
-			"ingredient": {
-				"IronPlate": 5
+			"RequesterChest": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"SteelChest": 1,
+					"ElectronicCircuit": 3,
+					"AdvancedCircuit": 1
+				},
+				"product": {
+					"RequesterChest": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"product": {
-				"SteelPlate": 1
+			"StorageChest": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"SteelChest": 1,
+					"ElectronicCircuit": 3,
+					"AdvancedCircuit": 1
+				},
+				"product": {
+					"StorageChest": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"StoneFurnace",
-				"SteelFurnace",
-				"ElectricFurnace"
-			],
-			"acceptProductivityModule": true
-		},
-		"StoneBrick": {
-			"craftTime": 3.5,
-			"hardness": 0,
-			"ingredient": {
-				"Stone": 2
+			"Roboport": {
+				"craftTime": 10,
+				"ingredient": {
+					"SteelPlate": 45,
+					"IronGearWheel": 45,
+					"AdvancedCircuit": 45
+				},
+				"product": {
+					"Roboport": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"product": {
-				"StoneBrick": 1
-			},
-			"machine": [
-				"StoneFurnace",
-				"SteelFurnace",
-				"ElectricFurnace"
-			],
-			"acceptProductivityModule": true
-		},
 
-		"IronStick": {
-			"craftTime": 0.5,
-			"hardness": 0,
-			"ingredient": {
-				"IronPlate": 1
+			"Lamp": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"ElectronicCircuit": 1,
+					"IronStick": 3,
+					"IronPlate": 1
+				},
+				"product": {
+					"Lamp": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"product": {
-				"IronStick": 2
+			"RedWire": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"ElectronicCircuit": 1,
+					"CopperCable": 1
+				},
+				"product": {
+					"RedWire": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine1",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": true
-		},
-		"IronGearWheel": {
-			"craftTime": 0.5,
-			"hardness": 0,
-			"ingredient": {
-				"IronPlate": 2
+			"GreenWire": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"ElectronicCircuit": 1,
+					"CopperCable": 1
+				},
+				"product": {
+					"GreenWire": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"product": {
-				"IronGearWheel": 1
+			"ArithmeticCombinator": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"CopperCable": 5,
+					"ElectronicCircuit": 5
+				},
+				"product": {
+					"ArithmeticCombinator": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine1",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": true
-		},
-		"CopperCable": {
-			"craftTime": 0.5,
-			"hardness": 0,
-			"ingredient": {
-				"CopperPlate": 1
+			"DeciderCombinator": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"CopperCable": 5,
+					"ElectronicCircuit": 5
+				},
+				"product": {
+					"DeciderCombinator": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"product": {
-				"CopperCable": 2
+			"ConstantCombinator": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"CopperCable": 5,
+					"ElectronicCircuit": 2
+				},
+				"product": {
+					"ConstantCombinator": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine1",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": true
-		},
-		"PlasticBar": {
-			"craftTime": 1,
-			"hardness": 0,
-			"ingredient": {
-				"Coal": 1,
-				"PetroleumGas": 3
+			"PowerSwitch": {
+				"craftTime": 2,
+				"ingredient": {
+					"IronPlate": 5,
+					"CopperCable": 5,
+					"ElectronicCircuit": 2
+				},
+				"product": {
+					"PowerSwitch": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"product": {
-				"PlasticBar": 2
+			"ProgrammableSpeaker": {
+				"craftTime": 2,
+				"ingredient": {
+					"IronPlate": 5,
+					"CopperCable": 5,
+					"ElectronicCircuit": 4
+				},
+				"product": {
+					"ProgrammableSpeaker": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"ChemicalPlant"
-			],
-			"acceptProductivityModule": true
-		},
-		"Sulfur": {
-			"craftTime": 1,
-			"hardness": 0,
-			"ingredient": {
-				"Water": 3,
-				"PetroleumGas": 3
-			},
-			"product": {
-				"Sulfur": 2
-			},
-			"machine": [
-				"ChemicalPlant"
-			],
-			"acceptProductivityModule": true
-		},
-		"ElectronicCircuit": {
-			"craftTime": 0.5,
-			"hardness": 0,
-			"ingredient": {
-				"IronPlate": 1,
-				"CopperCable": 3
-			},
-			"product": {
-				"ElectronicCircuit": 1
-			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine1",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": true
-		},
-		"AdvancedCircuit": {
-			"craftTime": 8,
-			"hardness": 0,
-			"ingredient": {
-				"ElectronicCircuit": 2,
-				"PlasticBar": 2,
-				"CopperCable": 4
-			},
-			"product": {
-				"AdvancedCircuit": 1
-			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": true
-		},
-		"ProcessingUnit": {
-			"craftTime": 15,
-			"hardness": 0,
-			"ingredient": {
-				"ElectronicCircuit": 20,
-				"AdvancedCircuit": 2,
-				"SulfuricAcid": 2
-			},
-			"product": {
-				"ProcessingUnit": 1
-			},
-			"machine": [
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": true
-		},
-		"Battery": {
-			"craftTime": 5,
-			"hardness": 0,
-			"ingredient": {
-				"IronPlate": 1,
-				"CopperPlate": 1,
-				"SulfuricAcid": 2
-			},
-			"product": {
-				"Battery": 1
-			},
-			"machine": [
-				"ChemicalPlant"
-			],
-			"acceptProductivityModule": true
-		},
 
-		"Pipe": {
-			"craftTime": 0.5,
-			"hardness": 0,
-			"ingredient": {
-				"IronPlate": 1
+			"StoneBrick": {
+				"craftTime": 3.5,
+				"ingredient": {
+					"Stone": 2
+				},
+				"product": {
+					"Concrete": 1
+				},
+				"machine": [
+					"StoneFurnace",
+					"SteelFurnace",
+					"ElectricFurnace"
+				],
+				"acceptProductivityModule": true
 			},
-			"product": {
-				"Pipe": 1
+			"Concrete": {
+				"craftTime": 10,
+				"ingredient": {
+					"StoneBrick": 5,
+					"IronOre": 1,
+					"Water": 100
+				},
+				"product": {
+					"Concrete": 10
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine1",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
+			"HazardConcrete": {
+				"craftTime": 0.25,
+				"ingredient": {
+					"Concrete": 10
+				},
+				"product": {
+					"HazardConcrete": 10
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"Landfill": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"Stone": 20
+				},
+				"product": {
+					"Landfill": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
 
-		"SpeedModule1": {
-			"craftTime": 15,
-			"hardness": 0,
-			"ingredient": {
-				"AdvancedCircuit": 5,
-				"ElectronicCircuit": 5
-			},
-			"product": {
-				"SpeedModule1": 1
-			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine1",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"SpeedModule2": {
-			"craftTime": 30,
-			"hardness": 0,
-			"ingredient": {
-				"AdvancedCircuit": 5,
-				"ProcessingUnit": 5,
-				"SpeedModule1": 4
-			},
-			"product": {
-				"SpeedModule2": 1
-			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"SpeedModule3": {
-			"craftTime": 60,
-			"hardness": 0,
-			"ingredient": {
-				"AdvancedCircuit": 5,
-				"ProcessingUnit": 5,
-				"SpeedModule2": 4
-			},
-			"product": {
-				"SpeedModule3": 1
-			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"ProductivityModule1": {
-			"craftTime": 15,
-			"hardness": 0,
-			"ingredient": {
-				"AdvancedCircuit": 5,
-				"ElectronicCircuit": 5
-			},
-			"product": {
-				"ProductivityModule1": 1
-			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine1",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"ProductivityModule2": {
-			"craftTime": 30,
-			"hardness": 0,
-			"ingredient": {
-				"AdvancedCircuit": 5,
-				"ProcessingUnit": 5,
-				"ProductivityModule1": 4
-			},
-			"product": {
-				"ProductivityModule2": 1
-			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"ProductivityModule3": {
-			"craftTime": 60,
-			"hardness": 0,
-			"ingredient": {
-				"AdvancedCircuit": 5,
-				"ProcessingUnit": 5,
-				"ProductivityModule2": 5
-			},
-			"product": {
-				"ProductivityModule3": 1
-			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"EfficiencyModule1": {
-			"craftTime": 15,
-			"hardness": 0,
-			"ingredient": {
-				"AdvancedCircuit": 5,
-				"ElectronicCircuit": 5
-			},
-			"product": {
-				"EfficiencyModule1": 1
-			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine1",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"EfficiencyModule2": {
-			"craftTime": 30,
-			"hardness": 0,
-			"ingredient": {
-				"AdvancedCircuit": 5,
-				"ProcessingUnit": 5,
-				"EfficiencyModule1": 4
-			},
-			"product": {
-				"EfficiencyModule2": 1
-			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"EfficiencyModule3": {
-			"craftTime": 60,
-			"hardness": 0,
-			"ingredient": {
-				"AdvancedCircuit": 5,
-				"ProcessingUnit": 5,
-				"EfficiencyModule2": 5
-			},
-			"product": {
-				"EfficiencyModule3": 1
-			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"Beacon": {
-			"craftTime": 15,
-			"hardness": 0,
-			"ingredient": {
-				"ElectronicCircuit": 20,
-				"AdvancedCircuit": 20,
-				"SteelPlate": 10,
-				"CopperCable": 10
-			},
-			"product": {
-				"Beacon": 1
-			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
 
-		"Wood": {
-			"craftTime": 0.5,
-			"hardness": 0,
-			"ingredient": {
-				"RawWood": 1
+			"IronAxe": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"IronStick": 2,
+					"IronPlate": 3
+				},
+				"product": {
+					"IronAxe": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"product": {
-				"Wood": 2
+			"SteelAxe": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"SteelPlate": 5,
+					"IronStick": 2
+				},
+				"product": {
+					"SteelAxe": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine1",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"SmallElectricPole": {
-			"craftTime": 0.5,
-			"hardness": 0,
-			"ingredient": {
-				"Wood": 2,
-				"CopperCable": 2
+			"RepairPack": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"ElectronicCircuit": 2,
+					"IronGearWheel": 2
+				},
+				"product": {
+					"RepairPack": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"product": {
-				"SmallElectricPole": 1
-			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine1",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"WoodenChest": {
-			"craftTime": 0.5,
-			"hardness": 0,
-			"ingredient": {
-				"Wood": 4
-			},
-			"product": {
-				"WoodenChest": 1
-			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine1",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"SolidFuel_HeavyOil": {
-			"label": "Solid Fuel from Heavy Oil",
-			"icon": "SolidFuel_HeavyOil.png",
-			"url": "https://wiki.factorio.com/Solid-fuel-from-heavy-oil",
-			"craftTime": 3,
-			"hardness": 0,
-			"ingredient": {
-				"HeavyOil": 2
-			},
-			"product": {
-				"SolidFuel": 1
-			},
-			"machine": [
-				"ChemicalPlant"
-			],
-			"acceptProductivityModule": false
-		},
-		"SolidFuel_LightOil": {
-			"label": "Solid Fuel from Light Oil",
-			"icon": "SolidFuel_LightOil.png",
-			"url": "https://wiki.factorio.com/Solid-fuel-from-light-oil",
-			"craftTime": 3,
-			"hardness": 0,
-			"ingredient": {
-				"LightOil": 1
-			},
-			"product": {
-				"SolidFuel": 1
-			},
-			"machine": [
-				"ChemicalPlant"
-			],
-			"acceptProductivityModule": false
-		},
-		"SolidFuel_PetroleumGas": {
-			"label": "Solid Fuel from Petroleum Gas",
-			"icon": "SolidFuel_PetroleumGas.png",
-			"url": "https://wiki.factorio.com/Solid-fuel-from-petroleum-gas",
-			"craftTime": 3,
-			"hardness": 0,
-			"ingredient": {
-				"PetroleumGas": 2
-			},
-			"product": {
-				"SolidFuel": 1
-			},
-			"machine": [
-				"ChemicalPlant"
-			],
-			"acceptProductivityModule": false
-		},
-		"RocketFuel": {
-			"craftTime": 30,
-			"hardness": 0,
-			"ingredient": {
-				"SolidFuel": 10
-			},
-			"product": {
-				"RocketFuel": 1
-			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine1",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
 
-		"SolarPanel": {
-			"craftTime": 10,
-			"hardness": 0,
-			"ingredient": {
-				"SteelPlate": 5,
-				"ElectronicCircuit": 15,
-				"CopperPlate": 5
+			"Boiler": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"StoneFurnace": 1,
+					"Pipe": 4
+				},
+				"product": {
+					"Boiler": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"product": {
-				"SolarPanel": 1
+			"SteamEngine": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"IronGearWheel": 8,
+					"Pipe": 5,
+					"IronPlate": 5
+				},
+				"product": {
+					"SteamEngine": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
+			"SteamTurbine": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"IronGearWheel": 50,
+					"CopperPlate": 50,
+					"Pipe": 20
+				},
+				"product": {
+					"SteamTurbine": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"SolarPanel": {
+				"craftTime": 10,
+				"ingredient": {
+					"SteelPlate": 5,
+					"ElectronicCircuit": 15,
+					"CopperPlate": 5
+				},
+				"product": {
+					"SolarPanel": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"Accumlator": {
+				"craftTime": 10,
+				"ingredient": {
+					"IronPlate": 2,
+					"Battery": 5
+				},
+				"product": {
+					"Accumlator": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"NuclearReactor": {
+				"craftTime": 4,
+				"ingredient": {
+					"Concrete": 500,
+					"SteelPlate": 500,
+					"AdvancedCircuit": 500,
+					"CopperPlate": 500
+				},
+				"product": {
+					"NuclearReactor": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"HeatExchanger": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"SteelPlate": 10,
+					"CopperPlate": 100,
+					"Pipe": 10
+				},
+				"product": {
+					"HeatExchanger": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"HeatPipe": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"SteelPlate": 10,
+					"CopperPlate": 20
+				},
+				"product": {
+					"HeatPipe": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+
+			"BurnerMiningDrill": {
+				"craftTime": 2,
+				"ingredient": {
+					"IronGearWheel": 3,
+					"StoneFurnace": 1,
+					"IronPlate": 3
+				},
+				"product": {
+					"BurnerMiningDrill": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"ElectricMiningDrill": {
+				"craftTime": 2,
+				"ingredient": {
+					"ElectronicCircuit": 3,
+					"IronGearWheel": 5,
+					"IronPlate": 10
+				},
+				"product": {
+					"ElectricMiningDrill": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"OffshorePump": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"ElectronicCircuit": 2,
+					"Pipe": 1,
+					"IronGearWheel": 1
+				},
+				"product": {
+					"OffshorePump": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"Pumpjack": {
+				"craftTime": 5,
+				"ingredient": {
+					"SteelPlate": 5,
+					"IronGearWheel": 10,
+					"ElectronicCircuit": 5,
+					"Pipe": 10
+				},
+				"product": {
+					"Pumpjack": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+
+			"StoneFurnace": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"Stone": 5
+				},
+				"product": {
+					"StoneFurnace": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"SteelFurnace": {
+				"craftTime": 3,
+				"ingredient": {
+					"SteelPlate": 6,
+					"StoneBrick": 10
+				},
+				"product": {
+					"SteelFurnace": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"ElectricFurnace": {
+				"craftTime": 5,
+				"ingredient": {
+					"SteelPlate": 10,
+					"AdvancedCircuit": 5,
+					"StoneBrick": 10
+				},
+				"product": {
+					"ElectricFurnace": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+
+			"AssemblingMachine1": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"ElectronicCircuit": 3,
+					"IronGearWheel": 5,
+					"IronPlate": 9
+				},
+				"product": {
+					"AssemblingMachine1": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"AssemblingMachine2": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"IronPlate": 9,
+					"ElectronicCircuit": 3,
+					"IronGearWheel": 5,
+					"AssemblingMachine1": 1
+				},
+				"product": {
+					"AssemblingMachine2": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"AssemblingMachine3": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"SpeedModule1": 4,
+					"AssemblingMachine2": 2
+				},
+				"product": {
+					"AssemblingMachine3": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"OilRefinery": {
+				"craftTime": 10,
+				"ingredient": {
+					"SteelPlate": 15,
+					"IronGearWheel": 10,
+					"StoneBrick": 10,
+					"ElectronicCircuit": 10,
+					"Pipe": 10
+				},
+				"product": {
+					"OilRefinery": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"ChemicalPlant": {
+				"craftTime": 5,
+				"ingredient": {
+					"SteelPlate": 5,
+					"IronGearWheel": 5,
+					"ElectronicCircuit": 5,
+					"Pipe": 5
+				},
+				"product": {
+					"ChemicalPlant": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"Centrifuge": {
+				"craftTime": 4,
+				"ingredient": {
+					"Concrete": 100,
+					"SteelPlate": 50,
+					"ElectronicCircuit": 100,
+					"IronGearWheel": 100
+				},
+				"product": {
+					"Centrifuge": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"Lab": {
+				"craftTime": 3,
+				"ingredient": {
+					"ElectronicCircuit": 10,
+					"IronGearWheel": 10,
+					"TransportBelt": 4
+				},
+				"product": {
+					"Lab": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+
+			"Beacon": {
+				"craftTime": 15,
+				"ingredient": {
+					"ElectronicCircuit": 20,
+					"AdvancedCircuit": 20,
+					"SteelPlate": 10,
+					"CopperCable": 10
+				},
+				"product": {
+					"Beacon": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"SpeedModule1": {
+				"craftTime": 15,
+				"ingredient": {
+					"AdvancedCircuit": 5,
+					"ElectronicCircuit": 5
+				},
+				"product": {
+					"SpeedModule1": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"SpeedModule2": {
+				"craftTime": 30,
+				"ingredient": {
+					"SpeedModule1": 4,
+					"AdvancedCircuit": 5,
+					"ProcessingUnit": 5
+				},
+				"product": {
+					"SpeedModule2": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"SpeedModule3": {
+				"craftTime": 60,
+				"ingredient": {
+					"SpeedModule2": 4,
+					"AdvancedCircuit": 5,
+					"ProcessingUnit": 5
+				},
+				"product": {
+					"SpeedModule3": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"EfficiencyModule1": {
+				"craftTime": 15,
+				"ingredient": {
+					"AdvancedCircuit": 5,
+					"ElectronicCircuit": 5
+				},
+				"product": {
+					"EfficiencyModule1": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"EfficiencyModule2": {
+				"craftTime": 30,
+				"ingredient": {
+					"EfficiencyModule1": 4,
+					"AdvancedCircuit": 5,
+					"ProcessingUnit": 5
+				},
+				"product": {
+					"EfficiencyModule2": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"EfficiencyModule3": {
+				"craftTime": 60,
+				"ingredient": {
+					"EfficiencyModule2": 5,
+					"AdvancedCircuit": 5,
+					"ProcessingUnit": 5
+				},
+				"product": {
+					"EfficiencyModule3": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"ProductivityModule1": {
+				"craftTime": 15,
+				"ingredient": {
+					"AdvancedCircuit": 5,
+					"ElectronicCircuit": 5
+				},
+				"product": {
+					"ProductivityModule1": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"ProductivityModule2": {
+				"craftTime": 30,
+				"ingredient": {
+					"ProductivityModule1": 4,
+					"AdvancedCircuit": 5,
+					"ProcessingUnit": 5
+				},
+				"product": {
+					"ProductivityModule2": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"ProductivityModule3": {
+				"craftTime": 60,
+				"ingredient": {
+					"ProductivityModule2": 5,
+					"AdvancedCircuit": 5,
+					"ProcessingUnit": 5
+				},
+				"product": {
+					"ProductivityModule3": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+
+
+			"SulfuricAcid": {
+				"craftTime": 1,
+				"ingredient": {
+					"Sulfur": 5,
+					"IronPlate": 1,
+					"Water": 10
+				},
+				"product": {
+					"SulfuricAcid": 50
+				},
+				"machine": [
+					"ChemicalPlant"
+				],
+				"acceptProductivityModule": true
+			},
+			"BasicOilProcessing": {
+				"label": "Basic Oil Processing",
+				"icon": "Recipe/BasicOilProcessing.png",
+				"craftTime": 5,
+				"ingredient": {
+					"CrudeOil": 100
+				},
+				"product": {
+					"HeavyOil": 30,
+					"LightOil": 30,
+					"PetroleumGas": 40
+				},
+				"machine": [
+					"OilRefinery"
+				],
+				"acceptProductivityModule": true
+			},
+			"AdvancedOilProcessing": {
+				"label": "Advanced Oil Processing",
+				"icon": "Recipe/AdvancedOilProcessing.png",
+				"craftTime": 5,
+				"ingredient": {
+					"Water": 50,
+					"CrudeOil": 100
+				},
+				"product": {
+					"HeavyOil": 10,
+					"LightOil": 45,
+					"PetroleumGas": 55
+				},
+				"machine": [
+					"OilRefinery"
+				],
+				"acceptProductivityModule": true
+			},
+			"CoalLiquefaction": {
+				"label": "Coal Liquefaction",
+				"icon": "Recipe/CoalLiquefaction.png",
+				"craftTime": 5,
+				"ingredient": {
+					"Coal": 10,
+					"HeavyOil": 25,
+					"Water": 50
+				},
+				"product": {
+					"HeavyOil": 35,
+					"LightOil": 15,
+					"PetroleumGas": 20
+				},
+				"machine": [
+					"OilRefinery"
+				],
+				"acceptProductivityModule": true
+			},
+			"HeavyOilCracking": {
+				"label": "Heavy Oil Cracking To Light Oil",
+				"icon": "Recipe/HeavyOilCracking.png",
+				"craftTime": 3,
+				"ingredient": {
+					"Water": 30,
+					"HeavyOil": 40
+				},
+				"product": {
+					"LightOil": 30
+				},
+				"machine": [
+					"ChemicalPlant"
+				],
+				"acceptProductivityModule": true
+			},
+			"LightOilCracking": {
+				"label": "Light Oil Cracking To Petroleum Gas",
+				"icon": "Recipe/LightOilCracking.png",
+				"craftTime": 3,
+				"ingredient": {
+					"Water": 30,
+					"LightOil": 30
+				},
+				"product": {
+					"PetroleumGas": 20
+				},
+				"machine": [
+					"ChemicalPlant"
+				],
+				"acceptProductivityModule": true
+			},
+			"SolidFuel_LightOil": {
+				"label": "Solid Fuel",
+				"icon": "Recipe/SolidFuel_LightOil.png",
+				"craftTime": 3,
+				"ingredient": {
+					"LightOil": 10
+				},
+				"product": {
+					"SolidFuel": 1
+				},
+				"machine": [
+					"ChemicalPlant"
+				],
+				"acceptProductivityModule": true
+			},
+			"SolidFuel_PetroleumGas": {
+				"label": "Solid Fuel",
+				"icon": "Recipe/SolidFuel_PetroleumGas.png",
+				"craftTime": 3,
+				"ingredient": {
+					"PetroleumGas": 20
+				},
+				"product": {
+					"SolidFuel": 1
+				},
+				"machine": [
+					"ChemicalPlant"
+				],
+				"acceptProductivityModule": true
+			},
+			"SolidFuel_HeavyOil": {
+				"label": "Solid Fuel",
+				"icon": "Recipe/SolidFuel_HeavyOil.png",
+				"craftTime": 3,
+				"ingredient": {
+					"HeavyOil": 20
+				},
+				"product": {
+					"SolidFuel": 1
+				},
+				"machine": [
+					"ChemicalPlant"
+				],
+				"acceptProductivityModule": true
+			},
+			"Lubricant": {
+				"craftTime": 1,
+				"ingredient": {
+					"HeavyOil": 10
+				},
+				"product": {
+					"Lubricant": 10
+				},
+				"machine": [
+					"ChemicalPlant"
+				],
+				"acceptProductivityModule": true
+			},
+
+			"Wood": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"RawWood": 1
+				},
+				"product": {
+					"Wood": 2
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+			"IronPlate": {
+				"craftTime": 3.5,
+				"ingredient": {
+					"IronOre": 1
+				},
+				"product": {
+					"IronPlate": 1
+				},
+				"machine": [
+					"StoneFurnace",
+					"SteelFurnace",
+					"ElectricFurnace"
+				],
+				"acceptProductivityModule": true
+			},
+			"CopperPlate": {
+				"craftTime": 3.5,
+				"ingredient": {
+					"CopperOre": 1
+				},
+				"product": {
+					"CopperPlate": 1
+				},
+				"machine": [
+					"StoneFurnace",
+					"SteelFurnace",
+					"ElectricFurnace"
+				],
+				"acceptProductivityModule": true
+			},
+			"SteelPlate": {
+				"craftTime": 17.5,
+				"ingredient": {
+					"IronPlate": 5
+				},
+				"product": {
+					"SteelPlate": 1
+				},
+				"machine": [
+					"StoneFurnace",
+					"SteelFurnace",
+					"ElectricFurnace"
+				],
+				"acceptProductivityModule": true
+			},
+			"Sulfur": {
+				"craftTime": 1,
+				"ingredient": {
+					"Water": 30,
+					"PetroleumGas": 30
+				},
+				"product": {
+					"Sulfur": 2
+				},
+				"machine": [
+					"ChemicalPlant"
+				],
+				"acceptProductivityModule": true
+			},
+			"PlasticBar": {
+				"craftTime": 1,
+				"ingredient": {
+					"Coal": 5,
+					"PetroleumGas": 20
+				},
+				"product": {
+					"PlasticBar": 2
+				},
+				"machine": [
+					"ChemicalPlant"
+				],
+				"acceptProductivityModule": true
+			},
+			"UraniumProcessing": {
+				"label": "Uranium Processing",
+				"icon": "Recipe/UraniumProcessing.png",
+				"craftTime": 10,
+				"ingredient": {
+					"UraniumOre": 10
+				},
+				"product": {
+					"Uranium235": 0.007,
+					"Uranium238": 0.993
+				},
+				"machine": [
+					"Centrifuge"
+				],
+				"acceptProductivityModule": true
+			},
+
+			"FillCrudeOilBarrel": {
+				"craftTime": 1,
+				"ingredient": {
+					"EmptyBarrel": 1,
+					"CrudeOil": 250
+				},
+				"product": {
+					"CrudeOilBarrel": 2
+				},
+				"machine": [
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"FillHeavyOilBarrel": {
+				"craftTime": 1,
+				"ingredient": {
+					"EmptyBarrel": 1,
+					"HeavyOil": 250
+				},
+				"product": {
+					"HeavyOilBarrel": 2
+				},
+				"machine": [
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"FillLightOilBarrel": {
+				"craftTime": 1,
+				"ingredient": {
+					"EmptyBarrel": 1,
+					"LightOil": 250
+				},
+				"product": {
+					"LightOilBarrel": 2
+				},
+				"machine": [
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"FillLubricantBarrel": {
+				"craftTime": 1,
+				"ingredient": {
+					"EmptyBarrel": 1,
+					"Lubricant": 250
+				},
+				"product": {
+					"LubricantBarrel": 2
+				},
+				"machine": [
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"FillPetroleumGasBarrel": {
+				"craftTime": 1,
+				"ingredient": {
+					"EmptyBarrel": 1,
+					"PetroleumGas": 250
+				},
+				"product": {
+					"PetroleumGasBarrel": 2
+				},
+				"machine": [
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"FillSulfuricAcidBarrel": {
+				"craftTime": 1,
+				"ingredient": {
+					"EmptyBarrel": 1,
+					"SulfuricAcid": 250
+				},
+				"product": {
+					"SulfuricAcidBarrel": 2
+				},
+				"machine": [
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"FillWaterBarrel": {
+				"craftTime": 1,
+				"ingredient": {
+					"EmptyBarrel": 1,
+					"Water": 250
+				},
+				"product": {
+					"WaterBarrel": 2
+				},
+				"machine": [
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+
+			"EmptyCrudeOilBarrel": {
+				"craftTime": 1,
+				"ingredient": {
+					"CrudeOilBarrel": 2
+				},
+				"product": {
+					"EmptyBarrel": 1,
+					"CrudeOil": 250
+				},
+				"machine": [
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"EmptyHeavyOilBarrel": {
+				"craftTime": 1,
+				"ingredient": {
+					"HeavyOilBarrel": 2
+				},
+				"product": {
+					"EmptyBarrel": 1,
+					"HeavyOil": 250
+				},
+				"machine": [
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"EmptyLightOilBarrel": {
+				"craftTime": 1,
+				"ingredient": {
+					"LightOilBarrel": 2
+				},
+				"product": {
+					"EmptyBarrel": 1,
+					"LightOil": 250
+				},
+				"machine": [
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"EmptyLubricantBarrel": {
+				"craftTime": 1,
+				"ingredient": {
+					"LubricantBarrel": 2
+				},
+				"product": {
+					"EmptyBarrel": 1,
+					"Lubricant": 250
+				},
+				"machine": [
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"EmptyPetroleumGasBarrel": {
+				"craftTime": 1,
+				"ingredient": {
+					"PetroleumGasBarrel": 2
+				},
+				"product": {
+					"EmptyBarrel": 1,
+					"PetroleumGas": 250
+				},
+				"machine": [
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"EmptySulfuricAcidBarrel": {
+				"craftTime": 1,
+				"ingredient": {
+					"SulfuricAcidBarrel": 2
+				},
+				"product": {
+					"EmptyBarrel": 1,
+					"SulfuricAcid": 250
+				},
+				"machine": [
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"EmptyWaterBarrel": {
+				"craftTime": 1,
+				"ingredient": {
+					"WaterBarrel": 2
+				},
+				"product": {
+					"EmptyBarrel": 1,
+					"Water": 250
+				},
+				"machine": [
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+
+			"CopperCable": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"CopperPlate": 1
+				},
+				"product": {
+					"CopperCable": 2
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+			"IronStick": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"IronPlate": 1
+				},
+				"product": {
+					"IronStick": 2
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+			"IronGearWheel": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"IronPlate": 2
+				},
+				"product": {
+					"IronGearWheel": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+			"EmptyBarrel": {
+				"craftTime": 1,
+				"ingredient": {
+					"SteelPlate": 1
+				},
+				"product": {
+					"EmptyBarrel": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+			"ElectronicCircuit": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"IronPlate": 1,
+					"CopperCable": 3
+				},
+				"product": {
+					"ElectronicCircuit": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+			"AdvancedCircuit": {
+				"craftTime": 6,
+				"ingredient": {
+					"ElectronicCircuit": 2,
+					"PlasticBar": 2,
+					"CopperCable": 4
+				},
+				"product": {
+					"AdvancedCircuit": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+			"ProcessingUnit": {
+				"craftTime": 10,
+				"ingredient": {
+					"ElectronicCircuit": 20,
+					"AdvancedCircuit": 2,
+					"SulfuricAcid": 5
+				},
+				"product": {
+					"ProcessingUnit": 1
+				},
+				"machine": [
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+			"EngineUnit": {
+				"craftTime": 10,
+				"ingredient": {
+					"SteelPlate": 1,
+					"IronGearWheel": 1,
+					"Pipe": 2
+				},
+				"product": {
+					"EngineUnit": 1
+				},
+				"machine": [
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+			"ElectricEngineUnit": {
+				"craftTime": 10,
+				"ingredient": {
+					"EngineUnit": 1,
+					"ElectronicCircuit": 2,
+					"Lubricant": 15
+				},
+				"product": {
+					"ElectricEngineUnit": 1
+				},
+				"machine": [
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+			"Battery": {
+				"craftTime": 5,
+				"ingredient": {
+					"IronPlate": 1,
+					"CopperPlate": 2,
+					"SulfuricAcid": 20
+				},
+				"product": {
+					"Battery": 1
+				},
+				"machine": [
+					"ChemicalPlant"
+				],
+				"acceptProductivityModule": true
+			},
+			"Explosives": {
+				"craftTime": 5,
+				"ingredient": {
+					"Sulfur": 1,
+					"Coal": 1,
+					"Water": 10
+				},
+				"product": {
+					"Explosives": 1
+				},
+				"machine": [
+					"ChemicalPlant"
+				],
+				"acceptProductivityModule": true
+			},
+			"FlyingRobotFrame": {
+				"craftTime": 20,
+				"ingredient": {
+					"ElectricEngineUnit": 1,
+					"Battery": 2,
+					"SteelPlate": 1,
+					"ElectronicCircuit": 3
+				},
+				"product": {
+					"FlyingRobotFrame": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+			"LowDensityStructure": {
+				"craftTime": 30,
+				"ingredient": {
+					"SteelPlate": 10,
+					"CopperPlate": 5,
+					"PlasticBar": 5
+				},
+				"product": {
+					"LowDensityStructure": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+			"RocketFuel": {
+				"craftTime": 30,
+				"ingredient": {
+					"SolidFuel": 10
+				},
+				"product": {
+					"ElectronicCircuit": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+			"RocketControlUnit": {
+				"craftTime": 30,
+				"ingredient": {
+					"ProcessingUnit": 1,
+					"SpeedModule1": 1
+				},
+				"product": {
+					"RocketControlUnit": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+			"RocketPart": {
+				"craftTime": 3,
+				"ingredient": {
+					"LowDensityStructure": 10,
+					"RocketFuel": 10,
+					"RocketControlUnit": 10
+				},
+				"product": {
+					"RocketPart": 1
+				},
+				"machine": [
+					"RocketSilo"
+				],
+				"acceptProductivityModule": true
+			},
+			"Satellite": {
+				"craftTime": 3,
+				"ingredient": {
+					"LowDensityStructure": 100,
+					"SolarPanel": 100,
+					"Accumlator": 100,
+					"Radar": 5,
+					"ProcessingUnit": 100,
+					"RocketFuel": 50
+				},
+				"product": {
+					"Satellite": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"UraniumFuelCell": {
+				"craftTime": 10,
+				"ingredient": {
+					"IronPlate": 10,
+					"Uranium235": 1,
+					"Uranium238": 19
+				},
+				"product": {
+					"UraniumFuelCell": 10
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+			"NuclearFuelReprocessing": {
+				"name": "Nuclear Fuel Reprocessing",
+				"icon": "Recipe/NuclearFuelReprocessing.png",
+				"craftTime": 50,
+				"ingredient": {
+					"UsedUpUraniumFuelCell": 5
+				},
+				"product": {
+					"Uranium238": 3
+				},
+				"machine": [
+					"Centrifuge"
+				],
+				"acceptProductivityModule": false
+			},
+			"KovarexEnrichmentProcess": {
+				"name": "Kovarex Enrichment Process",
+				"icon": "Recipe/KovarexEnrichmentProcess.png",
+				"craftTime": 50,
+				"ingredient": {
+					"Uranium235": 40,
+					"Uranium238": 5
+				},
+				"product": {
+					"Uranium235": 41,
+					"Uranium238": 2
+				},
+				"machine": [
+					"Centrifuge"
+				],
+				"acceptProductivityModule": true
+			},
+
+			"SciencePack1": {
+				"craftTime": 5,
+				"ingredient": {
+					"CopperPlate": 1,
+					"IronGearWheel": 1
+				},
+				"product": {
+					"SciencePack1": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+			"SciencePack2": {
+				"craftTime": 6,
+				"ingredient": {
+					"Inserter": 1,
+					"TransportBelt": 1
+				},
+				"product": {
+					"SciencePack2": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+			"SciencePack3": {
+				"craftTime": 12,
+				"ingredient": {
+					"AdvancedCircuit": 1,
+					"EngineUnit": 1,
+					"ElectricMiningDrill": 1
+				},
+				"product": {
+					"SciencePack3": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+			"MilitarySciencePack": {
+				"craftTime": 10,
+				"ingredient": {
+					"PiercingRoundsMagazine": 1,
+					"Grenade": 1,
+					"GunTurret": 1
+				},
+				"product": {
+					"MilitarySciencePack": 2
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+			"ProductionSciencePack": {
+				"craftTime": 14,
+				"ingredient": {
+					"ElectricEngineUnit": 1,
+					"AssemblingMachine1": 1,
+					"ElectricFurnace": 1
+				},
+				"product": {
+					"ProductionSciencePack": 2
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+			"HighTechSciencePack": {
+				"craftTime": 14,
+				"ingredient": {
+					"Battery": 1,
+					"ProcessingUnit": 3,
+					"SpeedModule1": 1,
+					"CopperCable": 30
+				},
+				"product": {
+					"HighTechSciencePack": 2
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+			"SpaceSciencePack": {
+				"craftTime": 1,
+				"ingredient": {
+					"RocketPart": 100,
+					"Satellite": 1
+				},
+				"product": {
+					"SpaceSciencePack": 1000
+				},
+				"machine": [
+					"RocketSilo_Launch"
+				],
+				"acceptProductivityModule": false
+			},
+
+
+			"Pistol": {
+				"craftTime": 5,
+				"ingredient": {
+					"CopperPlate": 5,
+					"IronPlate": 5
+				},
+				"product": {
+					"Pistol": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"SubmachineGun": {
+				"craftTime": 10,
+				"ingredient": {
+					"IronGearWheel": 10,
+					"CopperPlate": 5,
+					"IronPlate": 5
+				},
+				"product": {
+					"SubmachineGun": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"Shotgun": {
+				"craftTime": 10,
+				"ingredient": {
+					"IronPlate": 15,
+					"IronGearWheel": 5,
+					"CopperPlate": 10,
+					"Wood": 5
+				},
+				"product": {
+					"Shotgun": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"CombatShotgun": {
+				"craftTime": 10,
+				"ingredient": {
+					"SteelPlate": 15,
+					"IronGearWheel": 5,
+					"CopperPlate": 10,
+					"Wood": 10
+				},
+				"product": {
+					"CombatShotgun": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"RocketLauncher": {
+				"craftTime": 10,
+				"ingredient": {
+					"IronPlate": 5,
+					"IronGearWheel": 5,
+					"ElectronicCircuit": 5
+				},
+				"product": {
+					"RocketLauncher": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"Flamethrower": {
+				"craftTime": 10,
+				"ingredient": {
+					"SteelPlate": 5,
+					"IronGearWheel": 1
+				},
+				"product": {
+					"Flamethrower": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"LandMine": {
+				"craftTime": 5,
+				"ingredient": {
+					"SteelPlate": 1,
+					"Explosives": 1
+				},
+				"product": {
+					"LandMine": 4
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+
+			"FirearmMagazine": {
+				"craftTime": 1,
+				"ingredient": {
+					"IronPlate": 4
+				},
+				"product": {
+					"FirearmMagazine": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"PiercingRoundsMagazine": {
+				"craftTime": 3,
+				"ingredient": {
+					"FirearmMagazine": 1,
+					"SteelPlate": 1,
+					"CopperPlate": 5
+				},
+				"product": {
+					"PiercingRoundsMagazine": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"UraniumRoundMagazine": {
+				"craftTime": 10,
+				"ingredient": {
+					"PiercingRoundsMagazine": 1,
+					"Uranium238": 1
+				},
+				"product": {
+					"UraniumRoundMagazine": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"ShotgunShells": {
+				"craftTime": 3,
+				"ingredient": {
+					"CopperPlate": 2,
+					"IronPlate": 2
+				},
+				"product": {
+					"ShotgunShells": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"PiercingShotgunShells": {
+				"craftTime": 8,
+				"ingredient": {
+					"ShotgunShells": 2,
+					"CopperPlate": 5,
+					"SteelPlate": 2
+				},
+				"product": {
+					"PiercingShotgunShells": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"CannonShell": {
+				"craftTime": 8,
+				"ingredient": {
+					"SteelPlate": 2,
+					"PlasticBar": 2,
+					"Explosives": 1
+				},
+				"product": {
+					"CannonShell": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"ExplosiveCannonShell": {
+				"craftTime": 8,
+				"ingredient": {
+					"SteelPlate": 2,
+					"PlasticBar": 2,
+					"Explosives": 2
+				},
+				"product": {
+					"ExplosiveCannonShell": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"UraniumCannonShell": {
+				"craftTime": 12,
+				"ingredient": {
+					"CannonShell": 1,
+					"Uranium238": 1
+				},
+				"product": {
+					"UraniumCannonShell": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"ExplosiveUraniumCannonShell": {
+				"craftTime": 12,
+				"ingredient": {
+					"ExplosiveCannonShell": 1,
+					"Uranium238": 1
+				},
+				"product": {
+					"ExplosiveUraniumCannonShell": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"Rocket": {
+				"craftTime": 8,
+				"ingredient": {
+					"ElectronicCircuit": 1,
+					"Explosives": 1,
+					"IronPlate": 2
+				},
+				"product": {
+					"Rocket": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"ExplosiveRocket": {
+				"craftTime": 8,
+				"ingredient": {
+					"Rocket": 1,
+					"Explosives": 2
+				},
+				"product": {
+					"ExplosiveRocket": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"AtomicBomb": {
+				"craftTime": 50,
+				"ingredient": {
+					"ProcessingUnit": 20,
+					"Explosives": 10,
+					"Uranium235": 30
+				},
+				"product": {
+					"AtomicBomb": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"FlamethrowerAmmo": {
+				"craftTime": 6,
+				"ingredient": {
+					"SteelPlate": 5,
+					"LightOil": 50,
+					"HeavyOil": 50
+				},
+				"product": {
+					"FlamethrowerAmmo": 1
+				},
+				"machine": [
+					"ChemicalPlant"
+				],
+				"acceptProductivityModule": false
+			},
+
+			"Grenade": {
+				"craftTime": 8,
+				"ingredient": {
+					"IronPlate": 5,
+					"Coal": 10
+				},
+				"product": {
+					"Grenade": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"ClusterGrenade": {
+				"craftTime": 8,
+				"ingredient": {
+					"Grenade": 7,
+					"Explosives": 5,
+					"SteelPlate": 5
+				},
+				"product": {
+					"ClusterGrenade": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"PoisonCapsule": {
+				"craftTime": 8,
+				"ingredient": {
+					"SteelPlate": 3,
+					"ElectronicCircuit": 3,
+					"Coal": 10
+				},
+				"product": {
+					"PoisonCapsule": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"SlowdownCapsule": {
+				"craftTime": 8,
+				"ingredient": {
+					"SteelPlate": 2,
+					"ElectronicCircuit": 2,
+					"Coal": 5
+				},
+				"product": {
+					"SlowdownCapsule": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"DefenderCapsule": {
+				"craftTime": 8,
+				"ingredient": {
+					"PiercingRoundsMagazine": 1,
+					"ElectronicCircuit": 2,
+					"IronGearWheel": 3
+				},
+				"product": {
+					"DefenderCapsule": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"DistractorCapsule": {
+				"craftTime": 15,
+				"ingredient": {
+					"DefenderCapsule": 4,
+					"AdvancedCircuit": 3
+				},
+				"product": {
+					"DistractorCapsule": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"DestroyerCapsule": {
+				"craftTime": 15,
+				"ingredient": {
+					"DistractorCapsule": 4,
+					"SpeedModule1": 1
+				},
+				"product": {
+					"DestroyerCapsule": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"DischargeDefenseRemote": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"ElectronicCircuit": 1
+				},
+				"product": {
+					"DischargeDefenseRemote": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+
+			"LightArmor": {
+				"craftTime": 3,
+				"ingredient": {
+					"IronPlate": 40
+				},
+				"product": {
+					"LightArmor": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"HeavyArmor": {
+				"craftTime": 8,
+				"ingredient": {
+					"CopperPlate": 100,
+					"SteelPlate": 50
+				},
+				"product": {
+					"HeavyArmor": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"ModularArmor": {
+				"craftTime": 15,
+				"ingredient": {
+					"AdvancedCircuit": 30,
+					"SteelPlate": 50
+				},
+				"product": {
+					"ModularArmor": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"PowerArmor": {
+				"craftTime": 20,
+				"ingredient": {
+					"ProcessingUnit": 40,
+					"ElectricEngineUnit": 20,
+					"SteelPlate": 40
+				},
+				"product": {
+					"PowerArmor": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"PowerArmorMK2": {
+				"craftTime": 25,
+				"ingredient": {
+					"EfficiencyModule3": 5,
+					"SpeedModule3": 5,
+					"ProcessingUnit": 40,
+					"SteelPlate": 40
+				},
+				"product": {
+					"PowerArmorMK2": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+
+			"PortableSolarPanel": {
+				"craftTime": 10,
+				"ingredient": {
+					"SolarPanel": 5,
+					"AdvancedCircuit": 1,
+					"SteelPlate": 5
+				},
+				"product": {
+					"PortableSolarPanel": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"PortableFusionReactor": {
+				"craftTime": 10,
+				"ingredient": {
+					"ProcessingUnit": 250
+				},
+				"product": {
+					"PortableFusionReactor": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"EnergyShield": {
+				"craftTime": 10,
+				"ingredient": {
+					"AdvancedCircuit": 5,
+					"SteelPlate": 10
+				},
+				"product": {
+					"EnergyShield": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"EnergyShieldMK2": {
+				"craftTime": 10,
+				"ingredient": {
+					"EnergyShield": 10,
+					"ProcessingUnit": 10
+				},
+				"product": {
+					"EnergyShieldMK2": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"Battery_Equipment": {
+				"craftTime": 10,
+				"ingredient": {
+					"Battery": 5,
+					"SteelPlate": 10
+				},
+				"product": {
+					"Battery_Equipment": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"BatteryMK2": {
+				"craftTime": 10,
+				"ingredient": {
+					"Battery_Equipment": 10,
+					"ProcessingUnit": 20
+				},
+				"product": {
+					"BatteryMK2": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"PersonalLaserDefense": {
+				"craftTime": 10,
+				"ingredient": {
+					"ProcessingUnit": 1,
+					"SteelPlate": 5,
+					"LaserTurret": 5
+				},
+				"product": {
+					"PersonalLaserDefense": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"DischargeDefense": {
+				"craftTime": 10,
+				"ingredient": {
+					"ProcessingUnit": 5,
+					"SteelPlate": 20,
+					"LaserTurret": 10
+				},
+				"product": {
+					"DischargeDefense": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"Exoskeleton": {
+				"craftTime": 10,
+				"ingredient": {
+					"ProcessingUnit": 10,
+					"ElectricEngineUnit": 30,
+					"SteelPlate": 20
+				},
+				"product": {
+					"Exoskeleton": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"PersonalRoboport": {
+				"craftTime": 10,
+				"ingredient": {
+					"AdvancedCircuit": 10,
+					"IronGearWheel": 40,
+					"SteelPlate": 20,
+					"Battery": 45
+				},
+				"product": {
+					"PersonalRoboport": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"PersonalRoboportMK2": {
+				"craftTime": 20,
+				"ingredient": {
+					"PersonalRoboport": 5,
+					"ProcessingUnit": 100
+				},
+				"product": {
+					"PersonalRoboportMK2": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"Nightvision": {
+				"craftTime": 10,
+				"ingredient": {
+					"AdvancedCircuit": 5,
+					"SteelPlate": 10
+				},
+				"product": {
+					"Nightvision": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+
+			"StoneWall": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"Stone": 5
+				},
+				"product": {
+					"StoneWall": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"Gate": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"StoneWall": 1,
+					"SteelPlate": 2,
+					"ElectronicCircuit": 2
+				},
+				"product": {
+					"Gate": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"GunTurret": {
+				"craftTime": 8,
+				"ingredient": {
+					"IronGearWheel": 10,
+					"CopperPlate": 10,
+					"IronPlate": 20
+				},
+				"product": {
+					"GunTurret": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"LaserTurret": {
+				"craftTime": 20,
+				"ingredient": {
+					"SteelPlate": 20,
+					"ElectronicCircuit": 20,
+					"Battery": 12
+				},
+				"product": {
+					"LaserTurret": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"FlamethrowerTurret": {
+				"craftTime": 20,
+				"ingredient": {
+					"SteelPlate": 30,
+					"IronGearWheel": 15,
+					"Pipe": 10,
+					"EngineUnit": 5
+				},
+				"product": {
+					"FlamethrowerTurret": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"Radar": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"ElectronicCircuit": 5,
+					"IronGearWheel": 5,
+					"IronPlate": 10
+				},
+				"product": {
+					"Radar": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"Ro[cketSilo": {
+				"craftTime": 30,
+				"ingredient": {
+					"SteelPlate": 1000,
+					"Concrete": 1000,
+					"Pipe": 100,
+					"ProcessingUnit": 200,
+					"ElectricEngineUnit": 200
+				},
+				"product": {
+					"RocketSilo": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			}
 		},
-		"SteamEngine": {
-			"craftTime": 0.5,
-			"hardness": 0,
-			"ingredient": {
-				"IronGearWheel": 5,
-				"Pipe": 5,
-				"IronPlate": 5
+		"Expensive": {
+			"ExpressTransportBelt": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"IronGearWheel": 20,
+					"FastTransportBelt": 1,
+					"Lubricant": 20
+				},
+				"product": {
+					"ExpressTransportBelt": 1
+				},
+				"machine": [
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"product": {
-				"SteamEngine": 1
+
+			"Pipe": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"IronPlate": 2
+				},
+				"product": {
+					"Pipe": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
-		},
-		"Accumlator": {
-			"craftTime": 10,
-			"hardness": 0,
-			"ingredient": {
-				"IronPlate": 2,
-				"Battery": 5
+
+			"Tank": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"EngineUnit": 64,
+					"SteelPlate": 100,
+					"IronGearWheel": 30,
+					"AdvancedCircuit": 20
+				},
+				"product": {
+					"Tank": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"product": {
-				"Accumlator": 1
+
+
+			"SteamEngine": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"IronGearWheel": 10,
+					"Pipe": 5,
+					"IronPlate": 50
+				},
+				"product": {
+					"SteamEngine": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
 			},
-			"machine": [
-				"Hand_crafting",
-				"AssemblingMachine1",
-				"AssemblingMachine2",
-				"AssemblingMachine3"
-			],
-			"acceptProductivityModule": false
+
+			"BurnerMiningDrill": {
+				"craftTime": 4,
+				"ingredient": {
+					"IronGearWheel": 6,
+					"StoneFurnace": 2,
+					"IronPlate": 6
+				},
+				"product": {
+					"BurnerMiningDrill": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"ElectricMiningDrill": {
+				"craftTime": 2,
+				"ingredient": {
+					"ElectronicCircuit": 5,
+					"IronGearWheel": 10,
+					"IronPlate": 20
+				},
+				"product": {
+					"ElectricMiningDrill": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+
+			"AssemblingMachine2": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"IronPlate": 20,
+					"ElectronicCircuit": 5,
+					"IronGearWheel": 10,
+					"AssemblingMachine1": 1
+				},
+				"product": {
+					"AssemblingMachine2": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+
+
+			"SteelPlate": {
+				"craftTime": 35,
+				"ingredient": {
+					"IronPlate": 10
+				},
+				"product": {
+					"SteelPlate": 1
+				},
+				"machine": [
+					"StoneFurnace",
+					"SteelFurnace",
+					"ElectricFurnace"
+				],
+				"acceptProductivityModule": true
+			},
+
+			"IronGearWheel": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"IronPlate": 4
+				},
+				"product": {
+					"IronGearWheel": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+			"ElectronicCircuit": {
+				"craftTime": 0.5,
+				"ingredient": {
+					"IronPlate": 2,
+					"CopperCable": 10
+				},
+				"product": {
+					"ElectronicCircuit": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+			"AdvancedCircuit": {
+				"craftTime": 6,
+				"ingredient": {
+					"ElectronicCircuit": 2,
+					"PlasticBar": 2,
+					"CopperCable": 8
+				},
+				"product": {
+					"AdvancedCircuit": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+			"ProcessingUnit": {
+				"craftTime": 10,
+				"ingredient": {
+					"ElectronicCircuit": 20,
+					"AdvancedCircuit": 2,
+					"SulfuricAcid": 10
+				},
+				"product": {
+					"ProcessingUnit": 1
+				},
+				"machine": [
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+			"Battery": {
+				"craftTime": 5,
+				"ingredient": {
+					"IronPlate": 1,
+					"CopperPlate": 2,
+					"SulfuricAcid": 40
+				},
+				"product": {
+					"Battery": 1
+				},
+				"machine": [
+					"ChemicalPlant"
+				],
+				"acceptProductivityModule": true
+			},
+			"Explosives": {
+				"craftTime": 5,
+				"ingredient": {
+					"Sulfur": 2,
+					"Coal": 2,
+					"Water": 10
+				},
+				"product": {
+					"Explosives": 1
+				},
+				"machine": [
+					"ChemicalPlant"
+				],
+				"acceptProductivityModule": true
+			},
+			"LowDensityStructure": {
+				"craftTime": 30,
+				"ingredient": {
+					"SteelPlate": 10,
+					"CopperPlate": 10,
+					"PlasticBar": 10
+				},
+				"product": {
+					"LowDensityStructure": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": true
+			},
+
+
+			"SubmachineGun": {
+				"craftTime": 10,
+				"ingredient": {
+					"IronGearWheel": 15,
+					"CopperPlate": 20,
+					"IronPlate": 30
+				},
+				"product": {
+					"SubmachineGun": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"Flamethrower": {
+				"craftTime": 10,
+				"ingredient": {
+					"SteelPlate": 5,
+					"IronGearWheel": 10
+				},
+				"product": {
+					"Flamethrower": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"LandMine": {
+				"craftTime": 5,
+				"ingredient": {
+					"SteelPlate": 1,
+					"Explosives": 2
+				},
+				"product": {
+					"LandMine": 4
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+
+			"CannonShell": {
+				"craftTime": 8,
+				"ingredient": {
+					"SteelPlate": 4,
+					"PlasticBar": 4,
+					"Explosives": 1
+				},
+				"product": {
+					"CannonShell": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			},
+			"ExplosiveCannonShell": {
+				"craftTime": 8,
+				"ingredient": {
+					"SteelPlate": 4,
+					"PlasticBar": 4,
+					"Explosives": 2
+				},
+				"product": {
+					"ExplosiveCannonShell": 1
+				},
+				"machine": [
+					"Hand",
+					"AssemblingMachine2",
+					"AssemblingMachine3"
+				],
+				"acceptProductivityModule": false
+			}
 		}
 	},
-
 	"item": {
-		"Hand": {
-			"label": "Hand",
-			"icon": "Hand.png",
-			"url": "https://wiki.factorio.com/Manual_crafting",
-			"recipe": []
+		"WoodenChest": {
+			"label": "Wooden Chest",
+			"icon": "Item/WoodenChest.png",
+			"recipe": [
+				"WoodenChest"
+			]
 		},
+		"IronChest": {
+			"label": "Iron Chest",
+			"icon": "Item/IronChest.png",
+			"recipe": [
+				"IronChest"
+			]
+		},
+		"SteelChest": {
+			"label": "Steel Chest",
+			"icon": "Item/SteelChest.png",
+			"recipe": [
+				"SteelChest"
+			]
+		},
+		"StorageTank": {
+			"label": "Storage Tank",
+			"icon": "Item/StorageTank.png",
+			"recipe": [
+				"StorageTank"
+			]
+		},
+
+		"TransportBelt": {
+			"label": "Transport Belt",
+			"icon": "Item/TransportBelt.png",
+			"recipe": [
+				"TransportBelt"
+			]
+		},
+		"FastTransportBelt": {
+			"label": "Fast Transport Belt",
+			"icon": "Item/FastTransportBelt.png",
+			"recipe": [
+				"FastTransportBelt"
+			]
+		},
+		"ExpressTransportBelt": {
+			"label": "Express Transport Belt",
+			"icon": "Item/ExpressTransportBelt.png",
+			"recipe": [
+				"ExpressTransportBelt"
+			]
+		},
+		"UndergroundBelt": {
+			"label": "Underground Belt",
+			"icon": "Item/UndergroundBelt.png",
+			"recipe": [
+				"UndergroundBelt"
+			]
+		},
+		"FastUndergroundBelt": {
+			"label": "Fast Underground Belt",
+			"icon": "Item/FastUndergroundBelt.png",
+			"recipe": [
+				"FastUndergroundBelt"
+			]
+		},
+		"ExpressUndergroundBelt": {
+			"label": "Express Underground Belt",
+			"icon": "Item/ExpressUndergroundBelt.png",
+			"recipe": [
+				"ExpressUndergroundBelt"
+			]
+		},
+		"Splitter": {
+			"label": "Splitter",
+			"icon": "Item/Splitter.png",
+			"recipe": [
+				"Splitter"
+			]
+		},
+		"FastSplitter": {
+			"label": "Fast Splitter",
+			"icon": "Item/FastSplitter.png",
+			"recipe": [
+				"FastSplitter"
+			]
+		},
+		"ExpressSplitter": {
+			"label": "Express Splitter",
+			"icon": "Item/ExpressSplitter.png",
+			"recipe": [
+				"ExpressSplitter"
+			]
+		},
+
+		"BurnerInserter": {
+			"label": "Burner Inserter",
+			"icon": "Item/BurnerInserter.png",
+			"recipe": [
+				"BurnerInserter"
+			]
+		},
+		"Inserter": {
+			"label": "Inserter",
+			"icon": "Item/Inserter.png",
+			"recipe": [
+				"Inserter"
+			]
+		},
+		"LongHandedInserter": {
+			"label": "Long Handed Inserter",
+			"icon": "Item/LongHandedInserter.png",
+			"recipe": [
+				"LongHandedInserter"
+			]
+		},
+		"FastInserter": {
+			"label": "Fast Inserter",
+			"icon": "Item/FastInserter.png",
+			"recipe": [
+				"FastInserter"
+			]
+		},
+		"FilterInserter": {
+			"label": "Filter Inserter",
+			"icon": "Item/FilterInserter.png",
+			"recipe": [
+				"FilterInserter"
+			]
+		},
+		"StackInserter": {
+			"label": "Stack Inserter",
+			"icon": "Item/StackInserter.png",
+			"recipe": [
+				"StackInserter"
+			]
+		},
+		"StackFilterInserter": {
+			"label": "Stack Filter Inserter",
+			"icon": "Item/StackFilterInserter.png",
+			"recipe": [
+				"StackFilterInserter"
+			]
+		},
+
+		"SmallElectricPole": {
+			"label": "Small Electric Pole",
+			"icon": "Item/SmallElectricPole.png",
+			"recipe": [
+				"SmallElectricPole"
+			]
+		},
+		"MediumElectricPole": {
+			"label": "Medium Electric Pole",
+			"icon": "Item/MediumElectricPole.png",
+			"recipe": [
+				"MediumElectricPole"
+			]
+		},
+		"BigElectricPole": {
+			"label": "Big Electric Pole",
+			"icon": "Item/BigElectricPole.png",
+			"recipe": [
+				"BigElectricPole"
+			]
+		},
+		"Substation": {
+			"label": "Substation",
+			"icon": "Item/Substation.png",
+			"recipe": [
+				"Substation"
+			]
+		},
+		"Pipe": {
+			"label": "Pipe",
+			"icon": "Item/Pipe.png",
+			"recipe": [
+				"Pipe"
+			]
+		},
+		"PipeToGround": {
+			"label": "Pipe to Ground",
+			"icon": "Item/PipeToGround.png",
+			"recipe": [
+				"PipeToGround"
+			]
+		},
+		"Pump": {
+			"label": "Pump",
+			"icon": "Item/Pump.png",
+			"recipe": [
+				"Pump"
+			]
+		},
+
+		"StraightRail": {
+			"label": "Straight Rail",
+			"icon": "Item/StraightRail.png",
+			"recipe": [
+				"StraightRail"
+			]
+		},
+		"TrainStop": {
+			"label": "Train Stop",
+			"icon": "Item/TrainStop.png",
+			"recipe": [
+				"TrainStop"
+			]
+		},
+		"RailSignal": {
+			"label": "Rail Signal",
+			"icon": "Item/RailSignal.png",
+			"recipe": [
+				"RailSignal"
+			]
+		},
+		"RailChainSignal": {
+			"label": "Rail Chain Signal",
+			"icon": "Item/RailChainSignal.png",
+			"recipe": [
+				"RailChainSignal"
+			]
+		},
+		"Locomotive": {
+			"label": "Locomotive",
+			"icon": "Item/Locomotive.png",
+			"recipe": [
+				"Locomotive"
+			]
+		},
+		"CargoWagon": {
+			"label": "Cargo Wagon",
+			"icon": "Item/CargoWagon.png",
+			"recipe": [
+				"CargoWagon"
+			]
+		},
+		"FluidWagon": {
+			"label": "Fluid Wagon",
+			"icon": "Item/FluidWagon.png",
+			"recipe": [
+				"FluidWagon"
+			]
+		},
+		"Car": {
+			"label": "Car",
+			"icon": "Item/Car.png",
+			"recipe": [
+				"Car"
+			]
+		},
+		"Tank": {
+			"label": "Tank",
+			"icon": "Item/Tank.png",
+			"recipe": [
+				"Tank"
+			]
+		},
+
+		"LogisticRobot": {
+			"label": "Logistic Robot",
+			"icon": "Item/LogisticRobot.png",
+			"recipe": [
+				"LogisticRobot"
+			]
+		},
+		"ConstructionRobot": {
+			"label": "Construction Robot",
+			"icon": "Item/ConstructionRobot.png",
+			"recipe": [
+				"ConstructionRobot"
+			]
+		},
+		"ActiveProviderChest": {
+			"label": "Active Provider Chest",
+			"icon": "Item/ActiveProviderChest.png",
+			"recipe": [
+				"ActiveProviderChest"
+			]
+		},
+		"PassiveProviderChest": {
+			"label": "Passive Provider Chest",
+			"icon": "Item/PassiveProviderChest.png",
+			"recipe": [
+				"PassiveProviderChest"
+			]
+		},
+		"RequesterChest": {
+			"label": "Requester Chest",
+			"icon": "Item/RequesterChest.png",
+			"recipe": [
+				"RequesterChest"
+			]
+		},
+		"StorageChest": {
+			"label": "Storage Chest",
+			"icon": "Item/StorageChest.png",
+			"recipe": [
+				"StorageChest"
+			]
+		},
+		"Roboport": {
+			"label": "Roboport",
+			"icon": "Item/Roboport.png",
+			"recipe": [
+				"Roboport"
+			]
+		},
+
+		"Lamp": {
+			"label": "Lamp",
+			"icon": "Item/Lamp.png",
+			"recipe": [
+				"Lamp"
+			]
+		},
+		"RedWire": {
+			"label": "Red Wire",
+			"icon": "Item/RedWire.png",
+			"recipe": [
+				"RedWire"
+			]
+		},
+		"GreenWire": {
+			"label": "Green Wire",
+			"icon": "Item/GreenWire.png",
+			"recipe": [
+				"GreenWire"
+			]
+		},
+		"ArithmeticCombinator": {
+			"label": "Arithmetic Combinator",
+			"icon": "Item/ArithmeticCombinator.png",
+			"recipe": [
+				"ArithmeticCombinator"
+			]
+		},
+		"DeciderCombinator": {
+			"label": "Decider Combinator",
+			"icon": "Item/DeciderCombinator.png",
+			"recipe": [
+				"DeciderCombinator"
+			]
+		},
+		"ConstantCombinator": {
+			"label": "Constant Combinator",
+			"icon": "Item/ConstantCombinator.png",
+			"recipe": [
+				"ConstantCombinator"
+			]
+		},
+		"PowerSwitch": {
+			"label": "Power Switch",
+			"icon": "Item/PowerSwitch.png",
+			"recipe": [
+				"PowerSwitch"
+			]
+		},
+		"ProgrammableSpeaker": {
+			"label": "Programmable Speaker",
+			"icon": "Item/ProgrammableSpeaker.png",
+			"recipe": [
+				"ProgrammableSpeaker"
+			]
+		},
+
+		"StoneBrick": {
+			"label": "Stone Brick",
+			"icon": "Item/StoneBrick.png",
+			"recipe": [
+				"StoneBrick"
+			]
+		},
+		"Concrete": {
+			"label": "Concrete",
+			"icon": "Item/Concrete.png",
+			"recipe": [
+				"Concrete"
+			]
+		},
+		"HazardConcrete": {
+			"label": "Hazard Concrete",
+			"icon": "Item/HazardConcrete.png",
+			"recipe": [
+				"HazardConcrete"
+			]
+		},
+		"Landfill": {
+			"label": "Landfill",
+			"icon": "Item/Landfill.png",
+			"recipe": [
+				"Landfill"
+			]
+		},
+
+
 		"IronAxe": {
 			"label": "Iron Axe",
-			"icon": "IronAxe.png",
-			"url": "https://wiki.factorio.com/Iron_axe",
+			"icon": "Item/IronAxe.png",
 			"recipe": [
 				"IronAxe"
 			]
 		},
 		"SteelAxe": {
 			"label": "Steel Axe",
-			"icon": "SteelAxe.png",
-			"url": "https://wiki.factorio.com/Steel_axe",
+			"icon": "Item/SteelAxe.png",
 			"recipe": [
 				"SteelAxe"
 			]
 		},
+		"RepairPack": {
+			"label": "Repair Pack",
+			"icon": "Item/RepairPack.png",
+			"recipe": [
+				"RepairPack"
+			]
+		},
+
+		"Boiler": {
+			"label": "Boiler",
+			"icon": "Item/Boiler.png",
+			"recipe": [
+				"Boiler"
+			]
+		},
+		"SteamEngine": {
+			"label": "Steam Engine",
+			"icon": "Item/SteamEngine.png",
+			"recipe": [
+				"SteamEngine"
+			]
+		},
+		"SteamTurbine": {
+			"label": "Steam Turbine",
+			"icon": "Item/SteamTurbine.png",
+			"recipe": [
+				"SteamTurbine"
+			]
+		},
+		"SolarPanel": {
+			"label": "Solar Panel",
+			"icon": "Item/SolarPanel.png",
+			"recipe": [
+				"SolarPanel"
+			]
+		},
+		"Accumlator": {
+			"label": "Accumlator",
+			"icon": "Item/Accumlator.png",
+			"recipe": [
+				"Accumlator"
+			]
+		},
+		"NuclearReactor": {
+			"label": "Nuclear Reactor",
+			"icon": "Item/NuclearReactor.png",
+			"recipe": [
+				"NuclearReactor"
+			]
+		},
+		"HeatExchanger": {
+			"label": "Heat Exchanger",
+			"icon": "Item/HeatExchanger.png",
+			"recipe": [
+				"HeatExchanger"
+			]
+		},
+		"HeatPipe": {
+			"label": "Heat Pipe",
+			"icon": "Item/HeatPipe.png",
+			"recipe": [
+				"HeatPipe"
+			]
+		},
+
 		"BurnerMiningDrill": {
 			"label": "Burner Mining Drill",
-			"icon": "BurnerMiningDrill.png",
-			"url": "https://wiki.factorio.com/Burner_mining_drill",
+			"icon": "Item/BurnerMiningDrill.png",
 			"recipe": [
 				"BurnerMiningDrill"
 			]
 		},
 		"ElectricMiningDrill": {
 			"label": "Electric Mining Drill",
-			"icon": "ElectricMiningDrill.png",
-			"url": "https://wiki.factorio.com/Electric_mining_drill",
+			"icon": "Item/ElectricMiningDrill.png",
 			"recipe": [
 				"ElectricMiningDrill"
 			]
 		},
 		"OffshorePump": {
 			"label": "Offshore Pump",
-			"icon": "OffshorePump.png",
-			"url": "https://wiki.factorio.com/Offshore_pump",
+			"icon": "Item/OffshorePump.png",
 			"recipe": [
 				"OffshorePump"
 			]
 		},
 		"Pumpjack": {
 			"label": "Pumpjack",
-			"icon": "Pumpjack.png",
-			"url": "https://wiki.factorio.com/Pumpjack",
+			"icon": "Item/Pumpjack.png",
 			"recipe": [
 				"Pumpjack"
 			]
 		},
+
 		"StoneFurnace": {
 			"label": "Stone Furnace",
-			"icon": "StoneFurnace.png",
-			"url": "https://wiki.factorio.com/Stone_furnace",
+			"icon": "Item/StoneFurnace.png",
 			"recipe": [
 				"StoneFurnace"
 			]
 		},
 		"SteelFurnace": {
 			"label": "Steel Furnace",
-			"icon": "SteelFurnace.png",
-			"url": "https://wiki.factorio.com/Steel_furnace",
+			"icon": "Item/SteelFurnace.png",
 			"recipe": [
 				"SteelFurnace"
 			]
 		},
 		"ElectricFurnace": {
 			"label": "Electric Furnace",
-			"icon": "ElectricFurnace.png",
-			"url": "https://wiki.factorio.com/Electric_furnace",
+			"icon": "Item/ElectricFurnace.png",
 			"recipe": [
 				"ElectricFurnace"
 			]
 		},
+
 		"AssemblingMachine1": {
 			"label": "Assembling Machine 1",
-			"icon": "AssemblingMachine1.png",
-			"url": "https://wiki.factorio.com/Assembling_machine_1",
+			"icon": "Item/AssemblingMachine1.png",
 			"recipe": [
 				"AssemblingMachine1"
 			]
 		},
 		"AssemblingMachine2": {
 			"label": "Assembling Machine 2",
-			"icon": "AssemblingMachine2.png",
-			"url": "https://wiki.factorio.com/Assembling_machine_2",
+			"icon": "Item/AssemblingMachine2.png",
 			"recipe": [
 				"AssemblingMachine2"
 			]
 		},
 		"AssemblingMachine3": {
 			"label": "Assembling Machine 3",
-			"icon": "AssemblingMachine3.png",
-			"url": "https://wiki.factorio.com/Assembling_machine_3",
+			"icon": "Item/AssemblingMachine3.png",
 			"recipe": [
 				"AssemblingMachine3"
 			]
 		},
 		"OilRefinery": {
 			"label": "Oil Refinery",
-			"icon": "OilRefinery.png",
-			"url": "https://wiki.factorio.com/Oil_refinery",
+			"icon": "Item/OilRefinery.png",
 			"recipe": [
 				"OilRefinery"
 			]
 		},
 		"ChemicalPlant": {
 			"label": "Chemical Plant",
-			"icon": "ChemicalPlant.png",
-			"url": "https://wiki.factorio.com/Chemical_plant",
+			"icon": "Item/ChemicalPlant.png",
 			"recipe": [
 				"ChemicalPlant"
 			]
 		},
-
-		"Water": {
-			"label": "Water",
-			"icon": "Water.png",
-			"url": "https://wiki.factorio.com/Water",
+		"Centrifuge": {
+			"label": "Centrifuge",
+			"icon": "Item/Centrifuge.png",
 			"recipe": [
-				"Water"
+				"Centrifuge"
 			]
 		},
-		"CrudeOil": {
-			"label": "Crude Oil",
-			"icon": "CrudeOil.png",
-			"url": "https://wiki.factorio.com/Crude_oil",
+		"Lab": {
+			"label": "Lab",
+			"icon": "Item/Lab.png",
 			"recipe": [
-				"CrudeOil",
-				"CrudeOilUnbarreling"
-			]
-		},
-		"HeavyOil": {
-			"label": "Heavy Oil",
-			"icon": "HeavyOil.png",
-			"url": "https://wiki.factorio.com/Heavy_oil",
-			"recipe": [
-				"BasicOilProcessing",
-				"AdvancedOilProcessing"
-			]
-		},
-		"LightOil": {
-			"label": "Light Oil",
-			"icon": "LightOil.png",
-			"url": "https://wiki.factorio.com/Light_oil",
-			"recipe": [
-				"BasicOilProcessing",
-				"AdvancedOilProcessing",
-				"HeavyOilCracking"
-			]
-		},
-		"PetroleumGas": {
-			"label": "Petroleum Gas",
-			"icon": "PetroleumGas.png",
-			"url": "https://wiki.factorio.com/Petroleum_gas",
-			"recipe": [
-				"BasicOilProcessing",
-				"AdvancedOilProcessing",
-				"LightOilCracking"
-			]
-		},
-		"SulfuricAcid": {
-			"label": "Sulfuric Acid",
-			"icon": "SulfuricAcid.png",
-			"url": "https://wiki.factorio.com/Sulfuric_acid",
-			"recipe": [
-				"SulfuricAcid"
+				"Lab"
 			]
 		},
 
-		"CrudeOilBarrel": {
-			"label": "Crude Oil Barrel",
-			"icon": "CrudeOilBarrel.png",
-			"url": "https://wiki.factorio.com/Crude_oil_barrel",
+		"Beacon": {
+			"label": "Beacon",
+			"icon": "Item/Beacon.png",
 			"recipe": [
-				"CrudeOilBarreling"
+				"Beacon"
 			]
 		},
-		"EmptyBarrel": {
-			"label": "Empty Barrel",
-			"icon": "EmptyBarrel.png",
-			"url": "https://wiki.factorio.com/Empty_barrel",
-			"recipe": [
-				"EmptyBarrel",
-				"CrudeOilUnbarreling"
-			]
-		},
-
-		"IronOre": {
-			"label": "Iron Ore",
-			"icon": "IronOre.png",
-			"url": "https://wiki.factorio.com/Iron_ore",
-			"recipe": [
-				"IronOre"
-			]
-		},
-		"CopperOre": {
-			"label": "Copper Ore",
-			"icon": "CopperOre.png",
-			"url": "https://wiki.factorio.com/Copper_ore",
-			"recipe": [
-				"CopperOre"
-			]
-		},
-		"Stone": {
-			"label": "Stone",
-			"icon": "Stone.png",
-			"url": "https://wiki.factorio.com/Stone",
-			"recipe": [
-				"Stone"
-			]
-		},
-		"Coal": {
-			"label": "Coal",
-			"icon": "Coal.png",
-			"url": "https://wiki.factorio.com/Coal",
-			"recipe": [
-				"Coal"
-			]
-		},
-
-		"IronPlate": {
-			"label": "Iron Plate",
-			"icon": "IronPlate.png",
-			"url": "https://wiki.factorio.com/Iron_plate",
-			"recipe": [
-				"IronPlate"
-			]
-		},
-		"SteelPlate": {
-			"label": "Steel Plate",
-			"icon": "SteelPlate.png",
-			"url": "https://wiki.factorio.com/Steel_plate",
-			"recipe": [
-				"SteelPlate"
-			]
-		},
-		"CopperPlate": {
-			"label": "Copper Plate",
-			"icon": "CopperPlate.png",
-			"url": "https://wiki.factorio.com/Copper_plate",
-			"recipe": [
-				"CopperPlate"
-			]
-		},
-		"StoneBrick": {
-			"label": "Stone Brick",
-			"icon": "StoneBrick.png",
-			"url": "https://wiki.factorio.com/Stone_Brick",
-			"recipe": [
-				"StoneBrick"
-			]
-		},
-
-		"IronStick": {
-			"label": "Iron Stick",
-			"icon": "IronStick.png",
-			"url": "https://wiki.factorio.com/Iron_stick",
-			"recipe": [
-				"IronStick"
-			]
-		},
-		"IronGearWheel": {
-			"label": "Iron Gear Wheel",
-			"icon": "IronGearWheel.png",
-			"url": "https://wiki.factorio.com/Iron_gear_wheel",
-			"recipe": [
-				"IronGearWheel"
-			]
-		},
-		"CopperCable": {
-			"label": "Copper Cable",
-			"icon": "CopperCable.png",
-			"url": "https://wiki.factorio.com/Copper_cable",
-			"recipe": [
-				"CopperCable"
-			]
-		},
-		"PlasticBar": {
-			"label": "Plastic Bar",
-			"icon": "PlasticBar.png",
-			"url": "https://wiki.factorio.com/Plastic_bar",
-			"recipe": [
-				"PlasticBar"
-			]
-		},
-		"Sulfur": {
-			"label": "Sulfur",
-			"icon": "Sulfur.png",
-			"url": "https://wiki.factorio.com/Sulfur",
-			"recipe": [
-				"Sulfur"
-			]
-		},
-		"ElectronicCircuit": {
-			"label": "Electronic Circuit",
-			"icon": "ElectronicCircuit.png",
-			"url": "https://wiki.factorio.com/Electronic_circuit",
-			"recipe": [
-				"ElectronicCircuit"
-			]
-		},
-		"AdvancedCircuit": {
-			"label": "Advanced Circuit",
-			"icon": "AdvancedCircuit.png",
-			"url": "https://wiki.factorio.com/Advanced_circuit",
-			"recipe": [
-				"AdvancedCircuit"
-			]
-		},
-		"ProcessingUnit": {
-			"label": "Processing Unit",
-			"icon": "ProcessingUnit.png",
-			"url": "https://wiki.factorio.com/Processing_unit",
-			"recipe": [
-				"ProcessingUnit"
-			]
-		},
-		"Battery": {
-			"label": "Battery",
-			"icon": "Battery.png",
-			"url": "https://wiki.factorio.com/Battery",
-			"recipe": [
-				"Battery"
-			]
-		},
-
-		"Pipe": {
-			"label": "Pipe",
-			"icon": "Pipe.png",
-			"url": "https://wiki.factorio.com/Pipe",
-			"recipe": [
-				"Pipe"
-			]
-		},
-
 		"SpeedModule1": {
-			"label": "Speed Module 1",
-			"icon": "SpeedModule1.png",
-			"url": "https://wiki.factorio.com/Speed_module_1",
+			"label": "Speed Module",
+			"icon": "Item/SpeedModule1.png",
 			"recipe": [
 				"SpeedModule1"
 			]
 		},
 		"SpeedModule2": {
 			"label": "Speed Module 2",
-			"icon": "SpeedModule2.png",
-			"url": "https://wiki.factorio.com/Speed_module_2",
+			"icon": "Item/SpeedModule2.png",
 			"recipe": [
 				"SpeedModule2"
 			]
 		},
 		"SpeedModule3": {
 			"label": "Speed Module 3",
-			"icon": "SpeedModule3.png",
-			"url": "https://wiki.factorio.com/Speed_module_3",
+			"icon": "Item/SpeedModule3.png",
 			"recipe": [
 				"SpeedModule3"
 			]
 		},
-		"ProductivityModule1": {
-			"label": "Productivity Module 1",
-			"icon": "ProductivityModule1.png",
-			"url": "https://wiki.factorio.com/Productivity_module_1",
-			"recipe": [
-				"ProductivityModule1"
-			]
-		},
-		"ProductivityModule2": {
-			"label": "Productivity Module 3",
-			"icon": "ProductivityModule2.png",
-			"url": "https://wiki.factorio.com/Productivity_module_2",
-			"recipe": [
-				"ProductivityModule2"
-			]
-		},
-		"ProductivityModule3": {
-			"label": "Productivity Module 3",
-			"icon": "ProductivityModule3.png",
-			"url": "https://wiki.factorio.com/Productivity_module_3",
-			"recipe": [
-				"ProductivityModule3"
-			]
-		},
 		"EfficiencyModule1": {
-			"label": "Efficiency Module 1",
-			"icon": "EfficiencyModule1.png",
-			"url": "https://wiki.factorio.com/Efficiency_module_1",
+			"label": "Efficiency Module",
+			"icon": "Item/EfficiencyModule1.png",
 			"recipe": [
 				"EfficiencyModule1"
 			]
 		},
 		"EfficiencyModule2": {
-			"label": "Efficiency Module 3",
-			"icon": "EfficiencyModule2.png",
-			"url": "https://wiki.factorio.com/Efficiency_module_2",
+			"label": "Efficiency Module 2",
+			"icon": "Item/EfficiencyModule2.png",
 			"recipe": [
 				"EfficiencyModule2"
 			]
 		},
 		"EfficiencyModule3": {
 			"label": "Efficiency Module 3",
-			"icon": "EfficiencyModule3.png",
-			"url": "https://wiki.factorio.com/Efficiency_module_3",
+			"icon": "Item/EfficiencyModule3.png",
 			"recipe": [
 				"EfficiencyModule3"
 			]
 		},
-		"Beacon": {
-			"label": "Beacon",
-			"icon": "Beacon.png",
-			"url": "https://wiki.factorio.com/Beacon",
+		"ProductivityModule1": {
+			"label": "Productivity Module",
+			"icon": "Item/ProductivityModule1.png",
 			"recipe": [
-				"Beacon"
+				"ProductivityModule1"
+			]
+		},
+		"ProductivityModule2": {
+			"label": "Productivity Module 2",
+			"icon": "Item/ProductivityModule2.png",
+			"recipe": [
+				"ProductivityModule2"
+			]
+		},
+		"ProductivityModule3": {
+			"label": "Productivity Module 3",
+			"icon": "Item/ProductivityModule3.png",
+			"recipe": [
+				"ProductivityModule3"
 			]
 		},
 
+
+		"SolidFuel": {
+			"label": "Solid Fuel",
+			"icon": "Item/SolidFuel.png",
+			"recipe": [
+				"SolidFuel_LightOil",
+				"SolidFuel_HeavyOil",
+				"SolidFuel_PetroleumGas"
+			]
+		},
+		"Stone": {
+			"label": "Stone",
+			"icon": "Item/Stone.png",
+			"recipe": []
+		},
+		"IronOre": {
+			"label": "Iron Ore",
+			"icon": "Item/IronOre.png",
+			"recipe": []
+		},
+		"RawFish": {
+			"label": "Raw Fish",
+			"icon": "Item/RawFish.png",
+			"recipe": []
+		},
+		"CopperOre": {
+			"label": "Copper Ore",
+			"icon": "Item/CopperOre.png",
+			"recipe": []
+		},
+		"UraniumOre": {
+			"label": "Uranium Ore",
+			"icon": "Item/UraniumOre.png",
+			"recipe": []
+		},
+
+		"RawWood": {
+			"label": "Raw Wood",
+			"icon": "Item/RawWood.png",
+			"recipe": []
+		},
 		"Wood": {
 			"label": "Wood",
-			"icon": "Wood.png",
-			"url": "https://wiki.factorio.com/Wood",
+			"icon": "Item/Wood.png",
 			"recipe": [
 				"Wood"
 			]
 		},
-		"RawWood": {
-			"label": "Raw Wood",
-			"icon": "RawWood.png",
-			"url": "https://wiki.factorio.com/Raw_wood",
+		"Coal": {
+			"label": "Coal",
+			"icon": "Item/Coal.png",
 			"recipe": []
 		},
-		"SmallElectricPole": {
-			"label": "Small Electric Pole",
-			"icon": "SmallElectricPole.png",
-			"url": "https://wiki.factorio.com/Small_electric_pole",
+		"IronPlate": {
+			"label": "IronPlate",
+			"icon": "Item/IronPlate.png",
 			"recipe": [
-				"SmallElectricPole"
+				"IronPlate"
 			]
 		},
-		"WoodenChest": {
-			"label": "Wooden Chest",
-			"icon": "WoodenChest.png",
-			"url": "https://wiki.factorio.com/Wooden_chest",
+		"CopperPlate": {
+			"label": "CopperPlate",
+			"icon": "Item/CopperPlate.png",
 			"recipe": [
-				"WoodenChest"
+				"CopperPlate"
 			]
 		},
-		"SolidFuel": {
-			"label": "Solid Fuel",
-			"icon": "SolidFuel.png",
-			"url": "https://wiki.factorio.com/Solid_fuel",
+		"SteelPlate": {
+			"label": "SteelPlate",
+			"icon": "Item/SteelPlate.png",
 			"recipe": [
-				"SolidFuel_HeavyOil",
-				"SolidFuel_LightOil",
-				"SolidFuel_PetroleumGas"
+				"SteelPlate"
+			]
+		},
+		"Sulfur": {
+			"label": "Sulfur",
+			"icon": "Item/Sulfur.png",
+			"recipe": [
+				"Sulfur"
+			]
+		},
+		"PlasticBar": {
+			"label": "PlasticBar",
+			"icon": "Item/PlasticBar.png",
+			"recipe": [
+				"PlasticBar"
+			]
+		},
+
+		"CrudeOilBarrel": {
+			"label": "Crude Oil Barrel",
+			"recipe": [
+				"FillCrudeOilBarrel"
+			]
+		},
+		"HeavyOilBarrel": {
+			"label": "Heavy Oil Barrel",
+			"recipe": [
+				"FillHeavyOilBarrel"
+			]
+		},
+		"LightOilBarrel": {
+			"label": "Light Oil Barrel",
+			"recipe": [
+				"FillLightOilBarrel"
+			]
+		},
+		"LubricantBarrel": {
+			"label": "Lubricant Barrel",
+			"recipe": [
+				"FillLubricantBarrel"
+			]
+		},
+		"PetroleumGasBarrel": {
+			"label": "Petroleum Gas Barrel",
+			"recipe": [
+				"FillPetroleumGasBarrel"
+			]
+		},
+		"SulfuricAcidBarrel": {
+			"label": "Sulfuric Acid Barrel",
+			"recipe": [
+				"FillSulfuricAcidBarrel"
+			]
+		},
+		"WaterBarrel": {
+			"label": "Water Barrel",
+			"recipe": [
+				"FillWaterBarrel"
+			]
+		},
+
+		"CopperCable": {
+			"label": "Copper Cable",
+			"icon": "Item/CopperCable.png",
+			"recipe": [
+				"CopperCable"
+			]
+		},
+		"IronStick": {
+			"label": "Iron Stick",
+			"icon": "Item/IronStick.png",
+			"recipe": [
+				"IronStick"
+			]
+		},
+		"IronGearWheel": {
+			"label": "Iron Gear Wheel",
+			"icon": "Item/IronGearWheel.png",
+			"recipe": [
+				"IronGearWheel"
+			]
+		},
+		"EmptyBarrel": {
+			"label": "Empty Barrel",
+			"icon": "Item/EmptyBarrel.png",
+			"recipe": [
+				"EmptyBarrel",
+				"EmptyCrudeOilBarrel",
+				"EmptyHeavyOilBarrel",
+				"EmptyLightOilBarrel",
+				"EmptyLubricantBarrel",
+				"EmptyPetroleumGasBarrel",
+				"EmptyWaterBarrel"
+			]
+		},
+		"ElectronicCircuit": {
+			"label": "Electronic Circuit",
+			"icon": "Item/ElectronicCircuit.png",
+			"recipe": [
+				"ElectronicCircuit"
+			]
+		},
+		"AdvancedCircuit": {
+			"label": "Advanced Circuit",
+			"icon": "Item/AdvancedCircuit.png",
+			"recipe": [
+				"AdvancedCircuit"
+			]
+		},
+		"ProcessingUnit": {
+			"label": "Processing Unit",
+			"icon": "Item/ProcessingUnit.png",
+			"recipe": [
+				"ProcessingUnit"
+			]
+		},
+		"Uranium235": {
+			"label": "Uranium-235",
+			"icon": "Item/Uranium235.png",
+			"recipe": [
+				"UraniumProcessing",
+				"KovarexEnrichmentProcess"
+			]
+		},
+		"Uranium238": {
+			"label": "Uranium-238",
+			"icon": "Item/Uranium238.png",
+			"recipe": [
+				"UraniumProcessing",
+				"NuclearFuelReprocessing",
+				"KovarexEnrichmentProcess"
+			]
+		},
+		"EngineUnit": {
+			"label": "Engine Unit",
+			"icon": "Item/EngineUnit.png",
+			"recipe": [
+				"EngineUnit"
+			]
+		},
+		"ElectricEngineUnit": {
+			"label": "Electric Engine Unit",
+			"icon": "Item/ElectricEngineUnit.png",
+			"recipe": [
+				"ElectricEngineUnit"
+			]
+		},
+		"UsedUpUraniumFuelCell": {
+			"label": "Used Up Uranium Fuel Cell",
+			"icon": "Item/UsedUpUraniumFuelCell.png",
+			"recipe": [
+				"UsedUpUraniumFuelCell"
+			]
+		},
+		"Battery": {
+			"label": "Battery",
+			"icon": "Item/Battery.png",
+			"recipe": [
+				"Battery"
+			]
+		},
+		"Explosives": {
+			"label": "Explosives",
+			"icon": "Item/Explosives.png",
+			"recipe": [
+				"Explosives"
+			]
+		},
+		"FlyingRobotFrame": {
+			"label": "Flying Robot Frame",
+			"icon": "Item/FlyingRobotFrame.png",
+			"recipe": [
+				"FlyingRobotFrame"
+			]
+		},
+		"LowDensityStructure": {
+			"label": "Low Density Structure",
+			"icon": "Item/LowDensityStructure.png",
+			"recipe": [
+				"LowDensityStructure"
 			]
 		},
 		"RocketFuel": {
 			"label": "Rocket Fuel",
-			"icon": "RocketFuel.png",
-			"url": "https://wiki.factorio.com/Rocket_fuel",
+			"icon": "Item/RocketFuel.png",
 			"recipe": [
 				"RocketFuel"
 			]
 		},
+		"RocketControlUnit": {
+			"label": "Rocket Control Unit",
+			"icon": "Item/RocketControlUnit.png",
+			"recipe": [
+				"RocketControlUnit"
+			]
+		},
+		"Satellite": {
+			"label": "Satellite",
+			"icon": "Item/Satellite.png",
+			"recipe": [
+				"Satellite"
+			]
+		},
+		"RocketPart": {
+			"label": "Rocket Part",
+			"icon": "Item/RocketPart.png",
+			"recipe": [
+				"RocketPart"
+			]
+		},
+		"UraniumFuelCell": {
+			"label": "Uranium Fuel Cell",
+			"icon": "Item/UraniumFuelCell.png",
+			"recipe": [
+				"UraniumFuelCell"
+			]
+		},
 
-		"SolarPanel": {
-			"label": "Solar Panel",
-			"icon": "SolarPanel.png",
-			"url": "https://wiki.factorio.com/Solar_panel",
+		"SciencePack1": {
+			"label": "Science Pack 1",
+			"icon": "Item/SciencePack1.png",
 			"recipe": [
-				"SolarPanel"
+				"SciencePack1"
 			]
 		},
-		"SteamEngine": {
-			"label": "Steam Engine",
-			"icon": "SteamEngine.png",
-			"url": "https://wiki.factorio.com/Steam_engine",
+		"SciencePack2": {
+			"label": "Science Pack 2",
+			"icon": "Item/SciencePack2.png",
 			"recipe": [
-				"SteamEngine"
+				"SciencePack2"
 			]
 		},
-		"Accumlator": {
-			"label": "Accumlator",
-			"icon": "Accumlator.png",
-			"url": "https://wiki.factorio.com/Accumlator",
+		"SciencePack3": {
+			"label": "Science Pack 3",
+			"icon": "Item/SciencePack3.png",
 			"recipe": [
-				"Accumlator"
+				"SciencePack3"
+			]
+		},
+		"MilitarySciencePack": {
+			"label": "Military Science Pack",
+			"icon": "Item/MilitarySciencePack.png",
+			"recipe": [
+				"MilitarySciencePack"
+			]
+		},
+		"ProductionSciencePack": {
+			"label": "Production Science Pack",
+			"icon": "Item/ProductionSciencePack.png",
+			"recipe": [
+				"ProductionSciencePack"
+			]
+		},
+		"HighTechSciencePack": {
+			"label": "High Tech Science Pack",
+			"icon": "Item/HighTechSciencePack.png",
+			"recipe": [
+				"HighTechSciencePack"
+			]
+		},
+		"SpaceSciencePack": {
+			"label": "Space Science Pack",
+			"icon": "Item/SpaceSciencePack.png",
+			"recipe": [
+				"SpaceSciencePack"
+			]
+		},
+
+
+		"Pistol": {
+			"label": "Pistol",
+			"icon": "Item/Pistol.png",
+			"recipe": [
+				"Pistol"
+			]
+		},
+		"SubmachineGun": {
+			"label": "Submachine Gun",
+			"icon": "Item/SubmachineGun.png",
+			"recipe": [
+				"SubmachineGun"
+			]
+		},
+		"Shotgun": {
+			"label": "Shotgun",
+			"icon": "Item/Shotgun.png",
+			"recipe": [
+				"Shotgun"
+			]
+		},
+		"CombatShotgun": {
+			"label": "Combat Shotgun",
+			"icon": "Item/CombatShotgun.png",
+			"recipe": [
+				"CombatShotgun"
+			]
+		},
+		"RocketLauncher": {
+			"label": "Rocket Launcher",
+			"icon": "Item/RocketLauncher.png",
+			"recipe": [
+				"RocketLauncher"
+			]
+		},
+		"Flamethrower": {
+			"label": "Flamethrower",
+			"icon": "Item/Flamethrower.png",
+			"recipe": [
+				"Flamethrower"
+			]
+		},
+		"LandMine": {
+			"label": "LandMine",
+			"icon": "Item/LandMine.png",
+			"recipe": [
+				"LandMine"
+			]
+		},
+
+		"FirearmMagazine": {
+			"label": "Firearm Magazine",
+			"icon": "Item/FirearmMagazine.png",
+			"recipe": [
+				"FirearmMagazine"
+			]
+		},
+		"PiercingRoundsMagazine": {
+			"label": "Piercing Rounds Magazine",
+			"icon": "Item/PiercingRoundsMagazine.png",
+			"recipe": [
+				"PiercingRoundsMagazine"
+			]
+		},
+		"UraniumRoundMagazine": {
+			"label": "Uranium Round Magazine",
+			"icon": "Item/UraniumRoundMagazine.png",
+			"recipe": [
+				"UraniumRoundMagazine"
+			]
+		},
+		"ShotgunShells": {
+			"label": "Shotgun Shells",
+			"icon": "Item/ShotgunShells.png",
+			"recipe": [
+				"ShotgunShells"
+			]
+		},
+		"PiercingShotgunShells": {
+			"label": "Piercing Shotgun Shells",
+			"icon": "Item/PiercingShotgunShells.png",
+			"recipe": [
+				"PiercingShotgunShells"
+			]
+		},
+		"CannonShell": {
+			"label": "Cannon Shell",
+			"icon": "Item/CannonShell.png",
+			"recipe": [
+				"CannonShell"
+			]
+		},
+		"ExplosiveCannonShell": {
+			"label": "Explosive Cannon Shell",
+			"icon": "Item/ExplosiveCannonShell.png",
+			"recipe": [
+				"ExplosiveCannonShell"
+			]
+		},
+		"UraniumCannonShell": {
+			"label": "Uranium Cannon Shell",
+			"icon": "Item/UraniumCannonShell.png",
+			"recipe": [
+				"UraniumCannonShell"
+			]
+		},
+		"ExplosiveUraniumCannonShell": {
+			"label": "Explosive Uranium Cannon Shell",
+			"icon": "Item/ExplosiveUraniumCannonShell.png",
+			"recipe": [
+				"ExplosiveUraniumCannonShell"
+			]
+		},
+
+		"Rocket": {
+			"label": "Rocket",
+			"icon": "Item/Rocket.png",
+			"recipe": [
+				"Rocket"
+			]
+		},
+		"ExplosiveRocket": {
+			"label": "Explosive Rocket",
+			"icon": "Item/ExplosiveRocket.png",
+			"recipe": [
+				"ExplosiveRocket"
+			]
+		},
+		"AtomicBomb": {
+			"label": "Atomic Bomb",
+			"icon": "Item/AtomicBomb.png",
+			"recipe": [
+				"AtomicBomb"
+			]
+		},
+		"FlamethrowerAmmo": {
+			"label": "Flamethrower Ammo",
+			"icon": "Item/FlamethrowerAmmo.png",
+			"recipe": [
+				"FlamethrowerAmmo"
+			]
+		},
+
+		"Grenade": {
+			"label": "Grenade",
+			"icon": "Item/Grenade.png",
+			"recipe": [
+				"Grenade"
+			]
+		},
+		"ClusterGrenade": {
+			"label": "Cluster Grenade",
+			"icon": "Item/ClusterGrenade.png",
+			"recipe": [
+				"ClusterGrenade"
+			]
+		},
+		"PoisonCapsule": {
+			"label": "Poison Capsule",
+			"icon": "Item/PoisonCapsule.png",
+			"recipe": [
+				"PoisonCapsule"
+			]
+		},
+		"SlowdownCapsule": {
+			"label": "Slowdown Capsule",
+			"icon": "Item/SlowdownCapsule.png",
+			"recipe": [
+				"SlowdownCapsule"
+			]
+		},
+		"DefenderCapsule": {
+			"label": "Defender Capsule",
+			"icon": "Item/DefenderCapsule.png",
+			"recipe": [
+				"DefenderCapsule"
+			]
+		},
+		"DistractorCapsule": {
+			"label": "Distractor Capsule",
+			"icon": "Item/DistractorCapsule.png",
+			"recipe": [
+				"DistractorCapsule"
+			]
+		},
+		"DestroyerCapsule": {
+			"label": "Destroyer Capsule",
+			"icon": "Item/DestroyerCapsule.png",
+			"recipe": [
+				"DestroyerCapsule"
+			]
+		},
+		"DischargeDefenseRemote": {
+			"label": "Discharge Defense Remote",
+			"icon": "Item/DischargeDefenseRemote.png",
+			"recipe": [
+				"DischargeDefenseRemote"
+			]
+		},
+
+		"LightArmor": {
+			"label": "Light Armor",
+			"icon": "Item/LightArmor.png",
+			"recipe": [
+				"LightArmor"
+			]
+		},
+		"HeavyArmor": {
+			"label": "Heavy Armor",
+			"icon": "Item/HeavyArmor.png",
+			"recipe": [
+				"HeavyArmor"
+			]
+		},
+		"ModularArmor": {
+			"label": "Modular Armor",
+			"icon": "Item/ModularArmor.png",
+			"recipe": [
+				"ModularArmor"
+			]
+		},
+		"PowerArmor": {
+			"label": "Power Armor",
+			"icon": "Item/PowerArmor.png",
+			"recipe": [
+				"PowerArmor"
+			]
+		},
+		"PowerArmorMK2": {
+			"label": "Power Armor MK2",
+			"icon": "Item/PowerArmorMK2.png",
+			"recipe": [
+				"PowerArmorMK2"
+			]
+		},
+
+		"PortableSolarPanel": {
+			"label": "Portable Solar Panel",
+			"icon": "Item/PortableSolarPanel.png",
+			"recipe": [
+				"PortableSolarPanel"
+			]
+		},
+		"PortableFusionReactor": {
+			"label": "Portable Fusion Reactor",
+			"icon": "Item/PortableFusionReactor.png",
+			"recipe": [
+				"PortableFusionReactor"
+			]
+		},
+		"EnergyShield": {
+			"label": "Energy Shield",
+			"icon": "Item/EnergyShield.png",
+			"recipe": [
+				"EnergyShield"
+			]
+		},
+		"EnergyShieldMK2": {
+			"label": "Energy Shield MK2",
+			"icon": "Item/EnergyShieldMK2.png",
+			"recipe": [
+				"EnergyShieldMK2"
+			]
+		},
+		"Battery_Equipment": {
+			"label": "Battery",
+			"icon": "Item/Battery_Equipment.png",
+			"recipe": [
+				"Battery_Equipment"
+			]
+		},
+		"BatteryMK2": {
+			"label": "Battery MK2",
+			"icon": "Item/BatteryMK2.png",
+			"recipe": [
+				"BatteryMK2"
+			]
+		},
+		"PersonalLaserDefense": {
+			"label": "Personal Laser Defense",
+			"icon": "Item/PersonalLaserDefense.png",
+			"recipe": [
+				"PersonalLaserDefense"
+			]
+		},
+		"DischargeDefense": {
+			"label": "Discharge Defense",
+			"icon": "Item/DischargeDefense.png",
+			"recipe": [
+				"DischargeDefense"
+			]
+		},
+		"Exoskeleton": {
+			"label": "Exoskeleton",
+			"icon": "Item/Exoskeleton.png",
+			"recipe": [
+				"Exoskeleton"
+			]
+		},
+		"PersonalRoboport": {
+			"label": "Personal Roboport",
+			"icon": "Item/PersonalRoboport.png",
+			"recipe": [
+				"PersonalRoboport"
+			]
+		},
+		"PersonalRoboportMK2": {
+			"label": "Personal Roboport MK2",
+			"icon": "Item/PersonalRoboportMK2.png",
+			"recipe": [
+				"PersonalRoboportMK2"
+			]
+		},
+		"Nightvision": {
+			"label": "Nightvision",
+			"icon": "Item/Nightvision.png",
+			"recipe": [
+				"Nightvision"
+			]
+		},
+
+		"StoneWall": {
+			"label": "Stone Wall",
+			"icon": "Item/StoneWall.png",
+			"recipe": [
+				"StoneWall"
+			]
+		},
+		"Gate": {
+			"label": "Gate",
+			"icon": "Item/Gate.png",
+			"recipe": [
+				"Gate"
+			]
+		},
+		"GunTurret": {
+			"label": "Gun Turret",
+			"icon": "Item/GunTurret.png",
+			"recipe": [
+				"GunTurret"
+			]
+		},
+		"LaserTurret": {
+			"label": "Laser Turret",
+			"icon": "Item/LaserTurret.png",
+			"recipe": [
+				"LaserTurret"
+			]
+		},
+		"FlamethrowerTurret": {
+			"label": "Flamethrower Turret",
+			"icon": "Item/FlamethrowerTurret.png",
+			"recipe": [
+				"FlamethrowerTurret"
+			]
+		},
+		"Radar": {
+			"label": "Radar",
+			"icon": "Item/Radar.png",
+			"recipe": [
+				"Radar"
+			]
+		},
+		"RocketSilo": {
+			"label": "Rocket Silo",
+			"icon": "Item/RocketSilo.png",
+			"recipe": [
+				"RocketSilo"
+			]
+		},
+
+
+		"Water": {
+			"label": "Water",
+			"icon": "Item/Water.png",
+			"recipe": [
+				"EmptyWaterBarrel"
+			]
+		},
+		"CrudeOil": {
+			"label": "Crude Oil",
+			"icon": "Item/CrudeOil.png",
+			"recipe": [
+				"EmptyCrudeOilBarrel"
+			]
+		},
+		"HeavyOil": {
+			"label": "Heavy Oil",
+			"icon": "Item/HeavyOil.png",
+			"recipe": [
+				"BasicOilProcessing",
+				"AdvancedOilProcessing",
+				"CoalLiquefaction",
+				"EmptyHeavyOilBarrel"
+			]
+		},
+		"LightOil": {
+			"label": "Light Oil",
+			"icon": "Item/LightOil.png",
+			"recipe": [
+				"BasicOilProcessing",
+				"AdvancedOilProcessing",
+				"CoalLiquefaction",
+				"HeavyOilCracking",
+				"EmptyLightOilBarrel"
+			]
+		},
+		"PetroleumGas": {
+			"label": "Petroleum Gas",
+			"icon": "Item/PetroleumGas.png",
+			"recipe": [
+				"BasicOilProcessing",
+				"AdvancedOilProcessing",
+				"CoalLiquefaction",
+				"LightOilCracking",
+				"EmptyPetroleumGasBarrel"
+			]
+		},
+		"SulfuricAcid": {
+			"label": "Sulfuric Acid",
+			"icon": "Item/SulfuricAcid.png",
+			"recipe": [
+				"SulfuricAcid",
+				"EmptySulfuricAcidBarrel"
+			]
+		},
+		"Lubricant": {
+			"label": "Lubricant",
+			"icon": "Item/Lubricant.png",
+			"recipe": [
+				"Lubricant",
+				"EmptyLubricantBarrel"
 			]
 		}
 	},
 
-	"itemCategories": [
+	"recipeCategory": [
 		{
-			"label":"Machines",
+			"label": "Logistics",
+			"icon":  "Category/Logistics.png",
+			"subCategories": [
+				[
+					"WoodenChest",
+					"IronChest",
+					"SteelChest",
+					"StorageTank"
+				],
+				[
+					"TransportBelt",
+					"FastTransportBelt",
+					"ExpressTransportBelt",
+					"UndergroundBelt",
+					"FastUndergroundBelt",
+					"ExpressUndergroundBelt",
+					"Splitter",
+					"FastSplitter",
+					"ExpressSplitter"
+				],
+				[
+					"BurnerInserter",
+					"Inserter",
+					"LongHandedInserter",
+					"FastInserter",
+					"FilterInserter",
+					"StackInserter",
+					"StackFilterInserter"
+				],
+				[
+					"SmallElectricPole",
+					"MediumElectricPole",
+					"BigElectricPole",
+					"Substation",
+					"Pipe",
+					"PipeToGround",
+					"Pump"
+				],
+				[
+					"StraightRail",
+					"TrainStop",
+					"RailSignal",
+					"RailChainSignal",
+					"Locomotive",
+					"CargoWagon",
+					"FluidWagon",
+					"Car",
+					"Tank"
+				],
+				[
+					"LogisticRobot",
+					"ConstructionRobot",
+					"ActiveProviderChest",
+					"PassiveProviderChest",
+					"RequesterChest",
+					"StorageChest",
+					"Roboport"
+				],
+				[
+					"Lamp",
+					"RedWire",
+					"GreenWire",
+					"ArithmeticCombinator",
+					"DeciderCombinator",
+					"ConstantCombinator",
+					"PowerSwitch",
+					"ProgrammableSpeaker"
+				],
+				[
+					"StoneBrick",
+					"Concrete",
+					"HazardConcrete",
+					"Landfill"
+				]
+			]
+		},
+		{
+			"label": "Production",
+			"icon": "Category/Production.png",
 			"subCategories": [
 				[
 					"IronAxe",
 					"SteelAxe",
+					"RepairPack"
+				],
+				[
+					"Boiler",
+					"SteamEngine",
+					"SteamTurbine",
+					"SolarPanel",
+					"Accumlator",
+					"NuclearReactor",
+					"HeatExchanger",
+					"HeatPipe"
+				],
+				[
 					"BurnerMiningDrill",
 					"ElectricMiningDrill",
 					"OffshorePump",
@@ -1990,80 +5509,456 @@
 				[
 					"StoneFurnace",
 					"SteelFurnace",
-					"ElectricFurnace",
-					"AssemblingMachine1",
-					"AssemblingMachine2",
-					"AssemblingMachine3"
+					"ElectricFurnace"
 				],
 				[
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3",
 					"OilRefinery",
-					"ChemicalPlant"
+					"ChemicalPlant",
+					"Centrifuge",
+					"Lab"
+				],
+				[
+					"Beacon",
+					"SpeedModule1",
+					"SpeedModule2",
+					"SpeedModule3",
+					"EfficiencyModule1",
+					"EfficiencyModule2",
+					"EfficiencyModule3",
+					"ProductivityModule1",
+					"ProductivityModule2",
+					"ProductivityModule3"
 				]
 			]
 		},
 		{
-			"label": "Resources",
+			"label": "Intermediate Products",
+			"icon": "Category/IntermediateProducts.png",
 			"subCategories": [
 				[
+					"SulfuricAcid",
+					"BasicOilProcessing",
+					"AdvancedOilProcessing",
+					"CoalLiquefaction",
+					"HeavyOilCracking",
+					"LightOilCracking",
+					"SolidFuel_LightOil",
+					"SolidFuel_HeavyOil",
+					"SolidFuel_PetroleumGas",
+					"Lubricant"
+				],
+				[
+					"Wood",
+					"IronPlate",
+					"CopperPlate",
+					"SteelPlate",
+					"Sulfur",
+					"PlasticBar",
+					"UraniumProcessing"
+				],
+				[
+					"FillCrudeOilBarrel",
+					"FillHeavyOilBarrel",
+					"FillLightOilBarrel",
+					"FillLubricantBarrel",
+					"FillPetroleumGasBarrel",
+					"FillSulfuricAcidBarrel",
+					"FillWaterBarrel"
+				],
+				[
+					"EmptyCrudeOilBarrel",
+					"EmptyHeavyOilBarrel",
+					"EmptyLightOilBarrel",
+					"EmptyLubricantBarrel",
+					"EmptyPetroleumGasBarrel",
+					"EmptySulfuricAcidBarrel",
+					"EmptyWaterBarrel"
+				],
+				[
+					"CopperCable",
+					"IronStick",
+					"IronGearWheel",
+					"EmptyBarrel",
+					"ElectronicCircuit",
+					"AdvancedCircuit",
+					"ProcessingUnit",
+					"EngineUnit",
+					"ElectricEngineUnit",
+					"Battery",
+					"Explosives",
+					"FlyingRobotFrame",
+					"LowDensityStructure",
+					"RocketFuel",
+					"RocketControlUnit",
+					"RocketPart",
+					"Satellite",
+					"UraniumFuelCell",
+					"NuclearFuelReprocessing",
+					"KovarexEnrichmentProcess"
+				],
+				[
+					"SciencePack1",
+					"SciencePack2",
+					"SciencePack3",
+					"MilitarySciencePack",
+					"ProductionSciencePack",
+					"HighTechSciencePack"
+				]
+			]
+		},
+		{
+			"label": "Combat",
+			"icon": "Category/Combat.png",
+			"subCategories": [
+				[
+					"Pistol",
+					"SubmachineGun",
+					"Shotgun",
+					"CombatShotgun",
+					"RocketLauncher",
+					"Flamethrower",
+					"LandMine"
+				],
+				[
+					"FirearmMagazine",
+					"PiercingRoundsMagazine",
+					"UraniumRoundMagazine",
+					"ShotgunShells",
+					"PiercingShotgunShells",
+					"CannonShell",
+					"ExplosiveCannonShell",
+					"UraniumCannonShell",
+					"ExplosiveUraniumCannonShell",
+					"Rocket",
+					"ExplosiveRocket",
+					"AtomicBomb",
+					"FlamethrowerAmmo"
+				],
+				[
+					"Grenade",
+					"ClusterGrenade",
+					"PoisonCapsule",
+					"SlowdownCapsule",
+					"DefenderCapsule",
+					"DistractorCapsule",
+					"DestroyerCapsule",
+					"DischargeDefenseRemote"
+				],
+				[
+					"LightArmor",
+					"HeavyArmor",
+					"ModularArmor",
+					"PowerArmor",
+					"PowerArmorMK2"
+				],
+				[
+					"PortableSolarPanel",
+					"PortableFusionReactor",
+					"EnergyShield",
+					"EnergyShieldMK2",
+					"Battery",
+					"BatteryMK2",
+					"PersonalLaserDefense",
+					"DischargeDefense",
+					"Exoskeleton",
+					"PersonalRoboport",
+					"PersonalRoboportMK2",
+					"Nightvision"
+				],
+				[
+					"StoneWall",
+					"Gate",
+					"GunTurret",
+					"LaserTurret",
+					"FlamethrowerTurret",
+					"Radar",
+					"RocketSilo"
+				]
+			]
+		}
+	],
+	"itemCategory": [
+		{
+			"label": "Logistics",
+			"icon":  "Category/Logistics.png",
+			"subCategories": [
+				[
+					"WoodenChest",
+					"IronChest",
+					"SteelChest",
+					"StorageTank"
+				],
+				[
+					"TransportBelt",
+					"FastTransportBelt",
+					"ExpressTransportBelt",
+					"UndergroundBelt",
+					"FastUndergroundBelt",
+					"ExpressUndergroundBelt",
+					"Splitter",
+					"FastSplitter",
+					"ExpressSplitter"
+				],
+				[
+					"BurnerInserter",
+					"Inserter",
+					"LongHandedInserter",
+					"FastInserter",
+					"FilterInserter",
+					"StackInserter",
+					"StackFilterInserter"
+				],
+				[
+					"SmallElectricPole",
+					"MediumElectricPole",
+					"BigElectricPole",
+					"Substation",
+					"Pipe",
+					"PipeToGround",
+					"Pump"
+				],
+				[
+					"StraightRail",
+					"TrainStop",
+					"RailSignal",
+					"RailChainSignal",
+					"Locomotive",
+					"CargoWagon",
+					"FluidWagon",
+					"Car",
+					"Tank"
+				],
+				[
+					"LogisticRobot",
+					"ConstructionRobot",
+					"ActiveProviderChest",
+					"PassiveProviderChest",
+					"RequesterChest",
+					"StorageChest",
+					"Roboport"
+				],
+				[
+					"Lamp",
+					"RedWire",
+					"GreenWire",
+					"ArithmeticCombinator",
+					"DeciderCombinator",
+					"ConstantCombinator",
+					"PowerSwitch",
+					"ProgrammableSpeaker"
+				],
+				[
+					"StoneBrick",
+					"Concrete",
+					"HazardConcrete",
+					"Landfill"
+				]
+			]
+		},
+		{
+			"label": "Production",
+			"icon": "Category/Production.png",
+			"subCategories": [
+				[
+					"IronAxe",
+					"SteelAxe",
+					"RepairPack"
+				],
+				[
+					"Boiler",
+					"SteamEngine",
+					"SteamTurbine",
+					"SolarPanel",
+					"Accumlator",
+					"NuclearReactor",
+					"HeatExchanger",
+					"HeatPipe"
+				],
+				[
+					"BurnerMiningDrill",
+					"ElectricMiningDrill",
+					"OffshorePump",
+					"Pumpjack"
+				],
+				[
+					"StoneFurnace",
+					"SteelFurnace",
+					"ElectricFurnace"
+				],
+				[
+					"AssemblingMachine1",
+					"AssemblingMachine2",
+					"AssemblingMachine3",
+					"OilRefinery",
+					"ChemicalPlant",
+					"Centrifuge",
+					"Lab"
+				],
+				[
+					"Beacon",
+					"SpeedModule1",
+					"SpeedModule2",
+					"SpeedModule3",
+					"EfficiencyModule1",
+					"EfficiencyModule2",
+					"EfficiencyModule3",
+					"ProductivityModule1",
+					"ProductivityModule2",
+					"ProductivityModule3"
+				]
+			]
+		},
+		{
+			"label": "Intermediate Products",
+			"icon": "Category/IntermediateProducts.png",
+			"subCategories": [
+				[
+					"SolidFuel",
+					"Stone",
+					"IronOre",
+					"RawFish",
+					"CopperOre",
+					"UraniumOre"
+				],
+				[
+					"RawWood",
+					"Wood",
+					"Coal",
+					"IronPlate",
+					"CopperPlate",
+					"SteelPlate",
+					"Sulfur",
+					"PlasticBar"
+				],
+				[
+					"CrudeOilBarrel",
+					"HeavyOilBarrel",
+					"LightOilBarrel",
+					"LubricantBarrel",
+					"PetroleumGasBarrel",
+					"SulfuricAcidBarrel",
+					"WaterBarrel"
+				],
+				[
+					"CopperCable",
+					"IronStick",
+					"IronGearWheel",
+					"EmptyBarrel",
+					"ElectronicCircuit",
+					"AdvancedCircuit",
+					"ProcessingUnit",
+					"Uranium235",
+					"Uranium238",
+					"EngineUnit",
+					"ElectricEngineUnit",
+					"UsedUpUraniumFuelCell",
+					"Battery",
+					"Explosives",
+					"FlyingRobotFrame",
+					"LowDensityStructure",
+					"RocketFuel",
+					"RocketControlUnit",
+					"RocketPart",
+					"Satellite",
+					"UraniumFuelCell"
+				],
+				[
+					"SciencePack1",
+					"SciencePack2",
+					"SciencePack3",
+					"MilitarySciencePack",
+					"ProductionSciencePack",
+					"HighTechSciencePack",
+					"SpaceSciencePack"
+				]
+			]
+		},
+		{
+			"label": "Combat",
+			"icon": "Category/Combat.png",
+			"subCategories": [
+				[
+					"Pistol",
+					"SubmachineGun",
+					"Shotgun",
+					"CombatShotgun",
+					"RocketLauncher",
+					"Flamethrower",
+					"LandMine"
+				],
+				[
+					"FirearmMagazine",
+					"PiercingRoundsMagazine",
+					"UraniumRoundMagazine",
+					"ShotgunShells",
+					"PiercingShotgunShells",
+					"CannonShell",
+					"ExplosiveCannonShell",
+					"UraniumCannonShell",
+					"ExplosiveUraniumCannonShell",
+					"Rocket",
+					"ExplosiveRocket",
+					"AtomicBomb",
+					"FlamethrowerAmmo"
+				],
+				[
+					"Grenade",
+					"ClusterGrenade",
+					"PoisonCapsule",
+					"SlowdownCapsule",
+					"DefenderCapsule",
+					"DistractorCapsule",
+					"DestroyerCapsule",
+					"DischargeDefenseRemote"
+				],
+				[
+					"LightArmor",
+					"HeavyArmor",
+					"ModularArmor",
+					"PowerArmor",
+					"PowerArmorMK2"
+				],
+				[
+					"PortableSolarPanel",
+					"PortableFusionReactor",
+					"EnergyShield",
+					"EnergyShieldMK2",
+					"Battery",
+					"BatteryMK2",
+					"PersonalLaserDefense",
+					"DischargeDefense",
+					"Exoskeleton",
+					"PersonalRoboport",
+					"PersonalRoboportMK2",
+					"Nightvision"
+				],
+				[
+					"StoneWall",
+					"Gate",
+					"GunTurret",
+					"LaserTurret",
+					"FlamethrowerTurret",
+					"Radar",
+					"RocketSilo"
+				]
+			]
+		},
+		{
+			"label": "Fluids",
+			"icon": "Category/Fluids.png",
+			"subCategories": [
+				[
+					"Steam",
 					"Water",
 					"CrudeOil",
 					"HeavyOil",
 					"LightOil",
 					"PetroleumGas",
-					"SulfuricAcid"
-				],
-				[
-					"CrudeOilBarrel",
-					"EmptyBarrel"
-				],
-				[
-					"IronOre",
-					"CopperOre",
-					"Stone",
-					"Coal"
-				]
-			]
-		},
-		{
-			"label": "Intermediate",
-			"subCategories": [
-				[
-					"IronPlate",
-					"SteelPlate",
-					"CopperPlate",
-					"StoneBrick"
-				],
-				[
-					"IronStick",
-					"IronGearWheel",
-					"CopperCable",
-					"PlasticBar",
-					"Sulfur",
-					"ElectronicCircuit",
-					"AdvancedCircuit",
-					"ProcessingUnit"
-				]
-			]
-		},
-		{
-			"label": "Other",
-			"subCategories": [
-				[
-					"SpeedModule1",
-					"SpeedModule2",
-					"SpeedModule3",
-					"ProductivityModule1",
-					"ProductivityModule2",
-					"ProductivityModule3",
-					"EfficiencyModule1",
-					"EfficiencyModule2",
-					"EfficiencyModule3",
-					"Beacon"
-				],
-				[
-					"Wood",
-					"RawWood",
-					"Pipe"
+					"SulfuricAcid",
+					"Lubricant"
 				]
 			]
 		}

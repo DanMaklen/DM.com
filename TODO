@@ -1,14 +1,12 @@
 Factorio:
-	Science
-	Electricity
+	Detect Can Use Productivity on recipe.
 	Total Resources Required
+	Resource Mining
+	Electricity
+	Pollution
+	Science
 	Calculate Total Time
 	Common Builds
-	On 0.15 release add multiple difficulty settings.
 	Multiple Factories
 
 	Help Page explaining all the equations
-	Detect Can Use Productivity on items Currently it gets filtered out from the gui.
-
-General:
-	Reorganize folder/file structure and possibily add backend
