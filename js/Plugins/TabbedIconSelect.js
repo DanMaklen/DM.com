@@ -41,7 +41,8 @@ class TabbedIconSelect{
 			itemCategories: [],
 
 			getIcon_func: function(itemID){return 'icon/missing.png';},
-			change: function(itemID){}
+			change: function(itemID){},
+			changeTab: function(tabID){}
 		}, options);
 
 		this.$ = div;
@@ -51,14 +52,18 @@ class TabbedIconSelect{
 		this._init();
 
 		this.selected = null;
-		self.$.find('.TabbedIconSelect-selectable').click(function(){
+		this.$.find('.TabbedIconSelect-selectable').click(function(){
 			self.$.find('.TabbedIconSelect-item-selected').removeClass('TabbedIconSelect-item-selected');
 			$(this).addClass('TabbedIconSelect-item-selected');
 			self.selectedID = $(this).attr('id');
 			self.opt.change(self.selectedID);
 		})
 
-		this.$.tabs();
+		this.$.tabs({
+			activate: function(e, ui){
+				self.opt.changeTab(ui.newTab);
+			}
+		});
 	}
 
 	getSelected(){

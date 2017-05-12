@@ -8,15 +8,6 @@ class Dialog_Settings{
 			},
 			default: settings.config.rateUnit
 		});
-		this.$powerUnit = new SelectMenu(this.$.find('#PowerUnit'), {
-			items: {
-				1: {label: 'W'},
-				1000: {label: 'KW'},
-				1000000: {label: 'MW'},
-				1000000000: {label: 'GW'}
-			},
-			default: settings.config.powerUnit
-		})
 		this.$percision = new SelectMenu(this.$.find('#Percision'), {
 			items: {
 				0: {label: 1},
@@ -27,21 +18,12 @@ class Dialog_Settings{
 			},
 			default: settings.config.percision
 		});
-		this.$crudeOilYieldUnit = new SelectMenu(this.$.find('#CrudeOilYieldUnit'), {
-			items: {
-				1: {label: '/sec'},
-				60: {label: '/min'},
-				3600: {label: '/hour'}
-			},
-			default: settings.config.rateUnit
-		});
 		this.$recipeDifficulty = new SelectMenu(this.$.find('#RecipeDifficulty'), {
-			items: {'normal': {label: 'Normal'}},
+			items: {
+				'Normal': {label: 'Normal'},
+				'Expensive': {label: 'Expensive'}
+			},
 			default: settings.config.recipeDifficulty
-		});
-		this.$scienceDifficulty = new SelectMenu(this.$.find('#ScienceDifficulty'), {
-			items: {'normal': {label: 'Normal'}},
-			default: settings.config.scienceDifficulty
 		});
 	}
 	constructor(){
@@ -79,10 +61,8 @@ class Dialog_Settings{
 	getValue(){
 		return this._validate({
 			rateUnit: this.$rateUnit.getSelected(),
-			powerUnit: this.$powerUnit.getSelected(),
 			percision: this.$percision.getSelected(),
-			recipeDifficulty: this.$recipeDifficulty.getSelected(),
-			scienceDifficulty: this.$scienceDifficulty.getSelected()
+			recipeDifficulty: this.$recipeDifficulty.getSelected()
 		});
 	}
 }
@@ -93,8 +73,11 @@ class Dialog_NewBuild{
 		this.$buildType = new SelectMenu(this.$.find('#BuildType'), {
 			items: {
 				'itemBuild': {label: 'Item Build'},
-				'oilBuild': {label: 'Oil Build'},
-				'electricityBuild': {label: 'Electricity Build'},
+				'recipeBuild': {label: 'Recipe Build'},
+				'electricityBuild': {
+					label: 'Electricity Build',
+					disabled: true
+				},
 				'scienceBuild': {
 					label: 'Science Build',
 					disabled: true
@@ -111,46 +94,20 @@ class Dialog_NewBuild{
 
 		//Item Build:
 		this.$item = new TabbedIconSelect(this.$.find('#itemBuild #Item'), {
-			itemCategories: factorio.getItemCategories(),
-			getIcon_func: function(itemID){return factorio.getIcon('item', itemID);}
+			itemCategories: factorio.getItemCategory(),
+			getIcon_func: function(itemID){return factorio.getIcon('item', itemID);},
+			changeTab: function(tabID){
+				self.$.dialog('option', 'position', { my: "center", at: "center", of: window});
+			}
 		});
 
-		//Oil Build:
-		this.$recipe = new SelectMenu(this.$.find('#oilBuild #Recipe'), {
-			items: {
-				'BasicOilProcessing': {
-					label: factorio.getLabel('recipe', 'BasicOilProcessing', false),
-					icon: factorio.getIcon('recipe', 'BasicOilProcessing', false)
-				},
-				'AdvancedOilProcessing': {
-					label: factorio.getLabel('recipe', 'AdvancedOilProcessing', false),
-					icon: factorio.getIcon('recipe', 'AdvancedOilProcessing', false)
-				},
-				'HeavyOilCracking': {
-					label: factorio.getLabel('recipe', 'HeavyOilCracking', false),
-					icon: factorio.getIcon('recipe', 'HeavyOilCracking', false)
-				},
-				'LightOilCracking': {
-					label: factorio.getLabel('recipe', 'LightOilCracking', false),
-					icon: factorio.getIcon('recipe', 'LightOilCracking', false)
-				}
-			},
-			default: 'BasicOilProcessing'
-		})
-
-		//Electricity Build:
-		this.$electricityType = new SelectMenu(this.$.find('#electricityBuild #ElectricityType'), {
-			items: {
-				'Burner': {
-					label: factorio.getLabel('electricity', 'Burner'),
-					icon: factorio.getIcon('electricity', 'Burner')
-				},
-				'Electric':{
-					label: factorio.getLabel('electricity', 'Electric'),
-					icon: factorio.getIcon('electricity', 'Electric')
-				}
-			},
-			default: "electric"
+		//Recipe Build:
+		this.$recipe = new TabbedIconSelect(this.$.find('#recipeBuild #Recipe'), {
+			itemCategories: factorio.getRecipeCategory(),
+			getIcon_func: function(recipeID){return factorio.getIcon('recipe', recipeID);},
+			changeTab: function(tabID){
+				self.$.dialog('option', 'position', { my: "center", at: "center", of: window});
+			}
 		});
 	}
 	constructor(){
@@ -185,16 +142,14 @@ class Dialog_NewBuild{
 
 	_validate(val){
 		if(val.buildTypeID != 'itemBuild') val.itemID = null;
-		if(val.buildTypeID != 'oilBuild') val.recipeID = null;
-		if(val.buildTypeID != 'electricityBuild') val.electricityTypeID = null;
+		if(val.buildTypeID != 'recipeBuild') val.recipeID = null;
 		return val;
 	}
 	getValue(){
 		return this._validate({
 			buildTypeID: this.$buildType.getSelected(),
 			itemID: this.$item.getSelected(),
-			recipeID: this.$recipe.getSelected(),
-			electricityTypeID: this.$electricityType.getSelected()
+			recipeID: this.$recipe.getSelected()
 		});
 	}
 }

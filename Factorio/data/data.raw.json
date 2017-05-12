@@ -96,7 +96,7 @@
 	"module": {
 		"noModule": {
 			"label": "",
-			"icon": "blank.png",
+			"icon": "module/blank.png",
 			"energyConsumption": 0,
 			"speed": 0,
 			"productivity": 0,
@@ -171,8 +171,9 @@
 	"machine": {
 		"Hand": {
 			"label": "Hand",
-			"icon": "Hand.png",
+			"icon": "machine/Hand.png",
 			"speed": 1,
+			"productivity": 1,
 			"inputPower": {
 				"drain": 0,
 				"consumption": 0,
@@ -183,6 +184,7 @@
 		},
 		"StoneFurnace": {
 			"speed": 1,
+			"productivity": 1,
 			"inputPower": {
 				"drain": 0,
 				"consumption": 180000,
@@ -193,6 +195,7 @@
 		},
 		"SteelFurnace": {
 			"speed": 2,
+			"productivity": 1,
 			"inputPower": {
 				"drain": 0,
 				"consumption": 180000,
@@ -203,6 +206,7 @@
 		},
 		"ElectricFurnace": {
 			"speed": 2,
+			"productivity": 1,
 			"inputPower": {
 				"drain": 6000,
 				"consumption": 180000,
@@ -213,6 +217,7 @@
 		},
 		"AssemblingMachine1": {
 			"speed": 0.5,
+			"productivity": 1,
 			"inputPower": {
 				"drain": 3000,
 				"consumption": 90000,
@@ -223,6 +228,7 @@
 		},
 		"AssemblingMachine2": {
 			"speed": 0.75,
+			"productivity": 1,
 			"inputPower": {
 				"drain": 5000,
 				"consumption": 150000,
@@ -233,6 +239,7 @@
 		},
 		"AssemblingMachine3": {
 			"speed": 1.25,
+			"productivity": 1,
 			"inputPower": {
 				"drain": 7000,
 				"consumption": 210000,
@@ -243,6 +250,7 @@
 		},
 		"OilRefinery": {
 			"speed": 1,
+			"productivity": 1,
 			"inputPower": {
 				"drain": 14000,
 				"consumption": 420000,
@@ -253,6 +261,7 @@
 		},
 		"ChemicalPlant": {
 			"speed": 1.25,
+			"productivity": 1,
 			"inputPower": {
 				"drain": 7000,
 				"consumption": 210000,
@@ -263,6 +272,7 @@
 		},
 		"Centrifuge": {
 			"speed": 0.75,
+			"productivity": 1,
 			"inputPower": {
 				"drain": 11600,
 				"consumption": 350000,
@@ -270,6 +280,30 @@
 			},
 			"pollution": 1.6e-5,
 			"moduleSlots": 2
+		},
+		"RocketSilo": {
+			"speed": 1,
+			"productivity": 1,
+			"inputPower": {
+				"drain": 8300,
+				"consumption": 400000,
+				"type": "electric"
+			},
+			"pollution": 0,
+			"moduleSlots": 4
+		},
+		"RocketSilo_Launch": {
+			"label": "Rocket Silo",
+			"icon": "machine/RocketSilo.png",
+			"speed": 1,
+			"productivity": 1,
+			"inputPower": {
+				"drain": 0,
+				"consumption": 0,
+				"type": ""
+			},
+			"pollution": 0,
+			"moduleSlots": 0
 		}
 	},
 
@@ -1837,7 +1871,7 @@
 			},
 			"BasicOilProcessing": {
 				"label": "Basic Oil Processing",
-				"icon": "Recipe/BasicOilProcessing.png",
+				"icon": "recipe/BasicOilProcessing.png",
 				"craftTime": 5,
 				"ingredient": {
 					"CrudeOil": 100
@@ -1854,7 +1888,7 @@
 			},
 			"AdvancedOilProcessing": {
 				"label": "Advanced Oil Processing",
-				"icon": "Recipe/AdvancedOilProcessing.png",
+				"icon": "recipe/AdvancedOilProcessing.png",
 				"craftTime": 5,
 				"ingredient": {
 					"Water": 50,
@@ -1872,7 +1906,7 @@
 			},
 			"CoalLiquefaction": {
 				"label": "Coal Liquefaction",
-				"icon": "Recipe/CoalLiquefaction.png",
+				"icon": "recipe/CoalLiquefaction.png",
 				"craftTime": 5,
 				"ingredient": {
 					"Coal": 10,
@@ -1891,7 +1925,7 @@
 			},
 			"HeavyOilCracking": {
 				"label": "Heavy Oil Cracking To Light Oil",
-				"icon": "Recipe/HeavyOilCracking.png",
+				"icon": "recipe/HeavyOilCracking.png",
 				"craftTime": 3,
 				"ingredient": {
 					"Water": 30,
@@ -1907,7 +1941,7 @@
 			},
 			"LightOilCracking": {
 				"label": "Light Oil Cracking To Petroleum Gas",
-				"icon": "Recipe/LightOilCracking.png",
+				"icon": "recipe/LightOilCracking.png",
 				"craftTime": 3,
 				"ingredient": {
 					"Water": 30,
@@ -1923,7 +1957,7 @@
 			},
 			"SolidFuel_LightOil": {
 				"label": "Solid Fuel",
-				"icon": "Recipe/SolidFuel_LightOil.png",
+				"icon": "recipe/SolidFuel_LightOil.png",
 				"craftTime": 3,
 				"ingredient": {
 					"LightOil": 10
@@ -1938,7 +1972,7 @@
 			},
 			"SolidFuel_PetroleumGas": {
 				"label": "Solid Fuel",
-				"icon": "Recipe/SolidFuel_PetroleumGas.png",
+				"icon": "recipe/SolidFuel_PetroleumGas.png",
 				"craftTime": 3,
 				"ingredient": {
 					"PetroleumGas": 20
@@ -1953,7 +1987,7 @@
 			},
 			"SolidFuel_HeavyOil": {
 				"label": "Solid Fuel",
-				"icon": "Recipe/SolidFuel_HeavyOil.png",
+				"icon": "recipe/SolidFuel_HeavyOil.png",
 				"craftTime": 3,
 				"ingredient": {
 					"HeavyOil": 20
@@ -2071,7 +2105,7 @@
 			},
 			"UraniumProcessing": {
 				"label": "Uranium Processing",
-				"icon": "Recipe/UraniumProcessing.png",
+				"icon": "recipe/UraniumProcessing.png",
 				"craftTime": 10,
 				"ingredient": {
 					"UraniumOre": 10
@@ -2087,13 +2121,14 @@
 			},
 
 			"FillCrudeOilBarrel": {
+				"label": "Fill Crude Oil Barrel",
 				"craftTime": 1,
 				"ingredient": {
 					"EmptyBarrel": 1,
 					"CrudeOil": 250
 				},
 				"product": {
-					"CrudeOilBarrel": 2
+					"CrudeOilBarrel": 1
 				},
 				"machine": [
 					"AssemblingMachine2",
@@ -2102,13 +2137,14 @@
 				"acceptProductivityModule": false
 			},
 			"FillHeavyOilBarrel": {
+				"label": "Fill Heavy Oil Barrel",
 				"craftTime": 1,
 				"ingredient": {
 					"EmptyBarrel": 1,
 					"HeavyOil": 250
 				},
 				"product": {
-					"HeavyOilBarrel": 2
+					"HeavyOilBarrel": 1
 				},
 				"machine": [
 					"AssemblingMachine2",
@@ -2117,13 +2153,14 @@
 				"acceptProductivityModule": false
 			},
 			"FillLightOilBarrel": {
+				"label": "Fill Light Oil Barrel",
 				"craftTime": 1,
 				"ingredient": {
 					"EmptyBarrel": 1,
 					"LightOil": 250
 				},
 				"product": {
-					"LightOilBarrel": 2
+					"LightOilBarrel": 1
 				},
 				"machine": [
 					"AssemblingMachine2",
@@ -2132,13 +2169,14 @@
 				"acceptProductivityModule": false
 			},
 			"FillLubricantBarrel": {
+				"label": "Fill Lubricant Barrel",
 				"craftTime": 1,
 				"ingredient": {
 					"EmptyBarrel": 1,
 					"Lubricant": 250
 				},
 				"product": {
-					"LubricantBarrel": 2
+					"LubricantBarrel": 1
 				},
 				"machine": [
 					"AssemblingMachine2",
@@ -2147,13 +2185,14 @@
 				"acceptProductivityModule": false
 			},
 			"FillPetroleumGasBarrel": {
+				"label": "Fill Petroleum Gas Barrel",
 				"craftTime": 1,
 				"ingredient": {
 					"EmptyBarrel": 1,
 					"PetroleumGas": 250
 				},
 				"product": {
-					"PetroleumGasBarrel": 2
+					"PetroleumGasBarrel": 1
 				},
 				"machine": [
 					"AssemblingMachine2",
@@ -2162,13 +2201,14 @@
 				"acceptProductivityModule": false
 			},
 			"FillSulfuricAcidBarrel": {
+				"label": "Fill Sulfuric Acid Barrel",
 				"craftTime": 1,
 				"ingredient": {
 					"EmptyBarrel": 1,
 					"SulfuricAcid": 250
 				},
 				"product": {
-					"SulfuricAcidBarrel": 2
+					"SulfuricAcidBarrel": 1
 				},
 				"machine": [
 					"AssemblingMachine2",
@@ -2177,13 +2217,14 @@
 				"acceptProductivityModule": false
 			},
 			"FillWaterBarrel": {
+				"label": "Fill Water Barrel",
 				"craftTime": 1,
 				"ingredient": {
 					"EmptyBarrel": 1,
 					"Water": 250
 				},
 				"product": {
-					"WaterBarrel": 2
+					"WaterBarrel": 1
 				},
 				"machine": [
 					"AssemblingMachine2",
@@ -2193,6 +2234,7 @@
 			},
 
 			"EmptyCrudeOilBarrel": {
+				"label": "Empty Crude Oil Barrel",
 				"craftTime": 1,
 				"ingredient": {
 					"CrudeOilBarrel": 2
@@ -2208,6 +2250,7 @@
 				"acceptProductivityModule": false
 			},
 			"EmptyHeavyOilBarrel": {
+				"label": "Empty Heavy Oil Barrel",
 				"craftTime": 1,
 				"ingredient": {
 					"HeavyOilBarrel": 2
@@ -2223,6 +2266,7 @@
 				"acceptProductivityModule": false
 			},
 			"EmptyLightOilBarrel": {
+				"label": "Empty Light Oil Barrel",
 				"craftTime": 1,
 				"ingredient": {
 					"LightOilBarrel": 2
@@ -2238,6 +2282,7 @@
 				"acceptProductivityModule": false
 			},
 			"EmptyLubricantBarrel": {
+				"label": " Empty Lubricant Barrel",
 				"craftTime": 1,
 				"ingredient": {
 					"LubricantBarrel": 2
@@ -2253,6 +2298,7 @@
 				"acceptProductivityModule": false
 			},
 			"EmptyPetroleumGasBarrel": {
+				"label": "Empty Petroleum Gas Barrel",
 				"craftTime": 1,
 				"ingredient": {
 					"PetroleumGasBarrel": 2
@@ -2268,6 +2314,7 @@
 				"acceptProductivityModule": false
 			},
 			"EmptySulfuricAcidBarrel": {
+				"label": "Empty Sulfuric Acid Barrel",
 				"craftTime": 1,
 				"ingredient": {
 					"SulfuricAcidBarrel": 2
@@ -2283,6 +2330,7 @@
 				"acceptProductivityModule": false
 			},
 			"EmptyWaterBarrel": {
+				"label": "Empty Water Barrel",
 				"craftTime": 1,
 				"ingredient": {
 					"WaterBarrel": 2
@@ -2595,7 +2643,7 @@
 			},
 			"NuclearFuelReprocessing": {
 				"name": "Nuclear Fuel Reprocessing",
-				"icon": "Recipe/NuclearFuelReprocessing.png",
+				"icon": "recipe/NuclearFuelReprocessing.png",
 				"craftTime": 50,
 				"ingredient": {
 					"UsedUpUraniumFuelCell": 5
@@ -2610,7 +2658,7 @@
 			},
 			"KovarexEnrichmentProcess": {
 				"name": "Kovarex Enrichment Process",
-				"icon": "Recipe/KovarexEnrichmentProcess.png",
+				"icon": "recipe/KovarexEnrichmentProcess.png",
 				"craftTime": 50,
 				"ingredient": {
 					"Uranium235": 40,
@@ -2900,14 +2948,14 @@
 				],
 				"acceptProductivityModule": false
 			},
-			"UraniumRoundMagazine": {
+			"UraniumRoundsMagazine": {
 				"craftTime": 10,
 				"ingredient": {
 					"PiercingRoundsMagazine": 1,
 					"Uranium238": 1
 				},
 				"product": {
-					"UraniumRoundMagazine": 1
+					"UraniumRoundsMagazine": 1
 				},
 				"machine": [
 					"Hand",
@@ -3615,7 +3663,7 @@
 				],
 				"acceptProductivityModule": false
 			},
-			"Ro[cketSilo": {
+			"RocketSilo": {
 				"craftTime": 30,
 				"ingredient": {
 					"SteelPlate": 1000,
@@ -3984,28 +4032,28 @@
 	"item": {
 		"WoodenChest": {
 			"label": "Wooden Chest",
-			"icon": "Item/WoodenChest.png",
+			"icon": "item/WoodenChest.png",
 			"recipe": [
 				"WoodenChest"
 			]
 		},
 		"IronChest": {
 			"label": "Iron Chest",
-			"icon": "Item/IronChest.png",
+			"icon": "item/IronChest.png",
 			"recipe": [
 				"IronChest"
 			]
 		},
 		"SteelChest": {
 			"label": "Steel Chest",
-			"icon": "Item/SteelChest.png",
+			"icon": "item/SteelChest.png",
 			"recipe": [
 				"SteelChest"
 			]
 		},
 		"StorageTank": {
 			"label": "Storage Tank",
-			"icon": "Item/StorageTank.png",
+			"icon": "item/StorageTank.png",
 			"recipe": [
 				"StorageTank"
 			]
@@ -4013,63 +4061,63 @@
 
 		"TransportBelt": {
 			"label": "Transport Belt",
-			"icon": "Item/TransportBelt.png",
+			"icon": "item/TransportBelt.png",
 			"recipe": [
 				"TransportBelt"
 			]
 		},
 		"FastTransportBelt": {
 			"label": "Fast Transport Belt",
-			"icon": "Item/FastTransportBelt.png",
+			"icon": "item/FastTransportBelt.png",
 			"recipe": [
 				"FastTransportBelt"
 			]
 		},
 		"ExpressTransportBelt": {
 			"label": "Express Transport Belt",
-			"icon": "Item/ExpressTransportBelt.png",
+			"icon": "item/ExpressTransportBelt.png",
 			"recipe": [
 				"ExpressTransportBelt"
 			]
 		},
 		"UndergroundBelt": {
 			"label": "Underground Belt",
-			"icon": "Item/UndergroundBelt.png",
+			"icon": "item/UndergroundBelt.png",
 			"recipe": [
 				"UndergroundBelt"
 			]
 		},
 		"FastUndergroundBelt": {
 			"label": "Fast Underground Belt",
-			"icon": "Item/FastUndergroundBelt.png",
+			"icon": "item/FastUndergroundBelt.png",
 			"recipe": [
 				"FastUndergroundBelt"
 			]
 		},
 		"ExpressUndergroundBelt": {
 			"label": "Express Underground Belt",
-			"icon": "Item/ExpressUndergroundBelt.png",
+			"icon": "item/ExpressUndergroundBelt.png",
 			"recipe": [
 				"ExpressUndergroundBelt"
 			]
 		},
 		"Splitter": {
 			"label": "Splitter",
-			"icon": "Item/Splitter.png",
+			"icon": "item/Splitter.png",
 			"recipe": [
 				"Splitter"
 			]
 		},
 		"FastSplitter": {
 			"label": "Fast Splitter",
-			"icon": "Item/FastSplitter.png",
+			"icon": "item/FastSplitter.png",
 			"recipe": [
 				"FastSplitter"
 			]
 		},
 		"ExpressSplitter": {
 			"label": "Express Splitter",
-			"icon": "Item/ExpressSplitter.png",
+			"icon": "item/ExpressSplitter.png",
 			"recipe": [
 				"ExpressSplitter"
 			]
@@ -4077,49 +4125,49 @@
 
 		"BurnerInserter": {
 			"label": "Burner Inserter",
-			"icon": "Item/BurnerInserter.png",
+			"icon": "item/BurnerInserter.png",
 			"recipe": [
 				"BurnerInserter"
 			]
 		},
 		"Inserter": {
 			"label": "Inserter",
-			"icon": "Item/Inserter.png",
+			"icon": "item/Inserter.png",
 			"recipe": [
 				"Inserter"
 			]
 		},
 		"LongHandedInserter": {
 			"label": "Long Handed Inserter",
-			"icon": "Item/LongHandedInserter.png",
+			"icon": "item/LongHandedInserter.png",
 			"recipe": [
 				"LongHandedInserter"
 			]
 		},
 		"FastInserter": {
 			"label": "Fast Inserter",
-			"icon": "Item/FastInserter.png",
+			"icon": "item/FastInserter.png",
 			"recipe": [
 				"FastInserter"
 			]
 		},
 		"FilterInserter": {
 			"label": "Filter Inserter",
-			"icon": "Item/FilterInserter.png",
+			"icon": "item/FilterInserter.png",
 			"recipe": [
 				"FilterInserter"
 			]
 		},
 		"StackInserter": {
 			"label": "Stack Inserter",
-			"icon": "Item/StackInserter.png",
+			"icon": "item/StackInserter.png",
 			"recipe": [
 				"StackInserter"
 			]
 		},
 		"StackFilterInserter": {
 			"label": "Stack Filter Inserter",
-			"icon": "Item/StackFilterInserter.png",
+			"icon": "item/StackFilterInserter.png",
 			"recipe": [
 				"StackFilterInserter"
 			]
@@ -4127,49 +4175,49 @@
 
 		"SmallElectricPole": {
 			"label": "Small Electric Pole",
-			"icon": "Item/SmallElectricPole.png",
+			"icon": "item/SmallElectricPole.png",
 			"recipe": [
 				"SmallElectricPole"
 			]
 		},
 		"MediumElectricPole": {
 			"label": "Medium Electric Pole",
-			"icon": "Item/MediumElectricPole.png",
+			"icon": "item/MediumElectricPole.png",
 			"recipe": [
 				"MediumElectricPole"
 			]
 		},
 		"BigElectricPole": {
 			"label": "Big Electric Pole",
-			"icon": "Item/BigElectricPole.png",
+			"icon": "item/BigElectricPole.png",
 			"recipe": [
 				"BigElectricPole"
 			]
 		},
 		"Substation": {
 			"label": "Substation",
-			"icon": "Item/Substation.png",
+			"icon": "item/Substation.png",
 			"recipe": [
 				"Substation"
 			]
 		},
 		"Pipe": {
 			"label": "Pipe",
-			"icon": "Item/Pipe.png",
+			"icon": "item/Pipe.png",
 			"recipe": [
 				"Pipe"
 			]
 		},
 		"PipeToGround": {
 			"label": "Pipe to Ground",
-			"icon": "Item/PipeToGround.png",
+			"icon": "item/PipeToGround.png",
 			"recipe": [
 				"PipeToGround"
 			]
 		},
 		"Pump": {
 			"label": "Pump",
-			"icon": "Item/Pump.png",
+			"icon": "item/Pump.png",
 			"recipe": [
 				"Pump"
 			]
@@ -4177,63 +4225,63 @@
 
 		"StraightRail": {
 			"label": "Straight Rail",
-			"icon": "Item/StraightRail.png",
+			"icon": "item/StraightRail.png",
 			"recipe": [
 				"StraightRail"
 			]
 		},
 		"TrainStop": {
 			"label": "Train Stop",
-			"icon": "Item/TrainStop.png",
+			"icon": "item/TrainStop.png",
 			"recipe": [
 				"TrainStop"
 			]
 		},
 		"RailSignal": {
 			"label": "Rail Signal",
-			"icon": "Item/RailSignal.png",
+			"icon": "item/RailSignal.png",
 			"recipe": [
 				"RailSignal"
 			]
 		},
 		"RailChainSignal": {
 			"label": "Rail Chain Signal",
-			"icon": "Item/RailChainSignal.png",
+			"icon": "item/RailChainSignal.png",
 			"recipe": [
 				"RailChainSignal"
 			]
 		},
 		"Locomotive": {
 			"label": "Locomotive",
-			"icon": "Item/Locomotive.png",
+			"icon": "item/Locomotive.png",
 			"recipe": [
 				"Locomotive"
 			]
 		},
 		"CargoWagon": {
 			"label": "Cargo Wagon",
-			"icon": "Item/CargoWagon.png",
+			"icon": "item/CargoWagon.png",
 			"recipe": [
 				"CargoWagon"
 			]
 		},
 		"FluidWagon": {
 			"label": "Fluid Wagon",
-			"icon": "Item/FluidWagon.png",
+			"icon": "item/FluidWagon.png",
 			"recipe": [
 				"FluidWagon"
 			]
 		},
 		"Car": {
 			"label": "Car",
-			"icon": "Item/Car.png",
+			"icon": "item/Car.png",
 			"recipe": [
 				"Car"
 			]
 		},
 		"Tank": {
 			"label": "Tank",
-			"icon": "Item/Tank.png",
+			"icon": "item/Tank.png",
 			"recipe": [
 				"Tank"
 			]
@@ -4241,49 +4289,49 @@
 
 		"LogisticRobot": {
 			"label": "Logistic Robot",
-			"icon": "Item/LogisticRobot.png",
+			"icon": "item/LogisticRobot.png",
 			"recipe": [
 				"LogisticRobot"
 			]
 		},
 		"ConstructionRobot": {
 			"label": "Construction Robot",
-			"icon": "Item/ConstructionRobot.png",
+			"icon": "item/ConstructionRobot.png",
 			"recipe": [
 				"ConstructionRobot"
 			]
 		},
 		"ActiveProviderChest": {
 			"label": "Active Provider Chest",
-			"icon": "Item/ActiveProviderChest.png",
+			"icon": "item/ActiveProviderChest.png",
 			"recipe": [
 				"ActiveProviderChest"
 			]
 		},
 		"PassiveProviderChest": {
 			"label": "Passive Provider Chest",
-			"icon": "Item/PassiveProviderChest.png",
+			"icon": "item/PassiveProviderChest.png",
 			"recipe": [
 				"PassiveProviderChest"
 			]
 		},
 		"RequesterChest": {
 			"label": "Requester Chest",
-			"icon": "Item/RequesterChest.png",
+			"icon": "item/RequesterChest.png",
 			"recipe": [
 				"RequesterChest"
 			]
 		},
 		"StorageChest": {
 			"label": "Storage Chest",
-			"icon": "Item/StorageChest.png",
+			"icon": "item/StorageChest.png",
 			"recipe": [
 				"StorageChest"
 			]
 		},
 		"Roboport": {
 			"label": "Roboport",
-			"icon": "Item/Roboport.png",
+			"icon": "item/Roboport.png",
 			"recipe": [
 				"Roboport"
 			]
@@ -4291,56 +4339,56 @@
 
 		"Lamp": {
 			"label": "Lamp",
-			"icon": "Item/Lamp.png",
+			"icon": "item/Lamp.png",
 			"recipe": [
 				"Lamp"
 			]
 		},
 		"RedWire": {
 			"label": "Red Wire",
-			"icon": "Item/RedWire.png",
+			"icon": "item/RedWire.png",
 			"recipe": [
 				"RedWire"
 			]
 		},
 		"GreenWire": {
 			"label": "Green Wire",
-			"icon": "Item/GreenWire.png",
+			"icon": "item/GreenWire.png",
 			"recipe": [
 				"GreenWire"
 			]
 		},
 		"ArithmeticCombinator": {
 			"label": "Arithmetic Combinator",
-			"icon": "Item/ArithmeticCombinator.png",
+			"icon": "item/ArithmeticCombinator.png",
 			"recipe": [
 				"ArithmeticCombinator"
 			]
 		},
 		"DeciderCombinator": {
 			"label": "Decider Combinator",
-			"icon": "Item/DeciderCombinator.png",
+			"icon": "item/DeciderCombinator.png",
 			"recipe": [
 				"DeciderCombinator"
 			]
 		},
 		"ConstantCombinator": {
 			"label": "Constant Combinator",
-			"icon": "Item/ConstantCombinator.png",
+			"icon": "item/ConstantCombinator.png",
 			"recipe": [
 				"ConstantCombinator"
 			]
 		},
 		"PowerSwitch": {
 			"label": "Power Switch",
-			"icon": "Item/PowerSwitch.png",
+			"icon": "item/PowerSwitch.png",
 			"recipe": [
 				"PowerSwitch"
 			]
 		},
 		"ProgrammableSpeaker": {
 			"label": "Programmable Speaker",
-			"icon": "Item/ProgrammableSpeaker.png",
+			"icon": "item/ProgrammableSpeaker.png",
 			"recipe": [
 				"ProgrammableSpeaker"
 			]
@@ -4348,28 +4396,28 @@
 
 		"StoneBrick": {
 			"label": "Stone Brick",
-			"icon": "Item/StoneBrick.png",
+			"icon": "item/StoneBrick.png",
 			"recipe": [
 				"StoneBrick"
 			]
 		},
 		"Concrete": {
 			"label": "Concrete",
-			"icon": "Item/Concrete.png",
+			"icon": "item/Concrete.png",
 			"recipe": [
 				"Concrete"
 			]
 		},
 		"HazardConcrete": {
 			"label": "Hazard Concrete",
-			"icon": "Item/HazardConcrete.png",
+			"icon": "item/HazardConcrete.png",
 			"recipe": [
 				"HazardConcrete"
 			]
 		},
 		"Landfill": {
 			"label": "Landfill",
-			"icon": "Item/Landfill.png",
+			"icon": "item/Landfill.png",
 			"recipe": [
 				"Landfill"
 			]
@@ -4378,21 +4426,21 @@
 
 		"IronAxe": {
 			"label": "Iron Axe",
-			"icon": "Item/IronAxe.png",
+			"icon": "item/IronAxe.png",
 			"recipe": [
 				"IronAxe"
 			]
 		},
 		"SteelAxe": {
 			"label": "Steel Axe",
-			"icon": "Item/SteelAxe.png",
+			"icon": "item/SteelAxe.png",
 			"recipe": [
 				"SteelAxe"
 			]
 		},
 		"RepairPack": {
 			"label": "Repair Pack",
-			"icon": "Item/RepairPack.png",
+			"icon": "item/RepairPack.png",
 			"recipe": [
 				"RepairPack"
 			]
@@ -4400,56 +4448,56 @@
 
 		"Boiler": {
 			"label": "Boiler",
-			"icon": "Item/Boiler.png",
+			"icon": "item/Boiler.png",
 			"recipe": [
 				"Boiler"
 			]
 		},
 		"SteamEngine": {
 			"label": "Steam Engine",
-			"icon": "Item/SteamEngine.png",
+			"icon": "item/SteamEngine.png",
 			"recipe": [
 				"SteamEngine"
 			]
 		},
 		"SteamTurbine": {
 			"label": "Steam Turbine",
-			"icon": "Item/SteamTurbine.png",
+			"icon": "item/SteamTurbine.png",
 			"recipe": [
 				"SteamTurbine"
 			]
 		},
 		"SolarPanel": {
 			"label": "Solar Panel",
-			"icon": "Item/SolarPanel.png",
+			"icon": "item/SolarPanel.png",
 			"recipe": [
 				"SolarPanel"
 			]
 		},
 		"Accumlator": {
 			"label": "Accumlator",
-			"icon": "Item/Accumlator.png",
+			"icon": "item/Accumlator.png",
 			"recipe": [
 				"Accumlator"
 			]
 		},
 		"NuclearReactor": {
 			"label": "Nuclear Reactor",
-			"icon": "Item/NuclearReactor.png",
+			"icon": "item/NuclearReactor.png",
 			"recipe": [
 				"NuclearReactor"
 			]
 		},
 		"HeatExchanger": {
 			"label": "Heat Exchanger",
-			"icon": "Item/HeatExchanger.png",
+			"icon": "item/HeatExchanger.png",
 			"recipe": [
 				"HeatExchanger"
 			]
 		},
 		"HeatPipe": {
 			"label": "Heat Pipe",
-			"icon": "Item/HeatPipe.png",
+			"icon": "item/HeatPipe.png",
 			"recipe": [
 				"HeatPipe"
 			]
@@ -4457,28 +4505,28 @@
 
 		"BurnerMiningDrill": {
 			"label": "Burner Mining Drill",
-			"icon": "Item/BurnerMiningDrill.png",
+			"icon": "item/BurnerMiningDrill.png",
 			"recipe": [
 				"BurnerMiningDrill"
 			]
 		},
 		"ElectricMiningDrill": {
 			"label": "Electric Mining Drill",
-			"icon": "Item/ElectricMiningDrill.png",
+			"icon": "item/ElectricMiningDrill.png",
 			"recipe": [
 				"ElectricMiningDrill"
 			]
 		},
 		"OffshorePump": {
 			"label": "Offshore Pump",
-			"icon": "Item/OffshorePump.png",
+			"icon": "item/OffshorePump.png",
 			"recipe": [
 				"OffshorePump"
 			]
 		},
 		"Pumpjack": {
 			"label": "Pumpjack",
-			"icon": "Item/Pumpjack.png",
+			"icon": "item/Pumpjack.png",
 			"recipe": [
 				"Pumpjack"
 			]
@@ -4486,21 +4534,21 @@
 
 		"StoneFurnace": {
 			"label": "Stone Furnace",
-			"icon": "Item/StoneFurnace.png",
+			"icon": "item/StoneFurnace.png",
 			"recipe": [
 				"StoneFurnace"
 			]
 		},
 		"SteelFurnace": {
 			"label": "Steel Furnace",
-			"icon": "Item/SteelFurnace.png",
+			"icon": "item/SteelFurnace.png",
 			"recipe": [
 				"SteelFurnace"
 			]
 		},
 		"ElectricFurnace": {
 			"label": "Electric Furnace",
-			"icon": "Item/ElectricFurnace.png",
+			"icon": "item/ElectricFurnace.png",
 			"recipe": [
 				"ElectricFurnace"
 			]
@@ -4508,49 +4556,49 @@
 
 		"AssemblingMachine1": {
 			"label": "Assembling Machine 1",
-			"icon": "Item/AssemblingMachine1.png",
+			"icon": "item/AssemblingMachine1.png",
 			"recipe": [
 				"AssemblingMachine1"
 			]
 		},
 		"AssemblingMachine2": {
 			"label": "Assembling Machine 2",
-			"icon": "Item/AssemblingMachine2.png",
+			"icon": "item/AssemblingMachine2.png",
 			"recipe": [
 				"AssemblingMachine2"
 			]
 		},
 		"AssemblingMachine3": {
 			"label": "Assembling Machine 3",
-			"icon": "Item/AssemblingMachine3.png",
+			"icon": "item/AssemblingMachine3.png",
 			"recipe": [
 				"AssemblingMachine3"
 			]
 		},
 		"OilRefinery": {
 			"label": "Oil Refinery",
-			"icon": "Item/OilRefinery.png",
+			"icon": "item/OilRefinery.png",
 			"recipe": [
 				"OilRefinery"
 			]
 		},
 		"ChemicalPlant": {
 			"label": "Chemical Plant",
-			"icon": "Item/ChemicalPlant.png",
+			"icon": "item/ChemicalPlant.png",
 			"recipe": [
 				"ChemicalPlant"
 			]
 		},
 		"Centrifuge": {
 			"label": "Centrifuge",
-			"icon": "Item/Centrifuge.png",
+			"icon": "item/Centrifuge.png",
 			"recipe": [
 				"Centrifuge"
 			]
 		},
 		"Lab": {
 			"label": "Lab",
-			"icon": "Item/Lab.png",
+			"icon": "item/Lab.png",
 			"recipe": [
 				"Lab"
 			]
@@ -4558,70 +4606,70 @@
 
 		"Beacon": {
 			"label": "Beacon",
-			"icon": "Item/Beacon.png",
+			"icon": "item/Beacon.png",
 			"recipe": [
 				"Beacon"
 			]
 		},
 		"SpeedModule1": {
 			"label": "Speed Module",
-			"icon": "Item/SpeedModule1.png",
+			"icon": "item/SpeedModule1.png",
 			"recipe": [
 				"SpeedModule1"
 			]
 		},
 		"SpeedModule2": {
 			"label": "Speed Module 2",
-			"icon": "Item/SpeedModule2.png",
+			"icon": "item/SpeedModule2.png",
 			"recipe": [
 				"SpeedModule2"
 			]
 		},
 		"SpeedModule3": {
 			"label": "Speed Module 3",
-			"icon": "Item/SpeedModule3.png",
+			"icon": "item/SpeedModule3.png",
 			"recipe": [
 				"SpeedModule3"
 			]
 		},
 		"EfficiencyModule1": {
 			"label": "Efficiency Module",
-			"icon": "Item/EfficiencyModule1.png",
+			"icon": "item/EfficiencyModule1.png",
 			"recipe": [
 				"EfficiencyModule1"
 			]
 		},
 		"EfficiencyModule2": {
 			"label": "Efficiency Module 2",
-			"icon": "Item/EfficiencyModule2.png",
+			"icon": "item/EfficiencyModule2.png",
 			"recipe": [
 				"EfficiencyModule2"
 			]
 		},
 		"EfficiencyModule3": {
 			"label": "Efficiency Module 3",
-			"icon": "Item/EfficiencyModule3.png",
+			"icon": "item/EfficiencyModule3.png",
 			"recipe": [
 				"EfficiencyModule3"
 			]
 		},
 		"ProductivityModule1": {
 			"label": "Productivity Module",
-			"icon": "Item/ProductivityModule1.png",
+			"icon": "item/ProductivityModule1.png",
 			"recipe": [
 				"ProductivityModule1"
 			]
 		},
 		"ProductivityModule2": {
 			"label": "Productivity Module 2",
-			"icon": "Item/ProductivityModule2.png",
+			"icon": "item/ProductivityModule2.png",
 			"recipe": [
 				"ProductivityModule2"
 			]
 		},
 		"ProductivityModule3": {
 			"label": "Productivity Module 3",
-			"icon": "Item/ProductivityModule3.png",
+			"icon": "item/ProductivityModule3.png",
 			"recipe": [
 				"ProductivityModule3"
 			]
@@ -4630,7 +4678,7 @@
 
 		"SolidFuel": {
 			"label": "Solid Fuel",
-			"icon": "Item/SolidFuel.png",
+			"icon": "item/SolidFuel.png",
 			"recipe": [
 				"SolidFuel_LightOil",
 				"SolidFuel_HeavyOil",
@@ -4639,78 +4687,78 @@
 		},
 		"Stone": {
 			"label": "Stone",
-			"icon": "Item/Stone.png",
+			"icon": "item/Stone.png",
 			"recipe": []
 		},
 		"IronOre": {
 			"label": "Iron Ore",
-			"icon": "Item/IronOre.png",
+			"icon": "item/IronOre.png",
 			"recipe": []
 		},
 		"RawFish": {
 			"label": "Raw Fish",
-			"icon": "Item/RawFish.png",
+			"icon": "item/RawFish.png",
 			"recipe": []
 		},
 		"CopperOre": {
 			"label": "Copper Ore",
-			"icon": "Item/CopperOre.png",
+			"icon": "item/CopperOre.png",
 			"recipe": []
 		},
 		"UraniumOre": {
 			"label": "Uranium Ore",
-			"icon": "Item/UraniumOre.png",
+			"icon": "item/UraniumOre.png",
 			"recipe": []
 		},
 
 		"RawWood": {
 			"label": "Raw Wood",
-			"icon": "Item/RawWood.png",
+			"icon": "item/RawWood.png",
 			"recipe": []
 		},
 		"Wood": {
 			"label": "Wood",
-			"icon": "Item/Wood.png",
+			"icon": "item/Wood.png",
 			"recipe": [
 				"Wood"
 			]
 		},
 		"Coal": {
 			"label": "Coal",
-			"icon": "Item/Coal.png",
+			"icon": "item/Coal.png",
 			"recipe": []
 		},
 		"IronPlate": {
 			"label": "IronPlate",
-			"icon": "Item/IronPlate.png",
+			"icon": "item/IronPlate.png",
 			"recipe": [
 				"IronPlate"
 			]
 		},
 		"CopperPlate": {
 			"label": "CopperPlate",
-			"icon": "Item/CopperPlate.png",
+			"icon": "item/CopperPlate.png",
 			"recipe": [
 				"CopperPlate"
 			]
 		},
 		"SteelPlate": {
 			"label": "SteelPlate",
-			"icon": "Item/SteelPlate.png",
+			"icon": "item/SteelPlate.png",
 			"recipe": [
 				"SteelPlate"
 			]
 		},
 		"Sulfur": {
 			"label": "Sulfur",
-			"icon": "Item/Sulfur.png",
+			"icon": "item/Sulfur.png",
 			"recipe": [
 				"Sulfur"
 			]
 		},
 		"PlasticBar": {
 			"label": "PlasticBar",
-			"icon": "Item/PlasticBar.png",
+			"icon": "item/PlasticBar.png",
 			"recipe": [
 				"PlasticBar"
 			]
@@ -4761,28 +4809,28 @@
 
 		"CopperCable": {
 			"label": "Copper Cable",
-			"icon": "Item/CopperCable.png",
+			"icon": "item/CopperCable.png",
 			"recipe": [
 				"CopperCable"
 			]
 		},
 		"IronStick": {
 			"label": "Iron Stick",
-			"icon": "Item/IronStick.png",
+			"icon": "item/IronStick.png",
 			"recipe": [
 				"IronStick"
 			]
 		},
 		"IronGearWheel": {
 			"label": "Iron Gear Wheel",
-			"icon": "Item/IronGearWheel.png",
+			"icon": "item/IronGearWheel.png",
 			"recipe": [
 				"IronGearWheel"
 			]
 		},
 		"EmptyBarrel": {
 			"label": "Empty Barrel",
-			"icon": "Item/EmptyBarrel.png",
+			"icon": "item/EmptyBarrel.png",
 			"recipe": [
 				"EmptyBarrel",
 				"EmptyCrudeOilBarrel",
@@ -4795,28 +4843,28 @@
 		},
 		"ElectronicCircuit": {
 			"label": "Electronic Circuit",
-			"icon": "Item/ElectronicCircuit.png",
+			"icon": "item/ElectronicCircuit.png",
 			"recipe": [
 				"ElectronicCircuit"
 			]
 		},
 		"AdvancedCircuit": {
 			"label": "Advanced Circuit",
-			"icon": "Item/AdvancedCircuit.png",
+			"icon": "item/AdvancedCircuit.png",
 			"recipe": [
 				"AdvancedCircuit"
 			]
 		},
 		"ProcessingUnit": {
 			"label": "Processing Unit",
-			"icon": "Item/ProcessingUnit.png",
+			"icon": "item/ProcessingUnit.png",
 			"recipe": [
 				"ProcessingUnit"
 			]
 		},
 		"Uranium235": {
 			"label": "Uranium-235",
-			"icon": "Item/Uranium235.png",
+			"icon": "item/Uranium235.png",
 			"recipe": [
 				"UraniumProcessing",
 				"KovarexEnrichmentProcess"
@@ -4824,7 +4872,7 @@
 		},
 		"Uranium238": {
 			"label": "Uranium-238",
-			"icon": "Item/Uranium238.png",
+			"icon": "item/Uranium238.png",
 			"recipe": [
 				"UraniumProcessing",
 				"NuclearFuelReprocessing",
@@ -4833,84 +4881,84 @@
 		},
 		"EngineUnit": {
 			"label": "Engine Unit",
-			"icon": "Item/EngineUnit.png",
+			"icon": "item/EngineUnit.png",
 			"recipe": [
 				"EngineUnit"
 			]
 		},
 		"ElectricEngineUnit": {
 			"label": "Electric Engine Unit",
-			"icon": "Item/ElectricEngineUnit.png",
+			"icon": "item/ElectricEngineUnit.png",
 			"recipe": [
 				"ElectricEngineUnit"
 			]
 		},
 		"UsedUpUraniumFuelCell": {
 			"label": "Used Up Uranium Fuel Cell",
-			"icon": "Item/UsedUpUraniumFuelCell.png",
+			"icon": "item/UsedUpUraniumFuelCell.png",
 			"recipe": [
 				"UsedUpUraniumFuelCell"
 			]
 		},
 		"Battery": {
 			"label": "Battery",
-			"icon": "Item/Battery.png",
+			"icon": "item/Battery.png",
 			"recipe": [
 				"Battery"
 			]
 		},
 		"Explosives": {
 			"label": "Explosives",
-			"icon": "Item/Explosives.png",
+			"icon": "item/Explosives.png",
 			"recipe": [
 				"Explosives"
 			]
 		},
 		"FlyingRobotFrame": {
 			"label": "Flying Robot Frame",
-			"icon": "Item/FlyingRobotFrame.png",
+			"icon": "item/FlyingRobotFrame.png",
 			"recipe": [
 				"FlyingRobotFrame"
 			]
 		},
 		"LowDensityStructure": {
 			"label": "Low Density Structure",
-			"icon": "Item/LowDensityStructure.png",
+			"icon": "item/LowDensityStructure.png",
 			"recipe": [
 				"LowDensityStructure"
 			]
 		},
 		"RocketFuel": {
 			"label": "Rocket Fuel",
-			"icon": "Item/RocketFuel.png",
+			"icon": "item/RocketFuel.png",
 			"recipe": [
 				"RocketFuel"
 			]
 		},
 		"RocketControlUnit": {
 			"label": "Rocket Control Unit",
-			"icon": "Item/RocketControlUnit.png",
+			"icon": "item/RocketControlUnit.png",
 			"recipe": [
 				"RocketControlUnit"
 			]
 		},
 		"Satellite": {
 			"label": "Satellite",
-			"icon": "Item/Satellite.png",
+			"icon": "item/Satellite.png",
 			"recipe": [
 				"Satellite"
 			]
 		},
 		"RocketPart": {
 			"label": "Rocket Part",
-			"icon": "Item/RocketPart.png",
+			"icon": "item/RocketPart.png",
 			"recipe": [
 				"RocketPart"
 			]
 		},
 		"UraniumFuelCell": {
 			"label": "Uranium Fuel Cell",
-			"icon": "Item/UraniumFuelCell.png",
+			"icon": "item/UraniumFuelCell.png",
 			"recipe": [
 				"UraniumFuelCell"
 			]
@@ -4918,49 +4966,49 @@
 
 		"SciencePack1": {
 			"label": "Science Pack 1",
-			"icon": "Item/SciencePack1.png",
+			"icon": "item/SciencePack1.png",
 			"recipe": [
 				"SciencePack1"
 			]
 		},
 		"SciencePack2": {
 			"label": "Science Pack 2",
-			"icon": "Item/SciencePack2.png",
+			"icon": "item/SciencePack2.png",
 			"recipe": [
 				"SciencePack2"
 			]
 		},
 		"SciencePack3": {
 			"label": "Science Pack 3",
-			"icon": "Item/SciencePack3.png",
+			"icon": "item/SciencePack3.png",
 			"recipe": [
 				"SciencePack3"
 			]
 		},
 		"MilitarySciencePack": {
 			"label": "Military Science Pack",
-			"icon": "Item/MilitarySciencePack.png",
+			"icon": "item/MilitarySciencePack.png",
 			"recipe": [
 				"MilitarySciencePack"
 			]
 		},
 		"ProductionSciencePack": {
 			"label": "Production Science Pack",
-			"icon": "Item/ProductionSciencePack.png",
+			"icon": "item/ProductionSciencePack.png",
 			"recipe": [
 				"ProductionSciencePack"
 			]
 		},
 		"HighTechSciencePack": {
 			"label": "High Tech Science Pack",
-			"icon": "Item/HighTechSciencePack.png",
+			"icon": "item/HighTechSciencePack.png",
 			"recipe": [
 				"HighTechSciencePack"
 			]
 		},
 		"SpaceSciencePack": {
 			"label": "Space Science Pack",
-			"icon": "Item/SpaceSciencePack.png",
+			"icon": "item/SpaceSciencePack.png",
 			"recipe": [
 				"SpaceSciencePack"
 			]
@@ -4969,49 +5017,49 @@
 
 		"Pistol": {
 			"label": "Pistol",
-			"icon": "Item/Pistol.png",
+			"icon": "item/Pistol.png",
 			"recipe": [
 				"Pistol"
 			]
 		},
 		"SubmachineGun": {
 			"label": "Submachine Gun",
-			"icon": "Item/SubmachineGun.png",
+			"icon": "item/SubmachineGun.png",
 			"recipe": [
 				"SubmachineGun"
 			]
 		},
 		"Shotgun": {
 			"label": "Shotgun",
-			"icon": "Item/Shotgun.png",
+			"icon": "item/Shotgun.png",
 			"recipe": [
 				"Shotgun"
 			]
 		},
 		"CombatShotgun": {
 			"label": "Combat Shotgun",
-			"icon": "Item/CombatShotgun.png",
+			"icon": "item/CombatShotgun.png",
 			"recipe": [
 				"CombatShotgun"
 			]
 		},
 		"RocketLauncher": {
 			"label": "Rocket Launcher",
-			"icon": "Item/RocketLauncher.png",
+			"icon": "item/RocketLauncher.png",
 			"recipe": [
 				"RocketLauncher"
 			]
 		},
 		"Flamethrower": {
 			"label": "Flamethrower",
-			"icon": "Item/Flamethrower.png",
+			"icon": "item/Flamethrower.png",
 			"recipe": [
 				"Flamethrower"
 			]
 		},
 		"LandMine": {
 			"label": "LandMine",
-			"icon": "Item/LandMine.png",
+			"icon": "item/LandMine.png",
 			"recipe": [
 				"LandMine"
 			]
@@ -5019,63 +5067,63 @@
 
 		"FirearmMagazine": {
 			"label": "Firearm Magazine",
-			"icon": "Item/FirearmMagazine.png",
+			"icon": "item/FirearmMagazine.png",
 			"recipe": [
 				"FirearmMagazine"
 			]
 		},
 		"PiercingRoundsMagazine": {
 			"label": "Piercing Rounds Magazine",
-			"icon": "Item/PiercingRoundsMagazine.png",
+			"icon": "item/PiercingRoundsMagazine.png",
 			"recipe": [
 				"PiercingRoundsMagazine"
 			]
 		},
-		"UraniumRoundMagazine": {
-			"label": "Uranium Round Magazine",
-			"icon": "Item/UraniumRoundMagazine.png",
+		"UraniumRoundsMagazine": {
+			"label": "Uranium Rounds Magazine",
+			"icon": "item/UraniumRoundsMagazine.png",
 			"recipe": [
-				"UraniumRoundMagazine"
+				"UraniumRoundsMagazine"
 			]
 		},
 		"ShotgunShells": {
 			"label": "Shotgun Shells",
-			"icon": "Item/ShotgunShells.png",
+			"icon": "item/ShotgunShells.png",
 			"recipe": [
 				"ShotgunShells"
 			]
 		},
 		"PiercingShotgunShells": {
 			"label": "Piercing Shotgun Shells",
-			"icon": "Item/PiercingShotgunShells.png",
+			"icon": "item/PiercingShotgunShells.png",
 			"recipe": [
 				"PiercingShotgunShells"
 			]
 		},
 		"CannonShell": {
 			"label": "Cannon Shell",
-			"icon": "Item/CannonShell.png",
+			"icon": "item/CannonShell.png",
 			"recipe": [
 				"CannonShell"
 			]
 		},
 		"ExplosiveCannonShell": {
 			"label": "Explosive Cannon Shell",
-			"icon": "Item/ExplosiveCannonShell.png",
+			"icon": "item/ExplosiveCannonShell.png",
 			"recipe": [
 				"ExplosiveCannonShell"
 			]
 		},
 		"UraniumCannonShell": {
 			"label": "Uranium Cannon Shell",
-			"icon": "Item/UraniumCannonShell.png",
+			"icon": "item/UraniumCannonShell.png",
 			"recipe": [
 				"UraniumCannonShell"
 			]
 		},
 		"ExplosiveUraniumCannonShell": {
 			"label": "Explosive Uranium Cannon Shell",
-			"icon": "Item/ExplosiveUraniumCannonShell.png",
+			"icon": "item/ExplosiveUraniumCannonShell.png",
 			"recipe": [
 				"ExplosiveUraniumCannonShell"
 			]
@@ -5083,28 +5131,28 @@
 
 		"Rocket": {
 			"label": "Rocket",
-			"icon": "Item/Rocket.png",
+			"icon": "item/Rocket.png",
 			"recipe": [
 				"Rocket"
 			]
 		},
 		"ExplosiveRocket": {
 			"label": "Explosive Rocket",
-			"icon": "Item/ExplosiveRocket.png",
+			"icon": "item/ExplosiveRocket.png",
 			"recipe": [
 				"ExplosiveRocket"
 			]
 		},
 		"AtomicBomb": {
 			"label": "Atomic Bomb",
-			"icon": "Item/AtomicBomb.png",
+			"icon": "item/AtomicBomb.png",
 			"recipe": [
 				"AtomicBomb"
 			]
 		},
 		"FlamethrowerAmmo": {
 			"label": "Flamethrower Ammo",
-			"icon": "Item/FlamethrowerAmmo.png",
+			"icon": "item/FlamethrowerAmmo.png",
 			"recipe": [
 				"FlamethrowerAmmo"
 			]
@@ -5112,56 +5160,56 @@
 
 		"Grenade": {
 			"label": "Grenade",
-			"icon": "Item/Grenade.png",
+			"icon": "item/Grenade.png",
 			"recipe": [
 				"Grenade"
 			]
 		},
 		"ClusterGrenade": {
 			"label": "Cluster Grenade",
-			"icon": "Item/ClusterGrenade.png",
+			"icon": "item/ClusterGrenade.png",
 			"recipe": [
 				"ClusterGrenade"
 			]
 		},
 		"PoisonCapsule": {
 			"label": "Poison Capsule",
-			"icon": "Item/PoisonCapsule.png",
+			"icon": "item/PoisonCapsule.png",
 			"recipe": [
 				"PoisonCapsule"
 			]
 		},
 		"SlowdownCapsule": {
 			"label": "Slowdown Capsule",
-			"icon": "Item/SlowdownCapsule.png",
+			"icon": "item/SlowdownCapsule.png",
 			"recipe": [
 				"SlowdownCapsule"
 			]
 		},
 		"DefenderCapsule": {
 			"label": "Defender Capsule",
-			"icon": "Item/DefenderCapsule.png",
+			"icon": "item/DefenderCapsule.png",
 			"recipe": [
 				"DefenderCapsule"
 			]
 		},
 		"DistractorCapsule": {
 			"label": "Distractor Capsule",
-			"icon": "Item/DistractorCapsule.png",
+			"icon": "item/DistractorCapsule.png",
 			"recipe": [
 				"DistractorCapsule"
 			]
 		},
 		"DestroyerCapsule": {
 			"label": "Destroyer Capsule",
-			"icon": "Item/DestroyerCapsule.png",
+			"icon": "item/DestroyerCapsule.png",
 			"recipe": [
 				"DestroyerCapsule"
 			]
 		},
 		"DischargeDefenseRemote": {
 			"label": "Discharge Defense Remote",
-			"icon": "Item/DischargeDefenseRemote.png",
+			"icon": "item/DischargeDefenseRemote.png",
 			"recipe": [
 				"DischargeDefenseRemote"
 			]
@@ -5169,35 +5217,35 @@
 
 		"LightArmor": {
 			"label": "Light Armor",
-			"icon": "Item/LightArmor.png",
+			"icon": "item/LightArmor.png",
 			"recipe": [
 				"LightArmor"
 			]
 		},
 		"HeavyArmor": {
 			"label": "Heavy Armor",
-			"icon": "Item/HeavyArmor.png",
+			"icon": "item/HeavyArmor.png",
 			"recipe": [
 				"HeavyArmor"
 			]
 		},
 		"ModularArmor": {
 			"label": "Modular Armor",
-			"icon": "Item/ModularArmor.png",
+			"icon": "item/ModularArmor.png",
 			"recipe": [
 				"ModularArmor"
 			]
 		},
 		"PowerArmor": {
 			"label": "Power Armor",
-			"icon": "Item/PowerArmor.png",
+			"icon": "item/PowerArmor.png",
 			"recipe": [
 				"PowerArmor"
 			]
 		},
 		"PowerArmorMK2": {
 			"label": "Power Armor MK2",
-			"icon": "Item/PowerArmorMK2.png",
+			"icon": "item/PowerArmorMK2.png",
 			"recipe": [
 				"PowerArmorMK2"
 			]
@@ -5205,84 +5253,84 @@
 
 		"PortableSolarPanel": {
 			"label": "Portable Solar Panel",
-			"icon": "Item/PortableSolarPanel.png",
+			"icon": "item/PortableSolarPanel.png",
 			"recipe": [
 				"PortableSolarPanel"
 			]
 		},
 		"PortableFusionReactor": {
 			"label": "Portable Fusion Reactor",
-			"icon": "Item/PortableFusionReactor.png",
+			"icon": "item/PortableFusionReactor.png",
 			"recipe": [
 				"PortableFusionReactor"
 			]
 		},
 		"EnergyShield": {
 			"label": "Energy Shield",
-			"icon": "Item/EnergyShield.png",
+			"icon": "item/EnergyShield.png",
 			"recipe": [
 				"EnergyShield"
 			]
 		},
 		"EnergyShieldMK2": {
 			"label": "Energy Shield MK2",
-			"icon": "Item/EnergyShieldMK2.png",
+			"icon": "item/EnergyShieldMK2.png",
 			"recipe": [
 				"EnergyShieldMK2"
 			]
 		},
 		"Battery_Equipment": {
 			"label": "Battery",
-			"icon": "Item/Battery_Equipment.png",
+			"icon": "item/Battery_Equipment.png",
 			"recipe": [
 				"Battery_Equipment"
 			]
 		},
 		"BatteryMK2": {
 			"label": "Battery MK2",
-			"icon": "Item/BatteryMK2.png",
+			"icon": "item/BatteryMK2.png",
 			"recipe": [
 				"BatteryMK2"
 			]
 		},
 		"PersonalLaserDefense": {
 			"label": "Personal Laser Defense",
-			"icon": "Item/PersonalLaserDefense.png",
+			"icon": "item/PersonalLaserDefense.png",
 			"recipe": [
 				"PersonalLaserDefense"
 			]
 		},
 		"DischargeDefense": {
 			"label": "Discharge Defense",
-			"icon": "Item/DischargeDefense.png",
+			"icon": "item/DischargeDefense.png",
 			"recipe": [
 				"DischargeDefense"
 			]
 		},
 		"Exoskeleton": {
 			"label": "Exoskeleton",
-			"icon": "Item/Exoskeleton.png",
+			"icon": "item/Exoskeleton.png",
 			"recipe": [
 				"Exoskeleton"
 			]
 		},
 		"PersonalRoboport": {
 			"label": "Personal Roboport",
-			"icon": "Item/PersonalRoboport.png",
+			"icon": "item/PersonalRoboport.png",
 			"recipe": [
 				"PersonalRoboport"
 			]
 		},
 		"PersonalRoboportMK2": {
 			"label": "Personal Roboport MK2",
-			"icon": "Item/PersonalRoboportMK2.png",
+			"icon": "item/PersonalRoboportMK2.png",
 			"recipe": [
 				"PersonalRoboportMK2"
 			]
 		},
 		"Nightvision": {
 			"label": "Nightvision",
-			"icon": "Item/Nightvision.png",
+			"icon": "item/Nightvision.png",
 			"recipe": [
 				"Nightvision"
 			]
@@ -5290,49 +5338,49 @@
 
 		"StoneWall": {
 			"label": "Stone Wall",
-			"icon": "Item/StoneWall.png",
+			"icon": "item/StoneWall.png",
 			"recipe": [
 				"StoneWall"
 			]
 		},
 		"Gate": {
 			"label": "Gate",
-			"icon": "Item/Gate.png",
+			"icon": "item/Gate.png",
 			"recipe": [
 				"Gate"
 			]
 		},
 		"GunTurret": {
 			"label": "Gun Turret",
-			"icon": "Item/GunTurret.png",
+			"icon": "item/GunTurret.png",
 			"recipe": [
 				"GunTurret"
 			]
 		},
 		"LaserTurret": {
 			"label": "Laser Turret",
-			"icon": "Item/LaserTurret.png",
+			"icon": "item/LaserTurret.png",
 			"recipe": [
 				"LaserTurret"
 			]
 		},
 		"FlamethrowerTurret": {
 			"label": "Flamethrower Turret",
-			"icon": "Item/FlamethrowerTurret.png",
+			"icon": "item/FlamethrowerTurret.png",
 			"recipe": [
 				"FlamethrowerTurret"
 			]
 		},
 		"Radar": {
 			"label": "Radar",
-			"icon": "Item/Radar.png",
+			"icon": "item/Radar.png",
 			"recipe": [
 				"Radar"
 			]
 		},
 		"RocketSilo": {
 			"label": "Rocket Silo",
-			"icon": "Item/RocketSilo.png",
+			"icon": "item/RocketSilo.png",
 			"recipe": [
 				"RocketSilo"
 			]
@@ -5341,21 +5389,21 @@
 
 		"Water": {
 			"label": "Water",
-			"icon": "Item/Water.png",
+			"icon": "item/Water.png",
 			"recipe": [
 				"EmptyWaterBarrel"
 			]
 		},
 		"CrudeOil": {
 			"label": "Crude Oil",
-			"icon": "Item/CrudeOil.png",
+			"icon": "item/CrudeOil.png",
 			"recipe": [
 				"EmptyCrudeOilBarrel"
 			]
 		},
 		"HeavyOil": {
 			"label": "Heavy Oil",
-			"icon": "Item/HeavyOil.png",
+			"icon": "item/HeavyOil.png",
 			"recipe": [
 				"BasicOilProcessing",
 				"AdvancedOilProcessing",
@@ -5365,7 +5413,7 @@
 		},
 		"LightOil": {
 			"label": "Light Oil",
-			"icon": "Item/LightOil.png",
+			"icon": "item/LightOil.png",
 			"recipe": [
 				"BasicOilProcessing",
 				"AdvancedOilProcessing",
@@ -5376,7 +5424,7 @@
 		},
 		"PetroleumGas": {
 			"label": "Petroleum Gas",
-			"icon": "Item/PetroleumGas.png",
+			"icon": "item/PetroleumGas.png",
 			"recipe": [
 				"BasicOilProcessing",
 				"AdvancedOilProcessing",
@@ -5387,7 +5435,7 @@
 		},
 		"SulfuricAcid": {
 			"label": "Sulfuric Acid",
-			"icon": "Item/SulfuricAcid.png",
+			"icon": "item/SulfuricAcid.png",
 			"recipe": [
 				"SulfuricAcid",
 				"EmptySulfuricAcidBarrel"
@@ -5395,7 +5443,7 @@
 		},
 		"Lubricant": {
 			"label": "Lubricant",
-			"icon": "Item/Lubricant.png",
+			"icon": "item/Lubricant.png",
 			"recipe": [
 				"Lubricant",
 				"EmptyLubricantBarrel"
@@ -5406,7 +5454,7 @@
 	"recipeCategory": [
 		{
 			"label": "Logistics",
-			"icon":  "Category/Logistics.png",
+			"icon":  "category/Logistics.png",
 			"subCategories": [
 				[
 					"WoodenChest",
@@ -5483,7 +5531,7 @@
 		},
 		{
 			"label": "Production",
-			"icon": "Category/Production.png",
+			"icon": "category/Production.png",
 			"subCategories": [
 				[
 					"IronAxe",
@@ -5536,7 +5584,7 @@
 		},
 		{
 			"label": "Intermediate Products",
-			"icon": "Category/IntermediateProducts.png",
+			"icon": "category/IntermediateProducts.png",
 			"subCategories": [
 				[
 					"SulfuricAcid",
@@ -5611,7 +5659,7 @@
 		},
 		{
 			"label": "Combat",
-			"icon": "Category/Combat.png",
+			"icon": "category/Combat.png",
 			"subCategories": [
 				[
 					"Pistol",
@@ -5625,7 +5673,7 @@
 				[
 					"FirearmMagazine",
 					"PiercingRoundsMagazine",
-					"UraniumRoundMagazine",
+					"UraniumRoundsMagazine",
 					"ShotgunShells",
 					"PiercingShotgunShells",
 					"CannonShell",
@@ -5683,7 +5731,7 @@
 	"itemCategory": [
 		{
 			"label": "Logistics",
-			"icon":  "Category/Logistics.png",
+			"icon":  "category/Logistics.png",
 			"subCategories": [
 				[
 					"WoodenChest",
@@ -5760,7 +5808,7 @@
 		},
 		{
 			"label": "Production",
-			"icon": "Category/Production.png",
+			"icon": "category/Production.png",
 			"subCategories": [
 				[
 					"IronAxe",
@@ -5813,7 +5861,7 @@
 		},
 		{
 			"label": "Intermediate Products",
-			"icon": "Category/IntermediateProducts.png",
+			"icon": "category/IntermediateProducts.png",
 			"subCategories": [
 				[
 					"SolidFuel",
@@ -5878,7 +5926,7 @@
 		},
 		{
 			"label": "Combat",
-			"icon": "Category/Combat.png",
+			"icon": "category/Combat.png",
 			"subCategories": [
 				[
 					"Pistol",
@@ -5892,7 +5940,7 @@
 				[
 					"FirearmMagazine",
 					"PiercingRoundsMagazine",
-					"UraniumRoundMagazine",
+					"UraniumRoundsMagazine",
 					"ShotgunShells",
 					"PiercingShotgunShells",
 					"CannonShell",
@@ -5948,10 +5996,9 @@
 		},
 		{
 			"label": "Fluids",
-			"icon": "Category/Fluids.png",
+			"icon": "category/Fluids.png",
 			"subCategories": [
 				[
-					"Steam",
 					"Water",
 					"CrudeOil",
 					"HeavyOil",

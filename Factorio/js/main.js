@@ -13,11 +13,8 @@ class Settings{
 	constructor(){
 		this.config = {
 			rateUnit: 1,
-			powerUnit: 1,
 			percision: 2,
-
-			recipeDifficulty: 'normal',
-			scienceDifficulty: 'normal'
+			recipeDifficulty: 'Normal'
 		}
 
 		this.rateLabel = {
@@ -25,36 +22,25 @@ class Settings{
 			60: '/min',
 			3600: '/hour'
 		};
-		this.powerLabel = {
-			1: 'W',
-			1000: 'KW',
-			1000000: 'MW',
-			1000000000: 'GW',
-		}
 	}
 
 	updateSettings(config){
 		this.config = $.extend(true, this.config, config);
 	}
 
+	getNormalizedRateValue(rate){
+		return rate / this.config.rateUnit;
+	}
 	getRateLabel(){
 		return this.rateLabel[this.config.rateUnit];
 	}
-	getRateValue(rate){
-		return this.round(rate / this.config.rateUnit);
+	getRateValue(rate, round=true){
+		var val = rate * this.config.rateUnit;
+		if(round) val = this.round(val);
+		return val;
 	}
 	getRateText(rate){
 		return this.getRateValue(rate) + this.getRateLabel();
-	}
-
-	getPowerLabel(){
-		return this.powerLabel[this.config.powerUnit];
-	}
-	getPowerValue(power){
-		return this.round(power / this.config.powerUnit);
-	}
-	getPowerText(power){
-		return this.getPowerValue(power) + this.getPowerLabel();
 	}
 
 	round(n){
@@ -86,5 +72,44 @@ $(document).ready(function(){
 		buildEdit = new BuildEdit();
 
 		DONE();
+
+		return;
+		var build = {
+			rate: 1,
+			itemID: 'WoodenChest',
+			recipeID: 'WoodenChest',
+			count: 1,
+ 			machineConfig: {
+				machineID: "AssemblingMachine3",
+				module: [
+					"ProductivityModule3",
+					"ProductivityModule3",
+					"ProductivityModule3",
+					"ProductivityModule3"
+				]
+			},
+			beaconConfig: {
+				count: 8,
+				beaconID: 'Beacon',
+				module: [
+					'SpeedModule3',
+					'SpeedModule3'
+				]
+			}
+		}
+		console.log('rate:', factorio.calcItemRate_Product(
+			build.itemID,
+			build.recipeID,
+			build.count,
+			build.machineConfig,
+			build.beaconConfig
+		));
+		console.log('machineCount:', factorio.calcMachineCount_Product(
+			build.rate,
+			build.itemID,
+			build.recipeID,
+			build.machineConfig,
+			build.beaconConfig
+		));
 	});
 });

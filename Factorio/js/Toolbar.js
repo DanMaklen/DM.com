@@ -2,12 +2,12 @@ class Toolbar{
 	constructor(){
 		this.$ = $('#Sidebar #Toolbar');
 
-		this.$newBuild = this.$.find('#newBuild').button({
+		this.$addBuild = this.$.find('#addBuild').button({
 			icon: 'ui-icon-circle-plus',
 			showLabel: false
 		}).click(function(e){
 			dialog_newBuild.open(function(build){
-			 	factory.newBuild(build);
+			 	factory.addBuild(build);
 			});
 		});
 
@@ -31,6 +31,7 @@ class Toolbar{
 			self.dialog_settings.open(function(config){
 				settings.updateSettings(config);
 				factory.redraw();
+				buildEdit.syncWithSettings();
 			});
 		});
 	}
