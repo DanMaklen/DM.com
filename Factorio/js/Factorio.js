@@ -70,10 +70,10 @@ class Factorio{
 	}
 	getIcon(type, id, checkItem=true){
 		var data = this.getData(type, id);
-		if(!data) return '/img/icon/missing.png';
+		if(!data) return '../img/icon/missing.png';
 		if(data.hasOwnProperty('icon') && data['icon']) return 'img/'+data['icon'];
 		if(checkItem && type != 'item') return this.getIcon('item', id, false);
-		return '/img/icon/missing.png';
+		return '../img/icon/missing.png';
 	}
 	getItemCategory(){
 		return this.data.itemCategory
