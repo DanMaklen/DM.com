@@ -1,6 +1,9 @@
 class Factory{
-	_addNode(parent, node){
-		return this.$tree.create_node(parent, $.extend(true, {state:{opened: true}}, node));
+	_addTo(a, b){
+		for(var key in b) if(b.hasOwnProperty(key))
+			if(a.hasOwnProperty(key)) a[key] += b[key];
+			else a[key] = b[key];
+		return a;
 	}
 
 	constructor(){
@@ -26,6 +29,9 @@ class Factory{
 		this.iconList = Icon.getIconList();
 	}
 
+	_addNode(parent, node){
+		return this.$tree.create_node(parent, $.extend(true, {state:{opened: true}}, node));
+	}
 	_getText(build){
 		if(!build || !build.buildTypeID) return '::ERROR::';
 		switch(build.buildTypeID){
@@ -69,6 +75,21 @@ class Factory{
 		}
 		if(!this.$tree.get_selected().length) buildEdit.setBuild(null);
 	}
+	calcTotalRate(){
+		var root = this.$tree.get_node(this.rootNodeID);
+		var total = {}
+		for(var i = 0; i < root.children.length; i++)
+			this._addTo(total, this.calcSubTotalRate(this.$tree.get_node(root.children[i])));
+		return total;
+	}
+	calcSubTotalRate(treeNode=null){
+		if(!treeNode) treeNode = this.$tree.get_selected(true)[0];
+		switch(treeNode.data.buildTypeID){
+			case 'itemBuild': return this._calcSubTotalRate_itemBuild(treeNode);
+			case 'recipeBuild': return this._calcSubTotalRate_recipeBuild(treeNode);
+		}
+		return {};
+	}
 
 	_genModuleOverlay(lst){
 		if(!lst) return {};
@@ -85,7 +106,6 @@ class Factory{
 		});
 		return icon.getHTML();
 	}
-
 	_genBeaconConfigHTML(beaconConfig){
 		if(!beaconConfig || !beaconConfig.beaconID || !beaconConfig.count) return '';
 		var html = '';
@@ -195,7 +215,7 @@ class Factory{
 	}
 	_deleteBuild_itemBuild(treeNode){
 		var build = treeNode.data.data;
-		if(treeNode.parent == '#' && !build.recipeID)
+		if(treeNode.parent == this.rootNodeID && !build.recipeID)
 			this.$tree.delete_node(treeNode);
 		if(build.recipeID){
 			build.recipeID = null;
@@ -204,6 +224,28 @@ class Factory{
 			this.$tree.delete_node(treeNode.children);
 			this._redraw(treeNode);
 		}
+	}
+	_calcSubTotalRate_itemBuild(treeNode){
+		var build = treeNode.data.data;
+		var rate = factorio.calcRate(
+			build.recipeID,
+			1,
+			build.machineConfig,
+			build.beaconConfig
+		);
+		var factor = build.rate / rate.product[build.itemID];
+
+		var total = {}
+		for(var itemID in rate.product) if(rate.product.hasOwnProperty(itemID))
+			if(total.hasOwnProperty(itemID)) total[itemID] += rate.product[itemID] * factor;
+			else total[itemID] = rate.product[itemID] * factor;
+		for(var itemID in rate.ingredient) if(rate.ingredient.hasOwnProperty(itemID))
+			if(total.hasOwnProperty(itemID)) total[itemID] += -rate.ingredient[itemID] * factor;
+			else total[itemID] = -rate.ingredient[itemID] * factor;
+
+		for(var i = 0; i < treeNode.children.length; i++)
+			this._addTo(total, this.calcSubTotalRate(this.$tree.get_node(treeNode.children[i])))
+		return total;
 	}
 
 	_getText_recipeBuild(build){
@@ -256,7 +298,7 @@ class Factory{
 	}
 	_deleteBuild_recipeBuild(treeNode){
 		var build = treeNode.data;
-		if(build.parent == '#' && !build.machineConfig)
+		if(build.parent == this.rootNodeID && !build.machineConfig)
 			this.$tree.delete_node(treeNode);
 		if(build.machineConfig){
 			build.machineConfig = null;
@@ -264,5 +306,26 @@ class Factory{
 			this.$tree.delete_node(treeNode.children);
 			this._redraw(treeNode);
 		}
+	}
+	_calcSubTotalRate_recipeBuild(treeNode){
+		var build = treeNode.data.data;
+		var rate = factorio.calcRate(
+			build.recipeID,
+			build.count,
+			build.machineConfig,
+			build.beaconConfig
+		);
+
+		var total = {}
+		for(var itemID in rate.product) if(rate.product.hasOwnProperty(itemID))
+			if(total.hasOwnProperty(itemID)) total[itemID] += rate.product[itemID];
+			else total[itemID] = rate.product[itemID];
+		for(var itemID in rate.ingredient) if(rate.ingredient.hasOwnProperty(itemID))
+			if(total.hasOwnProperty(itemID)) total[itemID] += -rate.ingredient[itemID];
+			else total[itemID] = -rate.ingredient[itemID];
+
+		for(var i = 0; i < treeNode.children.length; i++)
+			this._addTo(total, this.calcSubTotalRate(this.$tree.get_node(treeNode.children[i])))
+		return total;
 	}
 }

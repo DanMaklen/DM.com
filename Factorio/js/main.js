@@ -51,7 +51,7 @@ class Settings{
 
 var factorio, settings;
 
-var dialog_settings, dialog_newBuild;
+var dialog_settings, dialog_newBuild, dialog_info;
 
 var factory;
 
@@ -65,7 +65,7 @@ $(document).ready(function(){
 
 		dialog_settings = new Dialog_Settings();
 		dialog_newBuild = new Dialog_NewBuild();
-
+		dialog_info = new Dialog_Info();
 		factory = new Factory();
 
 		toolbar = new Toolbar();

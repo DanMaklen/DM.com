@@ -153,3 +153,52 @@ class Dialog_NewBuild{
 		});
 	}
 }
+
+class Dialog_Info{
+	_init(){
+		this.$product = this.$.find('#Product');
+		this.$ingredient = this.$.find('#Ingredient');
+	}
+	constructor(){
+		var self = this;
+		this.$ = $('.dialog#info').dialog({
+			width: 'auto',
+			autoOpen: false,
+			modal: true,
+			resizable: false,
+			draggable: false,
+			buttons: {
+				'Okay': function(){self.$.dialog('close');}
+			}
+		});
+		this._init();
+	}
+
+	open(){
+		this.clear();
+		this.setTotalRate(factory.calcTotalRate());
+		this.$.dialog('open');
+	}
+
+	clear(){
+		this.$product.empty();
+		this.$ingredient.empty();
+	}
+	_add(parent, itemID, rate){
+		$('<div>')
+			.append(settings.getRateText(rate))
+			.append(Icon.gen(factorio.getIcon('item', itemID)).get$())
+			.appendTo(parent)
+			.css({
+				'display': 'inline',
+				'margin-right': '0.1em',
+				'margin-left': '0.1em'
+			})
+			;
+	}
+	setTotalRate(rate){
+		for(var itemID in rate) if(rate.hasOwnProperty(itemID))
+				 if(rate[itemID] > 0) this._add(this.$product, itemID, rate[itemID]);
+			else if(rate[itemID] < 0) this._add(this.$ingredient, itemID, -rate[itemID]);
+	}
+}

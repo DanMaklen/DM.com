@@ -11,17 +11,24 @@ class Toolbar{
 			});
 		});
 
+		this.$rmBuild = this.$.find('#rmBuild').button({
+			icon: 'ui-icon-circle-minus',
+			showLabel: false
+		}).click(function(e){
+			factory.deleteSelectedBuild();
+		});
+
 		this.$apply = this.$.find('#apply').button({
 			disabled: true
 		}).click(function(e){
 			factory.updateSelectedBuild(buildEdit.getValue());
 		});
 
-		this.$rmBuild = this.$.find('#rmBuild').button({
-			icon: 'ui-icon-circle-minus',
+		this.$info = this.$.find('#info').button({
+			icon: 'ui-icon-info',
 			showLabel: false
 		}).click(function(e){
-			factory.deleteSelectedBuild();
+			dialog_info.open();
 		});
 
 		this.$settings = this.$.find('#settings').button({

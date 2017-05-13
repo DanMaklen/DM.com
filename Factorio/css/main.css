@@ -12,6 +12,9 @@
 	pointer-events: none;
 	opacity: 0.35;
 }
+.inline{
+	display: inline
+}
 
 #Factory{
 	flex: 1;
