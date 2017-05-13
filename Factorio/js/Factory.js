@@ -60,19 +60,14 @@ class Factory{
 		}
 		this._redraw(treeNode);
 	}
-
 	deleteSelectedBuild(){
 		var treeNode = this.$tree.get_selected(true)[0];
-		if(!treeNode || treeNode.parents.length < 2) return;
-		var build = treeNode.data;
-		if(treeNode.parents.length > 2 || build.machineConfig.machineID){
-			build.machineConfig.machineID = null;
-			if(build.itemID) build.recipeID = null;
-			this.$tree.delete_node(treeNode.children);
-			this._redraw(treeNode);
+		if(!treeNode) return;
+		switch(treeNode.data.buildTypeID){
+			case 'itemBuild': this._deleteBuild_itemBuild(treeNode); break;
+			case 'recipeBuild': this._deleteBuild_recipeBuild(treeNode); break;
 		}
-		else if(treeNode.parents.length == 2 && !build.machineConfig.machineID)
-			this.$tree.delete_node(treeNode);
+		if(!this.$tree.get_selected().length) buildEdit.setBuild(null);
 	}
 
 	_genModuleOverlay(lst){
@@ -198,6 +193,18 @@ class Factory{
 
 		}
 	}
+	_deleteBuild_itemBuild(treeNode){
+		var build = treeNode.data.data;
+		if(treeNode.parent == '#' && !build.recipeID)
+			this.$tree.delete_node(treeNode);
+		if(build.recipeID){
+			build.recipeID = null;
+			build.machineConfig = null;
+			build.beaconConfig = null;
+			this.$tree.delete_node(treeNode.children);
+			this._redraw(treeNode);
+		}
+	}
 
 	_getText_recipeBuild(build){
 		if(!build.recipeID) return '::Error::';
@@ -245,6 +252,17 @@ class Factory{
 					rate: ingredient[child.data.data.itemID]
 				});
 			}
+		}
+	}
+	_deleteBuild_recipeBuild(treeNode){
+		var build = treeNode.data;
+		if(build.parent == '#' && !build.machineConfig)
+			this.$tree.delete_node(treeNode);
+		if(build.machineConfig){
+			build.machineConfig = null;
+			build.beaconConfig = null;
+			this.$tree.delete_node(treeNode.children);
+			this._redraw(treeNode);
 		}
 	}
 }
